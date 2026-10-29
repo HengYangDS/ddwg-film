@@ -1,4 +1,5 @@
-# Third-party fonts and their licenses keep their upstream names.
+# Third-party fonts, their licenses and the Creative Commons legal code keep their upstream names.
 assets/fonts/** linguist-vendored
+LICENSES/** linguist-vendored
 # Normalize every text file to LF in the index and working tree.
 * text=auto eol=lf

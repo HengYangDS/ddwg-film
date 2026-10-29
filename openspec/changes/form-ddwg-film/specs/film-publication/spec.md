@@ -6,13 +6,13 @@ Publish the films and their sources under clear licenses, with release assets wh
 
 ### Requirement: Licenses are declared for every tracked file
 
-Code SHALL be licensed MIT, the films' text, audio and images CC BY 4.0, and bundled fonts under their own licenses. Every tracked file SHALL carry a machine-readable license declaration, and third-party material SHALL keep its original notice.
+Code SHALL be licensed MIT, the films' text, audio and images CC BY 4.0, and bundled fonts under their own licenses. The root LICENSE SHALL carry the MIT grant that the package manifests declare, NOTICE SHALL name the tracked paths under CC BY 4.0, every other tracked file being code, each license text SHALL be present, and third-party material SHALL keep its original notice.
 
-#### Scenario: The license check covers the tree
+#### Scenario: The license declarations cover the tree
 
-- **WHEN** the license check runs on the repository
-- **THEN** every tracked file resolves to a declared license and copyright
-- **AND** each license text the declarations use is present
+- **WHEN** ETHOS checks the repository paradigm
+- **THEN** the MIT grant in LICENSE is recognized, linked from the README and declared by the package manifests
+- **AND** NOTICE names the license of every tracked path that is not code, and each license text it names is present
 
 ### Requirement: A release carries the films with their checksums
 

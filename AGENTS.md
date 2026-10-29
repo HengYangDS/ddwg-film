@@ -23,3 +23,13 @@ punctuation or forcing uniform speed.
 
 Generated output belongs under the ignored `build/`. The tracked tree holds
 sources only; the films are published as release assets.
+
+## Host and Film Gates
+
+A build needs Apple silicon and three host tools that Homebrew owns: FFmpeg with
+VideoToolbox, ExifTool and rsync 3 (`brew install ffmpeg exiftool rsync`).
+`mise run film:supply` is the only step that reaches the network. The proof
+sets hold the portable gates that hosted CI also runs. After
+`mise run film:build`, with the release assets in `build/artifacts/release/`,
+`ethos prove --gate film-media --gate film-reproduction --execute` accepts the
+films.

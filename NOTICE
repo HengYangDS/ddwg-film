@@ -1,0 +1,61 @@
+ddwg-film
+Copyright 2026 Yang HENG
+
+LICENSES
+
+The code is licensed under the MIT License (SPDX-License-Identifier: MIT); see LICENSE.
+Every tracked file is code unless it is named below.
+
+The films' content is licensed under the Creative Commons Attribution 4.0 International
+License (SPDX-License-Identifier: CC-BY-4.0); see LICENSES/CC-BY-4.0.txt. It comprises:
+
+- the scripts, narration texts, casts and pronunciation contract:
+  content/film-script.json, content/narration.md, content/voice-reference.json,
+  content/voice-performance.json, content/en/film-script.json, content/en/narration.md
+  and content/en/voice-reference.json;
+- the narrator's reference recordings in assets/audio/;
+- the covers in assets/cover/;
+- the films, captions, transcripts, chapters and covers that the build makes from them
+  and that the releases publish.
+
+Attribute the content as "DDWG introduction films by Yang HENG, licensed under
+CC BY 4.0", with a link to https://github.com/HengYangDS/ddwg-film.
+
+The fonts in assets/fonts/ keep the SIL Open Font License 1.1
+(SPDX-License-Identifier: OFL-1.1), whose texts and copyright notices lie beside them:
+IBM Plex Sans, Copyright 2017 IBM Corp., with Reserved Font Name "Plex"
+(assets/fonts/IBM-Plex-OFL.txt), and Noto Sans CJK SC, Copyright 2014-2021 Adobe
+(assets/fonts/LICENSE-NOTO.txt).
+
+THIRD-PARTY SOFTWARE AND MODELS
+
+The repository includes no third-party code. The build installs the following under
+their own licenses, which the licenses above do not cover:
+
+- HyperFrames 0.8.150, puppeteer-core 25.12.0 and @puppeteer/browsers 3.2.3, from npm,
+  under the Apache License 2.0;
+- GSAP 3.15.0, from npm, under its standard no-charge license
+  (https://gsap.com/standard-license); the build copies its minified script into each
+  staged picture document;
+- Chrome Headless Shell 152.0.7977.30, which the supply task installs, under the
+  licenses of Chromium and its components;
+- mlx-audio 0.5.8 and MLX 0.32.3 under the MIT License, with the other Python packages
+  that uv.lock pins, each under its own license;
+- the speech models that the supply task downloads, each under the Apache License 2.0:
+  mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16 at revision a6eb4f68,
+  mlx-community/Qwen3-ASR-0.6B-bf16 at revision eae2b51f and
+  mlx-community/Qwen3-ForcedAligner-0.6B-bf16 at revision 53c8c0e4;
+- FFmpeg, ExifTool and rsync, host tools that Homebrew installs and the build runs as
+  separate programs.
+
+THE NARRATOR
+
+The narrator is a synthetic voice, not a clone of any person's voice. Its identity
+recording, assets/audio/narration-reference.wav, was generated from a text description
+of a voice with Qwen3-TTS VoiceDesign through mlx-audio and selected by the author. The
+English reference and the clear Mandarin reference that the casts name were spoken in
+that voice by the Qwen3-TTS Base model, which also narrates both editions.
+
+The pronunciation contract records, as listening targets, English stress from CMUdict at
+commit 74790861, Copyright (C) 1993-2015 Carnegie Mellon University, under its
+BSD-style license, and Chinese readings from the macOS dictionaries.

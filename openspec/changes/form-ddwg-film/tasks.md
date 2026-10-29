@@ -33,9 +33,9 @@
 ## 6. Publication
 
 - [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command runs as written.
-- [ ] 6.2 Declare licenses with REUSE (MIT, CC BY 4.0, OFL-1.1) and third-party notices, including the GSAP license terms, and verify `reuse lint` passes.
+- [ ] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos status` reports no paradigm gap.
 - [ ] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
-- [ ] 6.4 Prepare `v1.0.0`: VERSION, CHANGELOG, release notes and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
+- [ ] 6.4 Prepare `v1.0.0`: `VERSION` as the only version source, `CHANGELOG.md` whose `1.0.0` entry is the release notes, `.ethos/release.toml` with the tags and peers, and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
 
 ## Workflow follow-up
 
