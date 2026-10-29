@@ -1,30 +1,44 @@
-"""The fixed delivery format of both editions: duration, rates, levels, limits and tags."""
+"""The delivery format of both editions: duration, rates, levels, limits, tags and credits."""
 
 from __future__ import annotations
 
 import json
+from typing import TYPE_CHECKING, Any
 
 import filmkit.repository as repository
 from filmkit.production import CODES, Edition
 
+if TYPE_CHECKING:
+    from collections.abc import Callable
 
-def _declared(key: str) -> int:
-    """A whole-number value that both editions' scripts declare alike."""
-    values = {
-        int(json.loads((repository.ROOT / Edition(code).script).read_text())[key]) for code in CODES
-    }
+
+def declared(key: str, read: Callable[[Any], Any]) -> Any:
+    """The value that both editions' scripts declare alike for a key, as `read` takes it."""
+    scripts = [json.loads((repository.ROOT / Edition(code).script).read_text()) for code in CODES]
+    values = {read(script[key]) for script in scripts}
     if len(values) != 1:
         message = f"The editions' scripts declare different {key} values: {sorted(values)}"
         raise ValueError(message)
     return values.pop()
 
 
+def rendered_rate(fps: int) -> int:
+    """A script's frame rate, refused unless it is the 60 fps the engine renders and encodes."""
+    if fps != 60:
+        message = f"The engine renders 60 fps films, not the {fps} fps the scripts declare"
+        raise ValueError(message)
+    return fps
+
+
 RATE = 48000
-DURATION = _declared("duration")
-FPS = 60
-CREDITS_DURATION = _declared("credits_duration")
+DURATION: int = declared("duration", int)
+# The H.264 levels below are set for this frame rate.
+FPS: int = declared("fps", lambda fps: rendered_rate(int(fps)))
+CREDITS_DURATION: int = declared("credits_duration", int)
 # The films' author, artist and copyright holder.
-AUTHOR = "Yang HENG"
+AUTHOR: str = declared("author", str)
+# The films' chapter count; each edition titles the chapters in its own language.
+CHAPTERS: int = declared("chapters", len)
 CAPTION_LIMITS = {"zh": 33, "en": 66}
 # ISO 639-2 tags of each edition's drawn captions and narration.
 ISO_LANGUAGES = {"zh": "zho", "en": "eng"}

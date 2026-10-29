@@ -9,16 +9,19 @@ import filmkit.repository as repository
 import filmkit.sources as sources
 from filmkit.sources import SourceError
 
+# The documents a pinned source holds.
+DOCUMENTS = ("docs/charter.md", "docs/decide.md", "docs/evolve.md")
+
 
 @pytest.fixture
 def pinned(tmp_path, monkeypatch):
-    """A source clone holding the seven documents at one commit, and a manifest pinning them."""
+    """A source clone holding three documents at one commit, and a manifest pinning them."""
     root = tmp_path / "film"
     monkeypatch.setattr(repository, "ROOT", root)
     monkeypatch.delenv(sources.CHECKOUT, raising=False)
     clone = tmp_path / "guidelines"
     (clone / "docs").mkdir(parents=True)
-    for path in sources.SOURCES:
+    for path in DOCUMENTS:
         (clone / path).write_text(f"# {path}\n")
 
     def git(*arguments):
@@ -29,7 +32,7 @@ def pinned(tmp_path, monkeypatch):
     git("init", "-q")
     git("add", ".")
     git("-c", "user.name=t", "-c", "user.email=t@example.test", "commit", "-qm", "docs")
-    members = [{"path": path, "sha256": repository.sha(clone / path)} for path in sources.SOURCES]
+    members = [{"path": path, "sha256": repository.sha(clone / path)} for path in DOCUMENTS]
     manifest = {"repository": "https://example.test/guidelines", "commit": git("rev-parse", "HEAD")}
 
     def write(rows=members):
@@ -64,8 +67,8 @@ def test_a_document_that_differs_at_the_commit_is_refused(pinned, monkeypatch):
         sources.verify()
 
 
-def test_a_manifest_without_the_seven_documents_is_refused(pinned):
-    _clone, members, write = pinned
-    write(members[1:])
-    with pytest.raises(SourceError, match="seven canonical documents"):
+def test_a_manifest_that_pins_no_document_is_refused(pinned):
+    _clone, _members, write = pinned
+    write([])
+    with pytest.raises(SourceError, match="pins no canonical document"):
         sources.verify()

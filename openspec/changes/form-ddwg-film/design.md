@@ -36,14 +36,13 @@ The first commit after the starter imports the selected paths of `fa1e974` with 
 ```text
 src/filmkit/   engine: narration, captions, soundtrack, picture driver and audits, packaging, verification
 picture/       this film's composition: film.js, film.css, index.html
-content/       scripts, casts, pronunciations, source manifest, delivery pages, review policy
+content/       film.toml, scripts, casts, players, entry page, source manifest, review prompt
 assets/        narrator references, covers, fonts
-film.toml      declared parameters: languages, runtime, frame rate, renditions, models, source, metadata
-tests/         engine tests with a sample film, and film tests
+tests/         engine and film tests
 build/         ignored output: runtime/tool-cache, runtime/work, artifacts, evidence
 ```
 
-The engine reads every film-specific value from `film.toml`, validated by pydantic, and from the paths it declares. A test scans the engine's sources for the film's declared identities, and a sample film of a few seconds builds end to end through the engine. A uv workspace was considered and deferred: it gives the same guarantee with more structure, and the extraction will create a separate repository anyway.
+The film declares itself in `content/film.toml`, validated by pydantic before any work: the file prefix, the Documents folder, the entry page, the source manifest, each edition's sources folder, cover and caption terms, and the review prompt, floors and scored dimensions. The ETHOS paradigm keeps the repository root to its catalog, so the declaration lives with the content. Each script already declares its edition's title, author, language, duration, frame rate and chapters; the engine reads those from the scripts rather than repeating them, and refuses scripts that disagree or a frame rate other than the 60 fps it encodes. Each edition has its own player page, so the engine no longer translates one player into another. A test scans the engine's sources for the film's identities: its prefix, Documents folder, source repository, titles, author and chapter titles. A sample film that builds end to end belongs to the engine's own repository and is built with its extraction. A uv workspace was considered and deferred: it gives the same guarantee with more structure, and the extraction will create a separate repository anyway.
 
 ### Pinned supply
 
@@ -72,7 +71,7 @@ A recording that does not regenerate byte-identically is not replaced silently: 
 
 ### Mature tools, without changing bytes
 
-- pydantic validates `film.toml`.
+- pydantic validates `content/film.toml`.
 - pysubs2 writes SRT and WebVTT if its output is byte-identical to the accepted captions; otherwise the current writer stays.
 - REUSE declares licenses per path (`REUSE.toml`, `LICENSES/`) and `reuse lint` checks them.
 - `rsync --checksum` and `shasum -a 256 -c` replace the Documents delivery module for local delivery.

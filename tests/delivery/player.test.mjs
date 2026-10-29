@@ -11,7 +11,6 @@ import { fileURLToPath } from "node:url";
 import { crc32, deflateSync } from "node:zlib";
 
 import {
-  SCRIPTS,
   bindingProblems,
   changedMembers,
   compareImages,
@@ -22,9 +21,11 @@ import {
 } from "../../src/filmkit/delivery/player-check.mjs";
 
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
+const FILM = { slug: "ddwg", duration: 1500 };
 const binding = (destination = "/delivery") => ({
   destination,
-  members: deliveryMembers().map((path) => ({ path, sha256: sha(path) })),
+  film: FILM,
+  members: deliveryMembers(FILM.slug).map((path) => ({ path, sha256: sha(path) })),
 });
 
 const chunk = (type, body) => {
@@ -92,11 +93,11 @@ test("the delivery has the entry page and ten members per language", () => {
       "chapters.ffmeta",
       "index.html",
     ].map((name) => `${code}/${name}`);
-  assert.deepEqual(deliveryMembers(), ["index.html", ...edition("zh"), ...edition("en")]);
-  assert.equal(new Set(deliveryMembers()).size, 21);
+  assert.deepEqual(deliveryMembers("ddwg"), ["index.html", ...edition("zh"), ...edition("en")]);
+  assert.equal(new Set(deliveryMembers("ddwg")).size, 21);
 });
 
-test("a binding names an absolute destination and exactly the delivery members", () => {
+test("a binding names an absolute destination, the film and exactly its delivery members", () => {
   assert.deepEqual(bindingProblems(binding()), []);
   assert.deepEqual(bindingProblems(binding("Documents/ddwg")), [
     "destination is not an absolute path",
@@ -113,9 +114,19 @@ test("a binding names an absolute destination and exactly the delivery members",
   const unhashed = binding();
   unhashed.members[3].sha256 = "abc";
   assert.deepEqual(bindingProblems(unhashed), [`${unhashed.members[3].path}: no SHA-256`]);
+  assert.deepEqual(bindingProblems({ ...binding(), film: { slug: "DDWG", duration: 0 } }), [
+    "film names no file prefix",
+    "film names no duration",
+  ]);
+  const another = { ...binding(), film: { slug: "another", duration: 1500 } };
+  assert.deepEqual(
+    bindingProblems(another).map((problem) => problem.split(":")[0]),
+    ["missing members", "unexpected members"],
+  );
   assert.deepEqual(bindingProblems({}), [
     "destination is not an absolute path",
-    `missing members: ${deliveryMembers().join(", ")}`,
+    "film names no file prefix",
+    "film names no duration",
   ]);
 });
 
@@ -226,16 +237,6 @@ test("cover comparison counts differing pixels and the largest channel differenc
 
 test("seek points sit two seconds in, at the middle and four seconds before the end", () => {
   assert.deepEqual(seekPoints(1500), [2, 750, 1496]);
-});
-
-test("each language's film script resolves from the repository root", async () => {
-  assert.deepEqual(Object.keys(SCRIPTS), ["zh", "en"]);
-  assert.equal(SCRIPTS.zh.href, new URL("../../content/film-script.json", import.meta.url).href);
-  assert.equal(SCRIPTS.en.href, new URL("../../content/en/film-script.json", import.meta.url).href);
-  for (const [language, script] of Object.entries(SCRIPTS)) {
-    const { duration } = JSON.parse(await readFile(script, "utf8"));
-    assert.ok(Number.isFinite(duration) && duration > 0, language);
-  }
 });
 
 test("the player check refuses a malformed invocation before opening a browser", () => {

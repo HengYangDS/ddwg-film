@@ -10,6 +10,7 @@ from __future__ import annotations
 import re
 
 from filmkit.captions import CaptionError
+from filmkit.film import FILM
 from filmkit.narration.spoken_units import (
     CLOSING_MARKS,
     PHRASE_BREAKS,
@@ -263,31 +264,9 @@ PREDICATE_STARTS = frozenset(
     }
 )
 # A term that reads as one name stays on one line, as do a verb and the object
-# pronoun or noun phrase it takes, and a modifier and the noun it qualifies.
-FIXED_TERMS = tuple(
-    tuple(term.split())
-    for term in (
-        "source of truth",
-        "sources of truth",
-        "decision owner",
-        "task lead",
-        "release owner",
-        "work cycle",
-        "permission or compliance",
-        "resource limits",
-        "publication time",
-        "price snapshots",
-        "goes back to the member",
-        "make up for",
-        "fabricated selectively hidden or unverified facts",
-        "agent output",
-        "standing in for",
-        "fact authorization or responsibility",
-        "data department work guidelines",
-        "operational delivery",
-        "the problem scope or completion condition",
-    )
-)
+# pronoun or noun phrase it takes, and a modifier and the noun it qualifies; the film
+# declares the terms its English script needs.
+FIXED_TERMS = tuple(tuple(term.split()) for term in FILM.editions["en"].caption_terms)
 OBJECT_PRONOUNS = frozenset({"it", "them", "him", "her", "us", "me"})
 MODIFIER_ENDINGS = ("ible", "able", "ive", "ous", "ful", "ical", "ed")
 DETERMINERS = frozenset(

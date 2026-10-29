@@ -260,7 +260,7 @@ def packages(inputs: Inputs) -> None:
         },
     )
     for path, body in (
-        (delivery_packaging.PLAYER, "<player>"),
+        (edition.player, "<player>"),
         (delivery_packaging.INDEX, "<entry template>"),
         (delivery_packaging.LANGUAGE_INDEX, "<entry page>"),
     ):
@@ -270,9 +270,9 @@ def packages(inputs: Inputs) -> None:
         {
             "script_sha256": sha(root / edition.script),
             "timeline_sha256": sha(edition.timeline),
-            "player_source_sha256": sha(root / delivery_packaging.PLAYER),
+            "player_source_sha256": sha(root / edition.player),
             "language_index": {
-                "source": "src/filmkit/delivery/index.html",
+                "source": str(delivery_packaging.INDEX),
                 "source_sha256": sha(root / delivery_packaging.INDEX),
                 "path": "build/artifacts/film/index.html",
                 "sha256": sha(root / delivery_packaging.LANGUAGE_INDEX),

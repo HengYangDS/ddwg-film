@@ -29,6 +29,8 @@ from typing import NamedTuple
 import filmkit.repository as repository
 import filmkit.sources as sources
 import filmkit.specification as specification
+from filmkit.delivery.packaging import BOUND_FILM
+from filmkit.film import FILM
 from filmkit.picture.rendering import COMPOSITION_SCRIPT
 from filmkit.production import CODES, Edition
 from filmkit.review import ReviewError
@@ -187,8 +189,8 @@ def bind(out: Path) -> dict:
     """Bind the packaged delivery members for the real-browser player check.
 
     The members are the neutral language entry and, for each edition, its two films and
-    the viewing package its package record names. Writes the destination and each
-    member's path and SHA-256, the shape the player check reads.
+    the viewing package its package record names. Writes the destination, the film's file
+    prefix and duration, and each member's path and SHA-256, the shape the player check reads.
     """
     destination = repository.ROOT / "build/artifacts/film"
     paths = ["index.html"]
@@ -199,12 +201,14 @@ def bind(out: Path) -> dict:
         paths += [f"{code}/{member['path']}" for member in viewing["members"]]
     present([destination / path for path in paths])
     members = [{"path": path, "sha256": repository.sha(destination / path)} for path in paths]
-    repository.write(out, {"destination": str(destination), "members": members})
+    repository.write(
+        out, {"destination": str(destination), "film": dict(BOUND_FILM), "members": members}
+    )
     return {"members": len(members), "binding": repository.relative(out)}
 
 
-# The reviewer prompt, filled per edition: a str.format template beside this module.
-TEMPLATE = Path(__file__).with_name("prompt.md").read_text(encoding="utf-8")
+# The reviewer prompt, filled per edition: the str.format template the film declares.
+TEMPLATE = (repository.ROOT / FILM.review.prompt).read_text(encoding="utf-8")
 
 
 def inner_caps(policy: dict) -> str:

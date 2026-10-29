@@ -6,23 +6,23 @@ Keep the film engine reusable by a second film: every film-specific value comes 
 
 ### Requirement: A film declares its parameters
 
-A film SHALL declare its languages, runtime, frame rate, renditions, narrator references, models, source and release metadata in one declaration. The engine SHALL validate the declaration before any work and SHALL refuse an invalid or incomplete one, naming each failing field.
+A film SHALL declare, in one declaration, its file prefix, delivery folder, entry page, source manifest, each edition's sources folder, cover and caption terms, and its review prompt, floors and scored dimensions. Each edition's script SHALL declare the edition's title, author, language, duration, frame rate and chapters. The engine SHALL check the declaration and the scripts before any work and SHALL refuse an invalid or incomplete declaration, naming each failing field.
 
 #### Scenario: An invalid declaration refuses before work
 
-- **WHEN** the declaration omits a language's script or gives a frame rate the renderer does not accept
-- **THEN** the build refuses before synthesis and names each failing field
+- **WHEN** the declaration omits an edition, names a file that is missing, gives a malformed file prefix or a review floor outside 0 to 100
+- **THEN** the engine refuses when it loads, before any synthesis, and names each failing field
+
+#### Scenario: Scripts that disagree refuse before work
+
+- **WHEN** the editions' scripts declare different durations, authors or chapter counts, or a frame rate other than the 60 fps the engine encodes
+- **THEN** the engine refuses when it loads and names the value
 
 ### Requirement: The engine carries no film's content
 
-The engine SHALL NOT contain any film's title, identity, script, voice, source or picture composition. It SHALL take them from the declared film.
+The engine SHALL NOT contain any film's title, identity, script, voice, source, player page, review policy or picture composition. It SHALL take them from the declared film.
 
 #### Scenario: The engine names no film
 
-- **WHEN** the engine's sources are scanned for the identities the film declares
+- **WHEN** the engine's sources are scanned for the film's file prefix, delivery folder, source repository, titles, author and chapter titles
 - **THEN** none is found
-
-#### Scenario: A second film builds through the same engine
-
-- **WHEN** the sample film of a few seconds is built through the engine
-- **THEN** its recordings, captions, soundtrack, picture and packaged film are produced without any change to the engine

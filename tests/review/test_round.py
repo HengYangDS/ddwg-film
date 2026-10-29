@@ -219,11 +219,22 @@ def test_prompts_cite_the_exact_media_previous_findings_and_round_inputs(
             {"program_level": {"policy": {"integrated_lufs": -16.5}}},
         )
     put(
-        root / "content/source-manifest.json",
+        root / sources.MANIFEST,
         {
             "repository": "https://example.test/guidelines",
             "commit": "abc",
-            "members": [{"path": path} for path in sources.SOURCES],
+            "members": [
+                {"path": f"docs/{name}.md"}
+                for name in (
+                    "charter",
+                    "decide",
+                    "data",
+                    "deliver",
+                    "human-agent",
+                    "communicate",
+                    "evolve",
+                )
+            ],
         },
     )
     monkeypatch.setenv(sources.CHECKOUT, "/source/guidelines")

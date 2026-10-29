@@ -56,6 +56,7 @@ def test_first_delivery_reads_every_member_back(film):
     assert len(members) == 21
     assert list(report) == [
         "destination",
+        "film",
         "delivered_at",
         "members",
         "all_match",

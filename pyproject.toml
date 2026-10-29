@@ -3,7 +3,7 @@ name = "filmkit"
 version = "1.0.0"
 description = "Rebuild narrated bilingual explainer films from their sources"
 requires-python = ">=3.12,<3.15"
-dependencies = ["mlx-audio==0.5.8", "numpy==2.5.4", "pillow==13.0.0"]
+dependencies = ["mlx-audio==0.5.8", "numpy==2.5.4", "pillow==13.0.0", "pydantic==2.14.1"]
 
 [build-system]
 requires = ["uv_build>=0.13,<0.14"]

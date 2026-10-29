@@ -190,7 +190,7 @@ def verify_package(edition: production.Edition) -> dict:
         films["script_sha256"] != repository.sha(repository.ROOT / edition.script)
         or films["soundtrack_sha256"] != repository.sha(edition.soundtrack)
         or films["picture_sha256"] != render["output_sha256"]
-        or films["cover_sha256"] != repository.sha(output / "ddwg-cover.jpg")
+        or films["cover_sha256"] != repository.sha(output / packaging.COVER_JPEG)
         or films["chapters_sha256"] != repository.sha(output / "chapters.ffmeta")
         or sorted(member["path"] for member in films["editions"]) != names
         or any(
@@ -209,14 +209,14 @@ def verify_package(edition: production.Edition) -> dict:
     if (
         viewing["script_sha256"] != repository.sha(repository.ROOT / edition.script)
         or viewing["timeline_sha256"] != repository.sha(edition.timeline)
-        or viewing["player_source_sha256"] != repository.sha(repository.ROOT / packaging.PLAYER)
+        or viewing["player_source_sha256"] != repository.sha(repository.ROOT / edition.player)
         or viewing["author"] != specification.AUTHOR
-        or viewing["chapters"] != packaging.CHAPTERS
+        or viewing["chapters"] != specification.CHAPTERS
         or any(
             member["sha256"] != repository.sha(output / member["path"])
             for member in viewing["members"]
         )
-        or repository.sha(output / "ddwg-cover.png")
+        or repository.sha(output / packaging.COVER_PNG)
         != repository.sha(repository.ROOT / edition.cover)
     ):
         msg = "Viewing package differs from its current inputs"
@@ -261,7 +261,7 @@ def verify_media(edition: production.Edition, path: Path, size: tuple[int, int])
         and audio.get("tags", {}).get("language") == language
         and video.get("tags", {}).get("handler_name") == names["picture"]
         and audio.get("tags", {}).get("handler_name") == names["narration"]
-        and len(data["chapters"]) == packaging.CHAPTERS
+        and len(data["chapters"]) == specification.CHAPTERS
     ):
         msg = f"Movie differs from the delivery contract: {path.name}"
         raise VerificationError(msg)

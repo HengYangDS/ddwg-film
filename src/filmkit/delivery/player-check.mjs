@@ -1,7 +1,7 @@
 /** Read the delivered players back in a real browser, and paint the cover from a staged document.
  *
- * players: a binding names the destination and the SHA-256 of each of the 21 delivery members (the delivery
- * readback, or a review round's artifacts binding). The member bytes are checked before and after the browser read.
+ * players: a binding names the destination, the film's file prefix and duration, and the SHA-256 of each of the 21
+ * delivery members (the delivery readback, or a review round's artifacts binding). The member bytes are checked before and after the browser read.
  * The read opens the language entry page and each language's player: page language, the delivered chapters, the
  * captioned viewing edition playing by default without a text track (captions are drawn in the picture), both
  * editions' duration and dimensions with decoding at three seek points, a chapter jump and the rendered transcript.
@@ -25,13 +25,8 @@ const USAGE =
   "Usage: node src/filmkit/delivery/player-check.mjs players <binding.json> <receipt.json>\n" +
   "       node src/filmkit/delivery/player-check.mjs cover <stage-dir> <cover.png> <output.png>";
 const LANGUAGES = { zh: "zh-CN", en: "en" };
-/* Repository files resolve from the repository root, three levels above this module. */
-const REPOSITORY = new URL("../../../", import.meta.url);
-/** Each language's film script, whose duration both of its delivered editions must play. */
-export const SCRIPTS = Object.freeze({
-  zh: new URL("content/film-script.json", REPOSITORY),
-  en: new URL("content/en/film-script.json", REPOSITORY),
-});
+/* A film's file prefix: lowercase words joined by hyphens. */
+const SLUG = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const EDITIONS = [
   ["-uhd.mp4", [3840, 2160]],
   ["-1080p-captioned.mp4", [1920, 1080]],
@@ -47,20 +42,20 @@ export async function digestFile(path) {
   return hash.digest("hex");
 }
 
-/** The 21 delivery members: the language entry page, then per language both movies, the cover as PNG and JPEG, SRT
- * and VTT subtitles, the transcript, chapters as JSON and FFmetadata, and the player. */
-export function deliveryMembers() {
+/** A film's 21 delivery members: the language entry page, then per language both movies, the cover as PNG and JPEG,
+ * SRT and VTT subtitles, the transcript, chapters as JSON and FFmetadata, and the player. */
+export function deliveryMembers(slug) {
   return [
     "index.html",
     ...Object.keys(LANGUAGES).flatMap((code) =>
       [
-        `ddwg-${code}-uhd.mp4`,
-        `ddwg-${code}-1080p-captioned.mp4`,
-        "ddwg-cover.png",
-        "ddwg-cover.jpg",
-        `ddwg-${code}.srt`,
-        `ddwg-${code}.vtt`,
-        `ddwg-${code}-transcript.md`,
+        `${slug}-${code}-uhd.mp4`,
+        `${slug}-${code}-1080p-captioned.mp4`,
+        `${slug}-cover.png`,
+        `${slug}-cover.jpg`,
+        `${slug}-${code}.srt`,
+        `${slug}-${code}.vtt`,
+        `${slug}-${code}-transcript.md`,
         "chapters.json",
         "chapters.ffmeta",
         "index.html",
@@ -69,18 +64,24 @@ export function deliveryMembers() {
   ];
 }
 
-/** Why a binding does not name one delivery; none for a binding with an absolute destination and exactly the delivery
- * members, each once with a SHA-256. A delivery readback must also have matched its sources with nothing beside them. */
+/** Why a binding does not name one delivery; none for a binding with an absolute destination, the film's file prefix
+ * and positive duration, and exactly the film's delivery members, each once with a SHA-256. A delivery readback must
+ * also have matched its sources with nothing beside them. */
 export function bindingProblems(binding) {
   const problems = [];
   if (typeof binding?.destination !== "string" || !isAbsolute(binding.destination))
     problems.push("destination is not an absolute path");
+  const slug = binding?.film?.slug,
+    named = typeof slug === "string" && SLUG.test(slug);
+  if (!named) problems.push("film names no file prefix");
+  if (!(Number.isFinite(binding?.film?.duration) && binding.film.duration > 0))
+    problems.push("film names no duration");
   if (binding?.all_match === false) problems.push("the readback does not match its sources");
   if (binding?.unexpected?.length)
     problems.push(`unexpected entries at the destination: ${binding.unexpected.join(", ")}`);
   const members = Array.isArray(binding?.members) ? binding.members : [];
   const paths = members.map((member) => member?.path),
-    expected = deliveryMembers();
+    expected = named ? deliveryMembers(slug) : paths;
   const missing = expected.filter((path) => !paths.includes(path)),
     extra = paths.filter((path) => !expected.includes(path));
   if (missing.length) problems.push(`missing members: ${missing.join(", ")}`);
@@ -238,7 +239,7 @@ async function readPlayers(browser, binding, receiptPath, report) {
     Object.keys(LANGUAGES).map((code) => `${code}/index.html`),
   );
   for (const [language, lang] of Object.entries(LANGUAGES)) {
-    const { duration } = JSON.parse(await readFile(SCRIPTS[language], "utf8"));
+    const { duration } = binding.film;
     const { chapters } = JSON.parse(await readFile(join(root, language, "chapters.json"), "utf8"));
     await page.goto(pathToFileURL(join(root, language, "index.html")).href, {
       waitUntil: "networkidle0",
@@ -259,7 +260,7 @@ async function readPlayers(browser, binding, receiptPath, report) {
     // The viewing edition plays by default, and burned-in captions are not doubled by a text track.
     item.default_source = await page.$eval("video", (video) => video.currentSrc.split("/").pop());
     item.text_tracks = await page.$eval("video", (video) => video.textTracks.length);
-    assert.equal(item.default_source, `ddwg-${language}-1080p-captioned.mp4`);
+    assert.equal(item.default_source, `${binding.film.slug}-${language}-1080p-captioned.mp4`);
     assert.equal(item.text_tracks, 0);
     for (const [file, dimensions] of EDITIONS) {
       await page.click(`[data-file$="${file}"]`);

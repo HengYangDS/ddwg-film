@@ -1,0 +1,80 @@
+# The film this repository builds. The engine in src/filmkit takes every film-specific value
+# from this declaration and the files it names; each edition's script declares its title,
+# author, language, duration, frame rate and chapters. Paths are below the repository root.
+
+# The prefix of every delivered file.
+slug = "ddwg"
+# The folder in ~/Documents that receives the delivery.
+documents_folder = "ddwg-introduction-film"
+# The page that leads to each edition's player.
+entry = "content/index.html"
+# The commit and digests of the canonical documents the films explain.
+source_manifest = "content/source-manifest.json"
+
+# Each edition's folder of script, cast and player, and its 16:9 cover.
+[editions.zh]
+sources = "content"
+cover = "assets/cover/ddwg-cover.png"
+
+[editions.en]
+sources = "content/en"
+cover = "assets/cover/ddwg-cover-en.png"
+# A term that reads as one name stays on one caption line, as do a verb and the object it
+# takes, and a modifier and the noun it qualifies.
+caption_terms = [
+  "source of truth",
+  "sources of truth",
+  "decision owner",
+  "task lead",
+  "release owner",
+  "work cycle",
+  "permission or compliance",
+  "resource limits",
+  "publication time",
+  "price snapshots",
+  "goes back to the member",
+  "make up for",
+  "fabricated selectively hidden or unverified facts",
+  "agent output",
+  "standing in for",
+  "fact authorization or responsibility",
+  "data department work guidelines",
+  "operational delivery",
+  "the problem scope or completion condition",
+]
+
+[review]
+# The reviewer prompt: a str.format template that each round fills for each edition.
+prompt = "content/review/prompt.md"
+# The verifier's floor: the overall score and every dimension at least this.
+overall_minimum = 90
+dimension_minimum = 90
+
+# The scored dimensions in record order, with what each one asks reviewers to judge.
+[review.dimensions]
+subject_and_faithfulness = """\
+  DDWG remains the subject; all seven documents substantively covered with conditions and \
+  boundaries; examples illuminate rules; Human/Agent responsibility and role combinations \
+  accurate."""
+narrative_and_clarity = """\
+  the real problem before the response; terms defined before use; connected argument; clear \
+  chapter boundaries; ending returns to the opening; the edition stands alone."""
+narration_identity_and_performance = """\
+  same voice identity across editions; delivery natural (not sleepy, rushed or theatrical); \
+  distinct thought pauses, paragraph boundaries and audible phrase tails; continuous and \
+  idiomatic."""
+pronunciation_and_bilingual_language = """\
+  tones and polyphones in context or English vowels and stress; idiomatic language (not \
+  translated); consistent terms."""
+visual_explanation_and_motion = """\
+  pictures explain relationships, operations, comparisons and consequences as narration \
+  develops; restrained but varied, intentional 2D motion; text supports the visual argument."""
+composition_and_typography = """\
+  alignment guides, hierarchy, margins, density, modest single-line captions, consistent color \
+  and contrast; collisions or clipping with timecodes."""
+sound_picture_continuity = """\
+  speech, captions, diagrams and scene changes synchronized; complete thoughts survive the \
+  edit; image stays purposeful through transitions and pauses."""
+credits_and_deliverable_craft = """\
+  covers and Yang HENG metadata; restrained signature; subtitles and transcript match the \
+  speech; chapters; player; opening, ending, covers and entry form one edition."""

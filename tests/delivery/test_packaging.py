@@ -25,28 +25,10 @@ def test_the_player_transcript_keeps_chapters_segments_and_escaped_text():
         "<p>A &amp; B &lt; C.</p><h2>02 Next</h2><h3>00:01:00.000 · Second</h3>"
         "<p>More.</p>"
     )
-    player = (repository.ROOT / delivery_packaging.PLAYER).read_text()
-    english = delivery_packaging.localize_player(player, "en")
+    english = (repository.ROOT / production.Edition("en").player).read_text()
     assert english.count("/*TRANSCRIPT*/") == 1
     assert '<a href="#transcript">Transcript</a>' in english
     assert '<a href="ddwg-en-transcript.md">Transcript (Markdown)</a>' in english
-    assert delivery_packaging.CHINESE.search(english) is None
-    assert delivery_packaging.localize_player(player, "zh") == player
-
-
-@pytest.mark.parametrize(
-    ("change", "message"),
-    [
-        (("章节", "目录"), "lacks a text the English player translates: 章节"),
-        (("ddwg-zh", "ddwg-cn"), "lacks a text the English player translates: ddwg-zh"),
-        (("</footer>", "<a>新增</a></footer>"), "keeps Chinese text: 新增"),
-        (("</footer>", "<a>，</a></footer>"), "keeps Chinese text: ，"),
-    ],
-)
-def test_the_english_player_refuses_an_untranslated_template(change, message):
-    player = (repository.ROOT / delivery_packaging.PLAYER).read_text().replace(*change)
-    with pytest.raises(PackagingError, match=message):
-        delivery_packaging.localize_player(player, "en")
 
 
 def test_the_runtime_and_viewing_members_follow_the_edition():
@@ -87,7 +69,7 @@ def test_delivery_index_uses_sibling_languages_and_preserves_language_players(
     assert "<base " not in output
     assert runtime in output
     assert observed == {
-        "source": "src/filmkit/delivery/index.html",
+        "source": "content/index.html",
         "source_sha256": repository.sha(source),
         "path": "build/artifacts/film/index.html",
         "sha256": repository.sha(root / "index.html"),

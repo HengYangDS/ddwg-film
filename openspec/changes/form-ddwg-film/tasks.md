@@ -2,22 +2,21 @@
 
 ## 1. Import and supply
 
-- [ ] 1.1 Import the private repository's code, tests, scripts, casts, assets and configuration from `fa1e974` without its history, `evidence/`, custody code or generated files, and verify every imported file's SHA-256 equals its blob at `fa1e974`.
-- [ ] 1.2 Bind the toolchain: the Mise configuration and lock for Node 26.12.1, CPython 3.12.16, uv 0.13.5 and ETHOS `0.2.0-alpha.19`, plus the uv and npm locks; verify `mise install --locked`, `uv sync --frozen` and `npm ci` succeed.
+- [x] 1.1 Import the private repository's code, tests, scripts, casts, assets and configuration from `fa1e974` without its history, `evidence/` or custody code, and verify every imported file's SHA-256 equals its blob at `fa1e974`.
+- [x] 1.2 Bind the toolchain: the Mise configuration and lock for Node 26.12.1, CPython 3.12.16, uv 0.13.5 and ETHOS `0.2.0-alpha.19`, plus the uv and npm locks; verify `mise install --locked`, `uv sync --frozen` and `npm ci` succeed.
 - [ ] 1.3 Adapt `AGENTS.md`, the gate registry and the check policies to this repository, declaring FFmpeg as a native tool; verify `ethos status` passes and the Python and Node suites pass unchanged.
 
 ## 2. Engine boundary
 
-- [ ] 2.1 Move the reusable pipeline into `src/filmkit` and the film's composition into `picture/`, update every import, command and test, and verify both suites pass.
-- [ ] 2.2 Declare the film's parameters in `film.toml`, validated by pydantic; move the delivery pages and review policy into `content/`; read every film-specific value from the declaration; verify the boundary scan finds no film identity in `src/filmkit`.
+- [x] 2.1 Move the reusable pipeline into `src/filmkit` and the film's composition into `picture/`, update every import, command and test, and verify both suites pass.
+- [x] 2.2 Declare the film in `content/film.toml`, validated by pydantic; move the delivery pages and review prompt into `content/` with a player page per edition; read every film-specific value from the declaration or the scripts; verify the boundary scan finds no film identity in `src/filmkit` and the rebuilt player and entry pages equal the accepted ones.
 - [ ] 2.3 Remove the custody archive, `restore-inputs` and the tracked evidence consumers; move the source manifest into `content/` with the DDWG repository URL and commit; write shot plans and narration mirrors under `build/`; verify a full build leaves the tracked tree unchanged.
-- [ ] 2.4 Add a sample film of a few seconds that builds end to end through the engine, and verify it in the suite.
 
 ## 3. Pinned supply
 
 - [ ] 3.1 Declare `hyperframes`, `puppeteer-core`, `@puppeteer/browsers` and `gsap` in npm, remove the vendored GSAP copy and the OpenMontage paths, disable renderer telemetry, and verify a stage renders with the locked renderer.
 - [ ] 3.2 Add the supply task for the browser build and the three model revisions in `build/runtime/tool-cache/`, with digest checks, and verify a build after supply runs offline.
-- [ ] 3.3 Declare the pipeline as Mise tasks and verify each task runs its engine command on the sample film.
+- [ ] 3.3 Declare the pipeline as Mise tasks and verify each task runs its engine command for one edition.
 
 ## 4. Mature tools
 

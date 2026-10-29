@@ -1,1 +1,1 @@
-"""Produce the bilingual DDWG introduction film from its scripts, narrator and composition."""
+"""Rebuild narrated bilingual explainer films from their declaration, scripts and composition."""

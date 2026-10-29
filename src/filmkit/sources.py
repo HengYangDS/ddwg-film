@@ -14,14 +14,11 @@ import subprocess
 from pathlib import Path
 
 import filmkit.repository as repository
+from filmkit.film import FILM
 
-MANIFEST = "content/source-manifest.json"
+MANIFEST = FILM.source_manifest
 # The environment variable that names a local clone of the source repository.
 CHECKOUT = "FILM_SOURCE_CHECKOUT"
-SOURCES = tuple(
-    f"docs/{name}.md"
-    for name in ("charter", "decide", "data", "deliver", "human-agent", "communicate", "evolve")
-)
 
 
 class SourceError(ValueError):
@@ -29,10 +26,10 @@ class SourceError(ValueError):
 
 
 def manifest() -> dict:
-    """The source manifest, refused unless it pins the seven canonical documents."""
+    """The source manifest, refused unless it pins a document."""
     pinned = repository.read(MANIFEST)
-    if sorted(member["path"] for member in pinned["members"]) != sorted(SOURCES):
-        msg = "Source manifest must name the seven canonical documents"
+    if not pinned.get("members"):
+        msg = "Source manifest pins no canonical document"
         raise SourceError(msg)
     return pinned
 

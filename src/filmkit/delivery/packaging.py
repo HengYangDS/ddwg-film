@@ -1,7 +1,7 @@
 """Package each edition's metadata, player and delivered films.
 
 `package_metadata` derives the viewing package: the cover as PNG and JPEG, the subtitles,
-transcript and chapters, the localized player and the language entry page, each recorded with
+transcript and chapters, the edition's player and the language entry page, each recorded with
 its SHA-256 in the edition's viewing package. `package_film` muxes the rendered picture with the
 soundtrack and chapters into every rendition in `production.RENDITIONS`, attaches the cover and
 the QuickTime keys in the packaging work folder, checks the finished film and only then links it
@@ -29,10 +29,19 @@ from PIL import Image
 
 import filmkit.media as media
 import filmkit.repository as repository
+from filmkit.film import FILM
 from filmkit.picture.rendering import COMPOSITION_SCRIPT, validate_picture
 from filmkit.production import CODES, RENDITIONS
 from filmkit.repository import read, run, sha, write
-from filmkit.specification import AUTHOR, DURATION, FPS, H264_LEVELS, ISO_LANGUAGES, RATE
+from filmkit.specification import (
+    AUTHOR,
+    CHAPTERS,
+    DURATION,
+    FPS,
+    H264_LEVELS,
+    ISO_LANGUAGES,
+    RATE,
+)
 
 if TYPE_CHECKING:
     from filmkit.production import Edition, Rendition
@@ -42,49 +51,22 @@ class PackagingError(ValueError):
     """A package input or a finished film differs from what packaging requires."""
 
 
-# The delivered player and the delivery folder's index page, as paths below the repository root.
-PLAYER = Path(__file__).with_name("player.html").relative_to(repository.ROOT)
-INDEX = Path(__file__).with_name("index.html").relative_to(repository.ROOT)
+# The delivery folder's entry page, below the repository root.
+INDEX = Path(FILM.entry)
 # The language entry page derived from INDEX, below the root.
 LANGUAGE_INDEX = Path("build/artifacts/film/index.html")
 # The folder below the root where each edition's films are encoded and finished.
 WORK = Path("build/runtime/work/final-film-packaging")
 # What a failed or timed-out encode was bound to, in the edition's evidence folder.
 FAILURE_RECEIPT = "packaging-failure.json"
-# Every film and player has this many chapters.
-CHAPTERS = 8
 CAPTION_OWNER = "Already drawn in source picture; no duplicate burn-in"
 # No encode's deadline is shorter, in seconds.
 DEADLINE_FLOOR = 600
-# The English player's text for each Chinese text of the player template, in replacement order.
-ENGLISH_PLAYER = {
-    'lang="zh-CN"': 'lang="en"',
-    "DDWG · 数据部门工作指南": "DDWG · Data Department Work Guidelines",
-    "中文 · /*RUNTIME*/": "English · /*RUNTIME*/",
-    "ddwg-zh": "ddwg-en",
-    "视频版本": "Video versions",
-    "观看版 · 1080p": "Viewing edition · 1080p",
-    "章节": "Chapters",
-    (
-        "从判断、数据与交付，讲到人与智能体协作、沟通和持续改进。"
-        "片中情境用于解释工作机制，未据此声称实际部署或团队采用。"
-    ): (
-        "From judgment, data and delivery to human–Agent collaboration, "
-        "communication and continuous improvement. Situations illustrate "
-        "mechanisms; they do not establish deployment or team adoption."
-    ),
-    "完整讲稿": "Transcript",
-    "讲稿 Markdown": "Transcript (Markdown)",
-    "字幕": "Captions",
-    "封面": "Cover",
-    "下载观看版": "Download viewing edition",
-    "下载 4K UHD": "Download 4K UHD",
-    "此浏览器无法播放当前编码，可下载视频后使用系统播放器。": (
-        "This browser cannot play the current codec. Download the video and use your system player."
-    ),
-}
-# Han characters and CJK or full-width punctuation, none of which the English player keeps.
-CHINESE = re.compile(r"[\u3000-\u303f\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\uff00-\uffef]")
+# Each edition's cover as delivered, PNG and JPEG.
+COVER_PNG = f"{FILM.slug}-cover.png"
+COVER_JPEG = f"{FILM.slug}-cover.jpg"
+# The film that a delivery binding names for the real-browser player check.
+BOUND_FILM = {"slug": FILM.slug, "duration": DURATION}
 
 
 def runtime_label() -> str:
@@ -96,8 +78,8 @@ def runtime_label() -> str:
 def viewing_members(edition: Edition) -> tuple[str, ...]:
     """The viewing package's members in record order, by name in the edition's folder."""
     return (
-        "ddwg-cover.png",
-        "ddwg-cover.jpg",
+        COVER_PNG,
+        COVER_JPEG,
         f"{edition.prefix}.srt",
         f"{edition.prefix}.vtt",
         f"{edition.prefix}-transcript.md",
@@ -148,26 +130,6 @@ def transcript_html(transcript: str) -> str:
         else:
             parts.append(f"<p>{escape(block)}</p>")
     return "".join(parts)
-
-
-def localize_player(player: str, code: str) -> str:
-    """The player in the edition's language; the template is the Chinese player.
-
-    Every text the English player translates must be in the template, and no Chinese text
-    may remain in it.
-    """
-    if code == "zh":
-        return player
-    for original, translated in ENGLISH_PLAYER.items():
-        if original not in player:
-            msg = f"The player template lacks a text the English player translates: {original}"
-            raise PackagingError(msg)
-        player = player.replace(original, translated)
-    remaining = CHINESE.findall(player)
-    if remaining:
-        msg = f"The English player keeps Chinese text: {''.join(remaining)}"
-        raise PackagingError(msg)
-    return player
 
 
 def refresh_shot_plan(edition: Edition, timeline: dict) -> None:
@@ -221,13 +183,12 @@ def refresh_shot_plan(edition: Edition, timeline: dict) -> None:
 
 
 def player_page(edition: Edition, chapters: list[dict]) -> str:
-    """The edition's player: the localized template with its chapters, transcript and runtime."""
-    player = (repository.ROOT / PLAYER).read_text()
+    """The edition's player: its template with the chapters, transcript and runtime."""
+    player = (repository.ROOT / edition.player).read_text()
     if "/*CHAPTERS*/[]" not in player:
         msg = "The player template lacks its chapter list"
         raise PackagingError(msg)
     player = player.replace("/*CHAPTERS*/[]", json.dumps(chapters, ensure_ascii=False))
-    player = localize_player(player, edition.code)
     if player.count("/*TRANSCRIPT*/") != 1:
         msg = "The player template needs exactly one transcript place"
         raise PackagingError(msg)
@@ -242,7 +203,7 @@ def package_metadata(edition: Edition) -> None:
     """Derive the viewing package from the current source-bound timeline."""
     output = edition.artifacts
     source_cover = repository.ROOT / edition.cover
-    target_cover = output / "ddwg-cover.png"
+    target_cover = output / COVER_PNG
     if not target_cover.exists() or sha(target_cover) != sha(source_cover):
         shutil.copy2(source_cover, target_cover)
     timeline = read(edition.timeline)
@@ -256,18 +217,18 @@ def package_metadata(edition: Edition) -> None:
         raise PackagingError(msg)
     (output / "index.html").write_text(player_page(edition, chapters))
     language_index = package_language_index()
-    with Image.open(output / "ddwg-cover.png") as cover:
+    with Image.open(output / COVER_PNG) as cover:
         if cover.width * 9 != cover.height * 16:
             msg = f"The cover must be 16:9, not {cover.width}x{cover.height}"
             raise PackagingError(msg)
-        cover.convert("RGB").save(output / "ddwg-cover.jpg", quality=95)
+        cover.convert("RGB").save(output / COVER_JPEG, quality=95)
     members = viewing_members(edition)
     write(
         edition.viewing_package,
         {
             "script_sha256": sha(edition.script),
             "timeline_sha256": sha(edition.timeline),
-            "player_source_sha256": sha(PLAYER),
+            "player_source_sha256": sha(edition.player),
             "language_index": language_index,
             "author": AUTHOR,
             "chapters": CHAPTERS,
@@ -283,7 +244,7 @@ def film_bindings(edition: Edition) -> dict:
     return {
         "picture_sha256": sha(edition.picture),
         "soundtrack_sha256": sha(edition.soundtrack),
-        "cover_sha256": sha(edition.artifacts / "ddwg-cover.jpg"),
+        "cover_sha256": sha(edition.artifacts / COVER_JPEG),
         "script_sha256": sha(edition.script),
         "chapters_sha256": sha(edition.artifacts / "chapters.ffmeta"),
     }
@@ -464,7 +425,7 @@ def attach_cover_and_keys(
         "-i",
         str(intermediate),
         "-i",
-        str(edition.artifacts / "ddwg-cover.jpg"),
+        str(edition.artifacts / COVER_JPEG),
         "-map",
         "0:v:0",
         "-map",

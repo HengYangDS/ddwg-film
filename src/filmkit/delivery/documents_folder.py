@@ -4,7 +4,7 @@ The destination holds exactly the 21 delivery members: the language entry page a
 per edition, the UHD and captioned 1080p movies, the cover as PNG and JPEG, SRT and
 VTT subtitles, the transcript, chapters as JSON and FFmetadata, and the player.
 Finder's .DS_Store files and the app-managed .claude folder at the top are ignored;
-any other entry, such as a Finder copy "ddwg-zh 2.srt", is unexpected.
+any other entry, such as a Finder copy of a subtitle file, is unexpected.
 
 retain records a verified rollback copy of the destination before it is replaced:
 each member and unexpected file whose exact bytes a set-aside package already holds
@@ -38,7 +38,8 @@ from pathlib import Path
 from typing import NamedTuple
 
 import filmkit.repository as repository
-from filmkit.delivery.packaging import LANGUAGE_INDEX, viewing_members
+from filmkit.delivery.packaging import BOUND_FILM, LANGUAGE_INDEX, viewing_members
+from filmkit.film import FILM
 from filmkit.production import CODES, Edition
 
 
@@ -46,7 +47,7 @@ class DeliveryRefusedError(Exception):
     """A retention or delivery that cannot be made; the destination is unchanged."""
 
 
-DESTINATION = Path.home() / "Documents/ddwg-introduction-film"
+DESTINATION = Path.home() / "Documents" / FILM.documents_folder
 PREDECESSORS = "build/artifacts/film/predecessors"
 READBACK = "build/evidence/delivery/delivery-readback.json"
 FINDER_METADATA = ".DS_Store"
@@ -415,6 +416,7 @@ def readback(root: Path, destination: Path, binding: Binding | None = None) -> d
     bound = binding is None or all(row["sha256"] == binding.expected[row["path"]] for row in rows)
     report = {
         "destination": str(destination),
+        "film": dict(BOUND_FILM),
         "delivered_at": datetime.now(UTC).isoformat(),
         "members": rows,
         "all_match": all(row["matches_source"] for row in rows) and not unexpected and bound,

@@ -9,6 +9,7 @@ from dataclasses import dataclass
 from typing import TYPE_CHECKING
 
 import filmkit.repository as repository
+from filmkit.film import FILM
 
 if TYPE_CHECKING:
     from pathlib import Path
@@ -75,8 +76,8 @@ class Edition:
 
     @property
     def sources(self) -> str:
-        """The folder of the edition's script, cast, narration mirror and shot plan."""
-        return "content" if self.code == "zh" else "content/en"
+        """The folder of the edition's script, cast, player, narration mirror and shot plan."""
+        return FILM.editions[self.code].sources
 
     @property
     def script(self) -> str:
@@ -97,10 +98,13 @@ class Edition:
         return f"{self.sources}/narration.md"
 
     @property
+    def player(self) -> str:
+        """The player page template, in the edition's language."""
+        return f"{self.sources}/player.html"
+
+    @property
     def cover(self) -> str:
-        return (
-            "assets/cover/ddwg-cover.png" if self.code == "zh" else "assets/cover/ddwg-cover-en.png"
-        )
+        return FILM.editions[self.code].cover
 
     @property
     def artifacts(self) -> Path:
@@ -116,7 +120,7 @@ class Edition:
 
     @property
     def prefix(self) -> str:
-        return f"ddwg-{self.code}"
+        return f"{FILM.slug}-{self.code}"
 
     @property
     def timeline(self) -> Path:
@@ -131,7 +135,7 @@ class Edition:
     @property
     def picture(self) -> Path:
         """The rendered picture, before the soundtrack, cover and metadata join it."""
-        return self.artifacts / "ddwg-final-picture.mp4"
+        return self.artifacts / f"{FILM.slug}-final-picture.mp4"
 
     def film(self, kind: str) -> Path:
         """A delivered film by its kind in `RENDITIONS`."""
