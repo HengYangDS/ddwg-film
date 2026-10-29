@@ -19,7 +19,7 @@ def current_review(tmp_path, monkeypatch):
     for name, body in (
         ("content/film-script.json", "{}"),
         (str(picture_rendering.COMPOSITION_SCRIPT), "/* film */"),
-        ("evidence/reviews/production-review.md", "# Review\n"),
+        ("build/evidence/editions/zh/production-review.md", "# Review\n"),
         ("build/artifacts/film/zh/ddwg-zh-uhd.mp4", "uhd"),
         ("build/artifacts/film/zh/ddwg-zh-1080p-captioned.mp4", "viewing"),
     ):
@@ -39,12 +39,13 @@ def current_review(tmp_path, monkeypatch):
         "overall": 96.0,
         "findings": [{"severity": "minor"}],
         "human_listening": {"state": "not_performed"},
+        # A published record keeps the report path of the repository that recorded it.
         "report": {
             "path": "evidence/reviews/production-review.md",
-            "sha256": repository.sha(tmp_path / "evidence/reviews/production-review.md"),
+            "sha256": repository.sha(edition.production_review.with_name("production-review.md")),
         },
     }
-    path = tmp_path / "evidence/reviews/production-review.json"
+    path = edition.production_review
 
     def check(**changes):
         path.write_text(json.dumps({**record, **changes}))
@@ -72,6 +73,12 @@ def test_review_accepts_only_current_media_above_thresholds(current_review):
         check(findings=[{"severity": "material"}])
     with pytest.raises(VerificationError, match="current delivered edition"):
         check(schema_version=1)
+    edition = production.Edition("zh")
+    report = edition.production_review.with_name("production-review.md")
+    report.write_text("# Another review\n")
+    with pytest.raises(VerificationError, match="Review report differs from its record"):
+        check()
+    report.write_text("# Review\n")
     files[0].write_text("re-encoded")
     with pytest.raises(VerificationError, match="current delivered edition"):
         check()

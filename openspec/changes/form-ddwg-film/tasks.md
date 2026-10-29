@@ -10,7 +10,7 @@
 
 - [x] 2.1 Move the reusable pipeline into `src/filmkit` and the film's composition into `picture/`, update every import, command and test, and verify both suites pass.
 - [x] 2.2 Declare the film in `content/film.toml`, validated by pydantic; move the delivery pages and review prompt into `content/` with a player page per edition; read every film-specific value from the declaration or the scripts; verify the boundary scan finds no film identity in `src/filmkit` and the rebuilt player and entry pages equal the accepted ones.
-- [ ] 2.3 Remove the custody archive, `restore-inputs` and the tracked evidence consumers; move the source manifest into `content/` with the DDWG repository URL and commit; write shot plans and narration mirrors under `build/`; verify a full build leaves the tracked tree unchanged.
+- [x] 2.3 Remove the custody archive, `restore-inputs` and the tracked evidence consumers; move the source manifest into `content/` with the DDWG repository URL and commit; write shot plans and review records under `build/evidence/` with each review report beside its record; verify by the suite that each edition's plan and record lie under `build/`.
 
 ## 3. Pinned supply
 
@@ -28,7 +28,7 @@
 - [ ] 5.1 Rebuild every thought recording of both editions from its seeds and verify byte identity with the accepted recordings; track any exception as a source asset with its provenance.
 - [ ] 5.2 Rebuild captions, transcripts and soundtracks, and verify byte identity with the accepted ones.
 - [ ] 5.3 Calibrate the picture PSNR floor from two renders of one stage and record it with the comparison.
-- [ ] 5.4 Render, package and verify both editions, and compare them with the accepted films under the reproduction standard.
+- [ ] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films under the reproduction standard.
 
 ## 6. Publication
 

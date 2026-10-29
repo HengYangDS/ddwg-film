@@ -45,16 +45,3 @@ format_check = "ethos prove --full --execute --json"
 validation_owner = "film-media"
 validation_command = "ethos prove --full --execute --json"
 mutation_policy = "forbidden"
-
-# Shot plans that filmkit.repository.write emits on every render (json.dumps with an indent
-# of 2) and film-media reads back against the script, composition and timeline: producer output,
-# not formatter input. A new render rewrites them together with that evidence.
-[[ownership]]
-id = "film-media-produced-plans"
-paths = ["content/en/shot-plan.json", "content/shot-plan.json"]
-format_owner = "immutable-carrier"
-format_command = "not-applicable:film-media-bound"
-format_check = "ethos prove --full --execute --json"
-validation_owner = "film-media"
-validation_command = "ethos prove --full --execute --json"
-mutation_policy = "forbidden"

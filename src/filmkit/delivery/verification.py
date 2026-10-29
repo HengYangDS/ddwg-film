@@ -313,8 +313,9 @@ def verify_review(edition: production.Edition, files: list[Path]) -> dict:
     if any(finding["severity"] == "material" for finding in review["findings"]):
         msg = "Review records an unresolved material finding"
         raise VerificationError(msg)
-    report = review["report"]
-    if repository.sha(repository.ROOT / report["path"]) != report["sha256"]:
+    # The report lies beside its record wherever the record was placed.
+    report = path.with_name("production-review.md")
+    if not report.is_file() or repository.sha(report) != review["report"]["sha256"]:
         msg = "Review report differs from its record"
         raise VerificationError(msg)
     return {

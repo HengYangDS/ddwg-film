@@ -76,7 +76,7 @@ class Edition:
 
     @property
     def sources(self) -> str:
-        """The folder of the edition's script, cast, player, narration mirror and shot plan."""
+        """The folder of the edition's script, cast, player and narration mirror."""
         return FILM.editions[self.code].sources
 
     @property
@@ -88,9 +88,9 @@ class Edition:
         return f"{self.sources}/voice-reference.json"
 
     @property
-    def shot_plan(self) -> str:
-        """The shot plan that every render writes from the script, composition and timeline."""
-        return f"{self.sources}/shot-plan.json"
+    def shot_plan(self) -> Path:
+        """The shot plan that packaging writes from the script, composition and timeline."""
+        return self.evidence / "shot-plan.json"
 
     @property
     def mirror(self) -> str:
@@ -185,9 +185,8 @@ class Edition:
 
     @property
     def production_review(self) -> Path:
-        """The tracked production review that the film verifier reads."""
-        folder = "evidence/reviews" if self.code == "zh" else "evidence/reviews/en"
-        return repository.ROOT / folder / "production-review.json"
+        """The production review record, beside its report, that the film verifier reads."""
+        return self.evidence / "production-review.json"
 
     @property
     def release(self) -> dict:
