@@ -52,7 +52,7 @@ gh release download v1.0.0 --repo HengYangDS/ddwg-film --dir build/artifacts/rel
 mise run film:compare
 ```
 
-The comparison refuses a published asset that differs from the release manifest, and accepts a published review only when it binds the published films and the current script and composition. It then compares the rebuild layer by layer: each soundtrack and staged picture document must hold the recorded bytes, the captions, transcripts and covers the published bytes, and each film must have the published frame count, decoded audio, streams, chapters and tags, with every decoded frame's PSNR at or above the floor the manifest records. The picture alone is not byte-identical, because GPU capture and encoding vary between renders of the same stage. The report goes to `build/evidence/reproduction/report.json`.
+The comparison refuses a published asset that differs from the release manifest, and accepts a published review only when it binds the published films and the current script and composition. It then compares the rebuild layer by layer: each soundtrack and staged picture document must hold the recorded bytes, the captions, transcripts and covers the published bytes, and each film must have the published frame count, decoded audio, streams, chapters and tags, with every decoded frame's PSNR at or above the floor the manifest records, 45 dB for each film of `v1.0.0`. The picture alone is not byte-identical, because GPU capture and encoding vary between renders of the same stage; the first rebuild's lowest frame measured 51.5 dB. The report goes to `build/evidence/reproduction/report.json`.
 
 ## Checks
 

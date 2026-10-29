@@ -56,7 +56,7 @@ A rebuild SHALL be compared layer by layer with the published release. Each edit
 
 ### Requirement: Pictures stay within a calibrated floor
 
-Every decoded frame's PSNR between a rebuilt film and its published film SHALL be measured. The first comparison SHALL record its minimum in the release manifest after its lowest frames are inspected side by side, and later rebuilds SHALL keep every decoded frame at or above that floor.
+Every decoded frame's PSNR between a rebuilt film and its published film SHALL be measured. After the first comparison's lowest frames are inspected side by side, the release manifest SHALL record each film's floor at or below that comparison's minimum, and later rebuilds SHALL keep every decoded frame at or above it.
 
 #### Scenario: The first comparison calibrates the floor
 

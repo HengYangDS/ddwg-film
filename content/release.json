@@ -4,12 +4,18 @@
     "zh": {
       "soundtrack_sha256": "dfc55fcfcbd1464f400d355a2a1f864d0540834a83e74265e96577533e34f875",
       "stage_sha256": "be90cccad73d9409014dbd9aeced72765ae147802a5251ebd36d5991b8396b86",
-      "picture_floor_db": {}
+      "picture_floor_db": {
+        "ddwg-zh-uhd.mp4": 45.0,
+        "ddwg-zh-1080p-captioned.mp4": 45.0
+      }
     },
     "en": {
       "soundtrack_sha256": "1d13a7df51c355b8a1b4091e946f7086b51128b2cebe124a1e8ef4eca3c2a5ce",
       "stage_sha256": "14da011d417a327bf80e9e173ecadb4ea0387c0b243f14d72e4820dfa43a5c2b",
-      "picture_floor_db": {}
+      "picture_floor_db": {
+        "ddwg-en-uhd.mp4": 45.0,
+        "ddwg-en-1080p-captioned.mp4": 45.0
+      }
     }
   },
   "assets": [

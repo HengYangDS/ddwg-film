@@ -14,30 +14,30 @@
 
 ## 3. Pinned supply
 
-- [ ] 3.1 Declare `hyperframes`, `puppeteer-core`, `@puppeteer/browsers` and `gsap` in npm with the accepted renderer's dependency tree, remove the vendored GSAP copy and the OpenMontage paths, turn off renderer telemetry, update checks and self-installs, and verify a stage renders with the locked renderer.
-- [ ] 3.2 Add the supply task for the browser build and the three model revisions in `build/runtime/tool-cache/`, with digest checks, and verify a build after supply runs offline.
-- [ ] 3.3 Declare the pipeline as Mise tasks and verify each task runs its engine command for one edition.
+- [x] 3.1 Declare `hyperframes`, `puppeteer-core`, `@puppeteer/browsers` and `gsap` in npm with the accepted renderer's dependency tree, remove the vendored GSAP copy and the OpenMontage paths, turn off renderer telemetry, update checks and self-installs, and verify a stage renders with the locked renderer.
+- [x] 3.2 Add the supply task for the browser build and the three model revisions in `build/runtime/tool-cache/`, with digest checks, and verify a build after supply runs offline.
+- [x] 3.3 Declare the pipeline as Mise tasks and verify each task runs its engine command for one edition.
 
 ## 4. Mature tools
 
 - [x] 4.1 Write SRT and WebVTT through pysubs2 if its output is byte-identical to the accepted captions, otherwise keep the current writer; verify with the accepted captions.
-- [ ] 4.2 Replace the Documents delivery module with `rsync --checksum` and `shasum -a 256 -c` in a Mise task, and verify a delivery reads back.
+- [x] 4.2 Replace the Documents delivery module with `rsync --checksum` and `shasum -a 256 -c` in a Mise task, and verify a delivery reads back.
 
 ## 5. Reproduction
 
-- [ ] 5.1 Rebuild every thought recording of both editions from its seeds and verify byte identity with the accepted recordings; track any exception as a source asset with its provenance.
-- [ ] 5.2 Rebuild captions, transcripts and soundtracks, and verify byte identity with the accepted ones.
-- [ ] 5.3 Record the release manifest from the accepted films with each edition's soundtrack and staged-document digests, and add the comparison of a rebuild with the published release as an engine command, the `film:compare` task and the `film-reproduction` gate, with `film:build` ending in the technical verification; verify by the suite.
-- [ ] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films: inspect the lowest frames side by side, record each film's floor in the manifest, and confirm every layer passes.
+- [x] 5.1 Rebuild every thought recording of both editions from its seeds and verify byte identity with the accepted recordings; track any exception as a source asset with its provenance.
+- [x] 5.2 Rebuild captions, transcripts and soundtracks, and verify byte identity with the accepted ones.
+- [x] 5.3 Record the release manifest from the accepted films with each edition's soundtrack and staged-document digests, and add the comparison of a rebuild with the published release as an engine command, the `film:compare` task and the `film-reproduction` gate, with `film:build` ending in the technical verification; verify by the suite.
+- [x] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films: inspect the lowest frames side by side, record each film's floor in the manifest, and confirm every layer passes.
 
 ## 6. Publication
 
-- [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command runs as written.
-- [ ] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos status` reports no paradigm gap.
-- [ ] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
+- [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command that needs no published release runs as written.
+- [ ] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos lane repair-paradigm --json` reports no gap.
+- [x] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
 - [ ] 6.4 Prepare `v1.0.0`: `VERSION` as the only version source, `CHANGELOG.md` whose `1.0.0` entry is the release notes, `.ethos/release.toml` with the tags and peers, and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
 
 ## Workflow follow-up
 
 - Archive the Change, prove the archived head once, land it and close out.
-- Add the forge remotes, push, tag `v1.0.0` and upload the release only after the user confirms.
+- Add the forge remotes, push, tag `v1.0.0` and upload the release only after the user confirms; then run the README's download command and read back every asset and `SHA256SUMS` on both forges.
