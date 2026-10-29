@@ -16,7 +16,7 @@ Code SHALL be licensed MIT, the films' text, audio and images CC BY 4.0, and bun
 
 ### Requirement: A release carries the films with their checksums
 
-A release SHALL publish both editions' UHD films, captioned 1080p films, captions, transcripts, covers and review records, together with their SHA-256 sums. The repository SHALL record each published asset's name, size and SHA-256.
+A release SHALL publish both editions' UHD films, captioned 1080p films, captions, transcripts, covers and review records, together with their SHA-256 sums. The repository SHALL record each published asset's name, size and SHA-256, and the digests of the soundtrack and staged picture document each edition was made from.
 
 #### Scenario: Published assets read back
 

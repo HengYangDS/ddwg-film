@@ -3,8 +3,14 @@ id = "ddwg-film-gate-registry"
 source_refs = ["system/gates.toml"]
 
 [proof_sets]
-default = ["native-static", "native-behavior", "film-media", "source-integrity"]
-full = ["native-static", "native-behavior", "film-media", "source-integrity"]
+default = [
+  "native-static",
+  "native-behavior",
+  "film-media",
+  "film-reproduction",
+  "source-integrity",
+]
+full = ["native-static", "native-behavior", "film-media", "film-reproduction", "source-integrity"]
 
 [[gates]]
 id = "native-static"
@@ -54,6 +60,7 @@ command = [
   "-m",
   "filmkit.delivery.verification",
   "--read-only",
+  "--technical-only",
   "--language",
   "all",
 ]
@@ -61,19 +68,39 @@ policy = "required"
 profile = "repository"
 toolchain = "uv-python"
 asset_classes = ["release-artifacts", "evidence"]
-dimensions = [
-  "duration",
-  "frames",
-  "sound",
-  "subtitles",
-  "source-integrity",
-  "picture-geometry",
-  "review-thresholds",
-]
+dimensions = ["duration", "frames", "sound", "subtitles", "source-integrity", "picture-geometry"]
 execution_mode = "adapter"
 evidence_class = "proof"
 trust_bearing = true
 tool_adapter = "verify-ddwg-film"
+writes_files = false
+network_policy = "offline"
+version_source = "locked-toolchain"
+
+[[gates]]
+id = "film-reproduction"
+kind = "asset"
+command = [
+  "uv",
+  "run",
+  "--python",
+  "3.12",
+  "--frozen",
+  "--offline",
+  "python",
+  "-m",
+  "filmkit.delivery.reproduction",
+  "--read-only",
+]
+policy = "required"
+profile = "repository"
+toolchain = "uv-python"
+asset_classes = ["release-artifacts", "evidence"]
+dimensions = ["frames", "sound", "subtitles", "picture-fidelity", "review-thresholds"]
+execution_mode = "adapter"
+evidence_class = "proof"
+trust_bearing = true
+tool_adapter = "compare-ddwg-film"
 writes_files = false
 network_policy = "offline"
 version_source = "locked-toolchain"

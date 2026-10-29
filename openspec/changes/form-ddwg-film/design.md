@@ -57,29 +57,31 @@ OpenMontage's runtime was rejected as a source: it is unpinned, licensed AGPL-3.
 
 ### The pipeline as Mise tasks
 
-The build is a set of declared Mise tasks (`film:supply`, `film:narrate`, `film:sound`, `film:picture`, `film:package`, `film:verify`, `film:build`) that call the engine's commands. Receipts stay the provenance record, written by one engine module. DVC was rejected: 42 direct dependencies including a task queue and default telemetry, a single active maintainer, and a lock that a nondeterministic picture would rewrite on every rebuild. Snakemake and doit add nothing over Mise, which the toolchain already owns.
+The build is a set of declared Mise tasks (`film:supply`, `film:narrate`, `film:sound`, `film:picture`, `film:package`, `film:verify`, `film:build`, `film:compare`) that call the engine's commands. Receipts stay the provenance record, written by one engine module. DVC was rejected: 42 direct dependencies including a task queue and default telemetry, a single active maintainer, and a lock that a nondeterministic picture would rewrite on every rebuild. Snakemake and doit add nothing over Mise, which the toolchain already owns.
 
 ### Reproduction standard
 
-A rebuild is compared layer by layer with the accepted films:
+A rebuild is compared layer by layer with the published release:
 
-- thought recordings, captions, transcripts and the soundtracks before encoding: byte-identical;
-- the picture: identical stage inputs, exact frame counts and timing, and every decoded frame within a PSNR floor of the published film; the floor is calibrated from two renders of the same stage and recorded with the comparison;
-- the containers: the same streams, durations, chapters and metadata.
+- the soundtracks before encoding and the staged picture documents: the bytes the release manifest records;
+- captions, transcripts and covers: byte-identical to the published assets;
+- the films: the same frame counts, decoded audio, streams, durations, chapters and tags, and every decoded frame's PSNR against the published film. With the staged document, renderer and browser build identical, a rebuild and the published film are two renders of one stage, so the first comparison measures the capture and encoding variation: its lowest frames are inspected side by side, and its minimum becomes each film's floor in the manifest, which later rebuilds must meet.
 
-A recording that does not regenerate byte-identically is not replaced silently: it becomes a tracked source asset with its provenance. The review records bind the published films; a rebuild inherits their acceptance only through this standard.
+Thought recordings are not published; the soundtrack digest binds them, and for `v1.0.0` each rebuilt recording was also compared with the accepted round's retained one. A recording that does not regenerate byte-identically is not replaced silently: it becomes a tracked source asset with its provenance. The review records bind the published films; a rebuild inherits their acceptance only through this standard.
 
 ### Mature tools, without changing bytes
 
 - pydantic validates `content/film.toml`.
-- pysubs2 writes SRT and WebVTT if its output is byte-identical to the accepted captions; otherwise the current writer stays.
+- The current writer keeps writing SRT and WebVTT. pysubs2 1.9.0, given the accepted cues, ends an SRT with an extra blank line and numbers every WebVTT cue, so its output differs from the accepted captions; trimming its output would cost more code than the writer it replaces.
 - REUSE declares licenses per path (`REUSE.toml`, `LICENSES/`) and `reuse lint` checks them.
 - `rsync --checksum` and `shasum -a 256 -c` replace the Documents delivery module for local delivery.
 - The hand-written BS.1770-4 K-weighting stays: a library computes slightly different gains and would change the soundtracks. It moves to a later engine version together with a new edition and its review.
 
-### Publication record
+### Publication and the comparison
 
-The `v1.0.0` release publishes both UHD films, both captioned 1080p films, captions, transcripts, covers, the two review records and `SHA256SUMS`. A tracked release manifest records each asset's name, size and SHA-256, so a rebuild knows what it must reproduce. The Release itself, the tag and the remotes wait for the user's confirmation.
+The `v1.0.0` release publishes, per edition, `<prefix>-uhd.mp4`, `<prefix>-1080p-captioned.mp4`, `<prefix>.srt`, `<prefix>.vtt`, `<prefix>-transcript.md`, `<prefix>-cover.png`, `<prefix>-production-review.json` and `<prefix>-production-review.md`, plus `SHA256SUMS`. The tracked manifest `content/release.json` records each asset's name, size and SHA-256, each edition's soundtrack and staged-document digests, and each film's PSNR floor once it is calibrated. Its `v1.0.0` values are recorded once from the accepted round-24 files; a later film assembles its release from its own reviewed build when the engine gains that command. The Release itself, the tag and the remotes wait for the user's confirmation.
+
+A rebuild cannot carry the review, because its films differ from the reviewed bytes by render variation. `film:build` therefore ends with the technical verification, and `film:compare` compares the rebuild with the published assets in `build/artifacts/release/`, downloaded from the release or placed there by the maintainer, and writes its report under `build/evidence/reproduction/`. The `film-media` gate runs the technical verification and a `film-reproduction` gate runs the comparison, so a full proof shows that the checkout's build reproduces what was published.
 
 ### CI
 
@@ -88,7 +90,7 @@ ETHOS projects the portable gates into GitHub Actions and GitLab CI. The film-me
 ## Risks / Trade-offs
 
 - [Some recordings do not regenerate byte-identically] → They become tracked source assets with their provenance; no changed take enters silently.
-- [A tolerance could hide a real picture change] → Stage inputs must hash identically, frame counts must match exactly, and the floor comes from same-stage repeats.
+- [A tolerance could hide a real picture change] → The staged document must hash identically, frame counts must match exactly, and the lowest frames are inspected side by side before the floor is recorded.
 - [Supply hosts are unavailable] → Supply runs once and every later build is offline; the model endpoint can be a mirror.
 - [Gate registry differences under alpha.19] → The registry is adapted in the first task group and proved before the archive.
 - [The rename to `filmkit` breaks an import path] → The full Python and Node suites run after the move, before any other change.

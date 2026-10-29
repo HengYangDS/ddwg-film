@@ -20,22 +20,22 @@
 
 ## 4. Mature tools
 
-- [ ] 4.1 Write SRT and WebVTT through pysubs2 if its output is byte-identical to the accepted captions, otherwise keep the current writer; verify with the accepted captions.
+- [x] 4.1 Write SRT and WebVTT through pysubs2 if its output is byte-identical to the accepted captions, otherwise keep the current writer; verify with the accepted captions.
 - [ ] 4.2 Replace the Documents delivery module with `rsync --checksum` and `shasum -a 256 -c` in a Mise task, and verify a delivery reads back.
 
 ## 5. Reproduction
 
 - [ ] 5.1 Rebuild every thought recording of both editions from its seeds and verify byte identity with the accepted recordings; track any exception as a source asset with its provenance.
 - [ ] 5.2 Rebuild captions, transcripts and soundtracks, and verify byte identity with the accepted ones.
-- [ ] 5.3 Calibrate the picture PSNR floor from two renders of one stage and record it with the comparison.
-- [ ] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films under the reproduction standard.
+- [ ] 5.3 Record the release manifest from the accepted films with each edition's soundtrack and staged-document digests, and add the comparison of a rebuild with the published release as an engine command, the `film:compare` task and the `film-reproduction` gate, with `film:build` ending in the technical verification; verify by the suite.
+- [ ] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films: inspect the lowest frames side by side, record each film's floor in the manifest, and confirm every layer passes.
 
 ## 6. Publication
 
 - [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command runs as written.
 - [ ] 6.2 Declare licenses with REUSE (MIT, CC BY 4.0, OFL-1.1) and third-party notices, including the GSAP license terms, and verify `reuse lint` passes.
 - [ ] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
-- [ ] 6.4 Prepare `v1.0.0`: VERSION, CHANGELOG, release notes and the release manifest of asset names, sizes and SHA-256; verify the manifest against the accepted films.
+- [ ] 6.4 Prepare `v1.0.0`: VERSION, CHANGELOG, release notes and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
 
 ## Workflow follow-up
 

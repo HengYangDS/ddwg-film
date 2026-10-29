@@ -57,12 +57,14 @@ run = [
 ]
 
 [tasks."film:picture"]
-description = "Stage each edition's picture, render it with the locked renderer and validate it"
+description = "Stage each edition's picture, check its geometry in the browser, render it with the locked renderer and validate it"
 run = [
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language zh",
+  "node src/filmkit/picture/geometry-check.mjs build/runtime/work/final-delivery-zh-uhd build/evidence/editions/zh/picture-geometry.json 2",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language zh",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language zh",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language en",
+  "node src/filmkit/picture/geometry-check.mjs build/runtime/work/final-delivery-en-uhd build/evidence/editions/en/picture-geometry.json 2",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language en",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language en",
 ]
@@ -77,8 +79,8 @@ run = [
 ]
 
 [tasks."film:verify"]
-description = "Verify both editions' delivered films and every input they bind"
-run = "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.verification --language all"
+description = "Verify both editions' films and every input they bind; a rebuild carries no review"
+run = "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.verification --technical-only --language all"
 
 [tasks."film:build"]
 description = "Build and verify both editions from the tracked sources and the supplied inputs"
@@ -89,6 +91,10 @@ run = [
   { task = "film:package" },
   { task = "film:verify" },
 ]
+
+[tasks."film:compare"]
+description = "Compare the build with the published release in build/artifacts/release under the reproduction standard"
+run = "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.reproduction"
 
 # The ETHOS gates resolve these only from this lock, never from PATH: Node for the picture checks,
 # Python and uv for the suite. Python stays on the 3.12 line that production selects.

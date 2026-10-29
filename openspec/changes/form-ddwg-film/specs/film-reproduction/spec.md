@@ -41,15 +41,43 @@ A build SHALL write generated files only under the ignored `build/` directory. I
 
 ### Requirement: A rebuild meets the reproduction standard
 
-A rebuild SHALL be compared layer by layer with the published films. Thought recordings, captions, transcripts and the soundtracks before encoding SHALL be byte-identical. Pictures SHALL have identical stage inputs, exact frame counts and every decoded frame within the recorded PSNR floor. Containers SHALL carry the same streams, durations, chapters and metadata.
+A rebuild SHALL be compared layer by layer with the published release. Each edition's soundtrack before encoding and staged picture document SHALL hold the bytes the release manifest records, its captions, transcript and cover SHALL be byte-identical to the published ones, and each film SHALL have the published film's frame count, decoded audio, streams, durations, chapters and tags.
 
 #### Scenario: A faithful rebuild passes
 
-- **WHEN** the comparison runs on a rebuild and the published films
+- **WHEN** the comparison runs on a rebuild and the published release
 - **THEN** it reports every layer with its measured result and passes
 
 #### Scenario: A changed layer refuses
 
-- **WHEN** any recording, caption or soundtrack differs by one byte, a frame count differs, or a decoded frame falls below the floor
-- **THEN** the comparison fails and names the edition, layer and position
+- **WHEN** a soundtrack, staged document, caption, transcript or cover differs by one byte, or a film's frame count, decoded audio, streams, durations, chapters or tags differ
+- **THEN** the comparison fails and names the edition, layer and asset
 - **AND** the rebuild does not inherit the published films' review
+
+### Requirement: Pictures stay within a calibrated floor
+
+Every decoded frame's PSNR between a rebuilt film and its published film SHALL be measured. The first comparison SHALL record its minimum in the release manifest after its lowest frames are inspected side by side, and later rebuilds SHALL keep every decoded frame at or above that floor.
+
+#### Scenario: The first comparison calibrates the floor
+
+- **WHEN** the release manifest records no floor for a film
+- **THEN** the comparison reports the film's minimum and lowest frames and does not pass
+
+#### Scenario: A frame below the floor refuses
+
+- **WHEN** a decoded frame of a rebuilt film falls below its recorded floor
+- **THEN** the comparison fails and names the film and the frame
+
+### Requirement: Only the reviewed published films carry acceptance
+
+The comparison SHALL refuse a published asset whose bytes differ from the release manifest. It SHALL accept a published review only when the review binds its edition's published films and the current script and composition and meets the declared floors, and a rebuild SHALL inherit that review only through the comparison.
+
+#### Scenario: A published asset that differs refuses
+
+- **WHEN** a published asset's size or SHA-256 differs from the release manifest
+- **THEN** the comparison refuses before comparing any layer and names the asset
+
+#### Scenario: A review that does not bind refuses
+
+- **WHEN** a published review covers other film bytes or another script or composition, or scores below a declared floor
+- **THEN** the comparison fails and names the edition

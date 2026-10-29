@@ -54,6 +54,25 @@ def current_review(tmp_path, monkeypatch):
     return check, record, files
 
 
+def test_a_published_review_is_read_beside_its_report_wherever_it_lies(current_review, tmp_path):
+    _, record, files = current_review
+    # A release names each edition's record and report after the edition's file prefix.
+    release = tmp_path / "build/artifacts/release"
+    release.mkdir(parents=True)
+    films = [release / film.name for film in files]
+    for film, published in zip(files, films, strict=True):
+        published.write_bytes(film.read_bytes())
+    (release / "ddwg-zh-production-review.md").write_text("# Review\n")
+    published = release / "ddwg-zh-production-review.json"
+    published.write_text(json.dumps(record))
+    edition = production.Edition("zh")
+    accepted = delivery_verification.verify_review(edition, films, record=published)
+    assert accepted["path"] == "build/artifacts/release/ddwg-zh-production-review.json"
+    (release / "ddwg-zh-production-review.md").write_text("# Another review\n")
+    with pytest.raises(VerificationError, match="Review report differs from its record"):
+        delivery_verification.verify_review(edition, films, record=published)
+
+
 def test_review_accepts_only_current_media_above_thresholds(current_review):
     check, record, files = current_review
     accepted = check()

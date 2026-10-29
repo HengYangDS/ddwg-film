@@ -283,12 +283,18 @@ def verify_media(edition: production.Edition, path: Path, size: tuple[int, int])
     }
 
 
-def verify_review(edition: production.Edition, files: list[Path]) -> dict:
-    """Accept only a current review of both delivered formats above threshold."""
-    path = edition.production_review
+def verify_review(
+    edition: production.Edition, files: list[Path], record: Path | None = None
+) -> dict:
+    """Accept only a current review of both delivered formats above threshold.
+
+    The record is the edition's own unless a published one is named. A review covers each
+    film by its name and bytes, and its report lies beside it under the same name.
+    """
+    path = record or edition.production_review
     review = repository.read(path)
-    covered = {item["path"]: item["sha256"] for item in review["media"]}
-    current = {str(f.relative_to(repository.ROOT)): repository.sha(f) for f in files}
+    covered = {Path(item["path"]).name: item["sha256"] for item in review["media"]}
+    current = {film.name: repository.sha(film) for film in files}
     if (
         review.get("schema_version") != review_record.SCHEMA_VERSION
         or review.get("language") != edition.code
@@ -315,7 +321,7 @@ def verify_review(edition: production.Edition, files: list[Path]) -> dict:
         msg = "Review records an unresolved material finding"
         raise VerificationError(msg)
     # The report lies beside its record wherever the record was placed.
-    report = path.with_name("production-review.md")
+    report = path.with_suffix(".md")
     if not report.is_file() or repository.sha(report) != review["report"]["sha256"]:
         msg = "Review report differs from its record"
         raise VerificationError(msg)
