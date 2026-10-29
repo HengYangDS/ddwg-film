@@ -3,33 +3,33 @@
 lockfile_version = 3
 
 [[tools."http:ethos"]]
-version = "0.2.0-alpha.18"
+version = "0.2.0-alpha.19"
 backend = "http:ethos"
-specifiers = ["0.2.0-alpha.18"]
+specifiers = ["0.2.0-alpha.19"]
 
 [tools."http:ethos"."platforms.linux-arm64"]
-checksum = "sha256:8b371187ad8a535be8e3bfee1fcce639154e217a3270894fdadfa9e0c3060fff"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-linux-arm64.tar.gz"
+checksum = "sha256:277a887e40801a1fd35e92659b48919ef4620b45f34c53404311e0b1040bcc63"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-linux-arm64.tar.gz"
 
 [tools."http:ethos"."platforms.linux-arm64-musl"]
-checksum = "sha256:8b371187ad8a535be8e3bfee1fcce639154e217a3270894fdadfa9e0c3060fff"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-linux-arm64.tar.gz"
+checksum = "sha256:277a887e40801a1fd35e92659b48919ef4620b45f34c53404311e0b1040bcc63"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-linux-arm64.tar.gz"
 
 [tools."http:ethos"."platforms.linux-x64"]
-checksum = "sha256:ae587a2222b9b753df4e92bcf207cfb81881412b8d74c76d105f6e5ef7d7280c"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-linux-x64.tar.gz"
+checksum = "sha256:b3dd983214084216b8094f439801e59618fd31a355bdaf1ffba4772edfdb201f"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-linux-x64.tar.gz"
 
 [tools."http:ethos"."platforms.linux-x64-musl"]
-checksum = "sha256:ae587a2222b9b753df4e92bcf207cfb81881412b8d74c76d105f6e5ef7d7280c"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-linux-x64.tar.gz"
+checksum = "sha256:b3dd983214084216b8094f439801e59618fd31a355bdaf1ffba4772edfdb201f"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-linux-x64.tar.gz"
 
 [tools."http:ethos"."platforms.macos-arm64"]
-checksum = "sha256:a0506f2e9a52a1bd1ef3228c46bbc561d38e825a04e728a98f148e3105624093"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-macos-arm64.tar.gz"
+checksum = "sha256:5a0f745f327a4af890b0c62f5cba3985fb4faf67ab03a6ba6d6313922d9d4130"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-macos-arm64.tar.gz"
 
 [tools."http:ethos"."platforms.windows-x64"]
-checksum = "sha256:51f5bc37177bab6b4a008f773a68d7990d35a45e201b7f5654eafa4933f019ee"
-url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.18/ethos-0.2.0-alpha.18-windows-x64.tar.gz"
+checksum = "sha256:015d29b34d87ec3eb5946a4ce293aa0b9df7ea8d83fd9f42e1b50c5023be8661"
+url = "https://github.com/HengYangDS/ethos/releases/download/v0.2.0-alpha.19/ethos-0.2.0-alpha.19-windows-x64.tar.gz"
 
 [[tools.node]]
 version = "26.12.1"
