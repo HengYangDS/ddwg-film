@@ -56,10 +56,6 @@ command = [
   "--read-only",
   "--language",
   "all",
-  "build/artifacts/film/zh/ddwg-zh-uhd.mp4",
-  "build/artifacts/film/zh/ddwg-zh-1080p-captioned.mp4",
-  "build/artifacts/film/en/ddwg-en-uhd.mp4",
-  "build/artifacts/film/en/ddwg-en-1080p-captioned.mp4",
 ]
 policy = "required"
 profile = "repository"

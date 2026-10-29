@@ -43,7 +43,7 @@ async function scratchFolder() {
 }
 
 // Scripts run in a context keep their file name, so coverage attributes them to their sources.
-const ENGINE = fileURLToPath(new URL("../../assets/vendor/gsap/gsap.min.js", import.meta.url));
+const ENGINE = fileURLToPath(new URL("../../node_modules/gsap/dist/gsap.min.js", import.meta.url));
 
 // The rules are measured against the film's own palette, as the composition defines it.
 const { palette } = openComposition(await authoredTimeline("zh"));

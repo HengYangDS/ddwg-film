@@ -2,10 +2,11 @@
 
 A stage is one ignored workspace holding the renderer document, which inlines the edition's
 timeline and the composition's script and style into the composition's template, beside the
-copied engine and fonts; its stage.json binds it to the current inputs. A render runs the
-native renderer on the complete UHD stage and records a receipt, and validation binds the
-rendered picture to that receipt, the stage and the current inputs. A stage, render or
-receipt that differs from this contract raises `PictureError`.
+copied timeline engine and fonts; its stage.json binds it to the current inputs. A render runs
+the locked HyperFrames renderer on the complete UHD stage with the supplied browser, telemetry,
+update checks and self-installs off, and records a receipt; validation binds the rendered
+picture to that receipt, the stage and the current inputs. A stage, render or receipt that
+differs from this contract raises `PictureError`.
 """
 
 from __future__ import annotations
@@ -46,7 +47,7 @@ STAGE_SIZES = {(rendition.width, rendition.height) for rendition in RENDITIONS.v
 STAGED_MEMBERS = (
     ("film.js", COMPOSITION_SCRIPT),
     ("film.css", STYLE),
-    ("gsap.min.js", Path("assets/vendor/gsap/gsap.min.js")),
+    ("gsap.min.js", Path("node_modules/gsap/dist/gsap.min.js")),
     *(
         (f"fonts/{name}", Path("assets/fonts") / name)
         for name in (
@@ -59,6 +60,15 @@ STAGED_MEMBERS = (
 )
 # Seconds a renderer's process group has to exit after SIGTERM before SIGKILL ends it.
 STOP_GRACE_SECONDS = 10
+# The locked renderer's command, below the repository root.
+RENDERER = Path("node_modules/.bin/hyperframes")
+# The tools and models the supply task installs, below the repository root.
+TOOL_CACHE = Path("build/runtime/tool-cache")
+# The browser build that the locked renderer pins, as the supply task installs it, and the
+# SHA-256 of its executable.
+BROWSER = ("chrome-headless-shell", "152.0.7977.30")
+BROWSER_EXECUTABLE = "chrome-headless-shell-mac-arm64/chrome-headless-shell"
+BROWSER_SHA256 = "ed7c5c6aff7cc4dd88ee7746c0df97f08a454180b62b7063fc961ba42e10b6a1"
 
 
 class PictureError(ValueError):
@@ -340,6 +350,35 @@ def group_exists(group: int) -> bool:
     return True
 
 
+def supplied_browser() -> Path:
+    """The executable of the browser build that the supply task installs."""
+    product, version = BROWSER
+    browsers = repository.ROOT / TOOL_CACHE / "browsers"
+    return browsers / product / f"mac_arm-{version}" / BROWSER_EXECUTABLE
+
+
+def browser_path() -> Path:
+    """The browser renders and checks run: FILM_CHROMIUM_PATH, or the supplied build."""
+    named = os.environ.get("FILM_CHROMIUM_PATH")
+    return Path(named) if named else supplied_browser()
+
+
+def renderer_environment() -> dict[str, str]:
+    """The renderer's environment: the browser and a font cache of the repository's own.
+
+    Telemetry, update checks and self-installs are off.
+    """
+    return {
+        **os.environ,
+        "HYPERFRAMES_NO_TELEMETRY": "1",
+        "DO_NOT_TRACK": "1",
+        "HYPERFRAMES_NO_UPDATE_CHECK": "1",
+        "HYPERFRAMES_NO_AUTO_INSTALL": "1",
+        "HYPERFRAMES_BROWSER_PATH": str(browser_path()),
+        "HYPERFRAMES_FONT_CACHE_DIR": str(repository.ROOT / TOOL_CACHE / "hyperframes/fonts"),
+    }
+
+
 def run_renderer(command: list[str], deadline: float) -> tuple[int | None, bool]:
     """Run the renderer to its exit or deadline: its exit status, and whether it timed out.
 
@@ -348,7 +387,11 @@ def run_renderer(command: list[str], deadline: float) -> tuple[int | None, bool]
     the group before the interruption propagates.
     """
     process = subprocess.Popen(
-        command, cwd=repository.ROOT, stdin=subprocess.DEVNULL, start_new_session=True
+        command,
+        cwd=repository.ROOT,
+        stdin=subprocess.DEVNULL,
+        start_new_session=True,
+        env=renderer_environment(),
     )
     try:
         exit_code = process.wait(timeout=deadline)
@@ -363,8 +406,8 @@ def run_renderer(command: list[str], deadline: float) -> tuple[int | None, bool]
     return exit_code, False
 
 
-def render_picture(edition: Edition, hyperframes: Path, deadline: int) -> None:
-    """Run the native renderer on the complete current stage and record its receipt.
+def render_picture(edition: Edition, deadline: int) -> None:
+    """Run the locked renderer on the complete current stage and record its receipt.
 
     At the deadline the renderer's process group is sent SIGTERM and, after
     `STOP_GRACE_SECONDS`, SIGKILL. A render that does not exit 0 within its deadline, or
@@ -374,7 +417,7 @@ def render_picture(edition: Edition, hyperframes: Path, deadline: int) -> None:
     require_current_stage(edition, stage)
     picture = edition.picture
     command = [
-        str(hyperframes),
+        str(repository.ROOT / RENDERER),
         "render",
         str(stage),
         "--output",

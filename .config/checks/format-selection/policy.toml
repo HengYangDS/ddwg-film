@@ -1,6 +1,6 @@
 # Sources whose SHA-256 the delivered films' build receipts record and film-media checks: the
-# reference recordings, covers, fonts and timeline engine, the scripts and voice contracts, the
-# source manifest, and the composition and player pages. A new production changes them together
+# reference recordings, covers and fonts, the scripts and voice contracts, the source manifest,
+# and the composition and player pages. A new production changes them together
 # with that evidence, through a full render and review.
 [[ownership]]
 id = "film-media-bound-sources"
@@ -13,7 +13,6 @@ paths = [
   "assets/fonts/IBMPlexSans-Regular.ttf",
   "assets/fonts/NotoSansCJKsc-Bold.otf",
   "assets/fonts/NotoSansCJKsc-Regular.otf",
-  "assets/vendor/gsap/gsap.min.js",
   "content/en/film-script.json",
   "content/en/player.html",
   "content/en/voice-reference.json",

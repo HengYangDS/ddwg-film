@@ -94,6 +94,12 @@ def renderer(folder, body):
     return path
 
 
+def render(monkeypatch, edition, fake, deadline):
+    """Render an edition with a stand-in in place of the locked renderer."""
+    monkeypatch.setattr(picture_rendering, "RENDERER", fake)
+    picture_rendering.render_picture(edition, deadline)
+
+
 def completed_receipt(edition):
     """A receipt of a completed render of the current stage, beside its picture."""
     stage, picture = edition.picture_stage, edition.picture
@@ -262,7 +268,16 @@ def test_a_changed_template_or_copied_member_refuses_the_stage(staged, root):
         picture_rendering.require_current_stage(edition, edition.picture_stage)
 
 
-def test_rendering_records_a_completed_render_that_binds(staged, root, tmp_path):
+def test_the_browser_is_the_supplied_one_unless_another_is_named(root, monkeypatch):
+    monkeypatch.delenv("FILM_CHROMIUM_PATH", raising=False)
+    supplied = "build/runtime/tool-cache/browsers/chrome-headless-shell/mac_arm-152.0.7977.30"
+    executable = "chrome-headless-shell-mac-arm64/chrome-headless-shell"
+    assert picture_rendering.browser_path() == root / supplied / executable
+    monkeypatch.setenv("FILM_CHROMIUM_PATH", "/opt/chromium/chrome")
+    assert picture_rendering.browser_path() == Path("/opt/chromium/chrome")
+
+
+def test_rendering_records_a_completed_render_that_binds(staged, root, tmp_path, monkeypatch):
     edition = staged
     fake = renderer(
         tmp_path,
@@ -275,12 +290,21 @@ def test_rendering_records_a_completed_render_that_binds(staged, root, tmp_path)
             "stdin": sys.stdin.read(),
             "session_leader": os.getsid(0) == os.getpid(),
             "cwd": os.getcwd(),
+            "environment": {key: os.environ.get(key) for key in (
+                "HYPERFRAMES_NO_TELEMETRY",
+                "DO_NOT_TRACK",
+                "HYPERFRAMES_NO_UPDATE_CHECK",
+                "HYPERFRAMES_NO_AUTO_INSTALL",
+                "HYPERFRAMES_BROWSER_PATH",
+                "HYPERFRAMES_FONT_CACHE_DIR",
+            )},
         }
         with open(sys.argv[0] + ".json", "w") as record:
             json.dump(observed, record)
         """,
     )
-    picture_rendering.render_picture(edition, fake, 60)
+    monkeypatch.setenv("FILM_CHROMIUM_PATH", "/opt/chromium/chrome")
+    render(monkeypatch, edition, fake, 60)
     receipt = repository.read(edition.render_receipt)
     assert list(receipt) == RECEIPT_KEYS
     stage, picture = edition.picture_stage, edition.picture
@@ -290,14 +314,28 @@ def test_rendering_records_a_completed_render_that_binds(staged, root, tmp_path)
     assert receipt["source_sha256"] == repository.sha(stage / "index.html")
     assert receipt["output_sha256"] == repository.sha(picture)
     observed = json.loads(Path(f"{fake}.json").read_text())
-    assert observed == {"stdin": "", "session_leader": True, "cwd": str(root)}
+    assert observed == {
+        "stdin": "",
+        "session_leader": True,
+        "cwd": str(root),
+        # Telemetry, update checks and self-installs are off; the browser and font cache are
+        # the repository's own.
+        "environment": {
+            "HYPERFRAMES_NO_TELEMETRY": "1",
+            "DO_NOT_TRACK": "1",
+            "HYPERFRAMES_NO_UPDATE_CHECK": "1",
+            "HYPERFRAMES_NO_AUTO_INSTALL": "1",
+            "HYPERFRAMES_BROWSER_PATH": "/opt/chromium/chrome",
+            "HYPERFRAMES_FONT_CACHE_DIR": str(root / "build/runtime/tool-cache/hyperframes/fonts"),
+        },
+    }
     picture_rendering.validate_picture_binding(edition, receipt)
 
 
-def test_rendering_refuses_a_failed_render_after_recording_it(staged, tmp_path):
+def test_rendering_refuses_a_failed_render_after_recording_it(staged, tmp_path, monkeypatch):
     edition = staged
     with pytest.raises(PictureError, match="did not complete"):
-        picture_rendering.render_picture(edition, renderer(tmp_path, "raise SystemExit(3)"), 60)
+        render(monkeypatch, edition, renderer(tmp_path, "raise SystemExit(3)"), 60)
     receipt = repository.read(edition.render_receipt)
     assert (receipt["exit"], receipt["timed_out"], receipt["output_sha256"]) == (3, False, None)
 
@@ -327,7 +365,7 @@ def test_failed_rendering_stops_its_remaining_workers(staged, tmp_path, monkeypa
     )
     try:
         with pytest.raises(PictureError, match="did not complete"):
-            picture_rendering.render_picture(staged, fake, 10)
+            render(monkeypatch, staged, fake, 10)
         receipt = repository.read(staged.render_receipt)
         assert (receipt["exit"], receipt["timed_out"]) == (3, False)
         assert gone(int(worker.with_suffix(".pid").read_text()))
@@ -337,13 +375,13 @@ def test_failed_rendering_stops_its_remaining_workers(staged, tmp_path, monkeypa
                 os.kill(int(worker.with_suffix(".pid").read_text()), signal.SIGKILL)
 
 
-def test_rendering_refuses_a_stale_stage_before_running(staged, root, tmp_path):
+def test_rendering_refuses_a_stale_stage_before_running(staged, root, tmp_path, monkeypatch):
     edition = staged
     template = root / picture_rendering.COMPOSITION / "index.html"
     template.write_text(template.read_text().replace("<title>", "<title>Changed "))
     fake = renderer(tmp_path, "open(__file__ + '.ran', 'w').close()")
     with pytest.raises(PictureError, match="template_sha256"):
-        picture_rendering.render_picture(edition, fake, 60)
+        render(monkeypatch, edition, fake, 60)
     assert not Path(f"{fake}.ran").exists()
     assert not edition.render_receipt.exists()
 
@@ -383,7 +421,7 @@ def test_rendering_stops_the_whole_process_group_at_its_deadline(staged, tmp_pat
     )
     started = time.monotonic()
     with pytest.raises(PictureError, match="did not complete"):
-        picture_rendering.render_picture(edition, fake, 2)
+        render(monkeypatch, edition, fake, 2)
     assert time.monotonic() - started < 10
     receipt = repository.read(edition.render_receipt)
     assert (receipt["exit"], receipt["timed_out"]) == (None, True)

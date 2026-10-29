@@ -8,7 +8,10 @@
     "format:markdown:check": "prettier --no-config --no-editorconfig --ignore-path .gitignore --print-width 100 --prose-wrap preserve --no-error-on-unmatched-pattern --check AGENTS.md README.md 'openspec/changes/*/*.md' 'openspec/changes/*/specs/**/*.md'"
   },
   "devDependencies": {
+    "@puppeteer/browsers": "3.2.3",
     "gsap": "3.15.0",
-    "prettier": "3.9.10"
+    "hyperframes": "0.8.150",
+    "prettier": "3.9.10",
+    "puppeteer-core": "25.12.0"
   }
 }

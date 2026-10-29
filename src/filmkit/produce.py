@@ -49,9 +49,7 @@ EDITION_ACTIONS: dict[str, Callable[[Edition, argparse.Namespace], object]] = {
     "stage-picture": lambda edition, options: stage_picture(
         edition, options.output, options.duration, options.width, options.height, options.start
     ),
-    "render-picture": lambda edition, options: render_picture(
-        edition, options.hyperframes.resolve(strict=True), options.deadline
-    ),
+    "render-picture": lambda edition, options: render_picture(edition, options.deadline),
     "package-metadata": lambda edition, _: package_metadata(edition),
     "validate-picture": lambda edition, _: validate_picture(edition),
     "package-film": lambda edition, _: package_film(edition),
@@ -71,10 +69,6 @@ REFUSALS = (
     MediaError,
     PackagingError,
 )
-# The options an action cannot run without, besides an edition action's --language.
-REQUIRED = {
-    "render-picture": ("--hyperframes",),
-}
 
 
 def arguments() -> argparse.ArgumentParser:
@@ -86,7 +80,6 @@ def arguments() -> argparse.ArgumentParser:
     parser.add_argument("--height", type=int, default=2160)
     parser.add_argument("--output", type=Path)
     parser.add_argument("--language", choices=CODES, help="the edition of an edition action")
-    parser.add_argument("--hyperframes", type=Path, help="Native HyperFrames CLI executable")
     parser.add_argument("--deadline", type=int, default=10800)
     return parser
 
@@ -96,9 +89,6 @@ def main(argv: list[str] | None = None) -> None:
     options = parser.parse_args(argv)
     if options.language is None:
         parser.error("the following arguments are required: --language")
-    required = REQUIRED.get(options.action, ())
-    if not all(getattr(options, flag[2:].replace("-", "_")) for flag in required):
-        parser.error(f"{options.action} requires {' and '.join(required)}")
     try:
         EDITION_ACTIONS[options.action](Edition(options.language), options)
     except REFUSALS as error:

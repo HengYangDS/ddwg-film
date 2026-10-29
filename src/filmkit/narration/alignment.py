@@ -1,10 +1,9 @@
 """Align each narration recording against its exact text with the pinned forced aligner.
 
-The aligner is `ALIGNER_REPO` at hub revision `ALIGNER_REVISION`, whose weights have the
-SHA-256 `ALIGNER_WEIGHTS_SHA256`. A model folder that is not that snapshot is refused before
-it loads, and every alignment records the aligner. Each recording's alignment is cached under
-its waveform and the aligner revision, and a cache is reused only while it still binds the
-recording, its text and the aligner.
+The aligner is the pinned `snapshots.ALIGNER` snapshot. A model folder that is not that
+snapshot is refused before it loads, and every alignment records the aligner. Each
+recording's alignment is cached under its waveform and the aligner revision, and a cache is
+reused only while it still binds the recording, its text and the aligner.
 
 Usage: python -m filmkit.narration.alignment --model DIR --receipt FILE --output FILE
     [--language Chinese|English]
@@ -23,13 +22,8 @@ from mlx_audio.stt.utils import load_model
 import filmkit.repository as repository
 from filmkit.narration.alignment_records import alignment_record
 from filmkit.narration.receipts import bound_records
+from filmkit.narration.snapshots import ALIGNER
 from filmkit.narration.thought_groups import validate_group_inputs
-
-ALIGNER_REPO = "mlx-community/Qwen3-ForcedAligner-0.6B-bf16"
-ALIGNER_REVISION = "53c8c0e46733eec430e4b53dd6471d0e5dee45f8"
-ALIGNER_WEIGHTS_SHA256 = "9d0728e17e28ee122c366bfaa9748ccbbb8fc3df4c0ce09dd8a5eac8202989e8"
-# A Hugging Face download into a folder records each file's hub revision and hash here.
-DOWNLOAD_RECORD = ".cache/huggingface/download/model.safetensors.metadata"
 
 
 def verify_aligner(folder: Path) -> dict:
@@ -38,20 +32,11 @@ def verify_aligner(folder: Path) -> dict:
     Returns:
         The aligner's identity: its hub repository, revision and weights SHA-256.
     """
-    if repository.sha(folder / "model.safetensors") != ALIGNER_WEIGHTS_SHA256:
-        msg = "The aligner weights differ from the pinned SHA-256"
-        raise ValueError(msg)
-    download = folder / DOWNLOAD_RECORD
-    if not download.is_file():
-        msg = "The aligner snapshot does not record its hub revision"
-        raise ValueError(msg)
-    if download.read_text().splitlines()[:2] != [ALIGNER_REVISION, ALIGNER_WEIGHTS_SHA256]:
-        msg = f"The aligner snapshot is not hub revision {ALIGNER_REVISION}"
-        raise ValueError(msg)
+    ALIGNER.verify(folder)
     return {
-        "repo": ALIGNER_REPO,
-        "revision": ALIGNER_REVISION,
-        "weights_sha256": ALIGNER_WEIGHTS_SHA256,
+        "repo": ALIGNER.repo,
+        "revision": ALIGNER.revision,
+        "weights_sha256": ALIGNER.weights["model.safetensors"],
     }
 
 

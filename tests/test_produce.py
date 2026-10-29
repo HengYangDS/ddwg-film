@@ -37,19 +37,16 @@ def test_an_edition_action_passes_its_options_to_its_owner(monkeypatch, tmp_path
     output = tmp_path / "stage"
     stage = ["--output", str(output), "--duration", "60", "--width", "1920", "--height", "1080"]
     produce.main(["stage-picture", "--language", "zh", *stage, "--start", "12.5"])
-    hyperframes = tmp_path / "hyperframes"
-    hyperframes.write_text("#!/bin/sh\n")
-    produce.main(["render-picture", "--language", "en", "--hyperframes", str(hyperframes)])
+    produce.main(["render-picture", "--language", "en", "--deadline", "600"])
     assert calls == [
         (production.Edition("zh"), output, 60, 1920, 1080, 12.5),
-        (production.Edition("en"), hyperframes.resolve(), 10800),
+        (production.Edition("en"), 600),
     ]
 
 
 @pytest.mark.parametrize(
     ("arguments", "message"),
     [
-        (["render-picture", "--language", "zh"], "render-picture requires --hyperframes"),
         (["select"], "the following arguments are required: --language"),
         (["render-picture"], "the following arguments are required: --language"),
         (["package-film", "--language", "fr"], "invalid choice: 'fr'"),

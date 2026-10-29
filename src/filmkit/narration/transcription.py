@@ -1,4 +1,4 @@
-"""Transcribe a narration receipt's recordings with the pinned, locally cached ASR model.
+"""Transcribe a narration receipt's recordings with the pinned, supplied ASR model.
 
 Each recording's unit error rate is the edit distance between the recognition units of its
 text and of its transcript over the text's unit count. Recognition is a proxy for
@@ -14,27 +14,23 @@ import argparse
 import json
 from pathlib import Path
 
-from huggingface_hub import snapshot_download
 from mlx_audio.stt.utils import load_model
 
 import filmkit.repository as repository
 from filmkit.narration.receipts import bound_records
 from filmkit.narration.recognition import recognition_units, unit_distance
+from filmkit.narration.snapshots import RECOGNIZER
 
-ASR_MODEL = "mlx-community/Qwen3-ASR-0.6B-bf16"
-# The hub revision of the locally cached snapshot, read without any download.
-ASR_REVISION = "eae2b51f96265328f1e7beced788adb0e4536f92"
-ASR_FILES = ["*.json", "*.txt", "*.safetensors", "*.model", "*.tiktoken", "README.md"]
+# The pinned snapshot's identity, as transcripts record it.
+ASR_MODEL = RECOGNIZER.repo
+ASR_REVISION = RECOGNIZER.revision
 SCOPE = "Automatic transcription proxy; not pronunciation certification or listening."
 
 
 def load_asr():
-    """Load the pinned ASR snapshot from the local cache without downloading anything."""
-    return load_model(
-        snapshot_download(
-            ASR_MODEL, revision=ASR_REVISION, local_files_only=True, allow_patterns=ASR_FILES
-        )
-    )
+    """Load the pinned ASR snapshot once it is checked, without downloading anything."""
+    RECOGNIZER.verify()
+    return load_model(str(repository.ROOT / RECOGNIZER.folder))
 
 
 def transcribe(model, path: Path, language: str) -> str:

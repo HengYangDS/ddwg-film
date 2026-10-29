@@ -74,6 +74,14 @@ def test_the_command_prints_each_editions_report_and_writes_nothing(tmp_path, ca
     (report,) = [json.loads(line) for line in capsys.readouterr().out.splitlines()]
     assert (report["language"], report["scope"]) == ("en", "acceptance")
     assert list(tmp_path.rglob("*")) == []
+    # Without named films, each selected edition's current delivered films are verified.
+    delivery_verification.main(["--technical-only", "--language", "all"])
+    reports = [json.loads(line) for line in capsys.readouterr().out.splitlines()]
+    assert [report["language"] for report in reports] == ["zh", "en"]
+    delivery_verification.main(["--technical-only", "--language", "en"])
+    (report,) = [json.loads(line) for line in capsys.readouterr().out.splitlines()]
+    english = sorted(film.name for film in production.Edition("en").films)
+    assert [name for name, _size in report["media"]] == english
     with pytest.raises(VerificationError, match="both current edition pairs"):
         delivery_verification.main(["--language", "all", *films[1:]])
     with pytest.raises(SystemExit):

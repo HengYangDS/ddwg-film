@@ -84,24 +84,12 @@ def test_a_recording_that_differs_from_its_receipt_is_not_transcribed(
     assert not (tmp_path / "asr.json").exists()
 
 
-def test_the_recognizer_loads_from_its_pinned_local_snapshot(monkeypatch):
-    snapshots, loads = [], []
-
-    def snapshot_download(repo_id, **options):
-        snapshots.append((repo_id, options))
-        return "snapshot"
-
-    monkeypatch.setattr(narration_transcription, "snapshot_download", snapshot_download)
+def test_the_recognizer_loads_from_its_checked_supplied_snapshot(tmp_path, monkeypatch):
+    checks, loads = [], []
+    snapshot = SimpleNamespace(folder="recognizer", verify=lambda: checks.append("verified"))
+    monkeypatch.setattr(repository, "ROOT", tmp_path)
+    monkeypatch.setattr(narration_transcription, "RECOGNIZER", snapshot)
     monkeypatch.setattr(narration_transcription, "load_model", loads.append)
     narration_transcription.load_asr()
-    assert snapshots == [
-        (
-            "mlx-community/Qwen3-ASR-0.6B-bf16",
-            {
-                "revision": ASR_REVISION,
-                "local_files_only": True,
-                "allow_patterns": narration_transcription.ASR_FILES,
-            },
-        )
-    ]
-    assert loads == ["snapshot"]
+    assert checks == ["verified"]
+    assert loads == [str(tmp_path / "recognizer")]

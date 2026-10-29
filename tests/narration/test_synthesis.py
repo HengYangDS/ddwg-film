@@ -14,12 +14,7 @@ import filmkit.narration.group_generation as narration_group_generation
 import filmkit.narration.synthesis as narration_synthesis
 import filmkit.narration.thought_groups as narration_thought_groups
 import filmkit.repository as repository
-from filmkit.narration.voice_model import (
-    MODEL,
-    MODEL_FILES,
-    NATIVE_DECODER,
-    REVISION,
-)
+from filmkit.narration.voice_model import NATIVE_DECODER
 
 RATE = 24000
 GROUPS = ["先核验实际工作。", "再说明结论和限度。"]
@@ -76,20 +71,19 @@ class Voice:
 
 @pytest.fixture
 def voice(tmp_path, monkeypatch):
-    """Load a voice double through the pinned snapshot and record what reaches the vendor."""
+    """Load a voice double from its checked snapshot and record what reaches the vendor."""
     model = Voice()
     model.snapshots = []
-
-    def snapshot_download(repo_id, **options):
-        model.snapshots.append((repo_id, options))
-        return "snapshot"
+    snapshot = SimpleNamespace(
+        folder="voice-snapshot", verify=lambda: model.snapshots.append("verified")
+    )
 
     def load_model(path):
-        assert path == "snapshot"
+        assert path == str(tmp_path / "voice-snapshot")
         return model
 
     monkeypatch.setattr(repository, "ROOT", tmp_path)
-    monkeypatch.setattr(narration_group_generation, "snapshot_download", snapshot_download)
+    monkeypatch.setattr(narration_group_generation, "VOICE", snapshot)
     monkeypatch.setattr(narration_group_generation, "load_model", load_model)
     previous = mx.set_cache_limit(0)
     mx.set_cache_limit(previous)
@@ -120,9 +114,7 @@ def test_local_narration_bounds_retained_gpu_buffer_cache(tmp_path, voice, monke
     narration_synthesis.main(ARGUMENTS)
     # MLX may recycle one freed block before the next allocation reclaims it.
     assert max(retained) <= (2 << 30) + (248 << 20)
-    assert voice.snapshots == [
-        (MODEL, {"revision": REVISION, "allow_patterns": MODEL_FILES, "local_files_only": True})
-    ]
+    assert voice.snapshots == ["verified"]
 
 
 def test_complete_thought_narration_preserves_source_native_tails_and_provenance(tmp_path, voice):

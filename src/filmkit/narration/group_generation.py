@@ -11,13 +11,13 @@ from typing import TYPE_CHECKING
 
 import mlx.core as mx
 import numpy as np
-from huggingface_hub import snapshot_download
 from mlx_audio.audio_io import read, write
 from mlx_audio.tts.utils import load_model
 from mlx_audio.utils import load_audio
 
 import filmkit.repository as repository
 from filmkit.narration.run_on import cut_run_on
+from filmkit.narration.snapshots import VOICE
 from filmkit.narration.thought_groups import (
     GROUP_POLICY,
     RetainedUtteranceError,
@@ -28,10 +28,7 @@ from filmkit.narration.thought_groups import (
 )
 from filmkit.narration.voice_model import (
     MLX_CACHE_LIMIT_BYTES,
-    MODEL,
-    MODEL_FILES,
     NATIVE_STREAM,
-    REVISION,
     request_fingerprint,
 )
 
@@ -58,12 +55,10 @@ class PlannedChild:
 
 
 def load_voice_model():
-    """Load the pinned reference-voice model from the local cache under its buffer bound."""
-    local = snapshot_download(
-        MODEL, revision=REVISION, allow_patterns=MODEL_FILES, local_files_only=True
-    )
+    """Load the pinned reference-voice snapshot, once checked, under its buffer bound."""
+    VOICE.verify()
     mx.set_cache_limit(MLX_CACHE_LIMIT_BYTES)
-    return load_model(local)
+    return load_model(str(repository.ROOT / VOICE.folder))
 
 
 def synthesize(

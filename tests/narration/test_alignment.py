@@ -8,6 +8,7 @@ import pytest
 
 import filmkit.narration.alignment as narration_alignment
 import filmkit.repository as repository
+from filmkit.narration.snapshots import ALIGNER
 
 REPO = "mlx-community/Qwen3-ForcedAligner-0.6B-bf16"
 REVISION = "53c8c0e46733eec430e4b53dd6471d0e5dee45f8"
@@ -58,7 +59,8 @@ def aligner(tmp_path, monkeypatch):
     (download / "model.safetensors.metadata").write_text(
         f"{REVISION}\n{sha256(WEIGHTS)}\n1792709337.748203\n"
     )
-    monkeypatch.setattr(narration_alignment, "ALIGNER_WEIGHTS_SHA256", sha256(WEIGHTS))
+    pinned = dataclasses.replace(ALIGNER, weights={"model.safetensors": sha256(WEIGHTS)})
+    monkeypatch.setattr(narration_alignment, "ALIGNER", pinned)
     model = Aligner()
 
     def load_model(path):

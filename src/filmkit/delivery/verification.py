@@ -6,7 +6,8 @@ Aesthetic judgment belongs to the review record; human listening stays separate.
 The verifier reads and decodes; it writes nothing and prints each edition's report.
 
 Usage: python -m filmkit.delivery.verification [--technical-only] --language zh|en|all
-           <films>
+           [<films>]
+Without films, each selected edition's current delivered films are verified.
 """
 
 from __future__ import annotations
@@ -375,13 +376,16 @@ REFUSALS = (
 
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("files", nargs="+", type=Path)
+    parser.add_argument("files", nargs="*", type=Path)
     # The film-media gate passes this flag; the verifier never writes, with or without it.
     parser.add_argument("--read-only", action="store_true", help="accepted; nothing is written")
     parser.add_argument("--technical-only", action="store_true")
     parser.add_argument("--language", choices=(*production.CODES, "all"), required=True)
     options = parser.parse_args(argv)
-    files = [path.resolve() for path in options.files]
+    codes = production.CODES if options.language == "all" else (options.language,)
+    files = [path.resolve() for path in options.files] or [
+        film for code in codes for film in production.Edition(code).films
+    ]
     groups = bilingual_inputs(files) if options.language == "all" else {options.language: files}
     for language, members in groups.items():
         try:

@@ -9,11 +9,11 @@ from __future__ import annotations
 import json
 
 import filmkit.repository as repository
+from filmkit.narration.snapshots import VOICE
 
-MODEL = "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16"
-REVISION = "a6eb4f68e4b056f1215157bb696209bc82a6db48"
-# The snapshot files the model loads from the local cache.
-MODEL_FILES = ["*.json", "*.txt", "*.safetensors", "README.md"]
+# The pinned snapshot's identity, as receipts and request fingerprints record it.
+MODEL = VOICE.repo
+REVISION = VOICE.revision
 # Bound reusable freed buffers; this is not a hard active-working-set limit.
 MLX_CACHE_LIMIT_BYTES = 2 * 1024**3
 NATIVE_DECODER = "official native chunked_decode"

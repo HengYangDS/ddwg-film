@@ -31,6 +31,65 @@ run = [
 description = "Apply the Markdown formatter to the files it owns"
 run = "npm run format:markdown"
 
+# The film pipeline: each stage runs the engine's commands for both editions from the repository
+# root, and film:build runs every stage in order. Only film:supply reaches the network; HF_ENDPOINT
+# names a Hugging Face mirror where the hub is unreachable.
+[tasks."film:supply"]
+description = "Install the pinned browser build and speech models below build/runtime/tool-cache"
+run = "uv run --python 3.12 --frozen --offline python -m filmkit.supply"
+
+[tasks."film:narrate"]
+description = "Narrate both editions from their casts' seeds, then align and transcribe them"
+run = [
+  "uv run --python 3.12 --frozen --offline python -m filmkit.narration.narrate --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.narration.narrate --language en",
+]
+
+[tasks."film:sound"]
+description = "Select each edition's recordings, assemble its soundtrack and write its captions"
+run = [
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce select --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce assemble --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce refresh-captions --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce select --language en",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce assemble --language en",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce refresh-captions --language en",
+]
+
+[tasks."film:picture"]
+description = "Stage each edition's picture, render it with the locked renderer and validate it"
+run = [
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language en",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language en",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language en",
+]
+
+[tasks."film:package"]
+description = "Package each edition's viewing members and both of its films"
+run = [
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce package-metadata --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce package-film --language zh",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce package-metadata --language en",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.produce package-film --language en",
+]
+
+[tasks."film:verify"]
+description = "Verify both editions' delivered films and every input they bind"
+run = "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.verification --language all"
+
+[tasks."film:build"]
+description = "Build and verify both editions from the tracked sources and the supplied inputs"
+run = [
+  { task = "film:narrate" },
+  { task = "film:sound" },
+  { task = "film:picture" },
+  { task = "film:package" },
+  { task = "film:verify" },
+]
+
 # The ETHOS gates resolve these only from this lock, never from PATH: Node for the picture checks,
 # Python and uv for the suite. Python stays on the 3.12 line that production selects.
 [tools]

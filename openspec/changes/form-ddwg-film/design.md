@@ -47,11 +47,11 @@ The film declares itself in `content/film.toml`, validated by pydantic before an
 ### Pinned supply
 
 - Mise locks Node 26.12.1, CPython 3.12.16, uv 0.13.5 and ETHOS `0.2.0-alpha.19`.
-- npm locks `hyperframes` 0.8.150, the `puppeteer-core` it was accepted with, `@puppeteer/browsers`, `gsap` 3.15.0 and `prettier`. The vendored GSAP copy and the OpenMontage runtime path are removed.
-- The supply task installs chrome-headless-shell 152.0.7977.30 into `build/runtime/tool-cache/` through `@puppeteer/browsers` and points the renderer and the audits at it.
-- The supply task downloads the speech, aligner and recognition models from Hugging Face at their pinned revisions into `build/runtime/tool-cache/` and checks their files; the endpoint may be a mirror.
-- FFmpeg stays with its Homebrew owner, declared as a native tool; each build records its version.
-- `HYPERFRAMES_NO_TELEMETRY=1` and `DO_NOT_TRACK=1` are set for every render.
+- npm locks `hyperframes` 0.8.150 with the exact dependency tree the accepted films were rendered with (every package's version and integrity equal the renderer's lock, except a patch release of `prettier` that its range admits), plus `@puppeteer/browsers`, `puppeteer-core` 25.12.0, `gsap` 3.15.0 and `prettier`. GSAP is staged from the npm package, byte-identical to the vendored copy it replaces, and the OpenMontage runtime path is removed.
+- `mise run film:supply` installs chrome-headless-shell 152.0.7977.30, the build that HyperFrames 0.8.150 pins, into `build/runtime/tool-cache/browsers` through `@puppeteer/browsers`, and checks its executable's SHA-256. The renderer and the real-browser checks run it unless `FILM_CHROMIUM_PATH` names another.
+- The same task downloads the voice, recognizer and aligner snapshots at their pinned revisions into `build/runtime/tool-cache/narration-*` through huggingface_hub, which honours `HF_ENDPOINT` for a mirror, and checks each weights file's SHA-256 and recorded revision. The engine loads each model only from its checked folder, so the build after the supply needs no network.
+- FFmpeg stays with its Homebrew owner, a host prerequisite that the README names; each build records its version.
+- HyperFrames sends telemetry, checks for updates and silently upgrades itself in place by default; every render sets `HYPERFRAMES_NO_TELEMETRY`, `DO_NOT_TRACK`, `HYPERFRAMES_NO_UPDATE_CHECK` and `HYPERFRAMES_NO_AUTO_INSTALL`, and keeps its font cache under the tool cache. A render cancels itself when any ancestor process exits, so a render's wrapper must outlive it.
 
 OpenMontage's runtime was rejected as a source: it is unpinned, licensed AGPL-3.0 and was upgraded in place. The Docker render was rejected for this release for the reasons in Context.
 

@@ -19,9 +19,10 @@ import sys
 import time
 
 import filmkit.repository as repository
+from filmkit.narration.snapshots import ALIGNER as ALIGNER_SNAPSHOT
 from filmkit.production import CODES, Edition
 
-ALIGNER = "build/runtime/tool-cache/narration-aligner"
+ALIGNER = ALIGNER_SNAPSHOT.folder
 
 
 class Scope(enum.Enum):

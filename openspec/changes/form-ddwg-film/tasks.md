@@ -14,7 +14,7 @@
 
 ## 3. Pinned supply
 
-- [ ] 3.1 Declare `hyperframes`, `puppeteer-core`, `@puppeteer/browsers` and `gsap` in npm, remove the vendored GSAP copy and the OpenMontage paths, disable renderer telemetry, and verify a stage renders with the locked renderer.
+- [ ] 3.1 Declare `hyperframes`, `puppeteer-core`, `@puppeteer/browsers` and `gsap` in npm with the accepted renderer's dependency tree, remove the vendored GSAP copy and the OpenMontage paths, turn off renderer telemetry, update checks and self-installs, and verify a stage renders with the locked renderer.
 - [ ] 3.2 Add the supply task for the browser build and the three model revisions in `build/runtime/tool-cache/`, with digest checks, and verify a build after supply runs offline.
 - [ ] 3.3 Declare the pipeline as Mise tasks and verify each task runs its engine command for one edition.
 
