@@ -32,7 +32,7 @@
 
 ## 6. Publication
 
-- [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command that needs no published release runs as written.
+- [x] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command that needs no published release runs as written.
 - [x] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos lane repair-paradigm --json` reports no gap.
 - [x] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
 - [x] 6.4 Prepare `v1.0.0`: `VERSION` as the only version source, `CHANGELOG.md` whose `1.0.0` entry is the release notes, `.ethos/release.toml` with the tags and peers, and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
