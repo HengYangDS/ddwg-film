@@ -4,7 +4,7 @@
 
 - [x] 1.1 Import the private repository's code, tests, scripts, casts, assets and configuration from `fa1e974` without its history, `evidence/` or custody code, and verify every imported file's SHA-256 equals its blob at `fa1e974`.
 - [x] 1.2 Bind the toolchain: the Mise configuration and lock for Node 26.12.1, CPython 3.12.16, uv 0.13.5 and ETHOS `0.2.0-alpha.19`, plus the uv and npm locks; verify `mise install --locked`, `uv sync --frozen` and `npm ci` succeed.
-- [ ] 1.3 Adapt `AGENTS.md`, the gate registry and the check policies to this repository, naming FFmpeg, ExifTool and rsync 3 as Homebrew host prerequisites; verify `ethos status` passes and the Python and Node suites pass.
+- [x] 1.3 Adapt `AGENTS.md`, the gate registry and the check policies to this repository, naming FFmpeg, ExifTool and rsync 3 as Homebrew host prerequisites; verify `ethos status` passes and the Python and Node suites pass.
 
 ## 2. Engine boundary
 
@@ -33,9 +33,9 @@
 ## 6. Publication
 
 - [ ] 6.1 Write the README with the supply, build and comparison steps, and verify each documented command that needs no published release runs as written.
-- [ ] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos lane repair-paradigm --json` reports no gap.
+- [x] 6.2 Declare the licenses through the ETHOS license contract: the MIT grant in `LICENSE` and `pyproject.toml`; in `NOTICE` the CC BY 4.0 content paths, the fonts' OFL-1.1 and the third-party notices, including the GSAP license terms and the narrator's provenance; and the CC BY 4.0 legal code in `LICENSES/`. Verify that `ethos lane repair-paradigm --json` reports no gap.
 - [x] 6.3 Project the portable gates into GitHub Actions and GitLab CI through ETHOS, and verify the generated workflows validate.
-- [ ] 6.4 Prepare `v1.0.0`: `VERSION` as the only version source, `CHANGELOG.md` whose `1.0.0` entry is the release notes, `.ethos/release.toml` with the tags and peers, and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
+- [x] 6.4 Prepare `v1.0.0`: `VERSION` as the only version source, `CHANGELOG.md` whose `1.0.0` entry is the release notes, `.ethos/release.toml` with the tags and peers, and the release folder with `SHA256SUMS`; verify the folder against the release manifest.
 
 ## Workflow follow-up
 
