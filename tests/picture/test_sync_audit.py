@@ -5,10 +5,10 @@ import re
 
 import pytest
 
-import ddwg_film.picture.rendering as picture_rendering
-import ddwg_film.picture.sync_audit as picture_sync_audit
-import ddwg_film.repository as repository
-from ddwg_film.picture.rendering import PictureError
+import filmkit.picture.rendering as picture_rendering
+import filmkit.picture.sync_audit as picture_sync_audit
+import filmkit.repository as repository
+from filmkit.picture.rendering import PictureError
 
 
 def timeline():

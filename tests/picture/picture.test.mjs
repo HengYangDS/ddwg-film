@@ -24,14 +24,14 @@ import {
   pictureOffset,
   readingLoad,
   strokeShare,
-} from "../../src/ddwg_film/picture/geometry-check.mjs";
+} from "../../src/filmkit/picture/geometry-check.mjs";
 import {
   canvasStandIn,
   canvasSweep,
   openComposition,
   readTimeline,
-} from "../../src/ddwg_film/picture/headless-composition.mjs";
-import { containerFill, seatMarks } from "../../src/ddwg_film/picture/seat-marks.mjs";
+} from "../../src/filmkit/picture/headless-composition.mjs";
+import { containerFill, seatMarks } from "../../src/filmkit/picture/seat-marks.mjs";
 
 // Each folder a test writes its inputs and outputs into is removed once the file's tests have run.
 const folders = [];
@@ -536,7 +536,7 @@ for (const code of ["zh", "en"]) {
 }
 
 const COMPOSITION = fileURLToPath(
-  new URL("../../src/ddwg_film/picture/composition/film.js", import.meta.url),
+  new URL("../../picture/film.js", import.meta.url),
 );
 const spanOf = (points) => [
   Math.min(...points.map((p) => p[0])),
@@ -842,10 +842,10 @@ test("the vendored timeline engine seeks a paused timeline as the composition dr
 
 // The headless audits run the composition itself on a timeline; a short stretch exercises every measurement.
 const AUDIT_FRAMES = fileURLToPath(
-  new URL("../../src/ddwg_film/picture/frame-audit.mjs", import.meta.url),
+  new URL("../../src/filmkit/picture/frame-audit.mjs", import.meta.url),
 );
 const AUDIT_MOTION = fileURLToPath(
-  new URL("../../src/ddwg_film/picture/motion-audit.mjs", import.meta.url),
+  new URL("../../src/filmkit/picture/motion-audit.mjs", import.meta.url),
 );
 
 test("the frame audit reports a stretch of the film, its label trace, its marks and its bounds", async () => {
@@ -1085,7 +1085,7 @@ test("the motion audit summarises marks across frames and traces them to their s
 
 // A malformed invocation must stop with exit code 2 and the usage, never print a report of no frames.
 const GEOMETRY = fileURLToPath(
-  new URL("../../src/ddwg_film/picture/geometry-check.mjs", import.meta.url),
+  new URL("../../src/filmkit/picture/geometry-check.mjs", import.meta.url),
 );
 const invoke = (tool, args) => spawnSync(process.execPath, [tool, ...args], { encoding: "utf8" });
 function assertRefused(tool, args, usage) {
@@ -1121,7 +1121,7 @@ test("the headless audits refuse a malformed invocation", async () => {
   const folder = await scratchFolder(),
     path = join(folder, "timeline.json");
   await writeFile(path, JSON.stringify(await authoredTimeline("zh")));
-  const frames = "Usage: node src/ddwg_film/picture/frame-audit.mjs";
+  const frames = "Usage: node src/filmkit/picture/frame-audit.mjs";
   for (const args of [
     [],
     [path, "0"],
@@ -1135,7 +1135,7 @@ test("the headless audits refuse a malformed invocation", async () => {
     [path, "--at", "11", "--from", "10"],
   ])
     assertRefused(AUDIT_FRAMES, args, frames);
-  const motion = "Usage: node src/ddwg_film/picture/motion-audit.mjs";
+  const motion = "Usage: node src/filmkit/picture/motion-audit.mjs";
   for (const args of [
     [],
     [path, "0"],
@@ -1149,7 +1149,7 @@ test("the headless audits refuse a malformed invocation", async () => {
 });
 
 test("the geometry check refuses a malformed invocation before opening a browser", () => {
-  const usage = "Usage: node src/ddwg_film/picture/geometry-check.mjs";
+  const usage = "Usage: node src/filmkit/picture/geometry-check.mjs";
   for (const args of [
     [],
     ["stage"],

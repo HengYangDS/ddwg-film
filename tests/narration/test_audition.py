@@ -9,10 +9,10 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-import ddwg_film.narration.audition as narration_audition
-import ddwg_film.narration.group_generation as narration_group_generation
-import ddwg_film.repository as repository
-from ddwg_film.production import Edition
+import filmkit.narration.audition as narration_audition
+import filmkit.narration.group_generation as narration_group_generation
+import filmkit.repository as repository
+from filmkit.production import Edition
 
 
 def sha256(data: bytes | str) -> str:

@@ -4,8 +4,8 @@ import hashlib
 
 import pytest
 
-import ddwg_film.narration.receipts as narration_receipts
-import ddwg_film.repository as repository
+import filmkit.narration.receipts as narration_receipts
+import filmkit.repository as repository
 
 
 @pytest.fixture

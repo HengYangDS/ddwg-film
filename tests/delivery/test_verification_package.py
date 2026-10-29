@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-import ddwg_film.delivery.packaging as delivery_packaging
-import ddwg_film.delivery.verification as delivery_verification
-from ddwg_film.delivery.verification import VerificationError
+import filmkit.delivery.packaging as delivery_packaging
+import filmkit.delivery.verification as delivery_verification
+from filmkit.delivery.verification import VerificationError
 
 
 def test_the_current_packages_pass(inputs):

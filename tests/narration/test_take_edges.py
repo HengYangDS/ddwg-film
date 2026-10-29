@@ -2,7 +2,7 @@
 
 import numpy as np
 
-import ddwg_film.narration.take_edges as narration_take_edges
+import filmkit.narration.take_edges as narration_take_edges
 
 RATE = 24000
 

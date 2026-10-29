@@ -2,7 +2,7 @@
 
 import pytest
 
-import ddwg_film.narration.recognition as narration_recognition
+import filmkit.narration.recognition as narration_recognition
 
 
 def test_units_fold_case_and_drop_punctuation_in_both_languages():

@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-import ddwg_film.narration.spoken_units as spoken_units
+import filmkit.narration.spoken_units as spoken_units
 
 
 def items(*words):

@@ -7,9 +7,9 @@ import wave
 import numpy as np
 import pytest
 
-import ddwg_film.production as production
-import ddwg_film.repository as repository
-import ddwg_film.soundtrack.assembly as soundtrack_assembly
+import filmkit.production as production
+import filmkit.repository as repository
+import filmkit.soundtrack.assembly as soundtrack_assembly
 
 REPOSITORY = repository.ROOT
 RATE = 48000

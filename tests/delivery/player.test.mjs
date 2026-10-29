@@ -19,7 +19,7 @@ import {
   deliveryMembers,
   digestFile,
   seekPoints,
-} from "../../src/ddwg_film/delivery/player-check.mjs";
+} from "../../src/filmkit/delivery/player-check.mjs";
 
 const sha = (bytes) => createHash("sha256").update(bytes).digest("hex");
 const binding = (destination = "/delivery") => ({
@@ -240,7 +240,7 @@ test("each language's film script resolves from the repository root", async () =
 
 test("the player check refuses a malformed invocation before opening a browser", () => {
   const tool = fileURLToPath(
-    new URL("../../src/ddwg_film/delivery/player-check.mjs", import.meta.url),
+    new URL("../../src/filmkit/delivery/player-check.mjs", import.meta.url),
   );
   for (const args of [
     [],
@@ -253,7 +253,7 @@ test("the player check refuses a malformed invocation before opening a browser",
     assert.equal(result.status, 2, args.join(" "));
     assert.equal(result.stdout, "", args.join(" "));
     assert.ok(
-      result.stderr.includes("Usage: node src/ddwg_film/delivery/player-check.mjs"),
+      result.stderr.includes("Usage: node src/filmkit/delivery/player-check.mjs"),
       args.join(" "),
     );
   }

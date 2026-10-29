@@ -10,8 +10,8 @@ import wave
 import numpy as np
 import pytest
 
-from ddwg_film.narration.thought_groups import join_quiet
-from ddwg_film.narration.voice_model import MODEL, NATIVE_DECODER, REVISION
+from filmkit.narration.thought_groups import join_quiet
+from filmkit.narration.voice_model import MODEL, NATIVE_DECODER, REVISION
 
 # Test modules whose code under test imports the MLX speech runtime at module load.
 SPEECH_RUNTIME_MODULES = [

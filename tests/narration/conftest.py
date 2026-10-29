@@ -2,8 +2,8 @@
 
 import pytest
 
-import ddwg_film.repository as repository
-from ddwg_film.production import Edition
+import filmkit.repository as repository
+from filmkit.production import Edition
 
 CONTRACT = "content/voice-performance.json"
 

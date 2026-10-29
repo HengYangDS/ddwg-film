@@ -7,8 +7,8 @@ import subprocess
 import numpy as np
 import pytest
 
-import ddwg_film.picture.still_scan as still_scan
-import ddwg_film.repository as repository
+import filmkit.picture.still_scan as still_scan
+import filmkit.repository as repository
 
 
 def timeline(*spans):

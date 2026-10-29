@@ -6,8 +6,8 @@ import json
 
 import pytest
 
-import ddwg_film.narration.script_edits as narration_script_edits
-import ddwg_film.repository as repository
+import filmkit.narration.script_edits as narration_script_edits
+import filmkit.repository as repository
 
 OPEN_SPEC = {"display": "OpenSpec", "spoken": "Open Spec", "kind": "english-name"}
 

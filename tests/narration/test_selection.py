@@ -6,9 +6,9 @@ import json
 
 import pytest
 
-import ddwg_film.narration.selection as narration_selection
-import ddwg_film.repository as repository
-from ddwg_film.production import Edition
+import filmkit.narration.selection as narration_selection
+import filmkit.repository as repository
+from filmkit.production import Edition
 
 
 def sha256(data: bytes | str) -> str:

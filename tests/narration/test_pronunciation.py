@@ -6,9 +6,9 @@ import json
 
 import pytest
 
-import ddwg_film.narration.pronunciation as narration_pronunciation
-import ddwg_film.repository as repository
-from ddwg_film.production import CODES, Edition
+import filmkit.narration.pronunciation as narration_pronunciation
+import filmkit.repository as repository
+from filmkit.production import CODES, Edition
 
 OPEN_SPEC = {"display": "OpenSpec", "spoken": "Open Spec", "kind": "english-name"}
 

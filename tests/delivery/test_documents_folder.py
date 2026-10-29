@@ -9,10 +9,10 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.delivery.documents_folder as delivery_documents_folder
-import ddwg_film.repository as repository
-from ddwg_film.delivery.documents_folder import DeliveryRefusedError
-from ddwg_film.production import CODES
+import filmkit.delivery.documents_folder as delivery_documents_folder
+import filmkit.repository as repository
+from filmkit.delivery.documents_folder import DeliveryRefusedError
+from filmkit.production import CODES
 
 
 def sha(text: str) -> str:
@@ -257,7 +257,7 @@ def test_a_refusal_exits_with_status_one_and_its_text_on_stderr(tmp_path):
         [
             sys.executable,
             "-m",
-            "ddwg_film.delivery.documents_folder",
+            "filmkit.delivery.documents_folder",
             "retain",
             "--name",
             "../outside",

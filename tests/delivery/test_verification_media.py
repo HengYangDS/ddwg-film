@@ -2,13 +2,13 @@
 
 import pytest
 
-import ddwg_film.delivery.packaging as delivery_packaging
-import ddwg_film.delivery.verification as delivery_verification
-import ddwg_film.media as media
-import ddwg_film.production as production
-import ddwg_film.repository as repository
-import ddwg_film.specification as specification
-from ddwg_film.delivery.verification import VerificationError
+import filmkit.delivery.packaging as delivery_packaging
+import filmkit.delivery.verification as delivery_verification
+import filmkit.media as media
+import filmkit.production as production
+import filmkit.repository as repository
+import filmkit.specification as specification
+from filmkit.delivery.verification import VerificationError
 
 FRAMES = specification.DURATION * specification.FPS
 SAMPLE_FRAMES = specification.DURATION * specification.RATE

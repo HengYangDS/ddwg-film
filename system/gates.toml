@@ -52,7 +52,7 @@ command = [
   "--offline",
   "python",
   "-m",
-  "ddwg_film.delivery.verification",
+  "filmkit.delivery.verification",
   "--read-only",
   "--language",
   "all",

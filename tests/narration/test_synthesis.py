@@ -10,11 +10,11 @@ import mlx.core as mx
 import numpy as np
 import pytest
 
-import ddwg_film.narration.group_generation as narration_group_generation
-import ddwg_film.narration.synthesis as narration_synthesis
-import ddwg_film.narration.thought_groups as narration_thought_groups
-import ddwg_film.repository as repository
-from ddwg_film.narration.voice_model import (
+import filmkit.narration.group_generation as narration_group_generation
+import filmkit.narration.synthesis as narration_synthesis
+import filmkit.narration.thought_groups as narration_thought_groups
+import filmkit.repository as repository
+from filmkit.narration.voice_model import (
     MODEL,
     MODEL_FILES,
     NATIVE_DECODER,

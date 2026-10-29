@@ -8,7 +8,7 @@ from urllib.request import Request, urlopen
 
 import pytest
 
-import ddwg_film.delivery.media_server as delivery_media_server
+import filmkit.delivery.media_server as delivery_media_server
 
 
 def test_media_ranges_support_seek_and_reject_unsatisfied_range(tmp_path):

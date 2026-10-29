@@ -4,11 +4,11 @@ import json
 
 import pytest
 
-import ddwg_film.captions.documents as captions_documents
-import ddwg_film.captions.timing as captions_timing
-import ddwg_film.production as production
-import ddwg_film.repository as repository
-import ddwg_film.specification as specification
+import filmkit.captions.documents as captions_documents
+import filmkit.captions.timing as captions_timing
+import filmkit.production as production
+import filmkit.repository as repository
+import filmkit.specification as specification
 
 
 @pytest.mark.parametrize(

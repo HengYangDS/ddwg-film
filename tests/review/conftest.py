@@ -4,8 +4,8 @@ import json
 
 import pytest
 
-import ddwg_film.repository as repository
-from ddwg_film.production import CODES, Edition
+import filmkit.repository as repository
+from filmkit.production import CODES, Edition
 
 
 def write_fixture(path, data):

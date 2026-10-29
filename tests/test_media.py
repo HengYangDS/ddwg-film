@@ -5,7 +5,7 @@ import subprocess
 import pytest
 from PIL import Image
 
-import ddwg_film.media as media
+import filmkit.media as media
 
 
 @pytest.mark.ffmpeg

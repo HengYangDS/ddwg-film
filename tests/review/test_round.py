@@ -5,15 +5,15 @@ import re
 
 import pytest
 
-import ddwg_film.delivery.verification as delivery_verification
-import ddwg_film.picture.rendering as picture_rendering
-import ddwg_film.repository as repository
-import ddwg_film.review.record as review_record
-import ddwg_film.review.round as review_round
-import ddwg_film.sources as sources
-import ddwg_film.specification as specification
-from ddwg_film.production import CODES, Edition
-from ddwg_film.review import ReviewError
+import filmkit.delivery.verification as delivery_verification
+import filmkit.picture.rendering as picture_rendering
+import filmkit.repository as repository
+import filmkit.review.record as review_record
+import filmkit.review.round as review_round
+import filmkit.sources as sources
+import filmkit.specification as specification
+from filmkit.production import CODES, Edition
+from filmkit.review import ReviewError
 
 SCORES = dict.fromkeys(review_record.DIMENSIONS, 92)
 PURPOSE = "superseded by its repairs"

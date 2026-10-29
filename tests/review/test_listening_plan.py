@@ -5,10 +5,10 @@ import re
 
 import pytest
 
-import ddwg_film.repository as repository
-import ddwg_film.review.listening_plan as review_listening_plan
-from ddwg_film.production import Edition
-from ddwg_film.review import ReviewError
+import filmkit.repository as repository
+import filmkit.review.listening_plan as review_listening_plan
+from filmkit.production import Edition
+from filmkit.review import ReviewError
 
 
 def test_the_listening_plan_derives_for_the_current_scripts(tmp_path):

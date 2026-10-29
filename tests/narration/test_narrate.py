@@ -5,8 +5,8 @@ import sys
 
 import pytest
 
-import ddwg_film.narration.narrate as narration_narrate
-import ddwg_film.repository as repository
+import filmkit.narration.narrate as narration_narrate
+import filmkit.repository as repository
 
 BASE = "build/evidence/editions/zh/ear-first"
 RECEIPT = f"{BASE}/narration-receipt-06-07.json"
@@ -14,7 +14,7 @@ PYTHON = [sys.executable, "-B"]
 NARRATION = [
     *PYTHON,
     "-m",
-    "ddwg_film.narration.synthesis",
+    "filmkit.narration.synthesis",
     "--script",
     "content/film-script.json",
     "--cast",
@@ -29,7 +29,7 @@ NARRATION = [
 ALIGNMENT = [
     *PYTHON,
     "-m",
-    "ddwg_film.narration.alignment",
+    "filmkit.narration.alignment",
     "--model",
     "build/runtime/tool-cache/narration-aligner",
     "--receipt",
@@ -42,7 +42,7 @@ ALIGNMENT = [
 TRANSCRIPTION = [
     *PYTHON,
     "-m",
-    "ddwg_film.narration.transcription",
+    "filmkit.narration.transcription",
     "--receipt",
     RECEIPT,
     "--output",
@@ -86,9 +86,9 @@ def test_narrate_edition_runs_the_whole_edition_from_the_root(commands, capsys):
     base = "build/evidence/editions/en/ear-first"
     run = [command for command, _ in commands]
     assert [command[2:4] for command in run] == [
-        ["-m", "ddwg_film.narration.synthesis"],
-        ["-m", "ddwg_film.narration.alignment"],
-        ["-m", "ddwg_film.narration.transcription"],
+        ["-m", "filmkit.narration.synthesis"],
+        ["-m", "filmkit.narration.alignment"],
+        ["-m", "filmkit.narration.transcription"],
     ]
     assert run[0][4:7] == ["--script", "content/en/film-script.json", "--cast"]
     assert run[0][-1] == f"{base}/narration-receipt.json"
@@ -102,12 +102,12 @@ def test_narrate_edition_runs_the_whole_edition_from_the_root(commands, capsys):
 @pytest.mark.parametrize(
     ("flag", "expected"),
     [
-        ("--dry-run", [("ddwg_film.narration.synthesis", "--dry-run")]),
+        ("--dry-run", [("filmkit.narration.synthesis", "--dry-run")]),
         (
             "--skip-generation",
             [
-                ("ddwg_film.narration.alignment", "Chinese"),
-                ("ddwg_film.narration.transcription", "Chinese"),
+                ("filmkit.narration.alignment", "Chinese"),
+                ("filmkit.narration.transcription", "Chinese"),
             ],
         ),
     ],

@@ -5,7 +5,7 @@ import re
 import numpy as np
 import pytest
 
-import ddwg_film.soundtrack.pauses as soundtrack_pauses
+import filmkit.soundtrack.pauses as soundtrack_pauses
 
 
 def test_statement_pauses_grow_with_the_thought_and_keep_their_mean(designed_policy):

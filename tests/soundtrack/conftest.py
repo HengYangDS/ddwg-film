@@ -2,7 +2,7 @@
 
 import pytest
 
-import ddwg_film.soundtrack.policy as soundtrack_policy
+import filmkit.soundtrack.policy as soundtrack_policy
 
 PERFORMANCE = {
     "assembly_mode": "native-speech-designed-pauses",

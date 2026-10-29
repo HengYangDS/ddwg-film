@@ -6,9 +6,9 @@ from types import SimpleNamespace
 import numpy as np
 import pytest
 
-import ddwg_film.narration.group_generation as narration_group_generation
-import ddwg_film.narration.thought_groups as narration_thought_groups
-import ddwg_film.repository as repository
+import filmkit.narration.group_generation as narration_group_generation
+import filmkit.narration.thought_groups as narration_thought_groups
+import filmkit.repository as repository
 
 RATE = 24000
 

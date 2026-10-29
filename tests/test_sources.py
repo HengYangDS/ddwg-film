@@ -5,9 +5,9 @@ import subprocess
 
 import pytest
 
-import ddwg_film.repository as repository
-import ddwg_film.sources as sources
-from ddwg_film.sources import SourceError
+import filmkit.repository as repository
+import filmkit.sources as sources
+from filmkit.sources import SourceError
 
 
 @pytest.fixture

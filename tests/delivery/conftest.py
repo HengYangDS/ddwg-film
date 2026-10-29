@@ -12,15 +12,15 @@ from typing import NamedTuple
 
 import pytest
 
-import ddwg_film.delivery.documents_folder as delivery_documents_folder
-import ddwg_film.delivery.packaging as delivery_packaging
-import ddwg_film.delivery.verification as delivery_verification
-import ddwg_film.narration.selection as narration_selection
-import ddwg_film.narration.thought_groups as narration_thought_groups
-import ddwg_film.picture.rendering as picture_rendering
-import ddwg_film.production as production
-import ddwg_film.repository as repository
-import ddwg_film.specification as specification
+import filmkit.delivery.documents_folder as delivery_documents_folder
+import filmkit.delivery.packaging as delivery_packaging
+import filmkit.delivery.verification as delivery_verification
+import filmkit.narration.selection as narration_selection
+import filmkit.narration.thought_groups as narration_thought_groups
+import filmkit.picture.rendering as picture_rendering
+import filmkit.production as production
+import filmkit.repository as repository
+import filmkit.specification as specification
 
 # The verified films last two seconds, the last of them credits.
 DURATION, CREDITS = 2, 1
@@ -272,7 +272,7 @@ def packages(inputs: Inputs) -> None:
             "timeline_sha256": sha(edition.timeline),
             "player_source_sha256": sha(root / delivery_packaging.PLAYER),
             "language_index": {
-                "source": "src/ddwg_film/delivery/index.html",
+                "source": "src/filmkit/delivery/index.html",
                 "source_sha256": sha(root / delivery_packaging.INDEX),
                 "path": "build/artifacts/film/index.html",
                 "sha256": sha(root / delivery_packaging.LANGUAGE_INDEX),

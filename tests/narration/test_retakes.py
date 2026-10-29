@@ -5,7 +5,7 @@ import hashlib
 
 import pytest
 
-import ddwg_film.narration.retakes as narration_retakes
+import filmkit.narration.retakes as narration_retakes
 
 
 def sha256(text: str) -> str:

@@ -4,9 +4,9 @@ import sys
 
 import pytest
 
-import ddwg_film.produce as produce
-import ddwg_film.production as production
-from ddwg_film.picture.rendering import PictureError
+import filmkit.produce as produce
+import filmkit.production as production
+from filmkit.picture.rendering import PictureError
 
 
 def test_an_action_runs_its_owner_for_the_selected_edition(monkeypatch):

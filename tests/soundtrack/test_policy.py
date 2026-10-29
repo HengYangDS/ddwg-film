@@ -5,8 +5,8 @@ import re
 
 import pytest
 
-import ddwg_film.repository as repository
-import ddwg_film.soundtrack.policy as soundtrack_policy
+import filmkit.repository as repository
+import filmkit.soundtrack.policy as soundtrack_policy
 
 
 def test_designed_pause_policy_keeps_the_declared_contract(designed_policy, performance):

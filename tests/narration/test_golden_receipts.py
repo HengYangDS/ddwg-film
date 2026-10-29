@@ -12,11 +12,11 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.narration.pronunciation as narration_pronunciation
-import ddwg_film.narration.retakes as narration_retakes
-import ddwg_film.narration.thought_groups as narration_thought_groups
-import ddwg_film.repository as repository
-from ddwg_film.narration.voice_model import request_fingerprint
+import filmkit.narration.pronunciation as narration_pronunciation
+import filmkit.narration.retakes as narration_retakes
+import filmkit.narration.thought_groups as narration_thought_groups
+import filmkit.repository as repository
+from filmkit.narration.voice_model import request_fingerprint
 
 GOLDEN = json.loads((Path(__file__).parent / "golden/receipts.json").read_text())
 

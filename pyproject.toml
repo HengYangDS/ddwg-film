@@ -1,7 +1,7 @@
 [project]
-name = "ddwg-introduction-film"
+name = "filmkit"
 version = "1.0.0"
-description = "Source-grounded twenty-five-minute bilingual Data Department Work Guidelines film"
+description = "Rebuild narrated bilingual explainer films from their sources"
 requires-python = ">=3.12,<3.15"
 dependencies = ["mlx-audio==0.5.8", "numpy==2.5.4", "pillow==13.0.0"]
 
@@ -15,7 +15,7 @@ build-backend = "uv_build"
 prerelease = "disallow"
 
 [tool.uv.build-backend]
-module-name = "ddwg_film"
+module-name = "filmkit"
 
 [dependency-groups]
 dev = ["coverage==7.16.2", "pytest==9.1.1", "pytest-cov==7.1.0", "pytest-reportlog==1.0.0"]

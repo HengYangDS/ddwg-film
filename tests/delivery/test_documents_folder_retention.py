@@ -7,8 +7,8 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.delivery.documents_folder as delivery_documents_folder
-from ddwg_film.delivery.documents_folder import DeliveryRefusedError
+import filmkit.delivery.documents_folder as delivery_documents_folder
+from filmkit.delivery.documents_folder import DeliveryRefusedError
 
 
 def sha(text: str) -> str:

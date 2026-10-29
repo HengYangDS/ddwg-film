@@ -6,12 +6,12 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.delivery.packaging as delivery_packaging
-import ddwg_film.media as media
-import ddwg_film.production as production
-import ddwg_film.repository as repository
-import ddwg_film.specification as specification
-from ddwg_film.delivery.packaging import PackagingError
+import filmkit.delivery.packaging as delivery_packaging
+import filmkit.media as media
+import filmkit.production as production
+import filmkit.repository as repository
+import filmkit.specification as specification
+from filmkit.delivery.packaging import PackagingError
 
 
 def test_the_player_transcript_keeps_chapters_segments_and_escaped_text():
@@ -87,7 +87,7 @@ def test_delivery_index_uses_sibling_languages_and_preserves_language_players(
     assert "<base " not in output
     assert runtime in output
     assert observed == {
-        "source": "src/ddwg_film/delivery/index.html",
+        "source": "src/filmkit/delivery/index.html",
         "source_sha256": repository.sha(source),
         "path": "build/artifacts/film/index.html",
         "sha256": repository.sha(root / "index.html"),

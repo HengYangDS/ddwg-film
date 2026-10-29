@@ -5,8 +5,8 @@ from types import SimpleNamespace
 
 import pytest
 
-import ddwg_film.narration.transcription as narration_transcription
-import ddwg_film.repository as repository
+import filmkit.narration.transcription as narration_transcription
+import filmkit.repository as repository
 
 ASR_REVISION = "eae2b51f96265328f1e7beced788adb0e4536f92"
 

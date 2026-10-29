@@ -13,15 +13,15 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.media as media
-import ddwg_film.picture.rendering as picture_rendering
-import ddwg_film.repository as repository
-from ddwg_film.picture.rendering import PictureError
-from ddwg_film.production import Edition
-from ddwg_film.specification import DURATION, FPS
+import filmkit.media as media
+import filmkit.picture.rendering as picture_rendering
+import filmkit.repository as repository
+from filmkit.picture.rendering import PictureError
+from filmkit.production import Edition
+from filmkit.specification import DURATION, FPS
 
 # The real composition, found before a test rebinds the repository root.
-COMPOSITION = Path(picture_rendering.__file__).with_name("composition")
+COMPOSITION = repository.ROOT / picture_rendering.COMPOSITION
 # The template patterns that the renderer document replaces.
 PLACEHOLDERS = (
     "/* FILM_DATA */",

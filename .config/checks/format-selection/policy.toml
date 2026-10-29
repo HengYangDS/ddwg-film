@@ -20,11 +20,11 @@ paths = [
   "content/source-manifest.json",
   "content/voice-performance.json",
   "content/voice-reference.json",
-  "src/ddwg_film/delivery/index.html",
-  "src/ddwg_film/delivery/player.html",
-  "src/ddwg_film/picture/composition/film.css",
-  "src/ddwg_film/picture/composition/film.js",
-  "src/ddwg_film/picture/composition/index.html",
+  "src/filmkit/delivery/index.html",
+  "src/filmkit/delivery/player.html",
+  "picture/film.css",
+  "picture/film.js",
+  "picture/index.html",
 ]
 format_owner = "immutable-carrier"
 format_command = "not-applicable:film-media-bound"
@@ -45,7 +45,7 @@ validation_owner = "film-media"
 validation_command = "ethos prove --full --execute --json"
 mutation_policy = "forbidden"
 
-# Shot plans that ddwg_film.repository.write emits on every render (json.dumps with an indent
+# Shot plans that filmkit.repository.write emits on every render (json.dumps with an indent
 # of 2) and film-media reads back against the script, composition and timeline: producer output,
 # not formatter input. A new render rewrites them together with that evidence.
 [[ownership]]

@@ -6,9 +6,9 @@ from pathlib import Path
 
 import pytest
 
-import ddwg_film.captions as captions
-import ddwg_film.captions.timing as captions_timing
-import ddwg_film.narration.spoken_units as spoken_units
+import filmkit.captions as captions
+import filmkit.captions.timing as captions_timing
+import filmkit.narration.spoken_units as spoken_units
 
 # Real segments of both delivered timelines, with the cues the production timed for them.
 SEGMENTS = json.loads((Path(__file__).parent / "cue-timing-segments.json").read_text())

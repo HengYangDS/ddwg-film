@@ -2,9 +2,9 @@
 
 import pytest
 
-import ddwg_film.delivery.verification as delivery_verification
-import ddwg_film.repository as repository
-from ddwg_film.delivery.verification import VerificationError
+import filmkit.delivery.verification as delivery_verification
+import filmkit.repository as repository
+from filmkit.delivery.verification import VerificationError
 
 
 def test_the_current_picture_passes(inputs):

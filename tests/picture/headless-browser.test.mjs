@@ -5,7 +5,7 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-import { browserPath, launchBrowser } from "../../src/ddwg_film/picture/headless-browser.mjs";
+import { browserPath, launchBrowser } from "../../src/filmkit/picture/headless-browser.mjs";
 
 /* Run with these environment variables set (undefined removes one), restoring the previous values after. */
 async function withEnvironment(values, run) {

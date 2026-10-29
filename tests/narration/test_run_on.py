@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-import ddwg_film.narration.run_on as narration_run_on
+import filmkit.narration.run_on as narration_run_on
 
 RATE = 24000
 

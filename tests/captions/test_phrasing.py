@@ -4,10 +4,10 @@ import json
 
 import pytest
 
-import ddwg_film.captions.chinese as captions_chinese
-import ddwg_film.captions.english as captions_english
-import ddwg_film.captions.phrasing as captions_phrasing
-import ddwg_film.repository as repository
+import filmkit.captions.chinese as captions_chinese
+import filmkit.captions.english as captions_english
+import filmkit.captions.phrasing as captions_phrasing
+import filmkit.repository as repository
 
 
 def test_english_caption_cues_preserve_connected_text_and_punctuation():

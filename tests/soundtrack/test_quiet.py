@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-import ddwg_film.soundtrack.quiet as soundtrack_quiet
+import filmkit.soundtrack.quiet as soundtrack_quiet
 
 
 def test_inner_quiet_is_the_heard_quiet_inside_every_thought():

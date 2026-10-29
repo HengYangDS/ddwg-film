@@ -7,14 +7,14 @@ import wave
 import numpy as np
 import pytest
 
-import ddwg_film.picture.rendering as picture_rendering
-import ddwg_film.picture.sync_audit as picture_sync_audit
-import ddwg_film.repository as repository
-import ddwg_film.review.endings as review_endings
-import ddwg_film.review.measurement as review_measurement
-import ddwg_film.review.support as review_support
-from ddwg_film.production import Edition
-from ddwg_film.review import ReviewError
+import filmkit.picture.rendering as picture_rendering
+import filmkit.picture.sync_audit as picture_sync_audit
+import filmkit.repository as repository
+import filmkit.review.endings as review_endings
+import filmkit.review.measurement as review_measurement
+import filmkit.review.support as review_support
+from filmkit.production import Edition
+from filmkit.review import ReviewError
 
 RATE = 48000
 # Each segment's words: text, start, end and the release that ends a thought.
@@ -477,11 +477,11 @@ def test_the_review_tools_and_the_verifier_load_no_speech_runtime():
     # They run on any host: none of them imports the MLX speech runtime, which needs a
     # Metal device. A child process imports them, since this one may hold MLX already.
     modules = (
-        "ddwg_film.review.measurement",
-        "ddwg_film.review.round",
-        "ddwg_film.review.listening_plan",
-        "ddwg_film.picture.sync_audit",
-        "ddwg_film.delivery.verification",
+        "filmkit.review.measurement",
+        "filmkit.review.round",
+        "filmkit.review.listening_plan",
+        "filmkit.picture.sync_audit",
+        "filmkit.delivery.verification",
     )
     probe = (
         "import importlib, sys\n"

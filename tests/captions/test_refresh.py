@@ -5,9 +5,9 @@ import json
 
 import pytest
 
-import ddwg_film.captions.refresh as captions_refresh
-import ddwg_film.production as production
-import ddwg_film.repository as repository
+import filmkit.captions.refresh as captions_refresh
+import filmkit.production as production
+import filmkit.repository as repository
 
 TEXT = "甲乙。丙丁。"
 WORDS = (("甲", 2.0, 2.4), ("乙", 2.4, 2.8), ("丙", 3.4, 3.8), ("丁", 3.8, 4.2))

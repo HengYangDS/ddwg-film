@@ -1,4 +1,4 @@
 # Patterns resolve from this directory. `.gitignore` is the other ignore file.
 # The review prompt is a str.format template: a placeholder line continues the list above it,
 # so Markdown formatting would nest the inserted repair items and change every prompt.
-../../../src/ddwg_film/review/prompt.md
+../../../src/filmkit/review/prompt.md

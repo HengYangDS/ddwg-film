@@ -5,8 +5,8 @@ import wave
 import numpy as np
 import pytest
 
-import ddwg_film.soundtrack.level as soundtrack_level
-import ddwg_film.specification as specification
+import filmkit.soundtrack.level as soundtrack_level
+import filmkit.specification as specification
 
 
 def test_successor_boundary_fades_preserve_occupied_native_phrase_tails():

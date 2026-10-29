@@ -6,7 +6,7 @@ import wave
 import numpy as np
 import pytest
 
-import ddwg_film.narration.thought_groups as narration_thought_groups
+import filmkit.narration.thought_groups as narration_thought_groups
 
 RATE = 24000
 

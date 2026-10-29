@@ -6,8 +6,8 @@ import json
 
 import pytest
 
-import ddwg_film.narration.alignment as narration_alignment
-import ddwg_film.repository as repository
+import filmkit.narration.alignment as narration_alignment
+import filmkit.repository as repository
 
 REPO = "mlx-community/Qwen3-ForcedAligner-0.6B-bf16"
 REVISION = "53c8c0e46733eec430e4b53dd6471d0e5dee45f8"

@@ -4,9 +4,9 @@ import json
 
 import pytest
 
-import ddwg_film.delivery.verification as delivery_verification
-import ddwg_film.repository as repository
-from ddwg_film.delivery.verification import VerificationError
+import filmkit.delivery.verification as delivery_verification
+import filmkit.repository as repository
+from filmkit.delivery.verification import VerificationError
 
 
 def cue(start: float, end: float, text: str = "数据先行。", **extra) -> dict:
