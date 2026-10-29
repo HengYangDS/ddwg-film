@@ -1,0 +1,16 @@
+schema = "ethos-ci-template-consistency-v1"
+
+[compiler]
+source = ".config/ci/pipeline.cue"
+common = ".config/ci/verification.cue"
+inputs = { ci = ".config/ci/verification.toml" }
+
+[[projection]]
+provider = "github"
+kind = "cue"
+projection = ".github/workflows/ci.yml"
+
+[[projection]]
+provider = "gitlab"
+kind = "cue"
+projection = ".gitlab-ci.yml"
