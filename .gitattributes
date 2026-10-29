@@ -1,0 +1,5 @@
+# Third-party fonts, their licenses and the vendored GSAP build keep their upstream names.
+assets/fonts/** linguist-vendored
+assets/vendor/** linguist-vendored
+# Normalize every text file to LF in the index and working tree.
+* text=auto eol=lf

@@ -1,0 +1,5218 @@
+{
+  "pronunciation": {
+    "schema_version": 1,
+    "status": "planned-not-listened",
+    "control_boundary": "Dictionary and occurrence targets are acceptance criteria. Native Qwen Base does not consume IPA or SSML. No normalization is proposed without an actually heard error.",
+    "sources": [
+      {
+        "id": "cmudict",
+        "url": "https://raw.githubusercontent.com/cmusphinx/cmudict/74790861f652b15e4ac49015a90074ad62a27690/cmudict.dict",
+        "sha256": "81917843c7f44ce2b094ac63873c2c7a4cf802040792c455ba3ca406891c3d22",
+        "bytes": 3618488
+      },
+      {
+        "id": "macos-dictionary",
+        "provider": "Installed public macOS DictionaryServices exact whole-word lookup",
+        "families": [
+          "The Standard Dictionary of Contemporary Chinese",
+          "Simplified Chinese-English"
+        ],
+        "qualification": "First returned single-character sense is not a universal reading."
+      },
+      {
+        "id": "contextual-composition",
+        "qualification": "Explicitly inferred compound recognition; not a dictionary headword."
+      }
+    ],
+    "languages": {
+      "Chinese": {
+        "language": "Chinese",
+        "normalization": [],
+        "targets": [
+          {
+            "term": "调度",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "diàodù",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "协调",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "xiétiáo",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重复",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngfù",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重跑",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngpǎo",
+            "source": "macos-dictionary 重 chóng contextual composition",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重述",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngshù",
+            "source": "macos-dictionary 重 chóng contextual composition",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重放",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngfàng",
+            "source": "macos-dictionary exact whole-word lookup; semantics may extend to current technical context",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重审",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngshěn",
+            "source": "macos-dictionary exact whole-word lookup; semantics may extend to current technical context",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重查",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngchá",
+            "source": "macos-dictionary 重 chóng contextual composition",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重试",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chóngshì",
+            "source": "macos-dictionary 重 chóng contextual composition",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "去重",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "qùchóng",
+            "source": "macos-dictionary 重 chóng contextual composition",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "重要",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "zhòngyào",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "并行",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "bìngxíng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "当时",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "dāngshí",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "应当",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "yīngdāng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "响应",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "xiǎngyìng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "对应",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "duìyìng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "回应",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "huíyìng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "应对",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "yìngduì",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "供应",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "gōngyìng",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "成为",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "chéngwéi",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "行为",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "xíngwéi",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "为何",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "wèihé",
+            "source": "macos-dictionary exact whole-word lookup: 为何 wèihé",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "角色",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "juésè",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "血缘",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "xuèyuán",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "相称",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "xiāngchèn",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "间歇",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "jiànxiē",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "取舍",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "qǔshě",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          },
+          {
+            "term": "审美",
+            "kind": "contextual-mandarin-word",
+            "target_reading": "shěnměi",
+            "source": "macos-dictionary",
+            "status": "planned-not-listened"
+          }
+        ],
+        "sandhi": "Natural Mandarin connected-speech tone sandhi and weak grammatical syllables; never force isolated citation tones.",
+        "embedded_english_targets": [],
+        "target_scope": "Actual bound Chinese paragraphs; no Latin terms in current narration."
+      },
+      "English": {
+        "language": "English",
+        "normalization": [],
+        "targets": [
+          {
+            "term": "acquisition",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "AE2",
+                "K",
+                "W",
+                "AH0",
+                "Z",
+                "IH1",
+                "SH",
+                "AH0",
+                "N"
+              ],
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "weak_syllables": [
+                2,
+                4
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "authorization",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "AO2",
+                "TH",
+                "ER0",
+                "AH0",
+                "Z",
+                "EY1",
+                "SH",
+                "AH0",
+                "N"
+              ],
+              "syllable_count": 5,
+              "primary_syllable": 4,
+              "secondary_syllables": [
+                1
+              ],
+              "weak_syllables": [
+                2,
+                3,
+                5
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "governance",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "G",
+                "AH1",
+                "V",
+                "ER0",
+                "N",
+                "AH0",
+                "N",
+                "S"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "hypothesis",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "HH",
+                "AY0",
+                "P",
+                "AA1",
+                "TH",
+                "AH0",
+                "S",
+                "AH0",
+                "S"
+              ],
+              "syllable_count": 4,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3,
+                4
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "hypotheses",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "HH",
+                "AY0",
+                "P",
+                "AA1",
+                "TH",
+                "AH0",
+                "S",
+                "IY2",
+                "Z"
+              ],
+              "syllable_count": 4,
+              "primary_syllable": 2,
+              "secondary_syllables": [
+                4
+              ],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "criteria",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "K",
+                "R",
+                "AY0",
+                "T",
+                "IH1",
+                "R",
+                "IY0",
+                "AH0"
+              ],
+              "syllable_count": 4,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3,
+                4
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "inference",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "IH1",
+                "N",
+                "F",
+                "ER0",
+                "AH0",
+                "N",
+                "S"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "irreversible",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "IH2",
+                "R",
+                "IH0",
+                "V",
+                "ER1",
+                "S",
+                "AH0",
+                "B",
+                "AH0",
+                "L"
+              ],
+              "syllable_count": 5,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "weak_syllables": [
+                2,
+                4,
+                5
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "obsolescence",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "AA2",
+                "B",
+                "S",
+                "AH0",
+                "L",
+                "EH1",
+                "S",
+                "AH0",
+                "N",
+                "S"
+              ],
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "weak_syllables": [
+                2,
+                4
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "verifiable",
+            "kind": "lexical",
+            "lexical_stress": [
+              {
+                "arpabet": [
+                  "V",
+                  "EH1",
+                  "R",
+                  "AH0",
+                  "F",
+                  "AY2",
+                  "AH0",
+                  "B",
+                  "AH0",
+                  "L"
+                ],
+                "syllable_count": 5,
+                "primary_syllable": 1,
+                "secondary_syllables": [
+                  3
+                ],
+                "weak_syllables": [
+                  2,
+                  4,
+                  5
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              },
+              {
+                "syllable_count": 4,
+                "primary_syllable": 3,
+                "secondary_syllables": [
+                  1
+                ],
+                "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbl/ with optional schwa omitted"
+              },
+              {
+                "syllable_count": 5,
+                "primary_syllable": 3,
+                "secondary_syllables": [
+                  1
+                ],
+                "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbəl/ with schwa retained"
+              },
+              {
+                "syllable_count": 4,
+                "primary_syllable": 1,
+                "secondary_syllables": [
+                  3
+                ],
+                "basis": "Installed dictionary AmE /ˈvɛrəˌfaɪəbl/ with optional schwa omitted"
+              }
+            ],
+            "source": [
+              "cmudict",
+              "macos-dictionary"
+            ]
+          },
+          {
+            "term": "remit",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "R",
+                "IY0",
+                "M",
+                "IH1",
+                "T"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "agents",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "EY1",
+                "JH",
+                "AH0",
+                "N",
+                "T",
+                "S"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "lineage",
+            "kind": "lexical",
+            "lexical_stress": [
+              {
+                "arpabet": [
+                  "L",
+                  "IH1",
+                  "N",
+                  "IY0",
+                  "AH0",
+                  "JH"
+                ],
+                "syllable_count": 3,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  2,
+                  3
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              },
+              {
+                "syllable_count": 2,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "basis": "Installed Simplified Chinese-English dictionary AmE /ˈlaɪnɪdʒ/"
+              }
+            ],
+            "source": [
+              "cmudict",
+              "macos-dictionary"
+            ]
+          },
+          {
+            "term": "reproducible",
+            "kind": "lexical",
+            "lexical_stress": [
+              {
+                "syllable_count": 4,
+                "primary_syllable": 3,
+                "secondary_syllables": [
+                  1
+                ],
+                "basis": "Dictionary AmE optional-schwa form /ˌriprəˈdusəbl/ or /ˌriprəˈdʒusəbl/"
+              },
+              {
+                "syllable_count": 5,
+                "primary_syllable": 3,
+                "secondary_syllables": [
+                  1
+                ],
+                "basis": "Dictionary AmE /ˌriprəˈdusəbəl/ or /ˌriprəˈdʒusəbəl/; schwa retained"
+              }
+            ],
+            "source": "macos-dictionary"
+          },
+          {
+            "term": "record",
+            "kind": "contextual-homograph",
+            "lexical_stress": {
+              "noun": {
+                "arpabet": [
+                  "R",
+                  "EH1",
+                  "K",
+                  "ER0",
+                  "D"
+                ],
+                "syllable_count": 2,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  2
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              },
+              "verb": [
+                {
+                  "arpabet": [
+                    "R",
+                    "AH0",
+                    "K",
+                    "AO1",
+                    "R",
+                    "D"
+                  ],
+                  "syllable_count": 2,
+                  "primary_syllable": 2,
+                  "secondary_syllables": [],
+                  "weak_syllables": [
+                    1
+                  ],
+                  "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+                },
+                {
+                  "arpabet": [
+                    "R",
+                    "IH0",
+                    "K",
+                    "AO1",
+                    "R",
+                    "D"
+                  ],
+                  "syllable_count": 2,
+                  "primary_syllable": 2,
+                  "secondary_syllables": [],
+                  "weak_syllables": [
+                    1
+                  ],
+                  "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+                }
+              ]
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "records",
+            "kind": "contextual-homograph",
+            "lexical_stress": {
+              "noun": {
+                "arpabet": [
+                  "R",
+                  "EH1",
+                  "K",
+                  "ER0",
+                  "D",
+                  "Z"
+                ],
+                "syllable_count": 2,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  2
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              }
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "recorded",
+            "kind": "lexical",
+            "lexical_stress": [
+              {
+                "arpabet": [
+                  "R",
+                  "AH0",
+                  "K",
+                  "AO1",
+                  "R",
+                  "D",
+                  "IH0",
+                  "D"
+                ],
+                "syllable_count": 3,
+                "primary_syllable": 2,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  1,
+                  3
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              },
+              {
+                "arpabet": [
+                  "R",
+                  "IH0",
+                  "K",
+                  "AO1",
+                  "R",
+                  "D",
+                  "IH0",
+                  "D"
+                ],
+                "syllable_count": 3,
+                "primary_syllable": 2,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  1,
+                  3
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              }
+            ],
+            "source": "cmudict"
+          },
+          {
+            "term": "project",
+            "kind": "contextual-homograph",
+            "lexical_stress": {
+              "noun": {
+                "arpabet": [
+                  "P",
+                  "R",
+                  "AA1",
+                  "JH",
+                  "EH0",
+                  "K",
+                  "T"
+                ],
+                "syllable_count": 2,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [
+                  2
+                ],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              }
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "use",
+            "kind": "contextual-homograph",
+            "lexical_stress": {
+              "noun": {
+                "arpabet": [
+                  "Y",
+                  "UW1",
+                  "S"
+                ],
+                "syllable_count": 1,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              },
+              "verb": {
+                "arpabet": [
+                  "Y",
+                  "UW1",
+                  "Z"
+                ],
+                "syllable_count": 1,
+                "primary_syllable": 1,
+                "secondary_syllables": [],
+                "weak_syllables": [],
+                "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+              }
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "uses",
+            "kind": "contextual-homograph",
+            "lexical_stress": {
+              "noun": [
+                {
+                  "arpabet": [
+                    "Y",
+                    "UW1",
+                    "S",
+                    "AH0",
+                    "Z"
+                  ],
+                  "syllable_count": 2,
+                  "primary_syllable": 1,
+                  "secondary_syllables": [],
+                  "weak_syllables": [
+                    2
+                  ],
+                  "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+                },
+                {
+                  "arpabet": [
+                    "Y",
+                    "UW1",
+                    "S",
+                    "IH0",
+                    "Z"
+                  ],
+                  "syllable_count": 2,
+                  "primary_syllable": 1,
+                  "secondary_syllables": [],
+                  "weak_syllables": [
+                    2
+                  ],
+                  "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+                }
+              ]
+            },
+            "source": "cmudict"
+          },
+          {
+            "term": "used",
+            "kind": "lexical",
+            "lexical_stress": {
+              "arpabet": [
+                "Y",
+                "UW1",
+                "Z",
+                "D"
+              ],
+              "syllable_count": 1,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            "source": "cmudict",
+            "grammar": "past-participle of use"
+          },
+          {
+            "term": "AI",
+            "kind": "letter-name",
+            "target_reading": "A /eɪ/ + I /aɪ/, not an ordinary word",
+            "source": "standard English letter names",
+            "lexical_stress": {}
+          },
+          {
+            "term": "worktree",
+            "kind": "contextual-compound",
+            "lexical_stress": {
+              "basis": "No headword in pinned CMU/native dictionary. Evaluate recognizable work + tree in full clause; not dictionary-certified IPA."
+            },
+            "source": "contextual-composition"
+          },
+          {
+            "term": "replayable",
+            "kind": "contextual-compound",
+            "lexical_stress": {
+              "basis": "No headword in pinned CMU/native dictionary. Evaluate re + play + able in full clause; not dictionary-certified IPA."
+            },
+            "source": "contextual-composition"
+          }
+        ]
+      }
+    },
+    "acceptance": [
+      "Listen to every listed occurrence in its complete clause and a short waveform window, including the connected lead-in and natural phrase tail.",
+      "Bind actual script and spoken-text hashes, selected reference, generated WAV hash, exact time window, target, observation, listener/modality and decision.",
+      "ASR spelling, alignment, F0, dictionary targets and model praise alone cannot certify pronunciation or natural flow.",
+      "Qualify raw complete paragraphs, assembled within-chapter joins and chapter boundaries separately. No isolated-word splice or forced overall speed.",
+      "Full-film bilingual listening remains required after a pilot; targets are not a claim that all words were heard."
+    ],
+    "script_bindings": [
+      {
+        "locale": "zh",
+        "path": "content/film-script.json",
+        "sha256": "d72394561ff6c68dd268183c8b8d5a8b11be5c4c5c859df433b20210f5e16698",
+        "source_manifest": {
+          "path": "evidence/source-manifest.json",
+          "sha256": "d444168991ed8f0e529f1e8b5fe3cc01b919f4c9610d317e41265364c054b686"
+        },
+        "cast": {
+          "path": "content/voice-reference.json",
+          "sha256": "011cd5438d2397db32164d0f2b626aa1b209fae552a94c2616c7684c5e976e4a"
+        },
+        "selected_reference": {
+          "path": "build/evidence/editions/source-complete-successor-production/claude-director-execution/native-final-production/whole-film-review/joint-narrative-preparation/voice-preview25/zh-slower-reference.wav",
+          "sha256": "f7c565f25d936508e57c63246c94c07ab84a6f3d0bf3e96c7f4988b452523353",
+          "transcript_sha256": "bed9b794bdb7e67dbf1060aebcbfa0e159c78334e1a6bf6b4d251626b66bcb05"
+        },
+        "status": "planned-not-listened"
+      },
+      {
+        "locale": "en",
+        "path": "content/en/film-script.json",
+        "sha256": "b7670c6fcf8495bd8b295ac7eec7b8d8ce09ee4f5545778a3d01523d0c89a2d2",
+        "source_manifest": {
+          "path": "evidence/source-manifest.json",
+          "sha256": "d444168991ed8f0e529f1e8b5fe3cc01b919f4c9610d317e41265364c054b686"
+        },
+        "cast": {
+          "path": "content/en/voice-reference.json",
+          "sha256": "dba35f9f4cc73c6bc16636cd8aed833ad75bb59cfa82af8e8d0cb6537f5dc3a1"
+        },
+        "selected_reference": {
+          "path": "build/evidence/editions/source-complete-successor-production/claude-director-execution/native-final-production/whole-film-review/joint-narrative-preparation/voice-preview25/natural-thought-qualification/en-reference-fit/ratio-1.08/reference.wav",
+          "sha256": "95ede563b41bf17e933dd82f7860e993ae2a65ee28e6f6a130ab9040ce314bfa",
+          "transcript_sha256": "0f118f128cd637c293eca6f215eeb3f8eeed34f60029dae64cd4ed350ece65fa"
+        },
+        "status": "planned-not-listened"
+      }
+    ],
+    "occurrence_plan": {
+      "count": 148,
+      "entries": [
+        {
+          "locale": "en",
+          "section": "01",
+          "display_span": [
+            115,
+            118
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "A report is finished. Can its next user rely on it? That depends on meaning, relevant time, evidence and permitted use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "01",
+          "display_span": [
+            134,
+            145
+          ],
+          "display_word": "acquisition",
+          "target_owner_term": "acquisition",
+          "grammar": "lexical",
+          "clause": "This connects acquisition, modeling, data science, development, production, platforms, operations, governance, and product and technical management. The Data Department Work Guidelines set a quality contract.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AE2",
+              "K",
+              "W",
+              "AH0",
+              "Z",
+              "IH1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "01",
+          "display_span": [
+            219,
+            229
+          ],
+          "display_word": "governance",
+          "target_owner_term": "governance",
+          "grammar": "lexical",
+          "clause": "This connects acquisition, modeling, data science, development, production, platforms, operations, governance, and product and technical management. The Data Department Work Guidelines set a quality contract.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "G",
+              "AH1",
+              "V",
+              "ER0",
+              "N",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "02",
+          "display_span": [
+            42,
+            48
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "The Guidelines bind members and delegated Agents: AI systems that search, reason or act. Humans retain direction, authorization, decisions and responsibility for consequences. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "02",
+          "display_span": [
+            50,
+            52
+          ],
+          "display_word": "AI",
+          "target_owner_term": "AI",
+          "grammar": "letter-name",
+          "clause": "The Guidelines bind members and delegated Agents: AI systems that search, reason or act. Humans retain direction, authorization, decisions and responsibility for consequences. ",
+          "target_reading": "A /eɪ/ + I /aɪ/, not an ordinary word",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "02",
+          "display_span": [
+            114,
+            127
+          ],
+          "display_word": "authorization",
+          "target_owner_term": "authorization",
+          "grammar": "lexical",
+          "clause": "The Guidelines bind members and delegated Agents: AI systems that search, reason or act. Humans retain direction, authorization, decisions and responsibility for consequences. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AO2",
+              "TH",
+              "ER0",
+              "AH0",
+              "Z",
+              "EY1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 4,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              3,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "02",
+          "display_span": [
+            313,
+            315
+          ],
+          "display_word": "AI",
+          "target_owner_term": "AI",
+          "grammar": "letter-name",
+          "clause": "The Guidelines target confused facts and choices, symptom fixes without mechanism repair, communication without decisions or action, and AI output without more reliable judgment or results. ",
+          "target_reading": "A /eɪ/ + I /aɪ/, not an ordinary word",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "03",
+          "display_span": [
+            279,
+            287
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Before choosing tools, name the decision owner, choice and deadline, subject, affected people, current state, comparison baseline, target, success criteria, included and excluded work, constraints and decisive unknowns. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "03",
+          "display_span": [
+            533,
+            539
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "noun",
+          "clause": "Task leads coordinate; authorized owners decide; acceptors examine work before authorized acceptance. Low risk permits one exchange; extended or higher-risk work needs a reviewable record. Stop and clarify or escalate unclear subjects, authority or irreversible consequences.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "03",
+          "display_span": [
+            601,
+            613
+          ],
+          "display_word": "irreversible",
+          "target_owner_term": "irreversible",
+          "grammar": "lexical",
+          "clause": "Task leads coordinate; authorized owners decide; acceptors examine work before authorized acceptance. Low risk permits one exchange; extended or higher-risk work needs a reviewable record. Stop and clarify or escalate unclear subjects, authority or irreversible consequences.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH2",
+              "R",
+              "IH0",
+              "V",
+              "ER1",
+              "S",
+              "AH0",
+              "B",
+              "AH0",
+              "L"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "05",
+          "display_span": [
+            71,
+            81
+          ],
+          "display_word": "hypothesis",
+          "target_owner_term": "hypothesis",
+          "grammar": "lexical",
+          "clause": "Suppose collection is late. The delay is a fact; late publication is a hypothesis. If publication was timely but the job started late, scheduling may explain the delay. That is an inference; other explanations remain open. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "HH",
+              "AY0",
+              "P",
+              "AA1",
+              "TH",
+              "AH0",
+              "S",
+              "AH0",
+              "S"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "05",
+          "display_span": [
+            180,
+            189
+          ],
+          "display_word": "inference",
+          "target_owner_term": "inference",
+          "grammar": "lexical",
+          "clause": "Suppose collection is late. The delay is a fact; late publication is a hypothesis. If publication was timely but the job started late, scheduling may explain the delay. That is an inference; other explanations remain open. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH1",
+              "N",
+              "F",
+              "ER0",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "05",
+          "display_span": [
+            471,
+            481
+          ],
+          "display_word": "hypotheses",
+          "target_owner_term": "hypotheses",
+          "grammar": "lexical",
+          "clause": "State each fact’s source, subject, time and scope; hypotheses must be refutable, and inferences reasoned with alternatives. Compare explanatory power, likelihood and test cost. Easy testing does not establish likelihood. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "HH",
+              "AY0",
+              "P",
+              "AA1",
+              "TH",
+              "AH0",
+              "S",
+              "IY2",
+              "Z"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [
+              4
+            ],
+            "weak_syllables": [
+              1,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "05",
+          "display_span": [
+            817,
+            825
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Check counterexamples, baseline and inaction. Avoid mistaking correlation for cause, a case for a population, or necessity for sufficiency. Reject selective evidence, shifting criteria and unique causes inferred from later outcomes. Check experience’s scope. State confidence, limits, next verification and what could change judgment.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "06",
+          "display_span": [
+            208,
+            218
+          ],
+          "display_word": "verifiable",
+          "target_owner_term": "verifiable",
+          "grammar": "lexical",
+          "clause": "Prefer an option solving the main failure within boundaries and resources. It should be verifiable, observable and recoverable, with exit conditions and less maintenance, memory dependence, coordination and manual rescue: repeated human intervention. Novelty cannot establish suitability. Give premises, strongest objection, first step and revisit trigger. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "V",
+                "EH1",
+                "R",
+                "AH0",
+                "F",
+                "AY2",
+                "AH0",
+                "B",
+                "AH0",
+                "L"
+              ],
+              "syllable_count": 5,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "weak_syllables": [
+                2,
+                4,
+                5
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbl/ with optional schwa omitted"
+            },
+            {
+              "syllable_count": 5,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbəl/ with schwa retained"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "basis": "Installed dictionary AmE /ˈvɛrəˌfaɪəbl/ with optional schwa omitted"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "06",
+          "display_span": [
+            753,
+            759
+          ],
+          "display_word": "Record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Readiness differs from execution. Ready means awaiting an authorized decision; blocked means an unacceptable gap, with owner and release condition; deferred means missing information or timing, with resolving action and revisit time. Agreement in principle is not a decision. Record choice, owner, date, reasons, revisit trigger and first action’s owner and completion condition.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "07",
+          "display_span": [
+            131,
+            135
+          ],
+          "display_word": "used",
+          "target_owner_term": "used",
+          "grammar": "past-participle",
+          "clause": "For data, ask: where did it come from, when was it knowable, what does it mean, what changed it, how good is it, and how may it be used? ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z",
+              "D"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "07",
+          "display_span": [
+            512,
+            523
+          ],
+          "display_word": "Acquisition",
+          "target_owner_term": "acquisition",
+          "grammar": "lexical",
+          "clause": "Unknown meaning, quality or historical availability permits authorized exploration, not a trusted lasting-asset claim. Acquisition, processing and use need permission; Agents remain within delegation. Missing or unclear permission stops affected action for escalation.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AE2",
+              "K",
+              "W",
+              "AH0",
+              "Z",
+              "IH1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "07",
+          "display_span": [
+            540,
+            543
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Unknown meaning, quality or historical availability permits authorized exploration, not a trusted lasting-asset claim. Acquisition, processing and use need permission; Agents remain within delegation. Missing or unclear permission stops affected action for escalation.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "07",
+          "display_span": [
+            561,
+            567
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Unknown meaning, quality or historical availability permits authorized exploration, not a trusted lasting-asset claim. Acquisition, processing and use need permission; Agents remain within delegation. Missing or unclear permission stops affected action for escalation.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "08",
+          "display_span": [
+            282,
+            288
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "noun",
+          "clause": "Business modeling settles entities, relationships, rules and metric meanings. Data modeling represents them through grain, the unit each record represents, identifiers, keys, constraints, time and version rules. Shared definitions need an owner; authorized domain owners resolve conflicts. A convenient schema cannot settle meaning. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "08",
+          "display_span": [
+            625,
+            635
+          ],
+          "display_word": "governance",
+          "target_owner_term": "governance",
+          "grammar": "lexical",
+          "clause": "Development checks joins; technical owners check compatibility. Product identifies consumers and migration; production plans release and recovery; governance confirms permission and exit. The task lead coordinates without taking over authority. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "G",
+              "AH1",
+              "V",
+              "ER0",
+              "N",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "10",
+          "display_span": [
+            61,
+            64
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Suppose a vendor corrects historical prices. May researchers use them to simulate earlier decisions? Admission permits specified use under stated conditions. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "10",
+          "display_span": [
+            129,
+            132
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Suppose a vendor corrects historical prices. May researchers use them to simulate earlier decisions? Admission permits specified use under stated conditions. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "10",
+          "display_span": [
+            622,
+            625
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Keep this use exploratory until evidence and permission support an authorized admission decision. Proposed operational feeds need separate checks; reliable operation cannot establish historical availability. Agents may compare and replay, not approve admission. The task lead brings evidence and risks to the decision owner and acceptor. Adoption means observed use within admitted conditions.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "10",
+          "display_span": [
+            820,
+            826
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Keep this use exploratory until evidence and permission support an authorized admission decision. Proposed operational feeds need separate checks; reliable operation cannot establish historical availability. Agents may compare and replay, not approve admission. The task lead brings evidence and risks to the decision owner and acceptor. Adoption means observed use within admitted conditions.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "10",
+          "display_span": [
+            974,
+            977
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Keep this use exploratory until evidence and permission support an authorized admission decision. Proposed operational feeds need separate checks; reliable operation cannot establish historical availability. Agents may compare and replay, not approve admission. The task lead brings evidence and risks to the decision owner and acceptor. Adoption means observed use within admitted conditions.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            153,
+            156
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Ask whether evaluation is worthwhile, what exploration reveals, whether findings reproduce, production can run reliably, and feedback supports continued use. These are questions, not a mandatory pipeline; research need not become production. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            261,
+            264
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Admission precedes use requiring permission. It needs acceptance, permissions, lineage, limits, veto and exit. Lineage traces sources and transformations. Deployment or feedback cannot authorize another use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            321,
+            328
+          ],
+          "display_word": "lineage",
+          "target_owner_term": "lineage",
+          "grammar": "lexical",
+          "clause": "Admission precedes use requiring permission. It needs acceptance, permissions, lineage, limits, veto and exit. Lineage traces sources and transformations. Deployment or feedback cannot authorize another use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "L",
+                "IH1",
+                "N",
+                "IY0",
+                "AH0",
+                "JH"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "basis": "Installed Simplified Chinese-English dictionary AmE /ˈlaɪnɪdʒ/"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            353,
+            360
+          ],
+          "display_word": "Lineage",
+          "target_owner_term": "lineage",
+          "grammar": "lexical",
+          "clause": "Admission precedes use requiring permission. It needs acceptance, permissions, lineage, limits, veto and exit. Lineage traces sources and transformations. Deployment or feedback cannot authorize another use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "L",
+                "IH1",
+                "N",
+                "IY0",
+                "AH0",
+                "JH"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "basis": "Installed Simplified Chinese-English dictionary AmE /ˈlaɪnɪdʒ/"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            445,
+            448
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Admission precedes use requiring permission. It needs acceptance, permissions, lineage, limits, veto and exit. Lineage traces sources and transformations. Deployment or feedback cannot authorize another use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            553,
+            565
+          ],
+          "display_word": "reproducible",
+          "target_owner_term": "reproducible",
+          "grammar": "lexical",
+          "clause": "Lasting assets require all eight conditions: explainable meaning, traceable source, identifiable time, reproducible processing, verifiable quality, observable operation, identifiable ownership and bounded use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Dictionary AmE optional-schwa form /ˌriprəˈdusəbl/ or /ˌriprəˈdʒusəbl/"
+            },
+            {
+              "syllable_count": 5,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Dictionary AmE /ˌriprəˈdusəbəl/ or /ˌriprəˈdʒusəbəl/; schwa retained"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            578,
+            588
+          ],
+          "display_word": "verifiable",
+          "target_owner_term": "verifiable",
+          "grammar": "lexical",
+          "clause": "Lasting assets require all eight conditions: explainable meaning, traceable source, identifiable time, reproducible processing, verifiable quality, observable operation, identifiable ownership and bounded use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "V",
+                "EH1",
+                "R",
+                "AH0",
+                "F",
+                "AY2",
+                "AH0",
+                "B",
+                "AH0",
+                "L"
+              ],
+              "syllable_count": 5,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "weak_syllables": [
+                2,
+                4,
+                5
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbl/ with optional schwa omitted"
+            },
+            {
+              "syllable_count": 5,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbəl/ with schwa retained"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "basis": "Installed dictionary AmE /ˈvɛrəˌfaɪəbl/ with optional schwa omitted"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            655,
+            658
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Lasting assets require all eight conditions: explainable meaning, traceable source, identifiable time, reproducible processing, verifiable quality, observable operation, identifiable ownership and bounded use. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            720,
+            723
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "If any is unmet, label data exploratory, temporary, limited-use or awaiting verification. Limited use needs evidence and permission. Changed facts or use reopen judgments. Stop and escalate proposed controlled use with unverified meaning or quality, or insufficient permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            758,
+            761
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "If any is unmet, label data exploratory, temporary, limited-use or awaiting verification. Limited use needs evidence and permission. Changed facts or use reopen judgments. Stop and escalate proposed controlled use with unverified meaning or quality, or insufficient permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            810,
+            813
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "If any is unmet, label data exploratory, temporary, limited-use or awaiting verification. Limited use needs evidence and permission. Changed facts or use reopen judgments. Stop and escalate proposed controlled use with unverified meaning or quality, or insufficient permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "11",
+          "display_span": [
+            870,
+            873
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "If any is unmet, label data exploratory, temporary, limited-use or awaiting verification. Limited use needs evidence and permission. Changed facts or use reopen judgments. Stop and escalate proposed controlled use with unverified meaning or quality, or insufficient permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "12",
+          "display_span": [
+            81,
+            85
+          ],
+          "display_word": "uses",
+          "target_owner_term": "uses",
+          "grammar": "noun",
+          "clause": "Those decisions need owners. Domain owns meaning, quality requirements, suitable uses and professional judgments; production owns reliable operation. Platform supplies repeated cross-domain capabilities; governance makes controls work; delivery exposes priorities, resources, dependencies, risks and open decisions. Platform cannot replace domain judgment; delivery cannot replace professional judgment. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "Y",
+                "UW1",
+                "S",
+                "AH0",
+                "Z"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "Y",
+                "UW1",
+                "S",
+                "IH0",
+                "Z"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "12",
+          "display_span": [
+            204,
+            214
+          ],
+          "display_word": "governance",
+          "target_owner_term": "governance",
+          "grammar": "lexical",
+          "clause": "Those decisions need owners. Domain owns meaning, quality requirements, suitable uses and professional judgments; production owns reliable operation. Platform supplies repeated cross-domain capabilities; governance makes controls work; delivery exposes priorities, resources, dependencies, risks and open decisions. Platform cannot replace domain judgment; delivery cannot replace professional judgment. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "G",
+              "AH1",
+              "V",
+              "ER0",
+              "N",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "12",
+          "display_span": [
+            880,
+            883
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Product owns consumers, use, value, acceptance and evolution; governance retains permissions and exit, production release and recovery. Cross-domain work should have one accountable task lead; explain different arrangements. Accountability remains mandatory. Interfaces state needs and evidence without transferring responsibility or authority. Technical choices grant no business-use permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "12",
+          "display_span": [
+            918,
+            928
+          ],
+          "display_word": "governance",
+          "target_owner_term": "governance",
+          "grammar": "lexical",
+          "clause": "Product owns consumers, use, value, acceptance and evolution; governance retains permissions and exit, production release and recovery. Cross-domain work should have one accountable task lead; explain different arrangements. Accountability remains mandatory. Interfaces state needs and evidence without transferring responsibility or authority. Technical choices grant no business-use permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "G",
+              "AH1",
+              "V",
+              "ER0",
+              "N",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "12",
+          "display_span": [
+            1237,
+            1240
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Product owns consumers, use, value, acceptance and evolution; governance retains permissions and exit, production release and recovery. Cross-domain work should have one accountable task lead; explain different arrangements. Accountability remains mandatory. Interfaces state needs and evidence without transferring responsibility or authority. Technical choices grant no business-use permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "13",
+          "display_span": [
+            218,
+            224
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "L0, light work, is local and reversible without external commitment: give conclusion, basis and action in one exchange. L1, standard work, covers cross-role or extended work, competing options or material uncertainty: record problem, options, execution path and acceptance. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "13",
+          "display_span": [
+            460,
+            473
+          ],
+          "display_word": "authorization",
+          "target_owner_term": "authorization",
+          "grammar": "lexical",
+          "clause": "L2, high risk, covers production, funds, sensitive data, security or compliance, deletion or overwrite, irreversibility, or external commitment. It requires a written decision, explicit authorization, rollback or degradation, independent review and human acceptance. Degradation limits service to contain impact. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AO2",
+              "TH",
+              "ER0",
+              "AH0",
+              "Z",
+              "EY1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 4,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              3,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "13",
+          "display_span": [
+            716,
+            719
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Risk determines the form, never the duty. Facts, scope, ownership, evidence and acceptance must stay clear at every level. Never use L0 to avoid necessary records. “Must” and “must not” mark hard boundaries; “should” is the default unless departure is explained; “may” permits choice. Members and Agents are bound unless a narrower subject is named.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "13",
+          "display_span": [
+            742,
+            749
+          ],
+          "display_word": "records",
+          "target_owner_term": "records",
+          "grammar": "noun",
+          "clause": "Risk determines the form, never the duty. Facts, scope, ownership, evidence and acceptance must stay clear at every level. Never use L0 to avoid necessary records. “Must” and “must not” mark hard boundaries; “should” is the default unless departure is explained; “may” permits choice. Members and Agents are bound unless a narrower subject is named.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D",
+              "Z"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "13",
+          "display_span": [
+            884,
+            890
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Risk determines the form, never the duty. Facts, scope, ownership, evidence and acceptance must stay clear at every level. Never use L0 to avoid necessary records. “Must” and “must not” mark hard boundaries; “should” is the default unless departure is explained; “may” permits choice. Members and Agents are bound unless a narrower subject is named.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "14",
+          "display_span": [
+            517,
+            520
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Published means arrival at the agreed publication destination. Effective or in use needs observation at the agreed target. Rehearsal is not execution; verification or merging is not publication; publication is not adoption.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            166,
+            172
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "noun",
+          "clause": "An authorized person commits to a defined subject. Bounded action produces evidence for a bounded claim, acceptance and learning; keep every link, however simple the record. Completion requires the agreed location and lifecycle, satisfied criteria, passed current matching checks, recorded risks, limits, uncovered cases and follow-up owners, and required authorized human acceptance. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            239,
+            247
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "An authorized person commits to a defined subject. Bounded action produces evidence for a bounded claim, acceptance and learning; keep every link, however simple the record. Completion requires the agreed location and lifecycle, satisfied criteria, passed current matching checks, recorded risks, limits, uncovered cases and follow-up owners, and required authorized human acceptance. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            281,
+            289
+          ],
+          "display_word": "recorded",
+          "target_owner_term": "recorded",
+          "grammar": "past-participle",
+          "clause": "An authorized person commits to a defined subject. Bounded action produces evidence for a bounded claim, acceptance and learning; keep every link, however simple the record. Completion requires the agreed location and lifecycle, satisfied criteria, passed current matching checks, recorded risks, limits, uncovered cases and follow-up owners, and required authorized human acceptance. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            385,
+            391
+          ],
+          "display_word": "Record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Record tested models, criteria, interfaces, migrations, actual inputs, version, environment, method, results and failure disposition. Claims name subject, scope, verification time, verifier and unproved limits; unresolved risks need owners. Keep the existing record reviewable, narrow unsupported claims and never claim organizational learning without it. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            407,
+            415
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Record tested models, criteria, interfaces, migrations, actual inputs, version, environment, method, results and failure disposition. Claims name subject, scope, verification time, verifier and unproved limits; unresolved risks need owners. Keep the existing record reviewable, narrow unsupported claims and never claim organizational learning without it. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "15",
+          "display_span": [
+            644,
+            650
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "noun",
+          "clause": "Record tested models, criteria, interfaces, migrations, actual inputs, version, environment, method, results and failure disposition. Claims name subject, scope, verification time, verifier and unproved limits; unresolved risks need owners. Keep the existing record reviewable, narrow unsupported claims and never claim organizational learning without it. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "16",
+          "display_span": [
+            249,
+            259
+          ],
+          "display_word": "replayable",
+          "target_owner_term": "replayable",
+          "grammar": "contextual-compound",
+          "clause": "Changes to production, shared assets or critical management chains need replayable inputs, logic, versions and outputs; tests, agreed acceptance and operational observation. Plan release and recovery; check security, access and sensitive information; define escalation, human takeover and stop conditions. Evidence must match the current version and environment. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "basis": "No headword in pinned CMU/native dictionary. Evaluate re + play + able in full clause; not dictionary-certified IPA."
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "16",
+          "display_span": [
+            601,
+            607
+          ],
+          "display_word": "Record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Material scope or risk changes return to the decision owner. Record the change and decision, expose critical-path blockers promptly, and stop dependent action while independent authorized work continues.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            306,
+            318
+          ],
+          "display_word": "irreversible",
+          "target_owner_term": "irreversible",
+          "grammar": "lexical",
+          "clause": "The human calling an Agent owns context, permissions, verification and result. Define goal, decision, authorities, sources, scope, exclusions, deliverable, destination, audience, constraints, permissions, acceptance, checkpoints, stop conditions and handoff. High-risk delegation names owner, recovery and irreversible-action approver; low risk may be brief. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH2",
+              "R",
+              "IH0",
+              "V",
+              "ER1",
+              "S",
+              "AH0",
+              "B",
+              "AH0",
+              "L"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            522,
+            532
+          ],
+          "display_word": "verifiable",
+          "target_owner_term": "verifiable",
+          "grammar": "lexical",
+          "clause": "The Agent must first confirm task, target, current state, owner and local rules, and, for repository work, its exact top-level directory. It must take reversible, verifiable steps within scope and authority, without incidental changes. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "V",
+                "EH1",
+                "R",
+                "AH0",
+                "F",
+                "AY2",
+                "AH0",
+                "B",
+                "AH0",
+                "L"
+              ],
+              "syllable_count": 5,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "weak_syllables": [
+                2,
+                4,
+                5
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbl/ with optional schwa omitted"
+            },
+            {
+              "syllable_count": 5,
+              "primary_syllable": 3,
+              "secondary_syllables": [
+                1
+              ],
+              "basis": "Installed dictionary AmE /ˌvɛrəˈfaɪəbəl/ with schwa retained"
+            },
+            {
+              "syllable_count": 4,
+              "primary_syllable": 1,
+              "secondary_syllables": [
+                3
+              ],
+              "basis": "Installed dictionary AmE /ˈvɛrəˌfaɪəbl/ with optional schwa omitted"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            595,
+            598
+          ],
+          "display_word": "Use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Use relevant material and the smallest sufficient model. When missing context does not materially affect direction, safety or authority, the Agent should continue with reasonable stated assumptions. Unestablished target, source, owner, authority or irreversible consequence requires stopping and asking. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            844,
+            856
+          ],
+          "display_word": "irreversible",
+          "target_owner_term": "irreversible",
+          "grammar": "lexical",
+          "clause": "Use relevant material and the smallest sufficient model. When missing context does not materially affect direction, safety or authority, the Agent should continue with reasonable stated assumptions. Unestablished target, source, owner, authority or irreversible consequence requires stopping and asking. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH2",
+              "R",
+              "IH0",
+              "V",
+              "ER1",
+              "S",
+              "AH0",
+              "B",
+              "AH0",
+              "L"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            1117,
+            1123
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Parallel work needs separable questions, paths or review angles, bounded owned subtasks and an integration owner to resolve conflicts, remove duplication, verify and judge the whole. Prefer independent read-only work. Agents must not edit one source of truth or worktree without coordination. Facts and criteria decide disagreement, not majorities.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            1161,
+            1169
+          ],
+          "display_word": "worktree",
+          "target_owner_term": "worktree",
+          "grammar": "contextual-compound",
+          "clause": "Parallel work needs separable questions, paths or review angles, bounded owned subtasks and an integration owner to resolve conflicts, remove duplication, verify and judge the whole. Prefer independent read-only work. Agents must not edit one source of truth or worktree without coordination. Facts and criteria decide disagreement, not majorities.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "basis": "No headword in pinned CMU/native dictionary. Evaluate recognizable work + tree in full clause; not dictionary-certified IPA."
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "17",
+          "display_span": [
+            1202,
+            1210
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Parallel work needs separable questions, paths or review angles, bounded owned subtasks and an integration owner to resolve conflicts, remove duplication, verify and judge the whole. Prefer independent read-only work. Agents must not edit one source of truth or worktree without coordination. Facts and criteria decide disagreement, not majorities.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            27,
+            34
+          ],
+          "display_word": "records",
+          "target_owner_term": "records",
+          "grammar": "noun",
+          "clause": "Analysis traces to primary records and repeatable observations; retellings, derived material and memory are leads to verify. Authority to act follows law, regulation, security and mandatory policy; explicit current authorized-owner decisions; effective contracts, policies, specifications and decision records; then plans, provisional agreements and preferences. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D",
+              "Z"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            302,
+            309
+          ],
+          "display_word": "records",
+          "target_owner_term": "records",
+          "grammar": "noun",
+          "clause": "Analysis traces to primary records and repeatable observations; retellings, derived material and memory are leads to verify. Authority to act follows law, regulation, security and mandatory policy; explicit current authorized-owner decisions; effective contracts, policies, specifications and decision records; then plans, provisional agreements and preferences. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D",
+              "Z"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            610,
+            617
+          ],
+          "display_word": "records",
+          "target_owner_term": "records",
+          "grammar": "noun",
+          "clause": "Projects should link shared rules. Clarification grants no waiver authority; establish waiver authority and resolve conflicts before acting. Expose conflicts and impact for an authorized decision; never guess, silently choose convenience or alter records against verified facts. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D",
+              "Z"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            771,
+            783
+          ],
+          "display_word": "irreversible",
+          "target_owner_term": "irreversible",
+          "grammar": "lexical",
+          "clause": "Authorized decision owners must approve high-risk admission, permission changes, production releases, deletion or overwrite, and irreversible actions. Agents may implement or help verify within delegation, but cannot approve or make human commitments. Agents, tools and files cannot self-authorize. Review and expertise grant no decision authority; missing competence or facts needs domain owners. Permission cannot change facts; evidence grants no permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH2",
+              "R",
+              "IH0",
+              "V",
+              "ER1",
+              "S",
+              "AH0",
+              "B",
+              "AH0",
+              "L"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            793,
+            799
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Authorized decision owners must approve high-risk admission, permission changes, production releases, deletion or overwrite, and irreversible actions. Agents may implement or help verify within delegation, but cannot approve or make human commitments. Agents, tools and files cannot self-authorize. Review and expertise grant no decision authority; missing competence or facts needs domain owners. Permission cannot change facts; evidence grants no permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "18",
+          "display_span": [
+            894,
+            900
+          ],
+          "display_word": "Agents",
+          "target_owner_term": "agents",
+          "grammar": "lexical",
+          "clause": "Authorized decision owners must approve high-risk admission, permission changes, production releases, deletion or overwrite, and irreversible actions. Agents may implement or help verify within delegation, but cannot approve or make human commitments. Agents, tools and files cannot self-authorize. Review and expertise grant no decision authority; missing competence or facts needs domain owners. Permission cannot change facts; evidence grants no permission.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "EY1",
+              "JH",
+              "AH0",
+              "N",
+              "T",
+              "S"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "19",
+          "display_span": [
+            691,
+            699
+          ],
+          "display_word": "recorded",
+          "target_owner_term": "recorded",
+          "grammar": "past-participle",
+          "clause": "Authorized acceptors examine work and evidence. Unmet conditions return it for correction within delegation; met conditions permit recorded acceptance and handoff. Checks grant no acceptance, admission or release; acceptance neither expands permission nor transfers responsibility.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "20",
+          "display_span": [
+            202,
+            214
+          ],
+          "display_word": "irreversible",
+          "target_owner_term": "irreversible",
+          "grammar": "lexical",
+          "clause": "Stop affected action and escalate for material instruction conflicts; unknown target, source or responsible person; insufficient authority; crossing permission, compliance, security or data boundaries; irreversible action without authorization or recovery; others’ unrecognized or uncommitted work; unknown ownership; contradictory checks or expired evidence; or when continuing would hide failure, pollute a source of truth, enlarge harm or require guesses as facts. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH2",
+              "R",
+              "IH0",
+              "V",
+              "ER1",
+              "S",
+              "AH0",
+              "B",
+              "AH0",
+              "L"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "20",
+          "display_span": [
+            230,
+            243
+          ],
+          "display_word": "authorization",
+          "target_owner_term": "authorization",
+          "grammar": "lexical",
+          "clause": "Stop affected action and escalate for material instruction conflicts; unknown target, source or responsible person; insufficient authority; crossing permission, compliance, security or data boundaries; irreversible action without authorization or recovery; others’ unrecognized or uncommitted work; unknown ownership; contradictory checks or expired evidence; or when continuing would hide failure, pollute a source of truth, enlarge harm or require guesses as facts. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AO2",
+              "TH",
+              "ER0",
+              "AH0",
+              "Z",
+              "EY1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 4,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              3,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "22",
+          "display_span": [
+            0,
+            3
+          ],
+          "display_word": "Use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Use checkable statements: “Tests passed; the release owner must confirm the target environment before release.” Contrast “actively progressing,” which gives no next action. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "22",
+          "display_span": [
+            375,
+            384
+          ],
+          "display_word": "inference",
+          "target_owner_term": "inference",
+          "grammar": "lexical",
+          "clause": "Work asynchronously when sufficient. Meetings need a question, necessary participants and inputs. Align facts and definitions before options; return drift to the decision. Locate disagreement in facts, inference, values, resources or authority. Challenge propositions, evidence and costs, not motives. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "IH1",
+              "N",
+              "F",
+              "ER0",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 3,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "22",
+          "display_span": [
+            475,
+            481
+          ],
+          "display_word": "Record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Record conclusions, basis, decisions, actions, open points and risks with owners, deadlines and completion criteria. Discussion may improve understanding without deciding; name what changed and remains open. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "22",
+          "display_span": [
+            582,
+            590
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Record conclusions, basis, decisions, actions, open points and risks with owners, deadlines and completion criteria. Discussion may improve understanding without deciding; name what changed and remains open. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "22",
+          "display_span": [
+            714,
+            722
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "Keep subjects, definitions and criteria stable, or explain changes first. Expose threatened deadlines before harm, naming escalation owner and trigger.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "24",
+          "display_span": [
+            204,
+            212
+          ],
+          "display_word": "recorded",
+          "target_owner_term": "recorded",
+          "grammar": "past-participle",
+          "clause": "Failure raises two questions: what caused it, and why did prevention or detection fail? Preserve symptoms, timeline and prior changes; distinguish affected from unaffected subjects. Reproduce safely with recorded inputs, or observe what distinguishes leading hypotheses. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D",
+                "IH0",
+                "D"
+              ],
+              "syllable_count": 3,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1,
+                3
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "24",
+          "display_span": [
+            259,
+            269
+          ],
+          "display_word": "hypotheses",
+          "target_owner_term": "hypotheses",
+          "grammar": "lexical",
+          "clause": "Failure raises two questions: what caused it, and why did prevention or detection fail? Preserve symptoms, timeline and prior changes; distinguish affected from unaffected subjects. Reproduce safely with recorded inputs, or observe what distinguishes leading hypotheses. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "HH",
+              "AY0",
+              "P",
+              "AA1",
+              "TH",
+              "AH0",
+              "S",
+              "IY2",
+              "Z"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [
+              4
+            ],
+            "weak_syllables": [
+              1,
+              3
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "24",
+          "display_span": [
+            1005,
+            1011
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Urgency grants neither authority nor certainty. Contain first if recording would delay response; record decisions, facts, authority, expiry, takeover and rollback afterward. Once controlled, verify affected data and dependent uses, complete the record and review the cause. Repeated emergency exceptions require mechanism repair.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "24",
+          "display_span": [
+            1134,
+            1138
+          ],
+          "display_word": "uses",
+          "target_owner_term": "uses",
+          "grammar": "noun",
+          "clause": "Urgency grants neither authority nor certainty. Contain first if recording would delay response; record decisions, facts, authority, expiry, takeover and rollback afterward. Once controlled, verify affected data and dependent uses, complete the record and review the cause. Repeated emergency exceptions require mechanism repair.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "Y",
+                "UW1",
+                "S",
+                "AH0",
+                "Z"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "Y",
+                "UW1",
+                "S",
+                "IH0",
+                "Z"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 1,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                2
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "24",
+          "display_span": [
+            1153,
+            1159
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "noun",
+          "clause": "Urgency grants neither authority nor certainty. Contain first if recording would delay response; record decisions, facts, authority, expiry, takeover and rollback afterward. Once controlled, verify affected data and dependent uses, complete the record and review the cause. Repeated emergency exceptions require mechanism repair.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "EH1",
+              "K",
+              "ER0",
+              "D"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              2
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "27",
+          "display_span": [
+            245,
+            248
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Managers clarify direction, priorities, decision boundaries and resources, resolve conflicts and ensure results, anomalies and actual-use effects return promptly to responsible owners. They demonstrate judgment, protect honest disclosure and must not punish honest uncertainty, normalize rescue or use the Guidelines for fault-finding, ceremony or micromanagement. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "27",
+          "display_span": [
+            409,
+            412
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Managers clarify direction, priorities, decision boundaries and resources, resolve conflicts and ensure results, anomalies and actual-use effects return promptly to responsible owners. They demonstrate judgment, protect honest disclosure and must not punish honest uncertainty, normalize rescue or use the Guidelines for fault-finding, ceremony or micromanagement. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "27",
+          "display_span": [
+            618,
+            623
+          ],
+          "display_word": "remit",
+          "target_owner_term": "remit",
+          "grammar": "lexical",
+          "clause": "Within decision boundaries, the owner closest to facts chooses methods, tools and implementation. Members own end-to-end results within their remit, disclosing unknowns, risks, dependencies and failures without prompting. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "R",
+              "IY0",
+              "M",
+              "IH1",
+              "T"
+            ],
+            "syllable_count": 2,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "27",
+          "display_span": [
+            800,
+            812
+          ],
+          "display_word": "obsolescence",
+          "target_owner_term": "obsolescence",
+          "grammar": "lexical",
+          "clause": "The department head owns the Guidelines and may appoint maintainers. They gather cases, conflicts and obsolescence; they must not add rules to mask goal, organizational or system defects.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AA2",
+              "B",
+              "S",
+              "AH0",
+              "L",
+              "EH1",
+              "S",
+              "AH0",
+              "N",
+              "S"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 3,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            351,
+            359
+          ],
+          "display_word": "criteria",
+          "target_owner_term": "criteria",
+          "grammar": "lexical",
+          "clause": "The department head or appointed maintainer owns weekly judgment calibration against real samples, evidence and criteria, monthly mechanism correction, and quarterly practice and capability review with users for net benefit. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "K",
+              "R",
+              "AY0",
+              "T",
+              "IH1",
+              "R",
+              "IY0",
+              "AH0"
+            ],
+            "syllable_count": 4,
+            "primary_syllable": 2,
+            "secondary_syllables": [],
+            "weak_syllables": [
+              1,
+              3,
+              4
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            533,
+            539
+          ],
+          "display_word": "record",
+          "target_owner_term": "record",
+          "grammar": "verb",
+          "clause": "Adjustments may reflect workload, risk, change and feedback quality; record reasons and next review. Revisit changed conditions, retain all three purposes and stricter requirements, and review trials or high-risk work before evidence or authorization expires. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": [
+            {
+              "arpabet": [
+                "R",
+                "AH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            },
+            {
+              "arpabet": [
+                "R",
+                "IH0",
+                "K",
+                "AO1",
+                "R",
+                "D"
+              ],
+              "syllable_count": 2,
+              "primary_syllable": 2,
+              "secondary_syllables": [],
+              "weak_syllables": [
+                1
+              ],
+              "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+            }
+          ],
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            701,
+            714
+          ],
+          "display_word": "authorization",
+          "target_owner_term": "authorization",
+          "grammar": "lexical",
+          "clause": "Adjustments may reflect workload, risk, change and feedback quality; record reasons and next review. Revisit changed conditions, retain all three purposes and stricter requirements, and review trials or high-risk work before evidence or authorization expires. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AO2",
+              "TH",
+              "ER0",
+              "AH0",
+              "Z",
+              "EY1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 4,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              3,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            724,
+            727
+          ],
+          "display_word": "Use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Use sufficient cases and time, keeping combined review purposes distinct. Use existing carriers; add forms or meetings only when necessary to hold review. Routine “nothing happened” reports are unnecessary. Rule changes name reason, evidence, scope and effective time. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            798,
+            801
+          ],
+          "display_word": "Use",
+          "target_owner_term": "use",
+          "grammar": "verb",
+          "clause": "Use sufficient cases and time, keeping combined review purposes distinct. Use existing carriers; add forms or meetings only when necessary to hold review. Routine “nothing happened” reports are unnecessary. Rule changes name reason, evidence, scope and effective time. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "Z"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "28",
+          "display_span": [
+            1049,
+            1052
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Observe work and decisions, quality and risk, and Agent use and capability. Metrics name decision, source, period, boundary and gaming risk. No single metric represents human worth; no local metric represents overall work or system value. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "29",
+          "display_span": [
+            90,
+            93
+          ],
+          "display_word": "use",
+          "target_owner_term": "use",
+          "grammar": "noun",
+          "clause": "Return to the report: clear meaning, facts knowable then, matching evidence and permitted use. Action and feedback allow correction. ",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "Y",
+              "UW1",
+              "S"
+            ],
+            "syllable_count": 1,
+            "primary_syllable": 1,
+            "secondary_syllables": [],
+            "weak_syllables": [],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "en",
+          "section": "30",
+          "display_span": [
+            243,
+            256
+          ],
+          "display_word": "authorization",
+          "target_owner_term": "authorization",
+          "grammar": "lexical",
+          "clause": "Humans retain direction, authorization, decisions and responsibility for consequences. Within bounds, real work tests the Guidelines.",
+          "target_reading": "See target dictionary reading and admissible lexical-stress variants",
+          "target_stress": {
+            "arpabet": [
+              "AO2",
+              "TH",
+              "ER0",
+              "AH0",
+              "Z",
+              "EY1",
+              "SH",
+              "AH0",
+              "N"
+            ],
+            "syllable_count": 5,
+            "primary_syllable": 4,
+            "secondary_syllables": [
+              1
+            ],
+            "weak_syllables": [
+              2,
+              3,
+              5
+            ],
+            "basis": "CMU dictionary pinned source; valid listed accent variants remain admissible"
+          },
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "01",
+          "display_span": [
+            26,
+            28
+          ],
+          "display_word": "对应",
+          "target_owner_term": "对应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "报表做完了，下一位使用者能依靠它判断吗？数字的含义、对应时间、依据和用途，还须说清。",
+          "target_reading": "duìyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "02",
+          "display_span": [
+            55,
+            57
+          ],
+          "display_word": "回应",
+          "target_owner_term": "回应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "指南回应四种失效：事实与选择混淆；症状修好，机制未变；交流不能支持决定或行动；人工智能增加材料，判断和结果却未改善。",
+          "target_reading": "huíyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "02",
+          "display_span": [
+            137,
+            139
+          ],
+          "display_word": "应对",
+          "target_owner_term": "应对",
+          "grammar": "contextual-mandarin-word",
+          "clause": "任务应解决问题、检验判断与限度，让系统更早识别、更好应对下一次问题。三种结果不要求三份报告。",
+          "target_reading": "yìngduì",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "04",
+          "display_span": [
+            130,
+            132
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "定义概念，用因果、依赖、约束和反馈组织问题。每层按一致依据划分，覆盖决定所需，说明缺口和共同原因；相互影响不能硬拆，也不能重复计算。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "05",
+          "display_span": [
+            43,
+            45
+          ],
+          "display_word": "调度",
+          "target_owner_term": "调度",
+          "grammar": "contextual-mandarin-word",
+          "clause": "若发布按时而任务启动晚，调度可能解释延迟，这是推论，仍须查其他解释。按及时性标准评价，说明信心和限度，是判断。",
+          "target_reading": "diàodù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "05",
+          "display_span": [
+            93,
+            95
+          ],
+          "display_word": "响应",
+          "target_owner_term": "响应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "决策负责人选择响应、取舍与再议条件，是决定；明确谁何时做什么、怎样确认完成，是行动。",
+          "target_reading": "xiǎngyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "05",
+          "display_span": [
+            96,
+            98
+          ],
+          "display_word": "取舍",
+          "target_owner_term": "取舍",
+          "grammar": "contextual-mandarin-word",
+          "clause": "决策负责人选择响应、取舍与再议条件，是决定；明确谁何时做什么、怎样确认完成，是行动。",
+          "target_reading": "qǔshě",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "06",
+          "display_span": [
+            85,
+            87
+          ],
+          "display_word": "协调",
+          "target_owner_term": "协调",
+          "grammar": "contextual-mandarin-word",
+          "clause": "优先选能解决既定问题和主要失效、在边界和资源内可核验、观察和恢复的方案，减少维护、记忆依赖、协调与救场，并有退出替换条件。",
+          "target_reading": "xiétiáo",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "07",
+          "display_span": [
+            82,
+            84
+          ],
+          "display_word": "角色",
+          "target_owner_term": "角色",
+          "grammar": "contextual-mandarin-word",
+          "clause": "原始、生产、实验数据，与服务、平台、报表视图各有角色。报表、目录、缓存和智能体摘要是派生呈现，不能悄然成为权威事实源。",
+          "target_reading": "juésè",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "07",
+          "display_span": [
+            109,
+            111
+          ],
+          "display_word": "成为",
+          "target_owner_term": "成为",
+          "grammar": "contextual-mandarin-word",
+          "clause": "原始、生产、实验数据，与服务、平台、报表视图各有角色。报表、目录、缓存和智能体摘要是派生呈现，不能悄然成为权威事实源。",
+          "target_reading": "chéngwéi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "10",
+          "display_span": [
+            0,
+            2
+          ],
+          "display_word": "供应",
+          "target_owner_term": "供应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "供应商修订历史价格，研究者模拟此前决定，须用当时能知道的值。",
+          "target_reading": "gōngyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "10",
+          "display_span": [
+            22,
+            24
+          ],
+          "display_word": "当时",
+          "target_owner_term": "当时",
+          "grammar": "contextual-mandarin-word",
+          "clause": "供应商修订历史价格，研究者模拟此前决定，须用当时能知道的值。",
+          "target_reading": "dāngshí",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "10",
+          "display_span": [
+            37,
+            39
+          ],
+          "display_word": "重述",
+          "target_owner_term": "重述",
+          "grammar": "contextual-mandarin-word",
+          "clause": "查修订、回补、重述、样本选择、对象变化和市场日历，说明缺失、延迟、冲突与异常。只留今天仍存在的对象，会产生幸存者偏差。",
+          "target_reading": "chóngshù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "10",
+          "display_span": [
+            170,
+            172
+          ],
+          "display_word": "重跑",
+          "target_owner_term": "重跑",
+          "grammar": "contextual-mandarin-word",
+          "clause": "已证实晚于模拟决定才可得，就替换或排除该值，重跑分析再请求准入。证据与授权支持前，拟议用途只能有边界地探索。",
+          "target_reading": "chóngpǎo",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "11",
+          "display_span": [
+            74,
+            76
+          ],
+          "display_word": "血缘",
+          "target_owner_term": "血缘",
+          "grammar": "contextual-mandarin-word",
+          "clause": "需要许可的使用，先落实验收、权限、血缘、限度、否决和退出。血缘记录来源和加工历史，部署和反馈不授权新用途。",
+          "target_reading": "xuèyuán",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "11",
+          "display_span": [
+            86,
+            88
+          ],
+          "display_word": "血缘",
+          "target_owner_term": "血缘",
+          "grammar": "contextual-mandarin-word",
+          "clause": "需要许可的使用，先落实验收、权限、血缘、限度、否决和退出。血缘记录来源和加工历史，部署和反馈不授权新用途。",
+          "target_reading": "xuèyuán",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "11",
+          "display_span": [
+            209,
+            211
+          ],
+          "display_word": "重审",
+          "target_owner_term": "重审",
+          "grammar": "contextual-mandarin-word",
+          "clause": "缺一项，标探索、临时、限定用途或待核验，限定用途仍须证据许可。事实或用途变化，重审判断。",
+          "target_reading": "chóngshěn",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "12",
+          "display_span": [
+            127,
+            129
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "这五类责任按部门现行安排分配，不是五个岗位。重要成果或决定须明确负责人、决策权限和有权验收者，权限与风险允许时可兼任。跨领域工作应有一位任务负责人；采用不同安排须说明理由，责任仍须明确。接口明确双方所需与证据，不转移责任或权限。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "13",
+          "display_span": [
+            39,
+            41
+          ],
+          "display_word": "角色",
+          "target_owner_term": "角色",
+          "grammar": "contextual-mandarin-word",
+          "clause": "形式随风险，责任仍在。轻量工作，本地、可逆、无对外承诺，可一次交流。标准工作跨角色或持续，存在竞争选项或重大未知，在原记录说明问题、选项、路径与验收。",
+          "target_reading": "juésè",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "13",
+          "display_span": [
+            204,
+            206
+          ],
+          "display_word": "应当",
+          "target_owner_term": "应当",
+          "grammar": "contextual-mandarin-word",
+          "clause": "必须、不得，是硬边界；应当，是说明理由后可偏离的默认；可以，由负责人选择。成员与智能体同受约束，除非另行限定适用对象。",
+          "target_reading": "yīngdāng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "15",
+          "display_span": [
+            207,
+            209
+          ],
+          "display_word": "重查",
+          "target_owner_term": "重查",
+          "grammar": "contextual-mandarin-word",
+          "clause": "版本、环境或用途变了，重查证据是否适用；缺证据就缩小主张。检查不授予验收、准入或发布权。决定、结果、限度和后续责任留在原记录；无可复查记录，不能声称组织已学到。",
+          "target_reading": "chóngchá",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "16",
+          "display_span": [
+            32,
+            34
+          ],
+          "display_word": "并行",
+          "target_owner_term": "并行",
+          "grammar": "contextual-mandarin-word",
+          "clause": "决定之后，进入有边界的执行。变更前查实际目标、版本、环境、现状、并行工作和恢复，确认承诺、参与者、资源、关键路径、依赖、期限和检查点。",
+          "target_reading": "bìngxíng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "16",
+          "display_span": [
+            96,
+            98
+          ],
+          "display_word": "重放",
+          "target_owner_term": "重放",
+          "grammar": "contextual-mandarin-word",
+          "clause": "生产、共享数据或关键管理链路变更，须明确影响和权限，保留可重放的输入、逻辑、版本和输出。",
+          "target_reading": "chóngfàng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "17",
+          "display_span": [
+            33,
+            35
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "重要委托说明目的、范围、交付、限制、权限，以及核验与交接。低风险可简述；高风险还须负责人、恢复路径和不可逆行动批准人。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "17",
+          "display_span": [
+            148,
+            150
+          ],
+          "display_word": "重述",
+          "target_owner_term": "重述",
+          "grammar": "contextual-mandarin-word",
+          "clause": "行动前，智能体须确认任务、对象、现状、负责人和适用规则；仓库工作还须准确根目录。用最小充分模型与相关材料，必要时重述目标与约定。",
+          "target_reading": "chóngshù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "17",
+          "display_span": [
+            195,
+            197
+          ],
+          "display_word": "并行",
+          "target_owner_term": "并行",
+          "grammar": "contextual-mandarin-word",
+          "clause": "并行须问题、路径或评审角度可分，默认独立只读。子任务有归属，整合者解冲突、去重、核验整体；未协调不得共改事实源或工作区。多数不是证据，提交者须理解结果并承担后果。",
+          "target_reading": "bìngxíng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "17",
+          "display_span": [
+            232,
+            234
+          ],
+          "display_word": "去重",
+          "target_owner_term": "去重",
+          "grammar": "contextual-mandarin-word",
+          "clause": "并行须问题、路径或评审角度可分，默认独立只读。子任务有归属，整合者解冲突、去重、核验整体；未协调不得共改事实源或工作区。多数不是证据，提交者须理解结果并承担后果。",
+          "target_reading": "qùchóng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "17",
+          "display_span": [
+            241,
+            243
+          ],
+          "display_word": "协调",
+          "target_owner_term": "协调",
+          "grammar": "contextual-mandarin-word",
+          "clause": "并行须问题、路径或评审角度可分，默认独立只读。子任务有归属，整合者解冲突、去重、核验整体；未协调不得共改事实源或工作区。多数不是证据，提交者须理解结果并承担后果。",
+          "target_reading": "xiétiáo",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "18",
+          "display_span": [
+            9,
+            11
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "事实凭原始记录和可重复观察，分析追溯原依据；转述、缓存、生成视图、智能体输出与记忆只作线索。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "19",
+          "display_span": [
+            281,
+            283
+          ],
+          "display_word": "成为",
+          "target_owner_term": "成为",
+          "grammar": "contextual-mandarin-word",
+          "clause": "验收不扩大权限或转移人的责任。核验后的智能体成果，只有原始来源与限度记入该项工作的权威系统，才成为长期团队事实。",
+          "target_reading": "chéngwéi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "20",
+          "display_span": [
+            243,
+            245
+          ],
+          "display_word": "重试",
+          "target_owner_term": "重试",
+          "grammar": "contextual-mandarin-word",
+          "clause": "部分完成也须检查，说明范围、状态与原因，分清缺依赖和未尝试。中断保留现状、未提交工作、失败尝试、恢复入口和无效重试，明确接手者、动作与期限。",
+          "target_reading": "chóngshì",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "21",
+          "display_span": [
+            150,
+            152
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "分析、提案和决策文档通常先结论，再用问题、证据和模型比较选项，给建议与行动。重要风险对应缓解措施，再讲剩余风险、限度和再议条件。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "21",
+          "display_span": [
+            154,
+            156
+          ],
+          "display_word": "对应",
+          "target_owner_term": "对应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "分析、提案和决策文档通常先结论，再用问题、证据和模型比较选项，给建议与行动。重要风险对应缓解措施，再讲剩余风险、限度和再议条件。",
+          "target_reading": "duìyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "23",
+          "display_span": [
+            77,
+            79
+          ],
+          "display_word": "审美",
+          "target_owner_term": "审美",
+          "grammar": "contextual-mandarin-word",
+          "clause": "达是准确理解后的清楚流畅。雅还须审美品味，使节奏、衔接、结构和视觉适合主题受众；准确清楚不穷尽雅。",
+          "target_reading": "shěnměi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "23",
+          "display_span": [
+            131,
+            133
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "用词精确，术语首次解释，每段有主旨。删空话重复，保留例子、推理、限定、责任和表达品质，语气客观有分寸。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "24",
+          "display_span": [
+            13,
+            15
+          ],
+          "display_word": "为何",
+          "target_owner_term": "为何",
+          "grammar": "contextual-mandarin-word",
+          "clause": "失效后，既查直接原因，也查为何未能预防或发现。保留症状、时间线和此前变化，分清受影响对象。",
+          "target_reading": "wèihé",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "24",
+          "display_span": [
+            205,
+            207
+          ],
+          "display_word": "响应",
+          "target_owner_term": "响应",
+          "grammar": "contextual-mandarin-word",
+          "clause": "受影响工作负责人，通常是任务负责人，承担响应和后续处置。保留核定影响和修复核验所需输入和版本，需额外权限就上报决策负责人。",
+          "target_reading": "xiǎngyìng",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "24",
+          "display_span": [
+            309,
+            311
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "紧急不授予权限或确定性。记录耽误止损，先控制，再补决定、事实、权限、到期、接管和回退。受控后核验数据及下游用途，补记录查原因；重复例外修机制。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            24,
+            26
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "预防不必等失败。问题反复或涉及多人、项目、周期，重要判断依赖少数人的隐性经验，遗忘可能造成实质损失，或智能体会重复工作；任一带来错误、损失、救场或协调的实质风险，就应留下预防措施。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            55,
+            57
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "预防不必等失败。问题反复或涉及多人、项目、周期，重要判断依赖少数人的隐性经验，遗忘可能造成实质损失，或智能体会重复工作；任一带来错误、损失、救场或协调的实质风险，就应留下预防措施。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            73,
+            75
+          ],
+          "display_word": "协调",
+          "target_owner_term": "协调",
+          "grammar": "contextual-mandarin-word",
+          "clause": "预防不必等失败。问题反复或涉及多人、项目、周期，重要判断依赖少数人的隐性经验，遗忘可能造成实质损失，或智能体会重复工作；任一带来错误、损失、救场或协调的实质风险，就应留下预防措施。",
+          "target_reading": "xiétiáo",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            175,
+            177
+          ],
+          "display_word": "成为",
+          "target_owner_term": "成为",
+          "grammar": "contextual-mandarin-word",
+          "clause": "成为部门做法，须有已观察问题、实质风险依据或适用义务，说明现有保障不足，权衡净收益与认知维护成本。重复不必增文件，任务措施也不必纳入。",
+          "target_reading": "chéngwéi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            224,
+            226
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "成为部门做法，须有已观察问题、实质风险依据或适用义务，说明现有保障不足，权衡净收益与认知维护成本。重复不必增文件，任务措施也不必纳入。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            298,
+            300
+          ],
+          "display_word": "相称",
+          "target_owner_term": "相称",
+          "grammar": "contextual-mandarin-word",
+          "clause": "小范围试验说明观察、保留依据、维护者、复查、修订与退出条件。必要保障不等事故或准入；试验在权限内选择、核验与风险相称的实现。未经检验的偏好不是规则；规则失去对象或使用者、重复事实源或得不偿失，就退出。",
+          "target_reading": "xiāngchèn",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "25",
+          "display_span": [
+            327,
+            329
+          ],
+          "display_word": "重复",
+          "target_owner_term": "重复",
+          "grammar": "contextual-mandarin-word",
+          "clause": "小范围试验说明观察、保留依据、维护者、复查、修订与退出条件。必要保障不等事故或准入；试验在权限内选择、核验与风险相称的实现。未经检验的偏好不是规则；规则失去对象或使用者、重复事实源或得不偿失，就退出。",
+          "target_reading": "chóngfù",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "26",
+          "display_span": [
+            52,
+            54
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "成员与任务负责人确认边界和成功条件；主管在能力培养中辅导推理、核对理解，日常既定授权内工作无需主管另批。重要决定检验事实、选项和风险；交付后针对主要推理或表达缺口，约定下次可观察改进。留成败案例与理由，逐步形成独立判断、方法和辅导能力。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "26",
+          "display_span": [
+            136,
+            138
+          ],
+          "display_word": "行为",
+          "target_owner_term": "行为",
+          "grammar": "contextual-mandarin-word",
+          "clause": "辅导不替人判断。反馈说清论点、证据、行为和后果；评议先查证据，覆盖问题界定、模型、不确定性、取舍、执行验收、沟通与智能体委托核验。流畅、努力或效率不能抵消前述硬风险。",
+          "target_reading": "xíngwéi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "26",
+          "display_span": [
+            164,
+            166
+          ],
+          "display_word": "取舍",
+          "target_owner_term": "取舍",
+          "grammar": "contextual-mandarin-word",
+          "clause": "辅导不替人判断。反馈说清论点、证据、行为和后果；评议先查证据，覆盖问题界定、模型、不确定性、取舍、执行验收、沟通与智能体委托核验。流畅、努力或效率不能抵消前述硬风险。",
+          "target_reading": "qǔshě",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "26",
+          "display_span": [
+            213,
+            215
+          ],
+          "display_word": "行为",
+          "target_owner_term": "行为",
+          "grammar": "contextual-mandarin-word",
+          "clause": "评分可选，须先定义等级、行为和用途；采用五级评估时，各级含义应保持稳定，只表示交付风险，不评人的整体价值。关键职责应独立可靠。",
+          "target_reading": "xíngwéi",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "28",
+          "display_span": [
+            21,
+            23
+          ],
+          "display_word": "重要",
+          "target_owner_term": "重要",
+          "grammar": "contextual-mandarin-word",
+          "clause": "标准与高风险任务，开始确认对象和成功条件，重要决定或风险变化时查事实、选项和权限，完成核验，中断交接。高风险信号立即上报，不等日历。",
+          "target_reading": "zhòngyào",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "29",
+          "display_span": [
+            18,
+            20
+          ],
+          "display_word": "当时",
+          "target_owner_term": "当时",
+          "grammar": "contextual-mandarin-word",
+          "clause": "回到开头的报表。使用者需要清楚含义、当时可得的事实、与主张相符的证据，以及获准且有边界的用途。",
+          "target_reading": "dāngshí",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        },
+        {
+          "locale": "zh",
+          "section": "30",
+          "display_span": [
+            63,
+            65
+          ],
+          "display_word": "应对",
+          "target_owner_term": "应对",
+          "grammar": "contextual-mandarin-word",
+          "clause": "真实工作检验：问题解决了吗？判断及其限度成立吗？系统能更早识别、更好应对下一次问题了吗？",
+          "target_reading": "yìngduì",
+          "target_stress": {},
+          "waveform": null,
+          "status": "planned-not-listened"
+        }
+      ]
+    },
+    "acceptance_plan": {
+      "status": "planned-not-listened",
+      "initial_paired_paragraphs": [
+        "05",
+        "11",
+        "17",
+        "28"
+      ],
+      "additional_context_paragraphs": [
+        "15",
+        "24",
+        "27"
+      ],
+      "chapter_boundary_paragraphs": [
+        "01",
+        "03",
+        "07",
+        "12",
+        "17",
+        "21",
+        "24",
+        "29"
+      ],
+      "proof_required": "Actual raw and assembled complete paragraphs, connected joins, all lexical occurrences and full bilingual soundtrack listening. Bind WAV/time windows/listener decisions; preserve selected references, pitch, natural tails and native speech speed."
+    }
+  }
+}

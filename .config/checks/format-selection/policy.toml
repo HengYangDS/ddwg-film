@@ -1,0 +1,59 @@
+# Sources whose SHA-256 the delivered films' build receipts record and film-media checks: the
+# reference recordings, covers, fonts and timeline engine, the scripts and voice contracts, the
+# source manifest, and the composition and player pages. A new production changes them together
+# with that evidence, through a full render and review.
+[[ownership]]
+id = "film-media-bound-sources"
+paths = [
+  "assets/audio/en/narration-reference.wav",
+  "assets/audio/narration-reference-clear.wav",
+  "assets/cover/ddwg-cover-en.png",
+  "assets/cover/ddwg-cover.png",
+  "assets/fonts/IBMPlexSans-Bold.ttf",
+  "assets/fonts/IBMPlexSans-Regular.ttf",
+  "assets/fonts/NotoSansCJKsc-Bold.otf",
+  "assets/fonts/NotoSansCJKsc-Regular.otf",
+  "assets/vendor/gsap/gsap.min.js",
+  "content/en/film-script.json",
+  "content/en/voice-reference.json",
+  "content/film-script.json",
+  "content/source-manifest.json",
+  "content/voice-performance.json",
+  "content/voice-reference.json",
+  "src/ddwg_film/delivery/index.html",
+  "src/ddwg_film/delivery/player.html",
+  "src/ddwg_film/picture/composition/film.css",
+  "src/ddwg_film/picture/composition/film.js",
+  "src/ddwg_film/picture/composition/index.html",
+]
+format_owner = "immutable-carrier"
+format_command = "not-applicable:film-media-bound"
+format_check = "ethos prove --full --execute --json"
+validation_owner = "film-media"
+validation_command = "ethos prove --full --execute --json"
+mutation_policy = "forbidden"
+
+# Narration texts that film-media compares with the script: each must equal its edition's
+# segment texts joined by one blank line, so a Markdown formatter must not rewrite them.
+[[ownership]]
+id = "film-media-bound-narration"
+paths = ["content/en/narration.md", "content/narration.md"]
+format_owner = "immutable-carrier"
+format_command = "not-applicable:film-media-bound"
+format_check = "ethos prove --full --execute --json"
+validation_owner = "film-media"
+validation_command = "ethos prove --full --execute --json"
+mutation_policy = "forbidden"
+
+# Shot plans that ddwg_film.repository.write emits on every render (json.dumps with an indent
+# of 2) and film-media reads back against the script, composition and timeline: producer output,
+# not formatter input. A new render rewrites them together with that evidence.
+[[ownership]]
+id = "film-media-produced-plans"
+paths = ["content/en/shot-plan.json", "content/shot-plan.json"]
+format_owner = "immutable-carrier"
+format_command = "not-applicable:film-media-bound"
+format_check = "ethos prove --full --execute --json"
+validation_owner = "film-media"
+validation_command = "ethos prove --full --execute --json"
+mutation_policy = "forbidden"

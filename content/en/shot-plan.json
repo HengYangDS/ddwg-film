@@ -1,0 +1,471 @@
+{
+  "schema_version": 1,
+  "language": "en",
+  "duration": 1500,
+  "fps": 60,
+  "script_sha256": "91c5a45192294112d2b0452642fc9bd46fb37f0c408333289cbe521b0ce6d738",
+  "composition_sha256": "d59d2699b997e0ec3c1223cc7df3337317767852b87438a91e3f8a031731ea33",
+  "timeline_sha256": "0ff51912e1d21f2b50607711e9b6f09d0c23db44d157bec33b9637ae4114eef5",
+  "composition_owner": "src/ddwg_film/picture/composition/film.js",
+  "motion_grammar": "One dark 2D field; each scene shows its subject as objects, processes and relations that change on spoken words, with minimal attached labels.",
+  "binding_scope": "Current source and timing projection; capture, audiovisual quality and artistic acceptance are checked separately.",
+  "shots": [
+    {
+      "id": "01",
+      "title": "Finished is not reliable",
+      "source_sections": [
+        "charter:Purpose",
+        "data:Ownership and Change Boundaries"
+      ],
+      "start": 0.0,
+      "end": 53.816804166666664,
+      "voice_start": 2.0102291666666665,
+      "voice_end": 53.4069375,
+      "gap_kind": "opening",
+      "script_text_sha256": "71d6739404e3d7a4a06250244650551fbf2ab10e8465708b90305c4516628662",
+      "caption_count": 23
+    },
+    {
+      "id": "02",
+      "title": "Four failures, three outcomes",
+      "source_sections": [
+        "charter:Purpose"
+      ],
+      "start": 53.816804166666664,
+      "end": 90.50981250000001,
+      "voice_start": 54.431604166666666,
+      "voice_end": 90.10777083333333,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "e7deb2b3e6198fd0eff09813703df4443a1ac125b89c84045842b0716b0b6e2b",
+      "caption_count": 15
+    },
+    {
+      "id": "03",
+      "title": "Two kinds of authority",
+      "source_sections": [
+        "charter:Two Kinds of Authority",
+        "charter:Four Non-Negotiable Boundaries",
+        "human-agent:Human–AI Collaboration"
+      ],
+      "start": 90.50981250000001,
+      "end": 156.2417125,
+      "voice_start": 91.112875,
+      "voice_end": 155.78797916666667,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "2fa2642b38b87746408f442c4d61e712c6b2c257b3006c943e76dc53c7c1677f",
+      "caption_count": 29
+    },
+    {
+      "id": "04",
+      "title": "Four boundaries; form follows risk",
+      "source_sections": [
+        "charter:Four Non-Negotiable Boundaries",
+        "charter:Form Follows Risk"
+      ],
+      "start": 156.2417125,
+      "end": 231.31742916666667,
+      "voice_start": 156.9223125,
+      "voice_end": 230.5123125,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "3c084d3187c1c7efeb268193d506c70d7f3800ede6069323b5d4c08516b40902",
+      "caption_count": 31
+    },
+    {
+      "id": "05",
+      "title": "Start from the decision",
+      "source_sections": [
+        "decide:Analysis and Decisions",
+        "decide:Frame the Right Problem"
+      ],
+      "start": 231.31742916666667,
+      "end": 276.95604166666664,
+      "voice_start": 232.52510416666667,
+      "voice_end": 276.554,
+      "gap_kind": "chapter",
+      "script_text_sha256": "63472dc88073d97371ccbf5c2079554cc00a247621d88269857ffbf07e44de9a",
+      "caption_count": 20
+    },
+    {
+      "id": "06",
+      "title": "Six kinds of statement",
+      "source_sections": [
+        "decide:Keep Six Meanings Distinct"
+      ],
+      "start": 276.95604166666664,
+      "end": 331.1826375,
+      "voice_start": 277.55910416666666,
+      "voice_end": 330.7780625,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "c78ba57fbd10e0faa3ca81af06e7c16e69e7b8cc0c5a68bd3ef214c5110dedce",
+      "caption_count": 24
+    },
+    {
+      "id": "07",
+      "title": "The smallest sufficient model",
+      "source_sections": [
+        "decide:Use the Smallest Sufficient Model",
+        "decide:Check the Reasoning"
+      ],
+      "start": 331.1826375,
+      "end": 394.2776333333333,
+      "voice_start": 331.7895,
+      "voice_end": 393.824375,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "0f1e87028d2573af3da4d16d68c1d045f6f1d0f3d59f062846ffffbec70df3bc",
+      "caption_count": 29
+    },
+    {
+      "id": "08",
+      "title": "Diagnose, then compare",
+      "source_sections": [
+        "decide:Diagnose a Failure and Its Prevention Gap",
+        "decide:Make the Choice Comparable and Actionable",
+        "decide:Decision Readiness"
+      ],
+      "start": 394.2776333333333,
+      "end": 436.488825,
+      "voice_start": 394.9575208333333,
+      "voice_end": 435.68370833333336,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "a566991bba951330f1dcb2102d3ea8b284e8c3d48a39f8987f992152d2920e2d",
+      "caption_count": 16
+    },
+    {
+      "id": "09",
+      "title": "Qualify data for a use",
+      "source_sections": [
+        "data:Data Quality and Adoption",
+        "data:Answer Six Questions First"
+      ],
+      "start": 436.488825,
+      "end": 473.6375,
+      "voice_start": 437.6965,
+      "voice_end": 473.2354583333333,
+      "gap_kind": "chapter",
+      "script_text_sha256": "ae1c2211f731b93362ede524c9477b07062019298d32bb2374774eff791815e8",
+      "caption_count": 17
+    },
+    {
+      "id": "10",
+      "title": "Five moments",
+      "source_sections": [
+        "data:Preserve the Historical Point of View",
+        "data:Answer Six Questions First"
+      ],
+      "start": 473.6375,
+      "end": 499.24879166666665,
+      "voice_start": 474.2405625,
+      "voice_end": 498.84675,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "364d87c52e29a9602ebc02bc85921b8a72f9bc1946bc9a680c89e26010f710ec",
+      "caption_count": 11
+    },
+    {
+      "id": "11",
+      "title": "What we see now is not what we knew then",
+      "source_sections": [
+        "data:Preserve the Historical Point of View",
+        "data:Worked decision: revised market history"
+      ],
+      "start": 499.24879166666665,
+      "end": 563.6897208333332,
+      "voice_start": 499.85185416666667,
+      "voice_end": 563.2319375,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "1ae827dd949aaeaba9b0db0253990860b7ed99c0d0929ba5d4ce486aea7a32ef",
+      "caption_count": 26
+    },
+    {
+      "id": "12",
+      "title": "From signal to controlled use",
+      "source_sections": [
+        "data:Admit a Durable Data Asset",
+        "data:Move from a Signal to Controlled Use"
+      ],
+      "start": 563.6897208333332,
+      "end": 617.9744041666667,
+      "voice_start": 564.3763958333333,
+      "voice_end": 617.5708958333333,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "160d3df6172b77cdf9da751f0e6e74d6dfb11f21ea7ce2b02c19e26e746b68e5",
+      "caption_count": 25
+    },
+    {
+      "id": "13",
+      "title": "Changing a shared identifier",
+      "source_sections": [
+        "data:Ownership and Change Boundaries",
+        "data:Assign Modeling and Lifecycle Decisions",
+        "data:Worked change: a shared issuer identifier"
+      ],
+      "start": 617.9744041666667,
+      "end": 677.5637333333334,
+      "voice_start": 618.5796666666666,
+      "voice_end": 677.122125,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "5c86a288063a03029a66d1dec408b0450e910f7c41b4138ef4a1f285c0ebb0a3",
+      "caption_count": 26
+    },
+    {
+      "id": "14",
+      "title": "Implementation, verification, production change",
+      "source_sections": [
+        "data:Own Implementation and Verification",
+        "data:Change Shared or Production Data"
+      ],
+      "start": 677.5637333333334,
+      "end": 745.5188583333334,
+      "voice_start": 678.2261458333334,
+      "voice_end": 744.71375,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "fee35da277c9aa2fed5568665dd1dcd20292bb36ddc04cf553d7675e66dcad5a",
+      "caption_count": 28
+    },
+    {
+      "id": "15",
+      "title": "The chain of trust",
+      "source_sections": [
+        "deliver:Execution and Delivery",
+        "deliver:Before Acting"
+      ],
+      "start": 745.5188583333334,
+      "end": 786.8576374999999,
+      "voice_start": 746.7265208333333,
+      "voice_end": 786.4556041666667,
+      "gap_kind": "chapter",
+      "script_text_sha256": "07ba3e50075971c69eb511c184913f4ddb3957bc113f255318e7917ec57f009c",
+      "caption_count": 18
+    },
+    {
+      "id": "16",
+      "title": "Name the state, not the effort",
+      "source_sections": [
+        "deliver:Name the State, Not the Effort"
+      ],
+      "start": 786.8576374999999,
+      "end": 824.0549083333333,
+      "voice_start": 787.4606875,
+      "voice_end": 823.652875,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "71c341d87895cfd50a7c123bebe9263cc578b2b5b14a5281c65872c57d626fe7",
+      "caption_count": 15
+    },
+    {
+      "id": "17",
+      "title": "Evidence sets the limit of the claim",
+      "source_sections": [
+        "deliver:Close the Work",
+        "deliver:Evidence Sets the Limit of the Claim"
+      ],
+      "start": 824.0549083333333,
+      "end": 865.9329083333333,
+      "voice_start": 824.6579583333333,
+      "voice_end": 865.530875,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "4090bb7307c12fbd069eb4978e3015271bc4dd99a331081e3e1a64e05e82bfd3",
+      "caption_count": 20
+    },
+    {
+      "id": "18",
+      "title": "The working loop",
+      "source_sections": [
+        "deliver:The Working Loop",
+        "deliver:Close the Work"
+      ],
+      "start": 865.9329083333333,
+      "end": 902.3654625,
+      "voice_start": 866.5359583333334,
+      "voice_end": 901.5603541666667,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "d03e970fe3a3b55fdbf69ba8ef6450a1466d173b678268afadfa5a783a19ebee",
+      "caption_count": 13
+    },
+    {
+      "id": "19",
+      "title": "Delegate a boundary",
+      "source_sections": [
+        "human-agent:Human–AI Collaboration",
+        "human-agent:Delegate a Boundary, Not a Pile of Context"
+      ],
+      "start": 902.3654625,
+      "end": 957.061925,
+      "voice_start": 903.573125,
+      "voice_end": 956.6445,
+      "gap_kind": "chapter",
+      "script_text_sha256": "3690b8c6d68127efbc89f3c916731f8dc028168ea39247851d83a2870db95ae1",
+      "caption_count": 23
+    },
+    {
+      "id": "20",
+      "title": "Delegation transfers work, not duty",
+      "source_sections": [
+        "human-agent:Delegate a Boundary, Not a Pile of Context",
+        "human-agent:Execute and Verify"
+      ],
+      "start": 957.061925,
+      "end": 995.7319083333333,
+      "voice_start": 957.6880625,
+      "voice_end": 995.329875,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "d673d38846b336b6c50c25891c75c758a3455d8c12ba29970701557768db015b",
+      "caption_count": 16
+    },
+    {
+      "id": "21",
+      "title": "Check the actual work",
+      "source_sections": [
+        "human-agent:Check Agent Output",
+        "human-agent:Agent Execution",
+        "human-agent:Parallel Work"
+      ],
+      "start": 995.7319083333333,
+      "end": 1045.9096916666665,
+      "voice_start": 996.3349583333334,
+      "voice_end": 1045.503,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "7ea6f8e78b7136a599ab72148008656e93f04b386a2dc3744f4fdfc75c8073ba",
+      "caption_count": 23
+    },
+    {
+      "id": "22",
+      "title": "Stop and hand off",
+      "source_sections": [
+        "human-agent:Stop and Handoff",
+        "human-agent:Report and Preserve a Handoff"
+      ],
+      "start": 1045.9096916666665,
+      "end": 1098.031275,
+      "voice_start": 1046.5197291666666,
+      "voice_end": 1097.2261666666666,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "8a5baf5a057252c8197f1ee4556838d4f32ca2ae1fef6da451d8fe1477f0688b",
+      "caption_count": 20
+    },
+    {
+      "id": "23",
+      "title": "Answer first",
+      "source_sections": [
+        "communicate:Communication",
+        "communicate:Know What the Exchange Must Accomplish",
+        "communicate:Structure an Important Update"
+      ],
+      "start": 1098.031275,
+      "end": 1137.1288666666667,
+      "voice_start": 1099.2389375,
+      "voice_end": 1136.7268333333334,
+      "gap_kind": "chapter",
+      "script_text_sha256": "3c96af7e4c7ab7d30cbe52ed6e0aa9e5da38b622701014939b511785a6b03677",
+      "caption_count": 17
+    },
+    {
+      "id": "24",
+      "title": "Statements that can be checked",
+      "source_sections": [
+        "communicate:Make Meetings Produce Decisions, Not Transcripts",
+        "communicate:Replace Vague Assurances with Checkable Statements"
+      ],
+      "start": 1137.1288666666667,
+      "end": 1172.8807208333335,
+      "voice_start": 1137.7319166666666,
+      "voice_end": 1172.4786875,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "dd5f67b7c8ed920e38f7973c3d3974dbed5cb8aacae778b498b9934874ce2769",
+      "caption_count": 15
+    },
+    {
+      "id": "25",
+      "title": "Fidelity, clarity, elegance",
+      "source_sections": [
+        "communicate:Write for Fidelity, Clarity, and Elegance",
+        "communicate:Review Before Sending",
+        "communicate:Escalate Risk in Four Parts"
+      ],
+      "start": 1172.8807208333335,
+      "end": 1237.2015666666666,
+      "voice_start": 1173.4837708333334,
+      "voice_end": 1236.3964583333334,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "18d1916fb36a98677120e00e51c4067c40f9c67f90e313c7b63cf5041a01db33",
+      "caption_count": 32
+    },
+    {
+      "id": "26",
+      "title": "What learning is for",
+      "source_sections": [
+        "evolve:Practice and Evolution",
+        "evolve:Admit Practices and Prevent Recurrence"
+      ],
+      "start": 1237.2015666666666,
+      "end": 1282.5652833333334,
+      "voice_start": 1238.4092291666666,
+      "voice_end": 1282.16325,
+      "gap_kind": "chapter",
+      "script_text_sha256": "e789d39164d8e81c95baac51fa41f510d906b8637dce251b8029a14e15237771",
+      "caption_count": 18
+    },
+    {
+      "id": "27",
+      "title": "Detect drift before failure",
+      "source_sections": [
+        "evolve:Detect Drift Before Failure",
+        "evolve:Improve the Existing Mechanism"
+      ],
+      "start": 1282.5652833333334,
+      "end": 1331.4647208333333,
+      "voice_start": 1283.1683333333333,
+      "voice_end": 1331.0626875,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "759b6b07b6fb7c19a00d139181b077f1f95f90d91451ed3644f65bf0b7ea1de0",
+      "caption_count": 21
+    },
+    {
+      "id": "28",
+      "title": "Growing through real work",
+      "source_sections": [
+        "evolve:Grow Capability Through Real Work",
+        "evolve:Review Critical Risks",
+        "evolve:Use Scores with Care",
+        "evolve:Observe the System Without Worshipping Numbers",
+        "evolve:Cadence and Responsibilities"
+      ],
+      "start": 1331.4647208333333,
+      "end": 1389.0914541666666,
+      "voice_start": 1332.0677708333333,
+      "voice_end": 1388.6555208333334,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "538abb43b28163cd151143145caf9271868ea40cb3e953f9f89cf9aab297d415",
+      "caption_count": 23
+    },
+    {
+      "id": "29",
+      "title": "Management and emergencies",
+      "source_sections": [
+        "evolve:Management Responsibilities",
+        "evolve:Emergencies and Exceptions"
+      ],
+      "start": 1389.0914541666666,
+      "end": 1459.1923375000001,
+      "voice_start": 1389.7453541666666,
+      "voice_end": 1458.3872291666667,
+      "gap_kind": "paragraph",
+      "script_text_sha256": "b6d7fcd485ae9e56a09bd2789140842ac129bd51e1dc8efe2d973ef524fbb8ba",
+      "caption_count": 30
+    },
+    {
+      "id": "30",
+      "title": "Back to the dataset",
+      "source_sections": [
+        "charter:Purpose",
+        "charter:From Principle to Action",
+        "evolve:Emergencies and Exceptions"
+      ],
+      "start": 1459.1923375000001,
+      "end": 1497.0,
+      "voice_start": 1460.4,
+      "voice_end": 1495.5,
+      "gap_kind": "chapter",
+      "script_text_sha256": "e161b5c1fa0207a6a9b4c9ad520fcd66b12e64286df732719113372b7765ff02",
+      "caption_count": 16
+    }
+  ]
+}

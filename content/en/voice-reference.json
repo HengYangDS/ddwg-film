@@ -1,0 +1,383 @@
+{
+  "reference_text": "ēthos connects human judgment with Agent action. Open Spec keeps formal intent. A Git reference changes only when its current state permits it.",
+  "reference_text_sha256": "0f118f128cd637c293eca6f215eeb3f8eeed34f60029dae64cd4ed350ece65fa",
+  "reference_mode": "icl",
+  "narration_language": "English",
+  "full_narration_seed": 4677,
+  "full_narration_temperature": 0.46,
+  "full_narration_max_tokens": 2100,
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+  "revision": "a6eb4f68e4b056f1215157bb696209bc82a6db48",
+  "reference_language": "English",
+  "language": "English",
+  "provider": "mlx",
+  "reference_audio": "assets/audio/en/narration-reference.wav",
+  "reference_sha256": "a763e48e15c5dc8abeda9b47da53c47db628b9ea602c79e657ab04653d318786",
+  "scope": "Approved synthetic narrator identity root used unmodified: no time-stretch, pitch shift or recast. Pronunciation and listening quality are qualified separately from this input binding.",
+  "retakes": {
+    "28": {
+      "seed": 9228,
+      "groups": {
+        "1": {
+          "seed": 135932,
+          "text_sha256": "16a3ca3f37ab0b6509ea0d835baf42df5f696fa441cbcf4d4f578e5654c23527"
+        }
+      }
+    },
+    "25": {
+      "groups": {
+        "5": {
+          "seed": 115568,
+          "text_sha256": "e1ce5404de2d5f3df0b8f11c617df6209b7544d8d64aff09a22e5535a4372ecb"
+        },
+        "6": {
+          "seed": 1612259,
+          "text_sha256": "6d62a4274b863ce115fcb014e46495b59fe36d83628c1ffcdbf05e824e9c5fb9",
+          "run_on": {
+            "spoken_text": "Escalating a risk takes four parts. The risk. The facts, impact, and the latest safe time to decide. What containment was tried, and with what result. And the options, their costs, your recommendation, and who must decide by when.",
+            "cut_sample": 348720
+          }
+        },
+        "7": {
+          "seed": 107649,
+          "text_sha256": "9f41f8f342f83e63998acc2f20edd77086db46e5826ad2051527d20d083c2af5"
+        },
+        "2": {
+          "seed": 147244,
+          "text_sha256": "c2417a7af7c07da187c7b58774c0e02c5ce08749684e5d1acd7c3bbc3721d94c"
+        },
+        "3": {
+          "seed": 91811,
+          "text_sha256": "3cbab0075fb2be114ed62fc0e4df882e2ef1f71fe2c2a1b6c165ab6c4b87f195"
+        },
+        "4": {
+          "seed": 99730,
+          "text_sha256": "67bead3f2519e5622317ea6f4c815e14012b1e96de3d2f6e7f27ea18f0d5faee"
+        }
+      }
+    },
+    "03": {
+      "groups": {
+        "3": {
+          "seed": 99708,
+          "text_sha256": "06c629d591ae9a5a365ba8462f1c317001e070e82de4ded1745d11ddbf13db6a"
+        },
+        "1": {
+          "seed": 107627,
+          "text_sha256": "9d07d1f0797d9f00fac389381e750f117efe629890f504996c467bf110c18b0e"
+        }
+      }
+    },
+    "30": {
+      "groups": {
+        "1": {
+          "seed": 186844,
+          "text_sha256": "b318e06b90ae91d4a7f825dcf4f9db5f3b30e97e681a87e5b1c5d2f6216c078e"
+        },
+        "2": {
+          "seed": 163087,
+          "text_sha256": "0c83d83fce53639088f024359ea4a477e7fde7d030179479e7a1debf8b083fff"
+        },
+        "6": {
+          "seed": 242277,
+          "text_sha256": "6c16ace1ad6a41beaece2818a189001bbcd4220dcc288fff36be9f1239cbbb25"
+        },
+        "8": {
+          "seed": 171006,
+          "text_sha256": "e2a1247cc12ece20017c8aea366e0bcff234dc752c628f7726ca77658a0a0dad"
+        },
+        "3": {
+          "seed": 107654,
+          "text_sha256": "30b5742667e3514354f96e106a104e0021386f22d441f0289c9070ee41768df8"
+        }
+      }
+    },
+    "02": {
+      "groups": {
+        "1": {
+          "seed": 99707,
+          "text_sha256": "fbe6c6b9d0f9eaf5204fdfe89cdfc9122eb14ef1052f83aa6c905c4b9eb98064"
+        },
+        "3": {
+          "seed": 258087,
+          "text_sha256": "7350f679905e9732975343e46a2c979deb6127a673cfd4fbe9dc063e369947f5"
+        }
+      }
+    },
+    "05": {
+      "groups": {
+        "2": {
+          "seed": 186819,
+          "text_sha256": "a8f1c8fd1ed524ab4325b69c08825ddd4789f46d105ae38edf523183cfd82c76"
+        },
+        "4": {
+          "seed": 91791,
+          "text_sha256": "9bec600c93151e7638405ae6d008e749c096079ca9a5b827dc4b916ea6d8a7d5",
+          "run_on": {
+            "spoken_text": "Collecting information is not the goal. Say which judgment it could change. An attractive solution that names no subject is not yet a proposal.",
+            "cut_sample": 149280
+          }
+        }
+      }
+    },
+    "06": {
+      "groups": {
+        "4": {
+          "seed": 131387,
+          "text_sha256": "bd8a349c0faed30b92c0f0dc7638276683aeba03e302df0172c010c5b5a54d71"
+        },
+        "3": {
+          "seed": 147225,
+          "text_sha256": "47cecac66cd8e90b79e0cf1bef392bc30d0a0852be09ef074013e09ad6ba2c2a"
+        },
+        "6": {
+          "seed": 99711,
+          "text_sha256": "73b2b60257f464c4193c5fb0c5071517ddccbe8dfffbf1642e789a3f045753f4"
+        }
+      }
+    },
+    "08": {
+      "groups": {
+        "2": {
+          "seed": 147227,
+          "text_sha256": "0faba81758eb3a4894e34e51596d7b23cb731b4b0b792271f640279885fe5e8e"
+        },
+        "3": {
+          "seed": 91794,
+          "text_sha256": "7ee9c9fe2ba75e1bd5ccdc9a497f99298e695f421f0b91c24a1c6cb42402c1ab"
+        },
+        "1": {
+          "seed": 139308,
+          "text_sha256": "5cd350b2a97591938f37cfa4a269aaec41a849dba94875f5b74e2f502fdfa1bf"
+        }
+      }
+    },
+    "11": {
+      "groups": {
+        "3": {
+          "seed": 107635,
+          "text_sha256": "6cdd4bdd0f15c6c59a200ee95edec9eb32c93f6cf52ca88d4d7b966ee0c8181a"
+        },
+        "6": {
+          "seed": 99716,
+          "text_sha256": "25fb2fea8c91da83b93c40de024cd85a2f495d3fe64725dfd85bc43ef6367a71"
+        },
+        "7": {
+          "seed": 163068,
+          "text_sha256": "ce624560276f1fe94035f8c808fd9675640b4d191d418261a1f1369c8f6202d1"
+        }
+      }
+    },
+    "16": {
+      "groups": {
+        "4": {
+          "seed": 139316,
+          "text_sha256": "25afc7a6c3e390364691c587209c4a3eab0f12ade9a1a22c6fb4602c11eb70d9"
+        }
+      }
+    },
+    "18": {
+      "groups": {
+        "3": {
+          "seed": 147237,
+          "text_sha256": "4fba6d185b514bbe48c032341be0f60ad3b3c302078dfe0fabf49e48f71bf5f3"
+        },
+        "1": {
+          "seed": 91804,
+          "text_sha256": "9825d5c6cc1913f8b6e308fef582dc2f4106ebb2ebc0c7185eb6f7401e9b41d4"
+        }
+      }
+    },
+    "22": {
+      "groups": {
+        "4": {
+          "seed": 91808,
+          "text_sha256": "30ec28ebc44e90154d6fa9a213bee99fcae34d909ef6f4c3c573f5e2ac820604"
+        },
+        "1": {
+          "seed": 131403,
+          "text_sha256": "7f32819456c9aabfb3a77d820684d0a1836c312c1f57a5f0b4f82509c3b35cad"
+        }
+      }
+    },
+    "23": {
+      "groups": {
+        "3": {
+          "seed": 186837,
+          "text_sha256": "5f5a7cc5f97561735f37be5029384ac49b4f4ead403796a1380a6d37c3f0384f"
+        }
+      }
+    },
+    "27": {
+      "groups": {
+        "1": {
+          "seed": 281869,
+          "text_sha256": "b5d65641448c91e0e7a8f2e3b6742b1648f7dd8deb365eb4a271095b6394c96e"
+        },
+        "3": {
+          "seed": 123489,
+          "text_sha256": "4547adb08a12c8977cd288d67f8ea7147a40a78e59ea63c143cd08c4314a7bac"
+        },
+        "6": {
+          "seed": 139327,
+          "text_sha256": "34a116ede4a3dc9dddd3ab485590f8eae5a3d7fe96660e641695db467cb5987a"
+        }
+      }
+    },
+    "04": {
+      "groups": {
+        "2": {
+          "seed": 123466,
+          "text_sha256": "7919672ff3a95d1f954877acb2f0972945614138b33194f4763f8fe33c1106dd"
+        },
+        "5": {
+          "seed": 91790,
+          "text_sha256": "e026ec31c8f4c91d7e5ffabcb19d18db3ad7e4f6c45e4cb8e2e07e4120d3b6e8"
+        }
+      }
+    },
+    "19": {
+      "groups": {
+        "1": {
+          "seed": 91805,
+          "text_sha256": "6fa1edc7d15703aa412b52faf12c86a7e20c25b1b56845b6878c27d2c56e68fb"
+        },
+        "2": {
+          "seed": 91805,
+          "text_sha256": "09122c63a3e52726d6be23ce188c183c64c31532e194dc13323edd4f9205f058"
+        },
+        "5": {
+          "seed": 107643,
+          "text_sha256": "8da0d0dfc5cb6dfd5bb6a0211933de5e25eee303e3cfc50dd005f23925701624"
+        }
+      }
+    },
+    "17": {
+      "groups": {
+        "1": {
+          "seed": 99722,
+          "text_sha256": "752fc703edaadc3275c1dfbf0fbb481a62b4792262fe1ba99ea751b585413bc6"
+        }
+      }
+    },
+    "29": {
+      "groups": {
+        "1": {
+          "seed": 99734,
+          "text_sha256": "623b54206a05ee06e816e44d34aaa0ae4b37485ccd234c2b1f465bab51d851d8"
+        },
+        "5": {
+          "seed": 1636020,
+          "text_sha256": "39da98399d9b0bf2ce635503e6529ea28c74a030050018c82aa079b6663d9253",
+          "run_on": {
+            "spoken_text": "Urgency does not make an uncertain result reliable, or grant authority. If recording would delay the response, contain first, then complete the record: who decided what, on which facts and authority, how long the measure lasts, who takes over, and when to roll back. Then verify the correction and review the cause. Treat a recurring exception as a mechanism problem.",
+            "cut_sample": 282960
+          }
+        }
+      }
+    },
+    "12": {
+      "groups": {
+        "2": {
+          "seed": 123474,
+          "text_sha256": "ccf1434aaedfdeb2e4bdf6a395d31cac836f7434e616e4954dc5d9b12dff86b4"
+        }
+      }
+    },
+    "14": {
+      "groups": {
+        "1": {
+          "seed": 107638,
+          "text_sha256": "9299a2fd16198dbef84524dea7cceac8c526acf261cc08b78bacb6ba7348950e"
+        },
+        "4": {
+          "seed": 115557,
+          "text_sha256": "d58de3bef280537c160fd7be6235c858e723f7e0ca6b7d63e9e4682c869646e8"
+        },
+        "3": {
+          "seed": 91800,
+          "text_sha256": "563a279ef2bbe678d22943afd7a317892e5dc64382cfaa49523733aacee1f281"
+        }
+      }
+    },
+    "20": {
+      "groups": {}
+    },
+    "26": {
+      "groups": {
+        "3": {
+          "seed": 139326,
+          "text_sha256": "7674a641a1009f852380de3559588b5bf3d4786f710a2846e30fdcd00b261b29"
+        }
+      }
+    },
+    "07": {
+      "groups": {
+        "2": {
+          "seed": 91793,
+          "text_sha256": "f09a3bf845872b3f2cb0abcd844350321b51049eef246cc4a2c5eb30e949e638"
+        }
+      }
+    },
+    "01": {
+      "groups": {
+        "4": {
+          "seed": 107625,
+          "text_sha256": "b7402ab00638186bfc0c0880690d9b1be355a49daf91b6764207ba2954e21a3f"
+        }
+      }
+    },
+    "13": {
+      "groups": {
+        "1": {
+          "seed": 194746,
+          "text_sha256": "d594e0ba82e812fafa8c18f48172d305893abc5832b17f4ed6aa16d1866e5413"
+        },
+        "3": {
+          "seed": 139313,
+          "text_sha256": "3da10832ddef030839f14193837058d528cd4fce20246d9d2ab683653de17a0c"
+        },
+        "2": {
+          "seed": 107637,
+          "text_sha256": "5dfa7709713acdb672aa6d724dede5930e0756389fb121ba8ea05a7b4bf89566"
+        }
+      }
+    },
+    "15": {
+      "groups": {
+        "4": {
+          "seed": 91801,
+          "text_sha256": "650b5927d02bab72e32f75fb6a994c5e9dc7a343d1dd0303bacdd054da3cd83c"
+        }
+      }
+    },
+    "21": {
+      "groups": {
+        "3": {
+          "seed": 155159,
+          "text_sha256": "a17d3a83f06218c6c8a515d183b3e9baf0961a70d47e04b3b7d4284061c99286"
+        },
+        "4": {
+          "seed": 91807,
+          "text_sha256": "1385039c521cbd4164f14296569b6c8fbaff1b0ed60065d0fd7699bc652cae04"
+        },
+        "5": {
+          "seed": 99726,
+          "text_sha256": "1ae73959cef83c85260d686842cdfc7a2caf0ffc8adb067ef3d378257941f928"
+        }
+      }
+    },
+    "09": {
+      "groups": {
+        "2": {
+          "seed": 131390,
+          "text_sha256": "efe45a0ae2d8dad55e39e630722345a5cde5e94173e6056f9fb0fdd3a5d0b36c"
+        }
+      }
+    }
+  },
+  "performance_recording": {
+    "receipt": "build/evidence/editions/en/ear-first/narration-receipt.json",
+    "alignment": "build/evidence/editions/en/ear-first/alignment.json"
+  }
+}

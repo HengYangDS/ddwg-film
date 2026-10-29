@@ -1,0 +1,772 @@
+{
+  "title": "DDWG · Data Department Work Guidelines",
+  "author": "Yang HENG",
+  "release": {
+    "year": 2026,
+    "collection": "DDWG · Data Department Work Guidelines",
+    "genre": "Education",
+    "description": "Data Department Work Guidelines; English; 2D; narration only",
+    "comment": "English introduction film; illustrative examples; no asserted deployment or adoption",
+    "synopsis": "A 25-minute introduction to the Data Department Work Guidelines (DDWG): why the work matters, then how to do it, by framing the problem, making data mean what it says, making delivery verifiable and working with Agents, and finally how to communicate and how to make the next attempt better. The price history and identifier cases are illustrative; no deployment or adoption is asserted.",
+    "keywords": [
+      "Data Department Work Guidelines",
+      "DDWG",
+      "data quality",
+      "delivery and verification",
+      "human-Agent collaboration",
+      "quantitative research"
+    ],
+    "tracks": {
+      "picture": "Picture",
+      "narration": "English narration"
+    }
+  },
+  "language": "English",
+  "duration": 1500,
+  "fps": 60,
+  "source": "evidence/source-manifest.json",
+  "chapters": [
+    {
+      "id": "purpose",
+      "title": "Why the work matters"
+    },
+    {
+      "id": "decide",
+      "title": "Framing the problem"
+    },
+    {
+      "id": "data",
+      "title": "Making data mean what it says"
+    },
+    {
+      "id": "deliver",
+      "title": "Making delivery verifiable"
+    },
+    {
+      "id": "human-agent",
+      "title": "Working with Agents"
+    },
+    {
+      "id": "communicate",
+      "title": "Communicating so others can act"
+    },
+    {
+      "id": "evolve",
+      "title": "Making the next attempt better"
+    },
+    {
+      "id": "coda",
+      "title": "Return to the purpose"
+    }
+  ],
+  "credits_duration": 3,
+  "editorial_intent": {
+    "purpose": "Explain the department-wide work guidelines to a first-time listener in natively authored spoken English: complete thoughts, one running example, source conditions and actors preserved, illustrative cases marked as illustrative."
+  },
+  "voice_performance": {
+    "performance_intent": "Selected neutral magnetic female narrator from the identity-root reference; clear, lively connected explanation; firm sentence endings; no theatrical delivery.",
+    "energy_curve": "Curious opening, purposeful explanatory body, firmer decisions, settled coda.",
+    "assembly_mode": "native-speech-designed-pauses",
+    "pacing_profile": "Ear-first copy spoken at the voice's native rate from the unmodified identity root. Speech is never time-stretched or pitch-shifted. No native pause inside a thought outlasts the declared inner cap. Designed quiet separates complete thoughts and paragraphs, longer after longer ones, each thought boundary outlasts the longest pause inside its thought by at least three fifths, and the coda settles on its own longer pause after every thought; the remaining runtime opens the picture between paragraphs and chapters within declared bounds.",
+    "designed_pauses": {
+      "thought": 0.59,
+      "question": 0.65,
+      "opening": 2.0,
+      "paragraph": 1.03,
+      "chapter": 2.0,
+      "closing": 1.5
+    },
+    "thought_pause_range": [
+      0.36,
+      1.0
+    ],
+    "thought_boundary_ratio": 1.62,
+    "thought_boundary_margin_seconds": 0.09,
+    "thought_level_tolerance_db": 0.75,
+    "chapter_level_tolerance_db": 0.3,
+    "paragraph_pause_range": [
+      1.0,
+      1.85
+    ],
+    "designed_pause_limits": {
+      "opening": 9.0,
+      "paragraph": 5.5,
+      "chapter": 9.0
+    },
+    "designed_pause_weights": {
+      "opening": 2.0,
+      "paragraph": 1.0,
+      "chapter": 2.5
+    },
+    "tail_guard_seconds": 0.3,
+    "provider_notes": {
+      "native": "Identity-root ICL reference and fixed seed; natural punctuation only; no instruction tokens, pitch or tempo transform, or music."
+    },
+    "coda_thought_pause_seconds": 0.9,
+    "inner_pause_cap_seconds": 0.28,
+    "inner_pause_caps_seconds": {
+      ",": 0.12
+    }
+  },
+  "caption_timing": {
+    "tail_seconds": 0.25,
+    "short_cue_lead_seconds": 0.1,
+    "hold_mode": "full-interval"
+  },
+  "pronunciation_contract": "content/voice-performance.json",
+  "timing_state": "Unrecorded ear-first successor; timing is derived after narration.",
+  "segments": [
+    {
+      "id": "01",
+      "chapter": "purpose",
+      "chapter_index": 0,
+      "chapter_title": "Why the work matters",
+      "title": "Finished is not reliable",
+      "language": "English",
+      "source_sections": [
+        "charter:Purpose",
+        "data:Ownership and Change Boundaries"
+      ],
+      "utterance_groups": [
+        "A historical price dataset is finished. But can the next person to use it rely on it? ",
+        "They need to know what each number means, which time it describes, what evidence it rests on, and what it may be used for. ",
+        "Researchers backtest with this data, and trading systems control risk with it. A number nobody can explain travels down the whole chain. ",
+        "Every step hands something to the next person: from acquisition and modeling, through development, production and platforms, to product management, governance and operational delivery. ",
+        "So the value of the work isn't a file, a table, a report or the start of a process. It is turning real-world information into judgments, data assets and actions others can safely rely on. ",
+        "This film follows the Data Department Work Guidelines in seven parts. It starts with why the work matters, then covers how to do it: framing the problem, making data mean what it says, making delivery verifiable, and working with Agents. It ends with communicating so others can act, and making the next attempt better."
+      ],
+      "text": "A historical price dataset is finished. But can the next person to use it rely on it? They need to know what each number means, which time it describes, what evidence it rests on, and what it may be used for. Researchers backtest with this data, and trading systems control risk with it. A number nobody can explain travels down the whole chain. Every step hands something to the next person: from acquisition and modeling, through development, production and platforms, to product management, governance and operational delivery. So the value of the work isn't a file, a table, a report or the start of a process. It is turning real-world information into judgments, data assets and actions others can safely rely on. This film follows the Data Department Work Guidelines in seven parts. It starts with why the work matters, then covers how to do it: framing the problem, making data mean what it says, making delivery verifiable, and working with Agents. It ends with communicating so others can act, and making the next attempt better.",
+      "spoken_text": "A historical price dataset is finished. But can the next person to use it rely on it? They need to know what each number means, which time it describes, what evidence it rests on, and what it may be used for. Researchers backtest with this data, and trading systems control risk with it. A number nobody can explain travels down the whole chain. Every step hands something to the next person: from acquisition and modeling, through development, production and platforms, to product management, governance and operational delivery. So the value of the work isn't a file, a table, a report or the start of a process. It is turning real-world information into judgments, data assets and actions others can safely rely on. This film follows the Data Department Work Guidelines in seven parts. It starts with why the work matters, then covers how to do it: framing the problem, making data mean what it says, making delivery verifiable, and working with Agents. It ends with communicating so others can act, and making the next attempt better."
+    },
+    {
+      "id": "02",
+      "chapter": "purpose",
+      "chapter_index": 0,
+      "chapter_title": "Why the work matters",
+      "title": "Four failures, three outcomes",
+      "language": "English",
+      "source_sections": [
+        "charter:Purpose"
+      ],
+      "utterance_groups": [
+        "These guidelines are the department's work-quality contract. They target four failures. ",
+        "The first confuses facts with choices: data arriving late is a fact; changing vendors is a choice. ",
+        "The second fixes the symptom and leaves the mechanism alone: someone backfills by hand, and next month it breaks again. ",
+        "The third ends a conversation with nobody able to decide or act. ",
+        "The fourth lets AI produce more material, while judgment and results grow no more reliable. ",
+        "So a task should deliver three outcomes: solve the problem; test the judgment and its limits; and leave the system better able to recognize or handle the next occurrence. ",
+        "Three outcomes, not three reports."
+      ],
+      "text": "These guidelines are the department's work-quality contract. They target four failures. The first confuses facts with choices: data arriving late is a fact; changing vendors is a choice. The second fixes the symptom and leaves the mechanism alone: someone backfills by hand, and next month it breaks again. The third ends a conversation with nobody able to decide or act. The fourth lets AI produce more material, while judgment and results grow no more reliable. So a task should deliver three outcomes: solve the problem; test the judgment and its limits; and leave the system better able to recognize or handle the next occurrence. Three outcomes, not three reports.",
+      "spoken_text": "These guidelines are the department's work-quality contract. They target four failures. The first confuses facts with choices: data arriving late is a fact; changing vendors is a choice. The second fixes the symptom and leaves the mechanism alone: someone backfills by hand, and next month it breaks again. The third ends a conversation with nobody able to decide or act. The fourth lets AI produce more material, while judgment and results grow no more reliable. So a task should deliver three outcomes: solve the problem; test the judgment and its limits; and leave the system better able to recognize or handle the next occurrence. Three outcomes, not three reports."
+    },
+    {
+      "id": "03",
+      "chapter": "purpose",
+      "chapter_index": 0,
+      "chapter_title": "Why the work matters",
+      "title": "Two kinds of authority",
+      "language": "English",
+      "source_sections": [
+        "charter:Two Kinds of Authority",
+        "charter:Four Non-Negotiable Boundaries",
+        "human-agent:Human–AI Collaboration"
+      ],
+      "utterance_groups": [
+        "The guidelines bind members, and the Agents that members delegate to: AI systems that search, reason and act toward a goal. Direction, authorization, decisions and responsibility for consequences stay with people. ",
+        "Two questions need to stay apart: who decides, and what counts as fact. ",
+        "There's an order to who decides. Law, regulation, security requirements and mandatory company policy come first. Within them, the explicit decision of the decision owner for this matter. Then contracts, policies, specifications and decision records in force. Plans, provisional agreements and personal preferences come last. ",
+        "What counts as fact? Primary records and repeatable observations, with a source, time, subject and scope. Second-hand accounts, caches, generated views, Agent output and memory are only clues. ",
+        "Authority cannot make a false fact true, and a fact does not grant permission to act. If a release is set for today but verification finds the data wrong, report the conflict and its impact. Don't alter the record, or silently act as if one side had won. ",
+        "Professional judgment belongs with people who have the competence and the facts; when either is missing, bring in the domain owner. Expertise alone grants no authority to decide or act."
+      ],
+      "text": "The guidelines bind members, and the Agents that members delegate to: AI systems that search, reason and act toward a goal. Direction, authorization, decisions and responsibility for consequences stay with people. Two questions need to stay apart: who decides, and what counts as fact. There's an order to who decides. Law, regulation, security requirements and mandatory company policy come first. Within them, the explicit decision of the decision owner for this matter. Then contracts, policies, specifications and decision records in force. Plans, provisional agreements and personal preferences come last. What counts as fact? Primary records and repeatable observations, with a source, time, subject and scope. Second-hand accounts, caches, generated views, Agent output and memory are only clues. Authority cannot make a false fact true, and a fact does not grant permission to act. If a release is set for today but verification finds the data wrong, report the conflict and its impact. Don't alter the record, or silently act as if one side had won. Professional judgment belongs with people who have the competence and the facts; when either is missing, bring in the domain owner. Expertise alone grants no authority to decide or act.",
+      "spoken_text": "The guidelines bind members, and the Agents that members delegate to: AI systems that search, reason and act toward a goal. Direction, authorization, decisions and responsibility for consequences stay with people. Two questions need to stay apart: who decides, and what counts as fact. There's an order to who decides. Law, regulation, security requirements and mandatory company policy come first. Within them, the explicit decision of the decision owner for this matter. Then contracts, policies, specifications and decision records in force. Plans, provisional agreements and personal preferences come last. What counts as fact? Primary records and repeatable observations, with a source, time, subject and scope. Second-hand accounts, caches, generated views, Agent output and memory are only clues. Authority cannot make a false fact true, and a fact does not grant permission to act. If a release is set for today but verification finds the data wrong, report the conflict and its impact. Don't alter the record, or silently act as if one side had won. Professional judgment belongs with people who have the competence and the facts; when either is missing, bring in the domain owner. Expertise alone grants no authority to decide or act."
+    },
+    {
+      "id": "04",
+      "chapter": "purpose",
+      "chapter_index": 0,
+      "chapter_title": "Why the work matters",
+      "title": "Four boundaries; form follows risk",
+      "language": "English",
+      "source_sections": [
+        "charter:Four Non-Negotiable Boundaries",
+        "charter:Form Follows Risk"
+      ],
+      "utterance_groups": [
+        "Four lines must never be crossed. ",
+        "First, tell the truth: no fabrication, no hiding, no cherry-picking, no uncertainty dressed as certainty. Second, stay within your limits of subject and time, competence and permission, and data, security, compliance and action. ",
+        "Third, name the owner: every important judgment, decision, change and acceptance has an accountable person. Fourth, do not claim false completion: without current evidence matching the claim, call nothing complete, correct, usable or adopted. ",
+        "Inside them, autonomy, exploration and creative work are welcome. When an action would cross one, stop, make it visible, and escalate. After a breach, stop the affected action, disclose it, correct it within your authority, and escalate as the risk requires. ",
+        "Risk sets the process. Local, reversible work with no external commitment can close in one clear exchange that states the conclusion, basis and action. ",
+        "Cross-role or extended work, competing options or material uncertainty call for a reviewable record. ",
+        "High-risk work also needs a written decision, explicit authorization, a rollback or degradation path, independent review and human acceptance. High risk means work touching production, funds, sensitive data, security or compliance, deletion or overwrite, external commitments or irreversible consequences. ",
+        "Lower risk means less process. Every duty still applies."
+      ],
+      "text": "Four lines must never be crossed. First, tell the truth: no fabrication, no hiding, no cherry-picking, no uncertainty dressed as certainty. Second, stay within your limits of subject and time, competence and permission, and data, security, compliance and action. Third, name the owner: every important judgment, decision, change and acceptance has an accountable person. Fourth, do not claim false completion: without current evidence matching the claim, call nothing complete, correct, usable or adopted. Inside them, autonomy, exploration and creative work are welcome. When an action would cross one, stop, make it visible, and escalate. After a breach, stop the affected action, disclose it, correct it within your authority, and escalate as the risk requires. Risk sets the process. Local, reversible work with no external commitment can close in one clear exchange that states the conclusion, basis and action. Cross-role or extended work, competing options or material uncertainty call for a reviewable record. High-risk work also needs a written decision, explicit authorization, a rollback or degradation path, independent review and human acceptance. High risk means work touching production, funds, sensitive data, security or compliance, deletion or overwrite, external commitments or irreversible consequences. Lower risk means less process. Every duty still applies.",
+      "spoken_text": "Four lines must never be crossed. First, tell the truth: no fabrication, no hiding, no cherry-picking, no uncertainty dressed as certainty. Second, stay within your limits of subject and time, competence and permission, and data, security, compliance and action. Third, name the owner: every important judgment, decision, change and acceptance has an accountable person. Fourth, do not claim false completion: without current evidence matching the claim, call nothing complete, correct, usable or adopted. Inside them, autonomy, exploration and creative work are welcome. When an action would cross one, stop, make it visible, and escalate. After a breach, stop the affected action, disclose it, correct it within your authority, and escalate as the risk requires. Risk sets the process. Local, reversible work with no external commitment can close in one clear exchange that states the conclusion, basis and action. Cross-role or extended work, competing options or material uncertainty call for a reviewable record. High-risk work also needs a written decision, explicit authorization, a rollback or degradation path, independent review and human acceptance. High risk means work touching production, funds, sensitive data, security or compliance, deletion or overwrite, external commitments or irreversible consequences. Lower risk means less process. Every duty still applies."
+    },
+    {
+      "id": "05",
+      "chapter": "decide",
+      "chapter_index": 1,
+      "chapter_title": "Framing the problem",
+      "title": "Start from the decision",
+      "language": "English",
+      "source_sections": [
+        "decide:Analysis and Decisions",
+        "decide:Frame the Right Problem"
+      ],
+      "utterance_groups": [
+        "Start by framing the problem. Before analysis, ask which decision it must support: who decides what, and by when. ",
+        "Say a team wants a better data catalog. Is it that people can't find the data? Or do they find it but not know what it means, how good it is, or whether they may use it? Both can be true, and each needs a different fix. ",
+        "So frame the problem: its subject and who is affected, the present state and the baseline, the goal, the success criteria, and what is out of scope. A goal without time, cost, compliance, technical and resource limits is not yet an executable commitment. ",
+        "If the subject, the authority or an irreversible consequence is unclear, stop the affected action and ask the decision owner. ",
+        "Collecting information is not the goal. Say which judgment it could change. An attractive solution that names no subject is not yet a proposal."
+      ],
+      "text": "Start by framing the problem. Before analysis, ask which decision it must support: who decides what, and by when. Say a team wants a better data catalog. Is it that people can't find the data? Or do they find it but not know what it means, how good it is, or whether they may use it? Both can be true, and each needs a different fix. So frame the problem: its subject and who is affected, the present state and the baseline, the goal, the success criteria, and what is out of scope. A goal without time, cost, compliance, technical and resource limits is not yet an executable commitment. If the subject, the authority or an irreversible consequence is unclear, stop the affected action and ask the decision owner. Collecting information is not the goal. Say which judgment it could change. An attractive solution that names no subject is not yet a proposal.",
+      "spoken_text": "Start by framing the problem. Before analysis, ask which decision it must support: who decides what, and by when. Say a team wants a better data catalog. Is it that people can't find the data? Or do they find it but not know what it means, how good it is, or whether they may use it? Both can be true, and each needs a different fix. So frame the problem: its subject and who is affected, the present state and the baseline, the goal, the success criteria, and what is out of scope. A goal without time, cost, compliance, technical and resource limits is not yet an executable commitment. If the subject, the authority or an irreversible consequence is unclear, stop the affected action and ask the decision owner. Collecting information is not the goal. Say which judgment it could change. An attractive solution that names no subject is not yet a proposal."
+    },
+    {
+      "id": "06",
+      "chapter": "decide",
+      "chapter_index": 1,
+      "chapter_title": "Framing the problem",
+      "title": "Six kinds of statement",
+      "language": "English",
+      "source_sections": [
+        "decide:Keep Six Meanings Distinct"
+      ],
+      "utterance_groups": [
+        "Six kinds of statement need to stay distinct. Take an illustrative case: last night's price collection ran two hours late. ",
+        "Two hours late is a recorded fact. Late publication by the vendor is an untested hypothesis. If publication was on time but the job started late, scheduling may explain the delay. That is an inference, and other explanations still need ruling out. ",
+        "By the timeliness standard, this delivery failed. That is a judgment. Starting the job earlier is a decision, and the decision owner makes it. Who makes the change, and by when, is the action. ",
+        "A fact states its source, subject, time and scope; a hypothesis, what would refute it; an inference, its reasoning and alternative explanations. ",
+        "A judgment states its criterion, confidence and limits; a decision, who made it, the trade-off, and what would trigger a revisit; an action, its owner, deadline and completion condition. ",
+        "A second-hand account, a cache, an Agent's analysis, or a remark like “this is usually true”: each is only a clue until verified."
+      ],
+      "text": "Six kinds of statement need to stay distinct. Take an illustrative case: last night's price collection ran two hours late. Two hours late is a recorded fact. Late publication by the vendor is an untested hypothesis. If publication was on time but the job started late, scheduling may explain the delay. That is an inference, and other explanations still need ruling out. By the timeliness standard, this delivery failed. That is a judgment. Starting the job earlier is a decision, and the decision owner makes it. Who makes the change, and by when, is the action. A fact states its source, subject, time and scope; a hypothesis, what would refute it; an inference, its reasoning and alternative explanations. A judgment states its criterion, confidence and limits; a decision, who made it, the trade-off, and what would trigger a revisit; an action, its owner, deadline and completion condition. A second-hand account, a cache, an Agent's analysis, or a remark like “this is usually true”: each is only a clue until verified.",
+      "spoken_text": "Six kinds of statement need to stay distinct. Take an illustrative case: last night's price collection ran two hours late. Two hours late is a recorded fact. Late publication by the vendor is an untested hypothesis. If publication was on time but the job started late, scheduling may explain the delay. That is an inference, and other explanations still need ruling out. By the timeliness standard, this delivery failed. That is a judgment. Starting the job earlier is a decision, and the decision owner makes it. Who makes the change, and by when, is the action. A fact states its source, subject, time and scope; a hypothesis, what would refute it; an inference, its reasoning and alternative explanations. A judgment states its criterion, confidence and limits; a decision, who made it, the trade-off, and what would trigger a revisit; an action, its owner, deadline and completion condition. A second-hand account, a cache, an Agent's analysis, or a remark like “this is usually true”: each is only a clue until verified."
+    },
+    {
+      "id": "07",
+      "chapter": "decide",
+      "chapter_index": 1,
+      "chapter_title": "Framing the problem",
+      "title": "The smallest sufficient model",
+      "language": "English",
+      "source_sections": [
+        "decide:Use the Smallest Sufficient Model",
+        "decide:Check the Reasoning"
+      ],
+      "utterance_groups": [
+        "Understanding a problem takes the smallest model that will do, not a longer list. ",
+        "First, model the relationships: one meaning per concept within a discussion, then the causes, dependencies, constraints and feedback. Don't force interacting parts into separate boxes, or count one effect twice. ",
+        "Next, pin down the observations: give important facts their source and time, and say how each unknown affects the decision. ",
+        "Then test the hypotheses. Look for counterexamples, check the baseline, and consider not acting. Prefer the smallest experiment that separates the plausible explanations. And being easy to test does not make an explanation more likely. ",
+        "Take last night's delay. Checking the vendor's publication time separates two explanations: did the vendor publish late, or did our job start late? ",
+        "Before trusting a conclusion, check the reasoning for traps such as a correlation presented as a cause, one case taken for the whole, a necessary condition treated as sufficient, one outcome blamed on a single cause, or best practice cited without its limits. ",
+        "Finally, bound the conclusion: what the evidence supports, how confident you are, what remains possible, what to verify next, and what new observation would change your mind."
+      ],
+      "text": "Understanding a problem takes the smallest model that will do, not a longer list. First, model the relationships: one meaning per concept within a discussion, then the causes, dependencies, constraints and feedback. Don't force interacting parts into separate boxes, or count one effect twice. Next, pin down the observations: give important facts their source and time, and say how each unknown affects the decision. Then test the hypotheses. Look for counterexamples, check the baseline, and consider not acting. Prefer the smallest experiment that separates the plausible explanations. And being easy to test does not make an explanation more likely. Take last night's delay. Checking the vendor's publication time separates two explanations: did the vendor publish late, or did our job start late? Before trusting a conclusion, check the reasoning for traps such as a correlation presented as a cause, one case taken for the whole, a necessary condition treated as sufficient, one outcome blamed on a single cause, or best practice cited without its limits. Finally, bound the conclusion: what the evidence supports, how confident you are, what remains possible, what to verify next, and what new observation would change your mind.",
+      "spoken_text": "Understanding a problem takes the smallest model that will do, not a longer list. First, model the relationships: one meaning per concept within a discussion, then the causes, dependencies, constraints and feedback. Don't force interacting parts into separate boxes, or count one effect twice. Next, pin down the observations: give important facts their source and time, and say how each unknown affects the decision. Then test the hypotheses. Look for counterexamples, check the baseline, and consider not acting. Prefer the smallest experiment that separates the plausible explanations. And being easy to test does not make an explanation more likely. Take last night's delay. Checking the vendor's publication time separates two explanations: did the vendor publish late, or did our job start late? Before trusting a conclusion, check the reasoning for traps such as a correlation presented as a cause, one case taken for the whole, a necessary condition treated as sufficient, one outcome blamed on a single cause, or best practice cited without its limits. Finally, bound the conclusion: what the evidence supports, how confident you are, what remains possible, what to verify next, and what new observation would change your mind."
+    },
+    {
+      "id": "08",
+      "chapter": "decide",
+      "chapter_index": 1,
+      "chapter_title": "Framing the problem",
+      "title": "Diagnose, then compare",
+      "language": "English",
+      "source_sections": [
+        "decide:Diagnose a Failure and Its Prevention Gap",
+        "decide:Make the Choice Comparable and Actionable",
+        "decide:Decision Readiness"
+      ],
+      "utterance_groups": [
+        "When something fails, keep the original symptom and timeline. Find the direct cause, and ask why the existing system did not prevent or detect it in time. Containment, repair and prevention are three layers. Doing only the first two is not a systemic fix. ",
+        "When choosing, compare the feasible options, including the status quo, on the same basis: benefit, cost, risk, reversibility and opportunity cost. Novelty, completeness or popularity do not prove a fit. ",
+        "A recommendation states its premises, the strongest objection, the first step, and what would trigger a revisit. ",
+        "The decision owner decides. “Agreed in principle” and “keep going” are not decisions. Instead, say: ready for decision, blocked, or deferred. When new facts overturn a conclusion, correct it, rather than defending sunk costs."
+      ],
+      "text": "When something fails, keep the original symptom and timeline. Find the direct cause, and ask why the existing system did not prevent or detect it in time. Containment, repair and prevention are three layers. Doing only the first two is not a systemic fix. When choosing, compare the feasible options, including the status quo, on the same basis: benefit, cost, risk, reversibility and opportunity cost. Novelty, completeness or popularity do not prove a fit. A recommendation states its premises, the strongest objection, the first step, and what would trigger a revisit. The decision owner decides. “Agreed in principle” and “keep going” are not decisions. Instead, say: ready for decision, blocked, or deferred. When new facts overturn a conclusion, correct it, rather than defending sunk costs.",
+      "spoken_text": "When something fails, keep the original symptom and timeline. Find the direct cause, and ask why the existing system did not prevent or detect it in time. Containment, repair and prevention are three layers. Doing only the first two is not a systemic fix. When choosing, compare the feasible options, including the status quo, on the same basis: benefit, cost, risk, reversibility and opportunity cost. Novelty, completeness or popularity do not prove a fit. A recommendation states its premises, the strongest objection, the first step, and what would trigger a revisit. The decision owner decides. “Agreed in principle” and “keep going” are not decisions. Instead, say: ready for decision, blocked, or deferred. When new facts overturn a conclusion, correct it, rather than defending sunk costs."
+    },
+    {
+      "id": "09",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "Qualify data for a use",
+      "language": "English",
+      "source_sections": [
+        "data:Data Quality and Adoption",
+        "data:Answer Six Questions First"
+      ],
+      "utterance_groups": [
+        "With the problem framed, we turn to data. Data earns trust only after it is shown fit for a specific use. ",
+        "A file that opens, a chart that looks right, a promising model signal: none of them alone establishes meaning, quality, permission, or reproducibility. ",
+        "So ask six questions. Where did it come from? When did it become available? What does it mean? What changed it? How good is it? And how may it be used? ",
+        "Data that cannot answer them may be explored within its authorized scope, but stays out of shared, production and decision work until it is shown fit. Reports, catalogs, caches and Agent summaries are all derived from other data, and none may quietly become the source of truth."
+      ],
+      "text": "With the problem framed, we turn to data. Data earns trust only after it is shown fit for a specific use. A file that opens, a chart that looks right, a promising model signal: none of them alone establishes meaning, quality, permission, or reproducibility. So ask six questions. Where did it come from? When did it become available? What does it mean? What changed it? How good is it? And how may it be used? Data that cannot answer them may be explored within its authorized scope, but stays out of shared, production and decision work until it is shown fit. Reports, catalogs, caches and Agent summaries are all derived from other data, and none may quietly become the source of truth.",
+      "spoken_text": "With the problem framed, we turn to data. Data earns trust only after it is shown fit for a specific use. A file that opens, a chart that looks right, a promising model signal: none of them alone establishes meaning, quality, permission, or reproducibility. So ask six questions. Where did it come from? When did it become available? What does it mean? What changed it? How good is it? And how may it be used? Data that cannot answer them may be explored within its authorized scope, but stays out of shared, production and decision work until it is shown fit. Reports, catalogs, caches and Agent summaries are all derived from other data, and none may quietly become the source of truth."
+    },
+    {
+      "id": "10",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "Five moments",
+      "language": "English",
+      "source_sections": [
+        "data:Preserve the Historical Point of View",
+        "data:Answer Six Questions First"
+      ],
+      "utterance_groups": [
+        "One price carries at least five moments. ",
+        "A trade sets it in the market. The vendor publishes it. We collect it, then write it into the receiving system. ",
+        "Finally, it becomes available to the people or systems that need it. ",
+        "That last moment is availability time. ",
+        "It is not when you look the value up today: available now does not mean available then. ",
+        "Keep the history of revisions, backfills and derivations, so you can explain each value and when it became available."
+      ],
+      "text": "One price carries at least five moments. A trade sets it in the market. The vendor publishes it. We collect it, then write it into the receiving system. Finally, it becomes available to the people or systems that need it. That last moment is availability time. It is not when you look the value up today: available now does not mean available then. Keep the history of revisions, backfills and derivations, so you can explain each value and when it became available.",
+      "spoken_text": "One price carries at least five moments. A trade sets it in the market. The vendor publishes it. We collect it, then write it into the receiving system. Finally, it becomes available to the people or systems that need it. That last moment is availability time. It is not when you look the value up today: available now does not mean available then. Keep the history of revisions, backfills and derivations, so you can explain each value and when it became available."
+    },
+    {
+      "id": "11",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "What we see now is not what we knew then",
+      "language": "English",
+      "source_sections": [
+        "data:Preserve the Historical Point of View",
+        "data:Worked decision: revised market history"
+      ],
+      "utterance_groups": [
+        "Here is an illustrative case. ",
+        "A vendor corrects a stretch of historical prices, and a researcher wants to backtest a strategy, simulating decisions made before the correction. ",
+        "The test needs the values available at each decision time, not today's corrected series. ",
+        "Without knowing when each value first became available, the backtest cannot claim it used only what was available then. ",
+        "Find the earlier snapshots and correction history. Authorized exploration may continue, if it states that the timing is unproven. ",
+        "If a value became available only after the decision, the decision could never have used it. Replace or exclude it, and rerun the test. ",
+        "Bias may hide elsewhere: in sample selection, changed tickers or issuers, the trading calendar, or keeping only today's survivors. ",
+        "Say how missing, late or conflicting data changes the conclusion, and claim no more than the evidence supports. ",
+        "Today's accurate feed cannot prove what was available then. ",
+        "Within its delegation, an Agent may locate snapshots, compare revisions and rerun the test, but cannot grant admission: permission for one specific use under stated conditions. ",
+        "The task lead, who answers for the whole result, takes the evidence and the open risks to the decision owner and the acceptor."
+      ],
+      "text": "Here is an illustrative case. A vendor corrects a stretch of historical prices, and a researcher wants to backtest a strategy, simulating decisions made before the correction. The test needs the values available at each decision time, not today's corrected series. Without knowing when each value first became available, the backtest cannot claim it used only what was available then. Find the earlier snapshots and correction history. Authorized exploration may continue, if it states that the timing is unproven. If a value became available only after the decision, the decision could never have used it. Replace or exclude it, and rerun the test. Bias may hide elsewhere: in sample selection, changed tickers or issuers, the trading calendar, or keeping only today's survivors. Say how missing, late or conflicting data changes the conclusion, and claim no more than the evidence supports. Today's accurate feed cannot prove what was available then. Within its delegation, an Agent may locate snapshots, compare revisions and rerun the test, but cannot grant admission: permission for one specific use under stated conditions. The task lead, who answers for the whole result, takes the evidence and the open risks to the decision owner and the acceptor.",
+      "spoken_text": "Here is an illustrative case. A vendor corrects a stretch of historical prices, and a researcher wants to backtest a strategy, simulating decisions made before the correction. The test needs the values available at each decision time, not today's corrected series. Without knowing when each value first became available, the backtest cannot claim it used only what was available then. Find the earlier snapshots and correction history. Authorized exploration may continue, if it states that the timing is unproven. If a value became available only after the decision, the decision could never have used it. Replace or exclude it, and rerun the test. Bias may hide elsewhere: in sample selection, changed tickers or issuers, the trading calendar, or keeping only today's survivors. Say how missing, late or conflicting data changes the conclusion, and claim no more than the evidence supports. Today's accurate feed cannot prove what was available then. Within its delegation, an Agent may locate snapshots, compare revisions and rerun the test, but cannot grant admission: permission for one specific use under stated conditions. The task lead, who answers for the whole result, takes the evidence and the open risks to the decision owner and the acceptor."
+    },
+    {
+      "id": "12",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "From signal to controlled use",
+      "language": "English",
+      "source_sections": [
+        "data:Admit a Durable Data Asset",
+        "data:Move from a Signal to Controlled Use"
+      ],
+      "utterance_groups": [
+        "Before data enters a lasting work system, eight conditions must all hold. Its meaning is explainable, its source traceable, its time identifiable. Its process is reproducible, its quality verifiable, its operation observable. Its owner is identifiable, and its use is bounded. ",
+        "If any condition is unmet, label the data exploratory, temporary, limited-use, or awaiting verification; a limited use needs its own evidence and permission. ",
+        "From a signal to controlled use, ask the questions that apply to the intended use; they are not mandatory stages. Is evaluation worthwhile? What is the data? Can the key findings be reproduced? Can it run reliably? May it serve this use? And does feedback support continuing? ",
+        "Technically possible does not mean worth doing. A signal does not mean production-ready. Deployed does not mean admitted for every use. ",
+        "Admission permits a specified use, like that backtest, under stated conditions, before it begins. Adoption is that use actually observed within them."
+      ],
+      "text": "Before data enters a lasting work system, eight conditions must all hold. Its meaning is explainable, its source traceable, its time identifiable. Its process is reproducible, its quality verifiable, its operation observable. Its owner is identifiable, and its use is bounded. If any condition is unmet, label the data exploratory, temporary, limited-use, or awaiting verification; a limited use needs its own evidence and permission. From a signal to controlled use, ask the questions that apply to the intended use; they are not mandatory stages. Is evaluation worthwhile? What is the data? Can the key findings be reproduced? Can it run reliably? May it serve this use? And does feedback support continuing? Technically possible does not mean worth doing. A signal does not mean production-ready. Deployed does not mean admitted for every use. Admission permits a specified use, like that backtest, under stated conditions, before it begins. Adoption is that use actually observed within them.",
+      "spoken_text": "Before data enters a lasting work system, eight conditions must all hold. Its meaning is explainable, its source traceable, its time identifiable. Its process is reproducible, its quality verifiable, its operation observable. Its owner is identifiable, and its use is bounded. If any condition is unmet, label the data exploratory, temporary, limited-use, or awaiting verification; a limited use needs its own evidence and permission. From a signal to controlled use, ask the questions that apply to the intended use; they are not mandatory stages. Is evaluation worthwhile? What is the data? Can the key findings be reproduced? Can it run reliably? May it serve this use? And does feedback support continuing? Technically possible does not mean worth doing. A signal does not mean production-ready. Deployed does not mean admitted for every use. Admission permits a specified use, like that backtest, under stated conditions, before it begins. Adoption is that use actually observed within them."
+    },
+    {
+      "id": "13",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "Changing a shared identifier",
+      "language": "English",
+      "source_sections": [
+        "data:Ownership and Change Boundaries",
+        "data:Assign Modeling and Lifecycle Decisions",
+        "data:Worked change: a shared issuer identifier"
+      ],
+      "utterance_groups": [
+        "Now an illustrative change. A shared dataset changes its issuer identifier. Local tests pass, but a downstream factor calculation still joins on the old one, and may match the wrong entities or lose some matches. ",
+        "Several decisions are now open. Authorized domain owners settle entities, relationships, rules and metric meanings. The data-model owner settles the grain, meaning what one row stands for, the IDs and keys, constraints, and the time and version rules. A convenient schema cannot resolve a conflict of meaning. ",
+        "Development checks the joins, technical owners check compatibility, the product owner identifies dependent consumers and their migration paths, production plans the release and recovery, and governance confirms permission and the exit conditions that end the use. ",
+        "These are responsibilities, not seats. Where authority and risk permit, one person or team may hold several. One accountable task lead coordinates them without taking over anyone's authority. ",
+        "Before the old identifier is retired, show that every affected consumer has migrated, or that the decision owner has ended its use. A deprecation notice alone does not prove migration."
+      ],
+      "text": "Now an illustrative change. A shared dataset changes its issuer identifier. Local tests pass, but a downstream factor calculation still joins on the old one, and may match the wrong entities or lose some matches. Several decisions are now open. Authorized domain owners settle entities, relationships, rules and metric meanings. The data-model owner settles the grain, meaning what one row stands for, the IDs and keys, constraints, and the time and version rules. A convenient schema cannot resolve a conflict of meaning. Development checks the joins, technical owners check compatibility, the product owner identifies dependent consumers and their migration paths, production plans the release and recovery, and governance confirms permission and the exit conditions that end the use. These are responsibilities, not seats. Where authority and risk permit, one person or team may hold several. One accountable task lead coordinates them without taking over anyone's authority. Before the old identifier is retired, show that every affected consumer has migrated, or that the decision owner has ended its use. A deprecation notice alone does not prove migration.",
+      "spoken_text": "Now an illustrative change. A shared dataset changes its issuer identifier. Local tests pass, but a downstream factor calculation still joins on the old one, and may match the wrong entities or lose some matches. Several decisions are now open. Authorized domain owners settle entities, relationships, rules and metric meanings. The data-model owner settles the grain, meaning what one row stands for, the IDs and keys, constraints, and the time and version rules. A convenient schema cannot resolve a conflict of meaning. Development checks the joins, technical owners check compatibility, the product owner identifies dependent consumers and their migration paths, production plans the release and recovery, and governance confirms permission and the exit conditions that end the use. These are responsibilities, not seats. Where authority and risk permit, one person or team may hold several. One accountable task lead coordinates them without taking over anyone's authority. Before the old identifier is retired, show that every affected consumer has migrated, or that the decision owner has ended its use. A deprecation notice alone does not prove migration."
+    },
+    {
+      "id": "14",
+      "chapter": "data",
+      "chapter_index": 2,
+      "chapter_title": "Making data mean what it says",
+      "title": "Implementation, verification, production change",
+      "language": "English",
+      "source_sections": [
+        "data:Own Implementation and Verification",
+        "data:Change Shared or Production Data"
+      ],
+      "utterance_groups": [
+        "Engineering owners carry a result from requirements and design through implementation, verification, release, operational feedback and improvement, as the work requires. Development and verification are two activities within one responsibility. Quality is not passed to the next stage. ",
+        "Before handing a result over, its owner states the model and criteria tested; the actual inputs, version, environment, method and results, with what was not covered; and each failure, how it was handled, and who owns the remaining risk. ",
+        "Changes to production, shared assets or critical management chains, such as risk control or regulatory reporting, need more: a defined subject, impact, task lead and authority; inputs, logic, versions and outputs that can be rerun exactly; tests, acceptance against the agreed criteria, and watching how it runs; and a release window with a rollback or degradation path. ",
+        "They also need security, permission and sensitive-data checks; conditions to escalate, hand control to a person, or stop; and evidence bound to the current version and environment. ",
+        "The decision owner must approve high-risk use admission, permission changes, production releases, deletion or overwrite, and irreversible actions. An Agent may implement or help verify them within its delegation. It cannot approve them."
+      ],
+      "text": "Engineering owners carry a result from requirements and design through implementation, verification, release, operational feedback and improvement, as the work requires. Development and verification are two activities within one responsibility. Quality is not passed to the next stage. Before handing a result over, its owner states the model and criteria tested; the actual inputs, version, environment, method and results, with what was not covered; and each failure, how it was handled, and who owns the remaining risk. Changes to production, shared assets or critical management chains, such as risk control or regulatory reporting, need more: a defined subject, impact, task lead and authority; inputs, logic, versions and outputs that can be rerun exactly; tests, acceptance against the agreed criteria, and watching how it runs; and a release window with a rollback or degradation path. They also need security, permission and sensitive-data checks; conditions to escalate, hand control to a person, or stop; and evidence bound to the current version and environment. The decision owner must approve high-risk use admission, permission changes, production releases, deletion or overwrite, and irreversible actions. An Agent may implement or help verify them within its delegation. It cannot approve them.",
+      "spoken_text": "Engineering owners carry a result from requirements and design through implementation, verification, release, operational feedback and improvement, as the work requires. Development and verification are two activities within one responsibility. Quality is not passed to the next stage. Before handing a result over, its owner states the model and criteria tested; the actual inputs, version, environment, method and results, with what was not covered; and each failure, how it was handled, and who owns the remaining risk. Changes to production, shared assets or critical management chains, such as risk control or regulatory reporting, need more: a defined subject, impact, task lead and authority; inputs, logic, versions and outputs that can be rerun exactly; tests, acceptance against the agreed criteria, and watching how it runs; and a release window with a rollback or degradation path. They also need security, permission and sensitive-data checks; conditions to escalate, hand control to a person, or stop; and evidence bound to the current version and environment. The decision owner must approve high-risk use admission, permission changes, production releases, deletion or overwrite, and irreversible actions. An Agent may implement or help verify them within its delegation. It cannot approve them."
+    },
+    {
+      "id": "15",
+      "chapter": "deliver",
+      "chapter_index": 3,
+      "chapter_title": "Making delivery verifiable",
+      "title": "The chain of trust",
+      "language": "English",
+      "source_sections": [
+        "deliver:Execution and Delivery",
+        "deliver:Before Acting"
+      ],
+      "utterance_groups": [
+        "Trusted data still needs delivery that can be verified. Before acting, make the commitment, owner and completion condition visible. ",
+        "Delivery follows a chain of trust. Take last night's delay: the decision owner approves an earlier start and its limits; the job is changed within them; current runs give evidence; the claim stays within that evidence; then come acceptance and learning. ",
+        "Lower risk means less process, but the chain cannot skip a link. ",
+        "Before changing anything, check the actual target, version, environment, current state, concurrent work and recovery path. Expose a blocked critical path at once. Don't wait for dependent work to fail. ",
+        "If scope or risk changes materially, return to the decision owner, and record the change and decision in the existing work record."
+      ],
+      "text": "Trusted data still needs delivery that can be verified. Before acting, make the commitment, owner and completion condition visible. Delivery follows a chain of trust. Take last night's delay: the decision owner approves an earlier start and its limits; the job is changed within them; current runs give evidence; the claim stays within that evidence; then come acceptance and learning. Lower risk means less process, but the chain cannot skip a link. Before changing anything, check the actual target, version, environment, current state, concurrent work and recovery path. Expose a blocked critical path at once. Don't wait for dependent work to fail. If scope or risk changes materially, return to the decision owner, and record the change and decision in the existing work record.",
+      "spoken_text": "Trusted data still needs delivery that can be verified. Before acting, make the commitment, owner and completion condition visible. Delivery follows a chain of trust. Take last night's delay: the decision owner approves an earlier start and its limits; the job is changed within them; current runs give evidence; the claim stays within that evidence; then come acceptance and learning. Lower risk means less process, but the chain cannot skip a link. Before changing anything, check the actual target, version, environment, current state, concurrent work and recovery path. Expose a blocked critical path at once. Don't wait for dependent work to fail. If scope or risk changes materially, return to the decision owner, and record the change and decision in the existing work record."
+    },
+    {
+      "id": "16",
+      "chapter": "deliver",
+      "chapter_index": 3,
+      "chapter_title": "Making delivery verifiable",
+      "title": "Name the state, not the effort",
+      "language": "English",
+      "source_sections": [
+        "deliver:Name the State, Not the Effort"
+      ],
+      "utterance_groups": [
+        "Report the state, not the effort. ",
+        "With the problem, scope or completion condition still missing, work is unframed. With a route and an owner but no action yet, it is planned. Under way but not yet verified, it is executing. ",
+        "The deliverable exists but checks have not passed: awaiting verification. Checks passed for a stated subject, version, environment and limit: verified. Confirmed by an authorized acceptor: accepted. ",
+        "Published at the agreed destination does not mean adopted. To claim adoption, say what use was actually observed. ",
+        "Work that's executing is not “almost done”. When blocked, name the gap, its impact and the escalation, and keep moving on independent, authorized work."
+      ],
+      "text": "Report the state, not the effort. With the problem, scope or completion condition still missing, work is unframed. With a route and an owner but no action yet, it is planned. Under way but not yet verified, it is executing. The deliverable exists but checks have not passed: awaiting verification. Checks passed for a stated subject, version, environment and limit: verified. Confirmed by an authorized acceptor: accepted. Published at the agreed destination does not mean adopted. To claim adoption, say what use was actually observed. Work that's executing is not “almost done”. When blocked, name the gap, its impact and the escalation, and keep moving on independent, authorized work.",
+      "spoken_text": "Report the state, not the effort. With the problem, scope or completion condition still missing, work is unframed. With a route and an owner but no action yet, it is planned. Under way but not yet verified, it is executing. The deliverable exists but checks have not passed: awaiting verification. Checks passed for a stated subject, version, environment and limit: verified. Confirmed by an authorized acceptor: accepted. Published at the agreed destination does not mean adopted. To claim adoption, say what use was actually observed. Work that's executing is not “almost done”. When blocked, name the gap, its impact and the escalation, and keep moving on independent, authorized work."
+    },
+    {
+      "id": "17",
+      "chapter": "deliver",
+      "chapter_index": 3,
+      "chapter_title": "Making delivery verifiable",
+      "title": "Evidence sets the limit of the claim",
+      "language": "English",
+      "source_sections": [
+        "deliver:Close the Work",
+        "deliver:Evidence Sets the Limit of the Claim"
+      ],
+      "utterance_groups": [
+        "Say complete only when every condition holds. The deliverable is at the agreed location. Every completion criterion is met. Current verification matching the claim has passed. Risks, limits and follow-up owners are recorded. The agreed state is reached. And where human acceptance is required, the acceptor has accepted it. ",
+        "Every completion claim answers the same questions. What is claimed, about which subject and version? Verified when, by whom, and how? Covering what, and leaving what unproved? ",
+        "A passing test is not acceptance. An exact copy can still mean the wrong thing. A merged change is not published. Published is not effective or adopted. And an Agent reporting completion does not make the work complete. ",
+        "When evidence is missing, narrow the claim. Don't inflate the wording."
+      ],
+      "text": "Say complete only when every condition holds. The deliverable is at the agreed location. Every completion criterion is met. Current verification matching the claim has passed. Risks, limits and follow-up owners are recorded. The agreed state is reached. And where human acceptance is required, the acceptor has accepted it. Every completion claim answers the same questions. What is claimed, about which subject and version? Verified when, by whom, and how? Covering what, and leaving what unproved? A passing test is not acceptance. An exact copy can still mean the wrong thing. A merged change is not published. Published is not effective or adopted. And an Agent reporting completion does not make the work complete. When evidence is missing, narrow the claim. Don't inflate the wording.",
+      "spoken_text": "Say complete only when every condition holds. The deliverable is at the agreed location. Every completion criterion is met. Current verification matching the claim has passed. Risks, limits and follow-up owners are recorded. The agreed state is reached. And where human acceptance is required, the acceptor has accepted it. Every completion claim answers the same questions. What is claimed, about which subject and version? Verified when, by whom, and how? Covering what, and leaving what unproved? A passing test is not acceptance. An exact copy can still mean the wrong thing. A merged change is not published. Published is not effective or adopted. And an Agent reporting completion does not make the work complete. When evidence is missing, narrow the claim. Don't inflate the wording."
+    },
+    {
+      "id": "18",
+      "chapter": "deliver",
+      "chapter_index": 3,
+      "chapter_title": "Making delivery verifiable",
+      "title": "The working loop",
+      "language": "English",
+      "source_sections": [
+        "deliver:The Working Loop",
+        "deliver:Close the Work"
+      ],
+      "utterance_groups": [
+        "The work runs as a loop, not a fixed sequence of stages: frame, analyze, decide, execute, verify, learn. When evidence or risk changes, review the judgment it affects; when the subject, outcome or boundaries change, frame the work again, keeping the verified parts that still hold. ",
+        "Before calling high-impact or repeated work complete, leave the test, monitor, rule or recovery path it needs with the existing owners, so the next occurrence is found earlier and judged more easily. ",
+        "Fixing last night's delay can leave a monitor on the schedule that warns whenever publication runs past the agreed time. ",
+        "But don't create an evidence directory nobody uses, or a report nobody reads, just to prove effort."
+      ],
+      "text": "The work runs as a loop, not a fixed sequence of stages: frame, analyze, decide, execute, verify, learn. When evidence or risk changes, review the judgment it affects; when the subject, outcome or boundaries change, frame the work again, keeping the verified parts that still hold. Before calling high-impact or repeated work complete, leave the test, monitor, rule or recovery path it needs with the existing owners, so the next occurrence is found earlier and judged more easily. Fixing last night's delay can leave a monitor on the schedule that warns whenever publication runs past the agreed time. But don't create an evidence directory nobody uses, or a report nobody reads, just to prove effort.",
+      "spoken_text": "The work runs as a loop, not a fixed sequence of stages: frame, analyze, decide, execute, verify, learn. When evidence or risk changes, review the judgment it affects; when the subject, outcome or boundaries change, frame the work again, keeping the verified parts that still hold. Before calling high-impact or repeated work complete, leave the test, monitor, rule or recovery path it needs with the existing owners, so the next occurrence is found earlier and judged more easily. Fixing last night's delay can leave a monitor on the schedule that warns whenever publication runs past the agreed time. But don't create an evidence directory nobody uses, or a report nobody reads, just to prove effort."
+    },
+    {
+      "id": "19",
+      "chapter": "human-agent",
+      "chapter_index": 4,
+      "chapter_title": "Working with Agents",
+      "title": "Delegate a boundary",
+      "language": "English",
+      "source_sections": [
+        "human-agent:Human–AI Collaboration",
+        "human-agent:Delegate a Boundary, Not a Pile of Context"
+      ],
+      "utterance_groups": [
+        "Members delegate search, analysis, drafting and changes to Agents. Agents extend what people can investigate, reason about and do, within a delegated boundary. But an Agent is not a source of organizational authority. ",
+        "So delegate with a clear boundary, not a pile of context. A consequential delegation states its purpose and scope, the deliverable, the limits and permissions, how the result will be accepted, and when to stop. ",
+        "For example: compare the vendor's earlier and revised price snapshots without changing anything. Report each value's source and observation time, the differences, and what cannot be verified. Stop if the earlier snapshot is missing or a write to production would be needed. Do not grant admission. ",
+        "Telling an Agent to “just handle it” does not set an authorization boundary. ",
+        "If missing context does not materially affect direction, safety or authority, the Agent proceeds on reasonable stated assumptions. If the target, source of truth, responsible person, authority or an irreversible consequence is unclear, it stops and asks."
+      ],
+      "text": "Members delegate search, analysis, drafting and changes to Agents. Agents extend what people can investigate, reason about and do, within a delegated boundary. But an Agent is not a source of organizational authority. So delegate with a clear boundary, not a pile of context. A consequential delegation states its purpose and scope, the deliverable, the limits and permissions, how the result will be accepted, and when to stop. For example: compare the vendor's earlier and revised price snapshots without changing anything. Report each value's source and observation time, the differences, and what cannot be verified. Stop if the earlier snapshot is missing or a write to production would be needed. Do not grant admission. Telling an Agent to “just handle it” does not set an authorization boundary. If missing context does not materially affect direction, safety or authority, the Agent proceeds on reasonable stated assumptions. If the target, source of truth, responsible person, authority or an irreversible consequence is unclear, it stops and asks.",
+      "spoken_text": "Members delegate search, analysis, drafting and changes to Agents. Agents extend what people can investigate, reason about and do, within a delegated boundary. But an Agent is not a source of organizational authority. So delegate with a clear boundary, not a pile of context. A consequential delegation states its purpose and scope, the deliverable, the limits and permissions, how the result will be accepted, and when to stop. For example: compare the vendor's earlier and revised price snapshots without changing anything. Report each value's source and observation time, the differences, and what cannot be verified. Stop if the earlier snapshot is missing or a write to production would be needed. Do not grant admission. Telling an Agent to “just handle it” does not set an authorization boundary. If missing context does not materially affect direction, safety or authority, the Agent proceeds on reasonable stated assumptions. If the target, source of truth, responsible person, authority or an irreversible consequence is unclear, it stops and asks."
+    },
+    {
+      "id": "20",
+      "chapter": "human-agent",
+      "chapter_index": 4,
+      "chapter_title": "Working with Agents",
+      "title": "Delegation transfers work, not duty",
+      "language": "English",
+      "source_sections": [
+        "human-agent:Delegate a Boundary, Not a Pile of Context",
+        "human-agent:Execute and Verify"
+      ],
+      "utterance_groups": [
+        "A piece of work can involve a task lead, an executing member, an Agent, a reviewer and an acceptor. Where policy permits, the task lead, the decision owner and the acceptor may be one person, but a title alone grants no power to decide or accept. ",
+        "The person who calls an Agent owns its context, permissions, verification and result. Submitting Agent-assisted work means you have understood and checked it, and accept its consequences. ",
+        "Delegation transfers the work, not that duty. ",
+        "The acceptor examines the actual work and evidence. If the agreed conditions are unmet, the work goes back to the member for revision within the delegation boundary. If they are met, it is accepted, recorded and handed off. Acceptance never expands permission."
+      ],
+      "text": "A piece of work can involve a task lead, an executing member, an Agent, a reviewer and an acceptor. Where policy permits, the task lead, the decision owner and the acceptor may be one person, but a title alone grants no power to decide or accept. The person who calls an Agent owns its context, permissions, verification and result. Submitting Agent-assisted work means you have understood and checked it, and accept its consequences. Delegation transfers the work, not that duty. The acceptor examines the actual work and evidence. If the agreed conditions are unmet, the work goes back to the member for revision within the delegation boundary. If they are met, it is accepted, recorded and handed off. Acceptance never expands permission.",
+      "spoken_text": "A piece of work can involve a task lead, an executing member, an Agent, a reviewer and an acceptor. Where policy permits, the task lead, the decision owner and the acceptor may be one person, but a title alone grants no power to decide or accept. The person who calls an Agent owns its context, permissions, verification and result. Submitting Agent-assisted work means you have understood and checked it, and accept its consequences. Delegation transfers the work, not that duty. The acceptor examines the actual work and evidence. If the agreed conditions are unmet, the work goes back to the member for revision within the delegation boundary. If they are met, it is accepted, recorded and handed off. Acceptance never expands permission."
+    },
+    {
+      "id": "21",
+      "chapter": "human-agent",
+      "chapter_index": 4,
+      "chapter_title": "Working with Agents",
+      "title": "Check the actual work",
+      "language": "English",
+      "source_sections": [
+        "human-agent:Check Agent Output",
+        "human-agent:Agent Execution",
+        "human-agent:Parallel Work"
+      ],
+      "utterance_groups": [
+        "Checking an Agent's output means checking the work, not just its summary. ",
+        "Is the authority right, and the state current? Are the inputs true and complete? Are assumptions, inferences and judgments kept apart? Do the actual changes match the agreed and reported scope? Did verification really run on the current version, in the right environment? Did the decision owner explicitly approve anything high-risk? ",
+        "An Agent first confirms the task, target, current state and responsible person. It moves in reversible, verifiable steps, without incidental changes. It runs checks matching the claim, and reads the complete results before summarizing. ",
+        "Parallel Agents suit only independent questions, paths or review angles: by default research, review and cross-checking that change nothing, with one person owning the combined result. A majority opinion is not evidence. ",
+        "Even checked output becomes a lasting team fact only once its source and limits are recorded in the authoritative record for that work."
+      ],
+      "text": "Checking an Agent's output means checking the work, not just its summary. Is the authority right, and the state current? Are the inputs true and complete? Are assumptions, inferences and judgments kept apart? Do the actual changes match the agreed and reported scope? Did verification really run on the current version, in the right environment? Did the decision owner explicitly approve anything high-risk? An Agent first confirms the task, target, current state and responsible person. It moves in reversible, verifiable steps, without incidental changes. It runs checks matching the claim, and reads the complete results before summarizing. Parallel Agents suit only independent questions, paths or review angles: by default research, review and cross-checking that change nothing, with one person owning the combined result. A majority opinion is not evidence. Even checked output becomes a lasting team fact only once its source and limits are recorded in the authoritative record for that work.",
+      "spoken_text": "Checking an Agent's output means checking the work, not just its summary. Is the authority right, and the state current? Are the inputs true and complete? Are assumptions, inferences and judgments kept apart? Do the actual changes match the agreed and reported scope? Did verification really run on the current version, in the right environment? Did the decision owner explicitly approve anything high-risk? An Agent first confirms the task, target, current state and responsible person. It moves in reversible, verifiable steps, without incidental changes. It runs checks matching the claim, and reads the complete results before summarizing. Parallel Agents suit only independent questions, paths or review angles: by default research, review and cross-checking that change nothing, with one person owning the combined result. A majority opinion is not evidence. Even checked output becomes a lasting team fact only once its source and limits are recorded in the authoritative record for that work."
+    },
+    {
+      "id": "22",
+      "chapter": "human-agent",
+      "chapter_index": 4,
+      "chapter_title": "Working with Agents",
+      "title": "Stop and hand off",
+      "language": "English",
+      "source_sections": [
+        "human-agent:Stop and Handoff",
+        "human-agent:Report and Preserve a Handoff"
+      ],
+      "utterance_groups": [
+        "Stop the affected action and escalate in five kinds of situation. One: instructions materially conflict, or the target, source of truth or responsible person can't be identified. Two: authority is insufficient, the action would cross a permission, compliance, security or data boundary, or an irreversible step lacks authorization or recovery. ",
+        "Three: you find work you don't recognize, someone else's uncommitted work, or work whose owner is unknown. Four: verification contradicts expectation, or evidence has expired. Five: continuing would hide a failure, corrupt a source of truth, worsen the harm, or present a guess as fact. ",
+        "Independent authorized work may continue. ",
+        "A report names the work, the delivery state reached, the evidence, its limits, and any acceptance still needed. On interruption, preserve the state, uncommitted work, attempts and failures, and where to resume. ",
+        "End with the next responsible person, action and due time, not a vague promise to follow up."
+      ],
+      "text": "Stop the affected action and escalate in five kinds of situation. One: instructions materially conflict, or the target, source of truth or responsible person can't be identified. Two: authority is insufficient, the action would cross a permission, compliance, security or data boundary, or an irreversible step lacks authorization or recovery. Three: you find work you don't recognize, someone else's uncommitted work, or work whose owner is unknown. Four: verification contradicts expectation, or evidence has expired. Five: continuing would hide a failure, corrupt a source of truth, worsen the harm, or present a guess as fact. Independent authorized work may continue. A report names the work, the delivery state reached, the evidence, its limits, and any acceptance still needed. On interruption, preserve the state, uncommitted work, attempts and failures, and where to resume. End with the next responsible person, action and due time, not a vague promise to follow up.",
+      "spoken_text": "Stop the affected action and escalate in five kinds of situation. One: instructions materially conflict, or the target, source of truth or responsible person can't be identified. Two: authority is insufficient, the action would cross a permission, compliance, security or data boundary, or an irreversible step lacks authorization or recovery. Three: you find work you don't recognize, someone else's uncommitted work, or work whose owner is unknown. Four: verification contradicts expectation, or evidence has expired. Five: continuing would hide a failure, corrupt a source of truth, worsen the harm, or present a guess as fact. Independent authorized work may continue. A report names the work, the delivery state reached, the evidence, its limits, and any acceptance still needed. On interruption, preserve the state, uncommitted work, attempts and failures, and where to resume. End with the next responsible person, action and due time, not a vague promise to follow up."
+    },
+    {
+      "id": "23",
+      "chapter": "communicate",
+      "chapter_index": 5,
+      "chapter_title": "Communicating so others can act",
+      "title": "Answer first",
+      "language": "English",
+      "source_sections": [
+        "communicate:Communication",
+        "communicate:Know What the Exchange Must Accomplish",
+        "communicate:Structure an Important Update"
+      ],
+      "utterance_groups": [
+        "Results become other people's actions through communication. Communication answers the reader's actual need before recounting the whole process. ",
+        "Name the purpose first: to synchronize, discuss, decide, escalate or review. ",
+        "An important update leads with the conclusion or present state, and what actually changed since last time. Then the decisive facts, impact and risks. Then your recommendation and the decision needed, from whom, and by when. Then the next action, its owner and due time, and what will show it is done. ",
+        "When you don't know, say so. When new evidence overturns a position, revise it at once. ",
+        "In a follow-up, keep the subject, definitions and criteria unchanged. If one must change, say so and why before answering."
+      ],
+      "text": "Results become other people's actions through communication. Communication answers the reader's actual need before recounting the whole process. Name the purpose first: to synchronize, discuss, decide, escalate or review. An important update leads with the conclusion or present state, and what actually changed since last time. Then the decisive facts, impact and risks. Then your recommendation and the decision needed, from whom, and by when. Then the next action, its owner and due time, and what will show it is done. When you don't know, say so. When new evidence overturns a position, revise it at once. In a follow-up, keep the subject, definitions and criteria unchanged. If one must change, say so and why before answering.",
+      "spoken_text": "Results become other people's actions through communication. Communication answers the reader's actual need before recounting the whole process. Name the purpose first: to synchronize, discuss, decide, escalate or review. An important update leads with the conclusion or present state, and what actually changed since last time. Then the decisive facts, impact and risks. Then your recommendation and the decision needed, from whom, and by when. Then the next action, its owner and due time, and what will show it is done. When you don't know, say so. When new evidence overturns a position, revise it at once. In a follow-up, keep the subject, definitions and criteria unchanged. If one must change, say so and why before answering."
+    },
+    {
+      "id": "24",
+      "chapter": "communicate",
+      "chapter_index": 5,
+      "chapter_title": "Communicating so others can act",
+      "title": "Statements that can be checked",
+      "language": "English",
+      "source_sections": [
+        "communicate:Make Meetings Produce Decisions, Not Transcripts",
+        "communicate:Replace Vague Assurances with Checkable Statements"
+      ],
+      "utterance_groups": [
+        "Meetings should produce decisions, not transcripts. Don't meet for what can be settled asynchronously. Align facts and definitions before comparing options, and locate any disagreement: in facts, inference, values, resources or authority. ",
+        "Challenge propositions, evidence and costs, never personalities or motives. ",
+        "In updates, say things others can check. Instead of “actively progressing”, say: the tests pass, and the release owner still needs to confirm the target environment. ",
+        "Instead of “probably fine”, say what passed verification and what risk remains. Instead of “the Agent analyzed it”, say which facts it produced, what you verified, and where the conclusion stops."
+      ],
+      "text": "Meetings should produce decisions, not transcripts. Don't meet for what can be settled asynchronously. Align facts and definitions before comparing options, and locate any disagreement: in facts, inference, values, resources or authority. Challenge propositions, evidence and costs, never personalities or motives. In updates, say things others can check. Instead of “actively progressing”, say: the tests pass, and the release owner still needs to confirm the target environment. Instead of “probably fine”, say what passed verification and what risk remains. Instead of “the Agent analyzed it”, say which facts it produced, what you verified, and where the conclusion stops.",
+      "spoken_text": "Meetings should produce decisions, not transcripts. Don't meet for what can be settled asynchronously. Align facts and definitions before comparing options, and locate any disagreement: in facts, inference, values, resources or authority. Challenge propositions, evidence and costs, never personalities or motives. In updates, say things others can check. Instead of “actively progressing”, say: the tests pass, and the release owner still needs to confirm the target environment. Instead of “probably fine”, say what passed verification and what risk remains. Instead of “the Agent analyzed it”, say which facts it produced, what you verified, and where the conclusion stops."
+    },
+    {
+      "id": "25",
+      "chapter": "communicate",
+      "chapter_index": 5,
+      "chapter_title": "Communicating so others can act",
+      "title": "Fidelity, clarity, elegance",
+      "language": "English",
+      "source_sections": [
+        "communicate:Write for Fidelity, Clarity, and Elegance",
+        "communicate:Review Before Sending",
+        "communicate:Escalate Risk in Four Parts"
+      ],
+      "utterance_groups": [
+        "Writing aims for fidelity, clarity and elegance, in that order. ",
+        "Fidelity preserves the meaning: actors, conditions, responsibilities and limits stay intact, facts keep their sources, and counterexamples, uncertainty and failure stay visible.",
+        " Clarity begins with accurate understanding, then puts it plainly and fluently, so the reader can understand and act.",
+        " Elegance brings taste and aesthetic judgment to rhythm, transitions and form, in a style suited to the subject and the reader, with precise verbs and concrete nouns, without slogans or pretended depth. ",
+        "If collection ran two hours late, write two hours late, not “roughly on time”. That is fidelity. Lead with the conclusion and the decision needed, then the detail. That is clarity. ",
+        "Clarity has concrete checks: a title that names the subject and purpose; the conclusion first; one point per paragraph; important terms defined at first use. Before sending, ask whether a reader outside the work could restate the conclusion, basis, limits and next action. ",
+        "Escalating a risk takes four parts. The risk. The facts, impact, and the latest safe time to decide. What containment was tried, and with what result. And the options, their costs, your recommendation, and who must decide by when."
+      ],
+      "text": "Writing aims for fidelity, clarity and elegance, in that order. Fidelity preserves the meaning: actors, conditions, responsibilities and limits stay intact, facts keep their sources, and counterexamples, uncertainty and failure stay visible. Clarity begins with accurate understanding, then puts it plainly and fluently, so the reader can understand and act. Elegance brings taste and aesthetic judgment to rhythm, transitions and form, in a style suited to the subject and the reader, with precise verbs and concrete nouns, without slogans or pretended depth. If collection ran two hours late, write two hours late, not “roughly on time”. That is fidelity. Lead with the conclusion and the decision needed, then the detail. That is clarity. Clarity has concrete checks: a title that names the subject and purpose; the conclusion first; one point per paragraph; important terms defined at first use. Before sending, ask whether a reader outside the work could restate the conclusion, basis, limits and next action. Escalating a risk takes four parts. The risk. The facts, impact, and the latest safe time to decide. What containment was tried, and with what result. And the options, their costs, your recommendation, and who must decide by when.",
+      "spoken_text": "Writing aims for fidelity, clarity and elegance, in that order. Fidelity preserves the meaning: actors, conditions, responsibilities and limits stay intact, facts keep their sources, and counterexamples, uncertainty and failure stay visible. Clarity begins with accurate understanding, then puts it plainly and fluently, so the reader can understand and act. Elegance brings taste and aesthetic judgment to rhythm, transitions and form, in a style suited to the subject and the reader, with precise verbs and concrete nouns, without slogans or pretended depth. If collection ran two hours late, write two hours late, not “roughly on time”. That is fidelity. Lead with the conclusion and the decision needed, then the detail. That is clarity. Clarity has concrete checks: a title that names the subject and purpose; the conclusion first; one point per paragraph; important terms defined at first use. Before sending, ask whether a reader outside the work could restate the conclusion, basis, limits and next action. Escalating a risk takes four parts. The risk. The facts, impact, and the latest safe time to decide. What containment was tried, and with what result. And the options, their costs, your recommendation, and who must decide by when."
+    },
+    {
+      "id": "26",
+      "chapter": "evolve",
+      "chapter_index": 6,
+      "chapter_title": "Making the next attempt better",
+      "title": "What learning is for",
+      "language": "English",
+      "source_sections": [
+        "evolve:Practice and Evolution",
+        "evolve:Admit Practices and Prevent Recurrence"
+      ],
+      "utterance_groups": [
+        "The last part is about making the next attempt better. Learning exists to find the next failure earlier, judge it more easily, and need less manual rescue. Not to add files. ",
+        "Before a rule, template, tool or Agent workflow becomes department practice, show an observed problem, a material risk with evidence, or an obligation that applies. Explain why the existing mechanism falls short, and what the new practice would cost to understand and maintain. Require a bounded trial, evidence of net benefit, a named owner, and stated triggers for revision or retirement. ",
+        "Necessary safeguards must not wait for an incident, or for a new practice to be approved. Meet the obligation now, within existing authority; a trial decides only how to meet it, not whether. Retire a rule that has lost its subject or users, duplicates a source of truth, or costs more than it returns."
+      ],
+      "text": "The last part is about making the next attempt better. Learning exists to find the next failure earlier, judge it more easily, and need less manual rescue. Not to add files. Before a rule, template, tool or Agent workflow becomes department practice, show an observed problem, a material risk with evidence, or an obligation that applies. Explain why the existing mechanism falls short, and what the new practice would cost to understand and maintain. Require a bounded trial, evidence of net benefit, a named owner, and stated triggers for revision or retirement. Necessary safeguards must not wait for an incident, or for a new practice to be approved. Meet the obligation now, within existing authority; a trial decides only how to meet it, not whether. Retire a rule that has lost its subject or users, duplicates a source of truth, or costs more than it returns.",
+      "spoken_text": "The last part is about making the next attempt better. Learning exists to find the next failure earlier, judge it more easily, and need less manual rescue. Not to add files. Before a rule, template, tool or Agent workflow becomes department practice, show an observed problem, a material risk with evidence, or an obligation that applies. Explain why the existing mechanism falls short, and what the new practice would cost to understand and maintain. Require a bounded trial, evidence of net benefit, a named owner, and stated triggers for revision or retirement. Necessary safeguards must not wait for an incident, or for a new practice to be approved. Meet the obligation now, within existing authority; a trial decides only how to meet it, not whether. Retire a rule that has lost its subject or users, duplicates a source of truth, or costs more than it returns."
+    },
+    {
+      "id": "27",
+      "chapter": "evolve",
+      "chapter_index": 6,
+      "chapter_title": "Making the next attempt better",
+      "title": "Detect drift before failure",
+      "language": "English",
+      "source_sections": [
+        "evolve:Detect Drift Before Failure",
+        "evolve:Improve the Existing Mechanism"
+      ],
+      "utterance_groups": [
+        "Many system defects begin as small signals: definitions drifting, questions recurring, people stepping in to rescue, evidence expiring, ownership blurring, intermittent failures, slight delays. ",
+        "One anomaly is not a trend. Check its pattern, impact and direction first. ",
+        "When someone asks every week how the same metric is calculated, that is a signal. ",
+        "Watch for these conditions. A problem recurs, or affects more than one person, project or work cycle. An important judgment rests on the tacit knowledge of one or a few people. Forgetting could cause material loss. Or the work is something Agents will repeat. ",
+        "When any of these brings material risk, leave reusable prevention behind, even before anything fails. ",
+        "Reusable prevention can be a test, a monitor, a checklist, a decision record, or clearer ownership and handoffs. Improve or link what exists before creating something new, and choose the lightest form that works."
+      ],
+      "text": "Many system defects begin as small signals: definitions drifting, questions recurring, people stepping in to rescue, evidence expiring, ownership blurring, intermittent failures, slight delays. One anomaly is not a trend. Check its pattern, impact and direction first. When someone asks every week how the same metric is calculated, that is a signal. Watch for these conditions. A problem recurs, or affects more than one person, project or work cycle. An important judgment rests on the tacit knowledge of one or a few people. Forgetting could cause material loss. Or the work is something Agents will repeat. When any of these brings material risk, leave reusable prevention behind, even before anything fails. Reusable prevention can be a test, a monitor, a checklist, a decision record, or clearer ownership and handoffs. Improve or link what exists before creating something new, and choose the lightest form that works.",
+      "spoken_text": "Many system defects begin as small signals: definitions drifting, questions recurring, people stepping in to rescue, evidence expiring, ownership blurring, intermittent failures, slight delays. One anomaly is not a trend. Check its pattern, impact and direction first. When someone asks every week how the same metric is calculated, that is a signal. Watch for these conditions. A problem recurs, or affects more than one person, project or work cycle. An important judgment rests on the tacit knowledge of one or a few people. Forgetting could cause material loss. Or the work is something Agents will repeat. When any of these brings material risk, leave reusable prevention behind, even before anything fails. Reusable prevention can be a test, a monitor, a checklist, a decision record, or clearer ownership and handoffs. Improve or link what exists before creating something new, and choose the lightest form that works."
+    },
+    {
+      "id": "28",
+      "chapter": "evolve",
+      "chapter_index": 6,
+      "chapter_title": "Making the next attempt better",
+      "title": "Growing through real work",
+      "language": "English",
+      "source_sections": [
+        "evolve:Grow Capability Through Real Work",
+        "evolve:Review Critical Risks",
+        "evolve:Use Scores with Care",
+        "evolve:Observe the System Without Worshipping Numbers",
+        "evolve:Cadence and Responsibilities"
+      ],
+      "utterance_groups": [
+        "Capability grows through real work. Confirm the boundary and success criteria at the start, examine the reasoning at important decisions, and after delivery, agree on one observable improvement for the next task. ",
+        "Coaching tests a member's reasoning without making the judgment for them. Feedback names a proposition, evidence, behavior and consequence. A label like “weak logic” gives no direction. ",
+        "Fluency, effort and Agent efficiency never make up for risks like these: fabricated, selectively hidden or unverified facts presented as established, completion claimed without current verification, Agent output standing in for fact, authorization or responsibility, high-risk or irreversible action beyond authority, hidden blockers and failures. ",
+        "If work is scored, the score expresses delivery risk. It must never label a person. Ask what decision a metric supports and how it could be gamed, and investigate anomalies through cases and mechanisms. By default, the department calibrates judgment weekly, reviews mechanisms monthly, and reviews practices and capability priorities quarterly. Escalate high-risk signals at once."
+      ],
+      "text": "Capability grows through real work. Confirm the boundary and success criteria at the start, examine the reasoning at important decisions, and after delivery, agree on one observable improvement for the next task. Coaching tests a member's reasoning without making the judgment for them. Feedback names a proposition, evidence, behavior and consequence. A label like “weak logic” gives no direction. Fluency, effort and Agent efficiency never make up for risks like these: fabricated, selectively hidden or unverified facts presented as established, completion claimed without current verification, Agent output standing in for fact, authorization or responsibility, high-risk or irreversible action beyond authority, hidden blockers and failures. If work is scored, the score expresses delivery risk. It must never label a person. Ask what decision a metric supports and how it could be gamed, and investigate anomalies through cases and mechanisms. By default, the department calibrates judgment weekly, reviews mechanisms monthly, and reviews practices and capability priorities quarterly. Escalate high-risk signals at once.",
+      "spoken_text": "Capability grows through real work. Confirm the boundary and success criteria at the start, examine the reasoning at important decisions, and after delivery, agree on one observable improvement for the next task. Coaching tests a member's reasoning without making the judgment for them. Feedback names a proposition, evidence, behavior and consequence. A label like “weak logic” gives no direction. Fluency, effort and Agent efficiency never make up for risks like these: fabricated, selectively hidden or unverified facts presented as established, completion claimed without current verification, Agent output standing in for fact, authorization or responsibility, high-risk or irreversible action beyond authority, hidden blockers and failures. If work is scored, the score expresses delivery risk. It must never label a person. Ask what decision a metric supports and how it could be gamed, and investigate anomalies through cases and mechanisms. By default, the department calibrates judgment weekly, reviews mechanisms monthly, and reviews practices and capability priorities quarterly. Escalate high-risk signals at once."
+    },
+    {
+      "id": "29",
+      "chapter": "evolve",
+      "chapter_index": 6,
+      "chapter_title": "Making the next attempt better",
+      "title": "Management and emergencies",
+      "language": "English",
+      "source_sections": [
+        "evolve:Management Responsibilities",
+        "evolve:Emergencies and Exceptions"
+      ],
+      "utterance_groups": [
+        "Managers clarify direction, priorities, decision boundaries and resources, resolve cross-domain conflicts and stalled decisions in time, and protect people who honestly expose problems. When goals conflict, priorities drift, resources run short or decisions stall, repair the management system before blaming a member. ",
+        "Managers show how they judge through real work, and never use these guidelines for fault-finding, ceremonial review or micromanagement. ",
+        "Within the stated boundaries, the responsible person closest to the facts chooses the method, tools and path. ",
+        "Say a data error, a production failure, or a permission or compliance breach threatens data, production, downstream use or compliance. Whoever finds it contains it within their authority and tells the data or production owner. ",
+        "The owner of the affected work, usually the task lead, sees the response through, escalates to the decision owner for any further permission, and preserves the inputs and versions needed to establish the impact and verify a correction. ",
+        "Urgency does not make an uncertain result reliable, or grant authority. If recording would delay the response, contain first, then complete the record: who decided what, on which facts and authority, how long the measure lasts, who takes over, and when to roll back. Then verify the correction and review the cause. Treat a recurring exception as a mechanism problem."
+      ],
+      "text": "Managers clarify direction, priorities, decision boundaries and resources, resolve cross-domain conflicts and stalled decisions in time, and protect people who honestly expose problems. When goals conflict, priorities drift, resources run short or decisions stall, repair the management system before blaming a member. Managers show how they judge through real work, and never use these guidelines for fault-finding, ceremonial review or micromanagement. Within the stated boundaries, the responsible person closest to the facts chooses the method, tools and path. Say a data error, a production failure, or a permission or compliance breach threatens data, production, downstream use or compliance. Whoever finds it contains it within their authority and tells the data or production owner. The owner of the affected work, usually the task lead, sees the response through, escalates to the decision owner for any further permission, and preserves the inputs and versions needed to establish the impact and verify a correction. Urgency does not make an uncertain result reliable, or grant authority. If recording would delay the response, contain first, then complete the record: who decided what, on which facts and authority, how long the measure lasts, who takes over, and when to roll back. Then verify the correction and review the cause. Treat a recurring exception as a mechanism problem.",
+      "spoken_text": "Managers clarify direction, priorities, decision boundaries and resources, resolve cross-domain conflicts and stalled decisions in time, and protect people who honestly expose problems. When goals conflict, priorities drift, resources run short or decisions stall, repair the management system before blaming a member. Managers show how they judge through real work, and never use these guidelines for fault-finding, ceremonial review or micromanagement. Within the stated boundaries, the responsible person closest to the facts chooses the method, tools and path. Say a data error, a production failure, or a permission or compliance breach threatens data, production, downstream use or compliance. Whoever finds it contains it within their authority and tells the data or production owner. The owner of the affected work, usually the task lead, sees the response through, escalates to the decision owner for any further permission, and preserves the inputs and versions needed to establish the impact and verify a correction. Urgency does not make an uncertain result reliable, or grant authority. If recording would delay the response, contain first, then complete the record: who decided what, on which facts and authority, how long the measure lasts, who takes over, and when to roll back. Then verify the correction and review the cause. Treat a recurring exception as a mechanism problem."
+    },
+    {
+      "id": "30",
+      "chapter": "coda",
+      "chapter_index": 7,
+      "chapter_title": "Return to the purpose",
+      "title": "Back to the dataset",
+      "language": "English",
+      "source_sections": [
+        "charter:Purpose",
+        "charter:From Principle to Action",
+        "evolve:Emergencies and Exceptions"
+      ],
+      "utterance_groups": [
+        "Back to the price dataset we began with. Its next user needs clear meaning, the facts available at the time, evidence that matches each claim, and a permitted, bounded use. ",
+        "None of this is extra paperwork. It is what turns a finished dataset into something others can safely rely on. ",
+        "Publishing these guidelines, adopting them, and improving the work are three different results, each needing its own evidence. ",
+        "Real work is the test. ",
+        "Was the problem solved? ",
+        "Do the judgment and its limits hold? ",
+        "And next time, can the system recognize it earlier, or handle it better? ",
+        "That, in the end, is what the work is for."
+      ],
+      "text": "Back to the price dataset we began with. Its next user needs clear meaning, the facts available at the time, evidence that matches each claim, and a permitted, bounded use. None of this is extra paperwork. It is what turns a finished dataset into something others can safely rely on. Publishing these guidelines, adopting them, and improving the work are three different results, each needing its own evidence. Real work is the test. Was the problem solved? Do the judgment and its limits hold? And next time, can the system recognize it earlier, or handle it better? That, in the end, is what the work is for.",
+      "spoken_text": "Back to the price dataset we began with. Its next user needs clear meaning, the facts available at the time, evidence that matches each claim, and a permitted, bounded use. None of this is extra paperwork. It is what turns a finished dataset into something others can safely rely on. Publishing these guidelines, adopting them, and improving the work are three different results, each needing its own evidence. Real work is the test. Was the problem solved? Do the judgment and its limits hold? And next time, can the system recognize it earlier, or handle it better? That, in the end, is what the work is for."
+    }
+  ]
+}

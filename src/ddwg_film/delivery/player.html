@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DDWG · 数据部门工作指南</title>
+<style>
+:root{color-scheme:dark;background:#0F1519;color:#ECE8DF;font-family:system-ui,-apple-system,"Noto Sans CJK SC",sans-serif}*{box-sizing:border-box}body{margin:0;padding:36px 5vw 48px}header{display:flex;justify-content:space-between;align-items:baseline;gap:24px;max-width:1400px;margin:0 auto 24px}h1{font-size:23px;font-weight:600;margin:0}header p{font-size:13px;color:#9BA8B1;margin:0}main{max-width:1400px;margin:auto}video{display:block;width:100%;aspect-ratio:16/9;background:#0F1519;border:1px solid #34424E}nav{display:flex;flex-wrap:wrap;gap:12px;margin:20px 0}button,a{background:transparent;color:#ECE8DF;border:1px solid #34424E;border-radius:3px;padding:10px 14px;font-size:14px;text-decoration:none;cursor:pointer}button:hover,a:hover{border-color:#7DB7D8}button:focus-visible,a:focus-visible{outline:2px solid #7DB7D8;outline-offset:3px}button[aria-pressed=true]{border-color:#7DB7D8}section p{font-size:14px;color:#9BA8B1;line-height:1.75;margin:10px 0}footer{margin-top:28px;border-top:1px solid #34424E;padding-top:16px;display:flex;flex-wrap:wrap;gap:12px}video::cue{font:18px sans-serif;color:#ECE8DF;background:#0F1519cc}#transcript{margin-top:28px;border-top:1px solid #34424E;padding-top:14px}#transcript summary{cursor:pointer;font-size:15px}#transcript summary:focus-visible{outline:2px solid #7DB7D8;outline-offset:3px}#transcript h2{font-size:17px;font-weight:600;margin:30px 0 6px}#transcript h3{font-size:13px;font-weight:500;color:#9BA8B1;margin:18px 0 2px;font-variant-numeric:tabular-nums}#transcript p{max-width:46em;color:#C9CFD3}@media(max-width:700px){body{padding:20px 16px}header{display:block}header p{margin-top:8px}h1{font-size:19px}button,a{font-size:13px}}
+</style>
+</head>
+<body>
+<header><h1>DDWG · 数据部门工作指南</h1><p>Yang HENG · 中文 · /*RUNTIME*/ · 60 fps</p></header>
+<main>
+<video id="film" controls playsinline preload="metadata" poster="ddwg-cover.png">
+<source src="ddwg-zh-1080p-captioned.mp4" type="video/mp4">
+</video>
+<nav aria-label="视频版本"><button data-file="ddwg-zh-1080p-captioned.mp4" aria-pressed="true">观看版 · 1080p</button><button data-file="ddwg-zh-uhd.mp4" aria-pressed="false">4K UHD · 2160p</button></nav>
+<nav id="chapters" aria-label="章节"></nav>
+<section><p>从判断、数据与交付，讲到人与智能体协作、沟通和持续改进。片中情境用于解释工作机制，未据此声称实际部署或团队采用。</p><p id="playback-status" role="status">观看版 · 1080p</p></section>
+<section id="transcript"><details><summary>完整讲稿</summary>/*TRANSCRIPT*/</details></section>
+<footer><a href="#transcript">完整讲稿</a><a href="ddwg-zh-transcript.md">讲稿 Markdown</a><a href="ddwg-zh.srt">字幕</a><a href="ddwg-cover.png">封面</a><a href="ddwg-zh-uhd.mp4" download>下载 4K UHD</a><a href="ddwg-zh-1080p-captioned.mp4" download>下载观看版</a></footer>
+</main>
+<script>
+const film=document.querySelector('#film');
+const chapters=/*CHAPTERS*/[];
+for(const chapter of chapters){const button=document.createElement('button');button.textContent=chapter.title;button.onclick=()=>{film.currentTime=chapter.start;film.play().catch(()=>{})};document.querySelector('#chapters').append(button)}
+for(const button of document.querySelectorAll('[data-file]')){button.onclick=()=>{const time=film.currentTime;const paused=film.paused;film.src=button.dataset.file;film.load();film.addEventListener('loadedmetadata',()=>{film.currentTime=Math.min(time,film.duration);if(!paused)film.play().catch(()=>{})},{once:true});for(const b of document.querySelectorAll('[data-file]'))b.setAttribute('aria-pressed',String(b===button));document.querySelector('#playback-status').textContent=button.textContent}}
+const transcript=document.querySelector('#transcript details');
+for(const link of document.querySelectorAll('a[href="#transcript"]'))link.addEventListener('click',()=>{transcript.open=true});
+if(location.hash==='#transcript')transcript.open=true;
+film.addEventListener('error',()=>{document.querySelector('#playback-status').textContent='此浏览器无法播放当前编码，可下载视频后使用系统播放器。'});
+</script>
+</body>
+</html>

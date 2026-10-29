@@ -1,0 +1,531 @@
+{
+  "reference_text": "我们以证据连接人的判断与智能体的行动。规范保存正式接受的意图，证据记录实际发生的事。看清关系，决定下一步；条件改变，就重新判断。",
+  "reference_text_sha256": "56bb01f22625ec420f058a31c72813b0507f659a969eb8f7ee2183bb501143f3",
+  "reference_mode": "icl",
+  "narration_language": "Chinese",
+  "full_narration_seed": 4677,
+  "full_narration_temperature": 0.46,
+  "full_narration_max_tokens": 1900,
+  "model": "mlx-community/Qwen3-TTS-12Hz-1.7B-Base-bf16",
+  "revision": "a6eb4f68e4b056f1215157bb696209bc82a6db48",
+  "reference_language": "Chinese",
+  "reference_audio": "assets/audio/narration-reference-clear.wav",
+  "reference_sha256": "7ff6347ed4231943944ef27bfc708cfcf796619b3988b2b99bc21be71ae338da",
+  "scope": "Clear in-context reference derived from the approved synthetic narrator identity root, which stays unchanged. Its speaker embedding alone spoke reference text b; that rendition, with every inner silence capped at 0.12 s, spoke reference text a in context; this rendition, with every inner silence capped at 0.12 s, is the reference. Voiced audio is native model output: never time-stretched, pitch-shifted or recast. Pronunciation and listening quality are qualified separately from this input binding.",
+  "derivation": {
+    "identity_root": {
+      "path": "assets/audio/narration-reference.wav",
+      "sha256": "a355801a8b16ca11925457678516329c04c4f2b2a66e76ef60457eea4872aa25",
+      "reference_text_sha256": "bed9b794bdb7e67dbf1060aebcbfa0e159c78334e1a6bf6b4d251626b66bcb05"
+    },
+    "steps": [
+      {
+        "mode": "speaker-embedding",
+        "text": "一份数据做完了，可下一位用它的人，能靠它做判断吗？他们需要知道每个数字是什么意思，对应哪个时间，依据从哪里来，能用在什么地方。",
+        "seed": 86770,
+        "temperature": 0.46,
+        "top_k": 50,
+        "top_p": 0.9,
+        "repetition_penalty": 1.05,
+        "max_tokens": 1900
+      },
+      {
+        "mode": "icl",
+        "text": "我们以证据连接人的判断与智能体的行动。规范保存正式接受的意图，证据记录实际发生的事。看清关系，决定下一步；条件改变，就重新判断。",
+        "prompt_text": "一份数据做完了，可下一位用它的人，能靠它做判断吗？他们需要知道每个数字是什么意思，对应哪个时间，依据从哪里来，能用在什么地方。",
+        "seed": 55847,
+        "temperature": 0.46,
+        "icl_repetition_penalty": 1.05,
+        "max_tokens": 1900
+      }
+    ],
+    "silence_treatment": "After each step, edges trimmed to 0.1 s and every inner run below -45 dBFS longer than 0.12 s shortened from its middle with 10 ms raised-cosine joins; voiced audio unchanged.",
+    "objective_comparison": {
+      "speaker_embedding_cosine_to_root": 0.9911,
+      "trial": "Six narration thoughts, three takes each, same take seeds as the current method",
+      "current_method": {
+        "cpp": 0.096,
+        "pitch_hz": 173.7,
+        "semitone_sd": 2.67,
+        "capped_pace_units_per_s": 5.629,
+        "articulation_units_per_s": 6.372,
+        "natural_endings": "4/18"
+      },
+      "derived_reference": {
+        "cpp": 0.163,
+        "pitch_hz": 175.7,
+        "semitone_sd": 2.8,
+        "capped_pace_units_per_s": 5.84,
+        "articulation_units_per_s": 6.049,
+        "natural_endings": "9/18"
+      }
+    },
+    "reason": "The approved root is breathy and in-context cloning copies its voice quality; the derived reference keeps the narrator's identity and pitch while reducing breathiness."
+  },
+  "icl_repetition_penalty": 1.05,
+  "performance_recording": {
+    "receipt": "build/evidence/editions/zh/ear-first/narration-receipt.json",
+    "alignment": "build/evidence/editions/zh/ear-first/alignment.json"
+  },
+  "retakes": {
+    "01": {
+      "groups": {
+        "2": {
+          "seed": 147220,
+          "text_sha256": "218a40c139ec280ddf1dc53ec3980f578275677ad0dceb1b4fe1410f7f551403"
+        },
+        "3": {
+          "seed": 123463,
+          "text_sha256": "4a07062d784bba101d4846865966be53973895a9d047d6197a8ec17e07ec2335"
+        },
+        "7": {
+          "seed": 99706,
+          "text_sha256": "6b20054210606c0042663a75ead112e2e9f555e151b906232311b888e14b4d60"
+        },
+        "4": {
+          "seed": 115544,
+          "text_sha256": "163f34cf4cc27372880a7e4bfb2de8eec07191cd2ca8dd1c2f1fe91941b4a091",
+          "run_on": {
+            "spoken_text": "所以，工作的价值不是交出一个文件、一张表、一份报告，或者启动一个流程，而是把现实里的信息，变成别人能放心依靠的判断、数据资产和行动。",
+            "cut_sample": 187440
+          }
+        }
+      }
+    },
+    "02": {
+      "groups": {
+        "1": {
+          "seed": 147221,
+          "text_sha256": "28ae08f025c0a4a8803028889b809cfb4780b35aaf1272126e92ec438ff1ddf3"
+        },
+        "6": {
+          "seed": 519414,
+          "text_sha256": "6d27c6401af5b4e0f3fd71e61e541420a22b1fcbab5be5ae8eda4dd1d6315e71"
+        }
+      }
+    },
+    "03": {
+      "groups": {
+        "1": {
+          "seed": 210574,
+          "text_sha256": "29c57ec2ed158b8a8be2870148da14d1987a65110dcdda68f057a44628473970"
+        },
+        "3": {
+          "seed": 115546,
+          "text_sha256": "d9db49b852fc41b60ca038ceb4767b5411c0e64c11fd912bf6386ae690f24298"
+        },
+        "6": {
+          "seed": 155141,
+          "text_sha256": "338e015af4743cbb9a9331609a763e611e0e3f564ad682e3d934cf5dd673ea2e"
+        }
+      }
+    },
+    "05": {
+      "groups": {
+        "1": {
+          "seed": 131386,
+          "text_sha256": "14e5a3519e2801adb02907505b039d7c3a1aa32150abff69243a3d0e6437650e"
+        },
+        "3": {
+          "seed": 392713,
+          "text_sha256": "b198e8022ee4fc3c227feb8551ee51461650cd68aeba9b344bdb29aae01a512b"
+        }
+      }
+    },
+    "06": {
+      "groups": {
+        "1": {
+          "seed": 99711,
+          "text_sha256": "22545ef25583972ded7ed007d48f1da3c46fb2c55905e7c9c50f96d59e10adf0"
+        },
+        "3": {
+          "seed": 123468,
+          "text_sha256": "e73781ba8c11411be77961eb6847b391a991c6d1cf2e26e61dc83e07a863205a"
+        },
+        "2": {
+          "seed": 115549,
+          "text_sha256": "8b40880d4bcf58bfd73abb419ab43ac3bc9e7e8bd34aad0c5319efc490027a34"
+        },
+        "4": {
+          "seed": 353119,
+          "text_sha256": "1b66fa345a16f5d873ef936093ef0114b2cbaa75441a91c2b039e8ffbf29bcf2"
+        },
+        "5": {
+          "seed": 329362,
+          "text_sha256": "82d01ec8208e9a337c84988fbe8318f01d69903220983382ef9c52544effa22b"
+        }
+      }
+    },
+    "08": {
+      "groups": {
+        "1": {
+          "seed": 91794,
+          "text_sha256": "c1d73f1149db650c8c082030e43140c5ef4f0b39bda21ef3161fa2d120d54b48"
+        },
+        "3": {
+          "seed": 384797,
+          "text_sha256": "f121d8b00e01be7976814a32e240167f0d72746d37f4723387218cd88e8ab1d6"
+        },
+        "5": {
+          "seed": 392716,
+          "text_sha256": "cee66520d0e27cfe89331a08c8520fc59da372d06aacb3e9074c3db11d55e496"
+        }
+      }
+    },
+    "09": {
+      "groups": {
+        "2": {
+          "seed": 329365,
+          "text_sha256": "35a2752684f3de7ea315ff0abbd03566d05323a1033e846227e1cb2dd5f7c593"
+        }
+      }
+    },
+    "10": {
+      "groups": {
+        "1": {
+          "seed": 99715,
+          "text_sha256": "7e126f028e818abc02d3e3ee409ac4ed5a5dce38fb75f4501d71591b235fa5a7"
+        },
+        "2": {
+          "seed": 384799,
+          "text_sha256": "74c8c44d8a4ebdda25724bab2dbd99aedb63837702caad15ae40189e4703a053"
+        },
+        "4": {
+          "seed": 329366,
+          "text_sha256": "aae1e16ee97766ce7a119cfdfb27dcbf8fa61eb6b3953968fe9bb1acb7772eb2"
+        }
+      }
+    },
+    "13": {
+      "groups": {
+        "2": {
+          "seed": 99718,
+          "text_sha256": "aba0019d34d22bbfd473169d0636262a1f19cc90f04c14902dd2b2b3f1d32754"
+        }
+      }
+    },
+    "17": {
+      "groups": {
+        "3": {
+          "seed": 361049,
+          "text_sha256": "b35bbd67069c7265894f85b69be4195eb28aa58db071f4219c5ff6bbad75b0ea"
+        }
+      }
+    },
+    "18": {
+      "groups": {}
+    },
+    "19": {
+      "groups": {
+        "1": {
+          "seed": 337294,
+          "text_sha256": "5a7ace9cbfd38c08c179d5fc39d748efefb57ba646a6a345a7d21d663a0caaf0"
+        },
+        "3": {
+          "seed": 337294,
+          "text_sha256": "ce9d73007fdee6babe3cc4f5d08ba5393aee63bb0db57c83b6fa475a6e31e75b"
+        }
+      }
+    },
+    "21": {
+      "groups": {
+        "2": {
+          "seed": 99726,
+          "text_sha256": "0321b8d72fa4b865ddbbfeca5683cd5712ef4c9ec0859c13bcb0700d5f77bcf1"
+        },
+        "3": {
+          "seed": 329377,
+          "text_sha256": "fcd3246f39ba46eddc79f38ba6862ee6c80a5f046e041cc558fa78b4214b749e"
+        }
+      }
+    },
+    "22": {
+      "groups": {
+        "2": {
+          "seed": 384811,
+          "text_sha256": "811c1020fc99d15eb1d918d9bd25b0514461f9e0f39ed582078ba732a318cc7c"
+        },
+        "3": {
+          "seed": 329378,
+          "text_sha256": "437a225f67ad9da7820d2ed8e16f5c159bcbaa38ec273129ce42c57ecc880b95"
+        },
+        "4": {
+          "seed": 107646,
+          "text_sha256": "a7b965fdb8a76c2b37cd720589f31f2a78360cb5e12ffa24f7844c0d8c43a763",
+          "run_on": {
+            "spoken_text": "最后写明接下来谁接手、做什么、什么时候做完，而不是一句“后续跟进”。",
+            "cut_sample": 262560
+          }
+        },
+        "5": {
+          "seed": 91808,
+          "text_sha256": "997ec541d7baa49482eff597462d95c658da24abcc474c9754a7cabf833c418e"
+        },
+        "1": {
+          "seed": 147241,
+          "text_sha256": "991b3282121b7ef46af4b1fccb24eb4eca58de8c15341c38170ebbd4626b211f"
+        }
+      }
+    },
+    "23": {
+      "groups": {
+        "2": {
+          "seed": 91809,
+          "text_sha256": "01a20f401326ee82f55d09783f3f6ae3c98e08e4e25751b799d344bceb1d70af"
+        },
+        "5": {
+          "seed": 91809,
+          "text_sha256": "51b34fbb9d1cd55a65bbe747f3b99ce087166f97e3ec5cf3241c94bcfcc3d335"
+        },
+        "1": {
+          "seed": 361055,
+          "text_sha256": "65f8f9dd6f1526f5973727d7f38e3c1e091be90762cf9ec662c9bf9984f56db7"
+        },
+        "4": {
+          "seed": 368974,
+          "text_sha256": "e4291905b02cfc5c387d794deed132b025925364f78961831e5b24b360e0c46f"
+        }
+      }
+    },
+    "24": {
+      "groups": {
+        "3": {
+          "seed": 163081,
+          "text_sha256": "69049f5185efae81aa0eee5ba93fb9cef8bcff139c8f2f0f6b35dd1a834f1e01",
+          "run_on": {
+            "spoken_text": "与其说“应该没问题”，不如说哪些核验通过了，还剩什么风险。与其说“智能体分析过了”，不如说它给出了哪些事实，你核实了什么，结论能说到哪里。",
+            "cut_sample": 173040
+          }
+        }
+      }
+    },
+    "25": {
+      "groups": {
+        "3": {
+          "seed": 107649,
+          "text_sha256": "1f20b692752b70bbb4e9a0312f8c508f7dfccf1e8f9da9d5159374a4ba141b0b"
+        },
+        "5": {
+          "seed": 171001,
+          "text_sha256": "437cf78be87fe58efcb1f2b48da0d999960b2a778b67334f47d0b0ebe9fdf81e"
+        },
+        "7": {
+          "seed": 115568,
+          "text_sha256": "76c1605946e749443b1cdd30ecbd68602a6101722ff27f270f24c706b9af59bf"
+        },
+        "6": {
+          "seed": 163082,
+          "text_sha256": "c0772a52b4cf45db92d8400d123f2b8016cd4c624e3562498a315003fa41c113",
+          "run_on": {
+            "spoken_text": "发出之前问一问：局外人能不能复述结论、依据、限度和下一步？",
+            "cut_sample": 185040
+          }
+        }
+      }
+    },
+    "26": {
+      "groups": {
+        "2": {
+          "seed": 131407,
+          "text_sha256": "816c6b05fd60a74d4cf73480a049ee1f7526fa4d6ed6582320d3c620a20c2bc4"
+        },
+        "5": {
+          "seed": 139326,
+          "text_sha256": "869be0587dd23f1dfe009c36690f18f0c8c754eab9732ebc5eeff623072a9ca3"
+        }
+      }
+    },
+    "28": {
+      "groups": {
+        "4": {
+          "seed": 392736,
+          "text_sha256": "83e1b0592bc828f0130cc369d722c348a79a119cf6d51a14c109194d6a5896f0"
+        },
+        "5": {
+          "seed": 178923,
+          "text_sha256": "ff885baddddc5b981b5d1046abff2cef52044104a414d01225ecc94a1308a41a",
+          "run_on": {
+            "spoken_text": "管理者要讲清方向、优先级、决定的边界和资源，及时化解跨领域的冲突和久拖不决的事项，保护如实暴露问题的人。",
+            "cut_sample": 162000
+          }
+        },
+        "3": {
+          "seed": 155166,
+          "text_sha256": "3bee9c8119ccc118705b8fcc5b4457d3445dd6409f5b074e42d067fa908e91b1"
+        }
+      }
+    },
+    "29": {
+      "groups": {
+        "2": {
+          "seed": 155167,
+          "text_sha256": "98bf7d8e3c05f3570975a7752928c2f05cb39fe7c30381f7ff7cbbebe4579d3c",
+          "run_on": {
+            "spoken_text": "管理者用真实的工作示范怎样判断，不拿这份指南事后挑错、走过场，或者做微观管理。",
+            "cut_sample": 169680
+          }
+        },
+        "5": {
+          "seed": 376899,
+          "text_sha256": "0e1d63ee8504969625c14c5ac857c7ee98bdffa40b4ed57859526143dc2f5f87"
+        },
+        "8": {
+          "seed": 368980,
+          "text_sha256": "00559939c6f461f0f66b11b9b142c4836d54cd060186ccb9760a3676987ee39e"
+        }
+      }
+    },
+    "30": {
+      "groups": {
+        "1": {
+          "seed": 345224,
+          "text_sha256": "2c99fef5c97d8e2a412ae5c7f819c61fca54e297f825e2b5012ddf6da7c3d5f6"
+        },
+        "3": {
+          "seed": 99735,
+          "text_sha256": "05c7ac80bfd4d930d7e2c78c30f9bf76b99dfd6ddfddfce9185d3027051c9320"
+        },
+        "5": {
+          "seed": 91816,
+          "text_sha256": "0475073325adddb7248d700dd57fb954127a9a63e77abdd444423cb644e4ca11"
+        },
+        "7": {
+          "seed": 99735,
+          "text_sha256": "ade49b3a7ab8e51cd139984f9942b184d63fbb6e8aa6779d952b6540456a614e"
+        },
+        "6": {
+          "seed": 115573,
+          "text_sha256": "b87a0c6c54b311d38fc61f48176cf429465315fec1a4e2354c1e04432c640b1d"
+        }
+      }
+    },
+    "14": {
+      "groups": {
+        "3": {
+          "seed": 107638,
+          "text_sha256": "bdcd86a175815957237cdc92c218c9bc6d4e37b81eb3946751a676f8df742ca6"
+        }
+      }
+    },
+    "04": {
+      "groups": {
+        "7": {
+          "seed": 115547,
+          "text_sha256": "bdc10070ee4adec16aad3698d1dabcc4fb538f31b2927e8f105db8bc5f0b62ca"
+        }
+      }
+    },
+    "11": {
+      "groups": {
+        "1": {
+          "seed": 123473,
+          "text_sha256": "dc28b143049e87749b247c9db22cea99e58747e60312b885b21334e628e3929e"
+        },
+        "6": {
+          "seed": 361043,
+          "text_sha256": "cfe3a0c8780a4087293f64ffdb2427a6090a603f3bde7f6428ec065d4af497a7"
+        },
+        "9": {
+          "seed": 376881,
+          "text_sha256": "03ae1216b66aa66e4d47bdbd83db19c70d2f708846ad3109b14de7acb68446e1"
+        },
+        "11": {
+          "seed": 91797,
+          "text_sha256": "0d38b50f48fba119da26b455fe29e17c76a2ac35ebe7fb17b2022910c2a9978d"
+        }
+      }
+    },
+    "16": {
+      "groups": {
+        "5": {
+          "seed": 376886,
+          "text_sha256": "ab75c3ebad266611f811a8d1543b194e8b7f7e4ded4f1e620c0e5d38947d53bf"
+        }
+      }
+    },
+    "27": {
+      "groups": {
+        "2": {
+          "seed": 91813,
+          "text_sha256": "1f6134d4391a1349cced5e22d362440bbac9983822fbd0b2d9720864b35e4bef"
+        },
+        "4": {
+          "seed": 321464,
+          "text_sha256": "cece6cc0e1991f994605dd029429d799f373be9f2972279a59ab5b8eaf581ef8"
+        }
+      }
+    },
+    "07": {
+      "groups": {
+        "3": {
+          "seed": 123469,
+          "text_sha256": "2f589e921b2d8162d0cb4733bd4f50ed6f04291b9274808224491f62ad57c7b4"
+        },
+        "4": {
+          "seed": 99712,
+          "text_sha256": "f2918d055d06181219039acf2605d1365014e72f4e654b7f14e5f583386bb112"
+        },
+        "5": {
+          "seed": 91793,
+          "text_sha256": "b2c211e60c4c595006dedcd49ed72cc072777eaf3c8484a5c8ede87804bbc835"
+        },
+        "8": {
+          "seed": 139307,
+          "text_sha256": "709d6f33fb96c005939e77bc8b4cd855a7a5c391c5755d76c3b15bb676665137"
+        },
+        "1": {
+          "seed": 392715,
+          "text_sha256": "a80ae0de06ce0bf98c2cff8bba441ca2bba5e1dc421a8bafe384e614ee05bb1d"
+        },
+        "6": {
+          "seed": 329363,
+          "text_sha256": "4612db89d809236573f108a34968d56821893da3b899e50d53de2efed897a814"
+        }
+      }
+    },
+    "12": {
+      "groups": {
+        "2": {
+          "seed": 91798,
+          "text_sha256": "b1050cfb6c0535aa3aef814c180128c5f92beabfe3104258b26e3a5f7ec109d0"
+        },
+        "1": {
+          "seed": 155150,
+          "text_sha256": "ee759432b513abbecd3aa09a4c051b6f969d92794266031fa59612e351626cdd"
+        }
+      }
+    },
+    "15": {
+      "groups": {
+        "3": {
+          "seed": 91801,
+          "text_sha256": "e78c300910046a64be47acef3ab6ac35b996294bcc76f9da7191b36779c70de3"
+        },
+        "5": {
+          "seed": 107639,
+          "text_sha256": "e7b3b657e144b7176439a7a51f272fa2854b3d376c58d5f139ff53b7c60c59bf"
+        },
+        "1": {
+          "seed": 321452,
+          "text_sha256": "0fbd2f653cb9833704756a62b59c4be67bd1d18d64317002efe69b5a536c3f27"
+        },
+        "4": {
+          "seed": 321452,
+          "text_sha256": "6812778293bc253a357d4a2c4676f0b18e7005f923e6992e5222879056c8ea46"
+        }
+      }
+    },
+    "20": {
+      "groups": {
+        "1": {
+          "seed": 186834,
+          "text_sha256": "0f40f8328569f825ccff5bf290bfad4c6a6c744a09faac17f27ca5f2781b2ec7"
+        },
+        "3": {
+          "seed": 115563,
+          "text_sha256": "4f2d1c99130e90172695dde9b9145e348b7e12ac947618a927b4f98c64e7fe43"
+        }
+      }
+    }
+  }
+}

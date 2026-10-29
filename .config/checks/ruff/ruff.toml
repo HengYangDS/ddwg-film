@@ -1,0 +1,87 @@
+# The product's own Ruff policy, held by this repository. The adopter floor of the runtime's
+# static gate selects only E, F, B, I and UP; this policy keeps the code at the product's standard.
+cache-dir = "build/runtime/tool-cache/ruff"
+line-length = 100
+target-version = "py312"
+
+[format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+skip-magic-trailing-comma = false
+docstring-code-format = true
+
+[lint]
+select = [
+  "D",
+  "E",
+  "W",
+  "F",
+  "I",
+  "UP",
+  "B",
+  "SIM",
+  "C4",
+  "RET",
+  "PTH",
+  "PT",
+  "N",
+  "A",
+  "ISC",
+  "FLY",
+  "PERF",
+  "TC",
+  "TID",
+  "PIE",
+  "RUF",
+  "C90",
+  "TRY",
+  "FBT",
+  "SLF",
+  "ARG",
+  "PGH",
+  "FURB",
+  "G",
+  "DTZ",
+  "EM",
+  "LOG",
+  "BLE",
+  "RSE",
+  "SLOT",
+  "YTT",
+  "ASYNC",
+  "PLE",
+  "PLC",
+  "PLW",
+  "PLR0911",
+  "PLR0912",
+  "PLR0915",
+  "S602",
+  "S604",
+  "S605",
+]
+
+# Every authored module/package needs a responsibility statement. Symbol-level
+# presence belongs to public interface policy; existing docstrings still obey D.
+ignore = ["D101", "D102", "D103", "D105", "D106", "D107"]
+
+# The film's scripts, captions and pronunciation tables are Chinese text, and its English
+# captions set typographic quotes and dashes, so these characters are intended.
+allowed-confusables = ["，", "？", "；", "！", "：", "（", "）", "‘", "’", "–"]
+
+[lint.mccabe]
+max-complexity = 10
+
+# Import order stays at isort's defaults, so this policy and the runtime's isolated static gate
+# accept the same imports.
+[lint.isort]
+known-first-party = ["ddwg_film"]
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.flake8-type-checking]
+runtime-evaluated-base-classes = ["pydantic.BaseModel"]
+
+[lint.flake8-tidy-imports]
+ban-relative-imports = "all"
