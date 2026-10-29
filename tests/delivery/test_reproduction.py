@@ -19,8 +19,8 @@ from filmkit.delivery.reproduction import ReproductionError
 pytestmark = pytest.mark.ffmpeg
 
 
-def encode(target: Path, picture: str, tone: int) -> Path:
-    """A six-frame 60 fps film of a test picture and a sine tone, titled like a film."""
+def encode(target: Path, picture: str, tone: int, created: str = "2026-10-28T11:29:43Z") -> Path:
+    """A six-frame 60 fps film of a test picture and a sine tone, titled and dated like a film."""
     subprocess.run(
         [
             "ffmpeg",
@@ -49,6 +49,8 @@ def encode(target: Path, picture: str, tone: int) -> Path:
             "aac",
             "-metadata",
             "title=A film",
+            "-metadata",
+            f"creation_time={created}",
             str(target),
         ],
         check=True,
@@ -66,6 +68,7 @@ def films(tmp_path_factory) -> dict[str, Path]:
         "same": encode(folder / "same.mp4", "testsrc2", 440),
         "picture": encode(folder / "picture.mp4", "smptebars", 440),
         "sound": encode(folder / "sound.mp4", "testsrc2", 880),
+        "later": encode(folder / "later.mp4", "testsrc2", 440, "2026-11-05T09:00:00Z"),
     }
 
 
@@ -220,6 +223,12 @@ def test_a_frame_below_its_floor_fails_naming_the_film_and_frame(release):
     assert film["psnr"]["below_floor"][0] == 0
     with pytest.raises(SystemExit, match=r"en: ddwg-en-1080p-captioned\.mp4: picture"):
         reproduction.main(["--read-only"])
+
+
+def test_a_film_packaged_later_differs_only_in_its_creation_date(release):
+    shutil.copyfile(release.films["later"], production.Edition("zh").film("uhd"))
+    film = release.compare()["editions"]["zh"]["films"][0]
+    assert (film["container"], film["audio"], film["verdict"]) == ("identical", "identical", "pass")
 
 
 def test_different_decoded_audio_fails(release):

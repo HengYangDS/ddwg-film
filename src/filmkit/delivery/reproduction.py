@@ -42,6 +42,8 @@ CHECKSUMS = "SHA256SUMS"
 DECODE_DEADLINE = 7200
 # How many of the lowest frames a film's comparison reports.
 LOWEST = 10
+# The container tags that name the encoder or the time a film was packaged, not the film.
+PACKAGING_TAGS = ("encoder", "creation_time", "com.apple.quicktime.creationdate")
 
 Digest = Annotated[str, StringConstraints(pattern=r"^[0-9a-f]{64}$")]
 AssetName = Annotated[str, StringConstraints(pattern=r"^[A-Za-z0-9][A-Za-z0-9._-]*$")]
@@ -213,7 +215,7 @@ def decoded_audio(path: Path) -> str:
 
 
 def container(path: Path) -> dict:
-    """A film's streams, duration, chapters and tags, apart from encoder labels."""
+    """A film's streams, duration, chapters and tags, apart from its packaging labels."""
     data = media.probe(path)
     keys = ("codec_type", "codec_name", "width", "height", "sample_rate", "channels", "nb_frames")
     return {
@@ -234,7 +236,11 @@ def container(path: Path) -> dict:
             (chapter["start_time"], chapter["end_time"], chapter.get("tags", {}).get("title"))
             for chapter in data.get("chapters", [])
         ],
-        "tags": {k: v for k, v in data["format"].get("tags", {}).items() if k != "encoder"},
+        "tags": {
+            key: value
+            for key, value in data["format"].get("tags", {}).items()
+            if key not in PACKAGING_TAGS
+        },
     }
 
 
