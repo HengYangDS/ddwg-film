@@ -3,6 +3,7 @@
 [[runner]]
 forge = "github"
 executables = ["mise", "mkdir"]
+references = ["github"]
 
 [[runner]]
 forge = "gitlab"
