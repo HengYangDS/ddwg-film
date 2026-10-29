@@ -4,3 +4,17 @@ profile_id = "ddwg-film"
 material_paths = [
     "**",
 ]
+
+[proof]
+gate_registry = "system/gates.toml"
+
+[[proof.source_contracts]]
+kind = "upstream"
+input_refs = ["package-lock.json#packages/node_modules/gsap"]
+integrity_gate = "source-integrity"
+
+[proof.source_contracts.members]
+"assets/vendor/gsap/gsap.min.js" = [
+  "package-lock.json#packages/node_modules/gsap",
+  "package/dist/gsap.min.js",
+]
