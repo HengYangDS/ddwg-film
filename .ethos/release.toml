@@ -1,0 +1,27 @@
+[protected_refs]
+tags = ["v*"]
+
+[publication]
+local_verification_command = "ethos prove --host --execute --full --json"
+local_installation_command = "mise run bootstrap"
+
+[[publication.peers]]
+id = "gitlab"
+provider = "gitlab"
+role = "organization_collaboration"
+git_remote = "gitlab"
+forge_repository = "http://192.168.64.101:18086/dig/misc/guidelines/ddwg-film"
+capabilities = ["repository", "ci_cd", "publication"]
+ci_surface = ".gitlab-ci.yml"
+
+[[publication.peers]]
+id = "github"
+provider = "github"
+role = "independent_distribution"
+git_remote = "github"
+forge_repository = "https://github.com/HengYangDS/ddwg-film"
+capabilities = ["repository", "ci_cd", "publication"]
+ci_surface = ".github/workflows/ci.yml"
+
+[release]
+mirror = "accepted_ff"

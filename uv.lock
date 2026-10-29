@@ -195,7 +195,6 @@ wheels = [
 
 [[package]]
 name = "filmkit"
-version = "1.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "mlx-audio" },
