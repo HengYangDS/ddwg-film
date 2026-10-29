@@ -1,7 +1,8 @@
-# Sources whose SHA-256 the delivered films' build receipts record and film-media checks: the
-# reference recordings, covers and fonts, the scripts and voice contracts, the source manifest,
-# and the composition and player pages. A new production changes them together
-# with that evidence, through a full render and review.
+# Sources whose SHA-256 the release manifest records and the Python suite checks in every proof,
+# and that film-media also checks against a build's receipts: the reference recordings, covers
+# and fonts, the scripts and voice contracts, the source manifest, and the composition and
+# player pages. A new production changes them together with the manifest, through a full render
+# and review.
 [[ownership]]
 id = "film-media-bound-sources"
 paths = [
@@ -29,18 +30,19 @@ paths = [
 format_owner = "immutable-carrier"
 format_command = "not-applicable:film-media-bound"
 format_check = "ethos prove --full --execute --json"
-validation_owner = "film-media"
+validation_owner = "native-behavior"
 validation_command = "ethos prove --full --execute --json"
 mutation_policy = "forbidden"
 
 # Narration texts that film-media compares with the script: each must equal its edition's
-# segment texts joined by one blank line, so a Markdown formatter must not rewrite them.
+# segment texts joined by one blank line, so a Markdown formatter must not rewrite them. The
+# release manifest records them too.
 [[ownership]]
 id = "film-media-bound-narration"
 paths = ["content/en/narration.md", "content/narration.md"]
 format_owner = "immutable-carrier"
 format_command = "not-applicable:film-media-bound"
 format_check = "ethos prove --full --execute --json"
-validation_owner = "film-media"
+validation_owner = "native-behavior"
 validation_command = "ethos prove --full --execute --json"
 mutation_policy = "forbidden"

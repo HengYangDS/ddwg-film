@@ -99,12 +99,21 @@ class Release:
                 "stage_sha256": repository.sha(edition.picture_stage / "index.html"),
                 "picture_floor_db": {} if floors is None else dict.fromkeys(films, floors),
             }
+        sources = [
+            *(production.Edition(code).script for code in production.CODES),
+            picture_rendering.COMPOSITION_SCRIPT,
+        ]
         assets = [
             {"name": path.name, "bytes": path.stat().st_size, "sha256": repository.sha(path)}
             for path in sorted(self.folder.iterdir())
             if path.name != reproduction.CHECKSUMS
         ]
-        manifest = {"version": "1.0.0", "editions": editions, "assets": assets}
+        manifest = {
+            "version": "1.0.0",
+            "editions": editions,
+            "sources": {str(path): repository.sha(path) for path in sources},
+            "assets": assets,
+        }
         checksums = reproduction.checksums(reproduction.Release.model_validate(manifest))
         (self.folder / reproduction.CHECKSUMS).write_text(checksums)
         assets.append(
@@ -276,6 +285,15 @@ def test_a_published_asset_that_differs_from_the_manifest_refuses_before_any_lay
         release.compare()
 
 
+def test_a_film_bound_source_that_differs_from_the_manifest_refuses_before_any_layer(release):
+    (release.root / picture_rendering.COMPOSITION_SCRIPT).write_text("/* edited */")
+    with pytest.raises(
+        ReproductionError,
+        match=r"film-bound sources differ from the release manifest: picture/film\.js",
+    ):
+        release.compare()
+
+
 @pytest.mark.usefixtures("release")
 def test_checksums_list_every_other_asset_for_shasum():
     manifest = reproduction.load()
@@ -306,6 +324,11 @@ def test_checksums_list_every_other_asset_for_shasum():
         (
             lambda manifest: manifest["assets"][-1].update(sha256="0" * 64),
             "SHA256SUMS differs from the assets it lists",
+        ),
+        (lambda manifest: manifest.pop("sources"), "is not a release manifest"),
+        (
+            lambda manifest: manifest["sources"].update({"../film.js": "0" * 64}),
+            "is not a release manifest",
         ),
     ],
 )

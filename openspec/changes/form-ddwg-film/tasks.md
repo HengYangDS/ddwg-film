@@ -29,6 +29,7 @@
 - [x] 5.2 Rebuild captions, transcripts and soundtracks, and verify byte identity with the accepted ones.
 - [x] 5.3 Record the release manifest from the accepted films with each edition's soundtrack and staged-document digests, and add the comparison of a rebuild with the published release as an engine command, the `film:compare` task and the `film-reproduction` gate, with `film:build` ending in the technical verification; verify by the suite.
 - [x] 5.4 Render, package and verify both editions, confirm the tracked tree is unchanged, and compare them with the accepted films: inspect the lowest frames side by side, record each film's floor in the manifest, and confirm every layer passes.
+- [x] 5.5 Record each film-bound source's SHA-256 in the release manifest, check the sources in the Python suite as the format policy's validation owner for them, and refuse a changed source in the comparison; verify by the suite.
 
 ## 6. Publication
 

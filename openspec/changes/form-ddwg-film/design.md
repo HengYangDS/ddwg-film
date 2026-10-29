@@ -81,7 +81,7 @@ Thought recordings are not published; the soundtrack digest binds them, and for 
 
 ### Publication and the comparison
 
-The `v1.0.0` release publishes, per edition, `<prefix>-uhd.mp4`, `<prefix>-1080p-captioned.mp4`, `<prefix>.srt`, `<prefix>.vtt`, `<prefix>-transcript.md`, `<prefix>-cover.png`, `<prefix>-production-review.json` and `<prefix>-production-review.md`, plus `SHA256SUMS`. The tracked manifest `content/release.json` records each asset's name, size and SHA-256, each edition's soundtrack and staged-document digests, and each film's PSNR floor once it is calibrated. Its `v1.0.0` values are recorded once from the accepted round-24 files; a later film assembles its release from its own reviewed build when the engine gains that command. The Release itself, the tag and the remotes wait for the user's confirmation.
+The `v1.0.0` release publishes, per edition, `<prefix>-uhd.mp4`, `<prefix>-1080p-captioned.mp4`, `<prefix>.srt`, `<prefix>.vtt`, `<prefix>-transcript.md`, `<prefix>-cover.png`, `<prefix>-production-review.json` and `<prefix>-production-review.md`, plus `SHA256SUMS`. The tracked manifest `content/release.json` records each asset's name, size and SHA-256, each edition's soundtrack and staged-document digests, the SHA-256 of each film-bound source, and each film's PSNR floor once it is calibrated. Its `v1.0.0` values are recorded once from the accepted round-24 files; a later film assembles its release from its own reviewed build when the engine gains that command. The Release itself, the tag and the remotes wait for the user's confirmation.
 
 A rebuild cannot carry the review, because its films differ from the reviewed bytes by render variation. `film:build` therefore ends with the technical verification, and `film:compare` compares the rebuild with the published assets in `build/artifacts/release/`, downloaded from the release or placed there by the maintainer, and writes its report under `build/evidence/reproduction/`. The `film-media` gate runs the technical verification and a `film-reproduction` gate runs the comparison, so the two local film gates show that the checkout's build reproduces what was published.
 
@@ -90,6 +90,8 @@ The root `LICENSE` carries the MIT text that ETHOS recognizes, and `pyproject.to
 ### CI
 
 ETHOS projects its full proof into GitHub Actions and GitLab CI, on Apple-silicon macOS runners, so hosted CI and a local proof run the same gates. The proof sets therefore hold only the portable gates: static analysis, the Python and Node suites and source integrity. The `film-media` and `film-reproduction` gates need the supplied models, an hour-long rebuild and the published release, so they stay registered outside both proof sets and run locally through `ethos prove --gate film-media --gate film-reproduction --execute`, which is the films' acceptance. Keeping them in the full proof was rejected: every hosted run would fail on inputs CI cannot have.
+
+The film-bound sources, which the format policy keeps from every formatter because their exact bytes make the films, still need a validation owner inside the full proof, as ETHOS requires of every immutable carrier. The Python suite is that owner: it checks each source against the SHA-256 that the release manifest records, and that the manifest records every source the policy keeps from formatters. The comparison also refuses a changed source before comparing any layer, since a rebuild from other bytes cannot reproduce the published films.
 
 ## Risks / Trade-offs
 

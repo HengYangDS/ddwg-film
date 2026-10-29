@@ -2,13 +2,14 @@
 
 The published assets lie in build/artifacts/release under the names that the release manifest
 content/release.json records with each asset's size and SHA-256; an asset that differs from
-the manifest refuses the comparison before any layer is compared. Each edition's soundtrack and
-staged picture document must hold the bytes the manifest records, its captions, transcript and
-cover the published bytes, and its published review must bind the published films and the
-current script and composition. Each rebuilt film must have its published film's frame count,
-decoded audio, streams, chapters and tags, and every decoded frame's PSNR against it at or
-above the floor that the manifest records. Without a floor the comparison reports the lowest
-frames, so that they can be inspected and the floor recorded, and does not pass.
+the manifest, or a film-bound source that differs from the bytes the manifest records, refuses
+the comparison before any layer is compared. Each edition's soundtrack and staged picture
+document must hold the bytes the manifest records, its captions, transcript and cover the
+published bytes, and its published review must bind the published films and the current
+script and composition. Each rebuilt film must have its published film's frame count, decoded
+audio, streams, chapters and tags, and every decoded frame's PSNR against it at or above the
+floor that the manifest records. Without a floor the comparison reports the lowest frames, so
+that they can be inspected and the floor recorded, and does not pass.
 
 The report goes to build/evidence/reproduction/report.json unless --read-only is given; a
 comparison that does not pass exits with "<edition>: <asset>: <layer>" for each failing layer.
@@ -47,6 +48,10 @@ PACKAGING_TAGS = ("encoder", "creation_time", "com.apple.quicktime.creationdate"
 
 Digest = Annotated[str, StringConstraints(pattern=r"^[0-9a-f]{64}$")]
 AssetName = Annotated[str, StringConstraints(pattern=r"^[A-Za-z0-9][A-Za-z0-9._-]*$")]
+# A tracked file's path below the root, each of its names an asset name.
+SourcePath = Annotated[
+    str, StringConstraints(pattern=r"^[A-Za-z0-9][A-Za-z0-9._-]*(/[A-Za-z0-9][A-Za-z0-9._-]*)*$")
+]
 
 
 class ReproductionError(ValueError):
@@ -70,10 +75,13 @@ class EditionRecord(Declared):
 
 
 class Release(Declared):
-    """The release manifest: the version, each edition's record and every published asset."""
+    """The release manifest: its version, editions' records, film-bound sources and assets."""
 
     version: Annotated[str, StringConstraints(pattern=r"^\d+\.\d+\.\d+$")]
     editions: dict[str, EditionRecord]
+    # Each tracked file that no formatter rewrites and whose exact bytes the build of the
+    # published films reads, with its SHA-256.
+    sources: dict[SourcePath, Digest] = Field(min_length=1)
     assets: tuple[Asset, ...] = Field(min_length=1)
 
 
@@ -123,6 +131,15 @@ def load() -> Release:
         msg = f"{MANIFEST}: {CHECKSUMS} differs from the assets it lists"
         raise ReproductionError(msg)
     return release
+
+
+def changed_sources(release: Release) -> list[str]:
+    """Each film-bound source whose tracked bytes differ from those the manifest records."""
+    return [
+        path
+        for path, digest in release.sources.items()
+        if not (repository.ROOT / path).is_file() or repository.sha(path) != digest
+    ]
 
 
 def published(release: Release) -> dict[str, Path]:
@@ -323,6 +340,10 @@ def failures(report: dict) -> list[str]:
 def compare() -> dict:
     """The comparison of the rebuild with the published release, every layer reported."""
     release = load()
+    changed = changed_sources(release)
+    if changed:
+        msg = f"The film-bound sources differ from the release manifest: {', '.join(changed)}"
+        raise ReproductionError(msg)
     assets = published(release)
     report = {
         "release": release.version,

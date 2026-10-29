@@ -81,3 +81,18 @@ The comparison SHALL refuse a published asset whose bytes differ from the releas
 
 - **WHEN** a published review covers other film bytes or another script or composition, or scores below a declared floor
 - **THEN** the comparison fails and names the edition
+
+### Requirement: Film-bound sources stay as published
+
+The release manifest SHALL record the SHA-256 of each film-bound source, a tracked file whose exact bytes the build reads and that no formatter rewrites. The portable proof SHALL check every film-bound source against the manifest, and the comparison SHALL refuse before comparing any layer when one differs.
+
+#### Scenario: A changed film-bound source refuses
+
+- **WHEN** a film-bound source differs by one byte from the release manifest
+- **THEN** the portable proof fails and names the source
+- **AND** the comparison refuses before comparing any layer and names the source
+
+#### Scenario: Every source kept from formatters is recorded
+
+- **WHEN** the format policy keeps a tracked file from every formatter
+- **THEN** the release manifest records that file's SHA-256

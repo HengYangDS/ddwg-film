@@ -8,7 +8,7 @@ Author: Yang HENG.
 
 ## The films
 
-The films are published as release assets, together with their captions, transcripts, covers, independent review records and `SHA256SUMS`. [`content/release.json`](content/release.json) records each asset's name, size and SHA-256, and the digests of the soundtrack and staged picture each edition was made from. The independent review of the published films scored each edition 95.9 out of 100, with every dimension at 95 or above and no material finding. That review scores the audio from automated evidence; human listening is a separate acceptance.
+The films are published as release assets, together with their captions, transcripts, covers, independent review records and `SHA256SUMS`. [`content/release.json`](content/release.json) records each asset's name, size and SHA-256, the digests of the soundtrack and staged picture each edition was made from, and those of the film-bound sources: the scripts, narration texts, voice contracts, reference recordings, source manifest, covers, fonts, composition and pages whose exact bytes the build reads. The independent review of the published films scored each edition 95.9 out of 100, with every dimension at 95 or above and no material finding. That review scores the audio from automated evidence; human listening is a separate acceptance.
 
 ## Rebuilding the films
 
@@ -52,7 +52,7 @@ gh release download v1.0.0 --repo HengYangDS/ddwg-film --dir build/artifacts/rel
 mise run film:compare
 ```
 
-The comparison refuses a published asset that differs from the release manifest, and accepts a published review only when it binds the published films and the current script and composition. It then compares the rebuild layer by layer: each soundtrack and staged picture document must hold the recorded bytes, the captions, transcripts and covers the published bytes, and each film must have the published frame count, decoded audio, streams, chapters and tags, with every decoded frame's PSNR at or above the floor the manifest records, 45 dB for each film of `v1.0.0`. The picture alone is not byte-identical, because GPU capture and encoding vary between renders of the same stage; the first rebuild's lowest frame measured 51.5 dB. The report goes to `build/evidence/reproduction/report.json`.
+The comparison refuses a published asset or a film-bound source that differs from the release manifest, and accepts a published review only when it binds the published films and the current script and composition. It then compares the rebuild layer by layer: each soundtrack and staged picture document must hold the recorded bytes, the captions, transcripts and covers the published bytes, and each film must have the published frame count, decoded audio, streams, chapters and tags, with every decoded frame's PSNR at or above the floor the manifest records, 45 dB for each film of `v1.0.0`. The picture alone is not byte-identical, because GPU capture and encoding vary between renders of the same stage; the first rebuild's lowest frame measured 51.5 dB. The report goes to `build/evidence/reproduction/report.json`.
 
 ## Checks
 
