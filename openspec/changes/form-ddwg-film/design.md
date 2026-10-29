@@ -50,7 +50,7 @@ The film declares itself in `content/film.toml`, validated by pydantic before an
 - npm locks `hyperframes` 0.8.150 with the exact dependency tree the accepted films were rendered with (every package's version and integrity equal the renderer's lock, except a patch release of `prettier` that its range admits), plus `@puppeteer/browsers`, `puppeteer-core` 25.12.0, `gsap` 3.15.0 and `prettier`. GSAP is staged from the npm package, byte-identical to the vendored copy it replaces, and the OpenMontage runtime path is removed.
 - `mise run film:supply` installs chrome-headless-shell 152.0.7977.30, the build that HyperFrames 0.8.150 pins, into `build/runtime/tool-cache/browsers` through `@puppeteer/browsers`, and checks its executable's SHA-256. The renderer and the real-browser checks run it unless `FILM_CHROMIUM_PATH` names another.
 - The same task downloads the voice, recognizer and aligner snapshots at their pinned revisions into `build/runtime/tool-cache/narration-*` through huggingface_hub, which honours `HF_ENDPOINT` for a mirror, and checks each weights file's SHA-256 and recorded revision. The engine loads each model only from its checked folder, so the build after the supply needs no network.
-- FFmpeg stays with its Homebrew owner, a host prerequisite that the README names; each build records its version.
+- FFmpeg, ExifTool and rsync 3 stay with their Homebrew owner, host prerequisites that the README and `AGENTS.md` name; the comparison report records the FFmpeg version.
 - HyperFrames sends telemetry, checks for updates and silently upgrades itself in place by default; every render sets `HYPERFRAMES_NO_TELEMETRY`, `DO_NOT_TRACK`, `HYPERFRAMES_NO_UPDATE_CHECK` and `HYPERFRAMES_NO_AUTO_INSTALL`, and keeps its font cache under the tool cache. A render cancels itself when any ancestor process exits, so a render's wrapper must outlive it.
 
 OpenMontage's runtime was rejected as a source: it is unpinned, licensed AGPL-3.0 and was upgraded in place. The Docker render was rejected for this release for the reasons in Context.
@@ -74,7 +74,7 @@ Thought recordings are not published; the soundtrack digest binds them, and for 
 - pydantic validates `content/film.toml`.
 - The current writer keeps writing SRT and WebVTT. pysubs2 1.9.0, given the accepted cues, ends an SRT with an extra blank line and numbers every WebVTT cue, so its output differs from the accepted captions; trimming its output would cost more code than the writer it replaces.
 - REUSE declares licenses per path (`REUSE.toml`, `LICENSES/`) and `reuse lint` checks them.
-- `rsync --checksum` and `shasum -a 256 -c` replace the Documents delivery module for local delivery.
+- `rsync --checksum` places the Documents delivery and moves every entry it replaces or removes into a predecessor folder under `build/`, and `shasum -a 256 -c` reads the delivery back; this replaces the hand-written retention and copy code. The delivery task runs the film verifier first, which binds every member to its package records. The engine requires rsync 3, which Homebrew installs.
 - The hand-written BS.1770-4 K-weighting stays: a library computes slightly different gains and would change the soundtracks. It moves to a later engine version together with a new edition and its review.
 
 ### Publication and the comparison

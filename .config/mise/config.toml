@@ -92,6 +92,13 @@ run = [
   { task = "film:verify" },
 ]
 
+[tasks."film:deliver"]
+description = "Deliver the reviewed editions to the film's Documents folder with rsync and read them back"
+run = [
+  "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.verification --language all",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.documents_folder",
+]
+
 [tasks."film:compare"]
 description = "Compare the build with the published release in build/artifacts/release under the reproduction standard"
 run = "uv run --python 3.12 --frozen --offline python -m filmkit.delivery.reproduction"

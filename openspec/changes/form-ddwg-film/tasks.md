@@ -4,7 +4,7 @@
 
 - [x] 1.1 Import the private repository's code, tests, scripts, casts, assets and configuration from `fa1e974` without its history, `evidence/` or custody code, and verify every imported file's SHA-256 equals its blob at `fa1e974`.
 - [x] 1.2 Bind the toolchain: the Mise configuration and lock for Node 26.12.1, CPython 3.12.16, uv 0.13.5 and ETHOS `0.2.0-alpha.19`, plus the uv and npm locks; verify `mise install --locked`, `uv sync --frozen` and `npm ci` succeed.
-- [ ] 1.3 Adapt `AGENTS.md`, the gate registry and the check policies to this repository, declaring FFmpeg as a native tool; verify `ethos status` passes and the Python and Node suites pass unchanged.
+- [ ] 1.3 Adapt `AGENTS.md`, the gate registry and the check policies to this repository, naming FFmpeg, ExifTool and rsync 3 as Homebrew host prerequisites; verify `ethos status` passes and the Python and Node suites pass.
 
 ## 2. Engine boundary
 

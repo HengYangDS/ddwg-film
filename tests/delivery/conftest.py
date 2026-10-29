@@ -1,6 +1,6 @@
 """Fixtures of the delivery tests.
 
-`film` is a root whose delivery sources are small recorded texts, beside an absent Documents
+`film` is a root whose delivery sources are small texts, beside an absent Documents
 destination; `inputs` is one edition's inputs bound as the film verifier reads them.
 """
 
@@ -39,14 +39,10 @@ def write_input(path: Path, body: str | bytes | dict) -> Path:
 
 
 class Folder(NamedTuple):
-    """A root whose delivery sources are small recorded texts, and an absent destination.
-
-    `package` is the set-aside package folder below the root that retention may bind.
-    """
+    """A root whose delivery sources are small texts, and an absent destination."""
 
     root: Path
     destination: Path
-    package = Path("build/runtime/work/package")
 
     @staticmethod
     def write(path: Path, body: str | bytes) -> Path:
@@ -61,46 +57,18 @@ class Folder(NamedTuple):
             if path.is_file()
         }
 
-    def records(self, code: str) -> tuple[Path, Path]:
-        """The edition's film and viewing package records below the root."""
-        edition = production.Edition(code)
-        return tuple(
-            self.root / place.relative_to(repository.ROOT)
-            for place in (edition.film_package, edition.viewing_package)
-        )
-
-    def bind(self) -> None:
-        """Record every current source in its edition's film or viewing package."""
-        index = repository.sha(self.root / "build/artifacts/film/index.html")
-        for code in production.CODES:
-            films, viewing = self.records(code)
-            names = {path.name for path in production.Edition(code).films}
-            rows = [
-                (path.removeprefix(f"{code}/"), repository.sha(source))
-                for source, path in delivery_documents_folder.plan(self.root)
-                if path.startswith(f"{code}/")
-            ]
-            recorded = [{"path": n, "sha256": s} for n, s in rows if n in names]
-            write_input(films, {"editions": recorded})
-            members = [{"path": n, "sha256": s} for n, s in rows if n not in names]
-            language_index = {"path": "build/artifacts/film/index.html", "sha256": index}
-            write_input(viewing, {"language_index": language_index, "members": members})
-
     def better(self) -> None:
-        """Replace every member source with a successor edition and record it."""
+        """Replace every member source with a successor edition."""
         for source, path in delivery_documents_folder.plan(self.root):
             source.write_text(f"better {path}\n")
-        self.bind()
 
 
 @pytest.fixture
 def film(tmp_path) -> Folder:
-    """A root whose current, recorded members are small texts, and an absent destination."""
+    """A root whose current members are small texts, and an absent destination."""
     folder = Folder(tmp_path / "root", tmp_path / "Documents/ddwg-introduction-film")
     for source, path in delivery_documents_folder.plan(folder.root):
         write_input(source, f"current {path}\n")
-    folder.bind()
-    (folder.root / folder.package).mkdir(parents=True)
     return folder
 
 
