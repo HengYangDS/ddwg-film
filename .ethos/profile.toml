@@ -1,0 +1,6 @@
+profile_id = "ddwg-film"
+
+[openspec]
+material_paths = [
+    "**",
+]
