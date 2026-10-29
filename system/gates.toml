@@ -2,15 +2,12 @@ schema_version = 1
 id = "ddwg-film-gate-registry"
 source_refs = ["system/gates.toml"]
 
+# The proof sets hold the portable gates that hosted CI also runs. The film gates need Apple
+# silicon, the supplied models, a rebuild and the published release; they run locally through
+# `ethos prove --gate film-media --gate film-reproduction --execute`.
 [proof_sets]
-default = [
-  "native-static",
-  "native-behavior",
-  "film-media",
-  "film-reproduction",
-  "source-integrity",
-]
-full = ["native-static", "native-behavior", "film-media", "film-reproduction", "source-integrity"]
+default = ["native-static", "native-behavior", "source-integrity"]
+full = ["native-static", "native-behavior", "source-integrity"]
 
 [[gates]]
 id = "native-static"

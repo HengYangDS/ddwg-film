@@ -85,7 +85,7 @@ A rebuild cannot carry the review, because its films differ from the reviewed by
 
 ### CI
 
-ETHOS projects the portable gates into GitHub Actions and GitLab CI. The film-media gate needs Apple silicon, the models and the films, so it runs only in the local full proof, which is the acceptance.
+ETHOS projects its full proof into GitHub Actions and GitLab CI, on Apple-silicon macOS runners, so hosted CI and a local proof run the same gates. The proof sets therefore hold only the portable gates: static analysis, the Python and Node suites and source integrity. The `film-media` and `film-reproduction` gates need the supplied models, an hour-long rebuild and the published release, so they stay registered outside both proof sets and run locally through `ethos prove --gate film-media --gate film-reproduction --execute`, which is the films' acceptance. Keeping them in the full proof was rejected: every hosted run would fail on inputs CI cannot have.
 
 ## Risks / Trade-offs
 
