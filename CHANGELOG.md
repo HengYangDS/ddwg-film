@@ -6,8 +6,6 @@ All notable changes to the DDWG introduction films and their build are recorded 
 
 ## [1.1.0] - 2026-10-31
 
-The films are those of `1.0.0`; this release changes how they are built.
-
 ### Changed
 
 - The films are built by the published `filmkit` 0.1.0 release, which `pyproject.toml` pins by its tag `v0.1.0` and `uv.lock` by its commit, instead of the engine copy in `src/filmkit`. Every other locked package keeps its version. The declaration names the fonts the picture stages and the listening plan's readings, which `content/review/readings.json` holds, and the Mise tasks run the Node tools through `python -m filmkit.tools`.
