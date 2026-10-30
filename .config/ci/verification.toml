@@ -8,18 +8,6 @@ mise_version = "2026.10.23"
 
 [supply.checks]
 github = ["mise run bootstrap"]
-gitlab = ["mise run bootstrap"]
 
 [github]
 runners = ["macos-latest"]
-
-[gitlab.variables]
-MISE_CONFIG_DIR = "$CI_PROJECT_DIR/build/runtime/work/mise-config"
-MISE_CEILING_PATHS = "$CI_PROJECT_DIR/.."
-MISE_TRUSTED_CONFIG_PATHS = "$CI_PROJECT_DIR/.config/mise/config.toml"
-MISE_YES = "1"
-
-[gitlab.runners.macos]
-system = "macos"
-review_tags = ["ci-macos-arm64-review"]
-protected_tags = ["ci-macos-arm64-shell"]

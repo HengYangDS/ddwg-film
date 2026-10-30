@@ -7,7 +7,7 @@
 
 ## 2. Publication topology
 
-- [ ] 2.1 Remove the GitLab peer from `.ethos/release.toml`, the GitLab projection and runner declarations from the CI configuration, and the generated `.gitlab-ci.yml`, and project the gates again with `ethos lane project`; done when `ethos lane project --check` and `ethos lane repair-paradigm --json` report no gap and `CHANGELOG.md` names GitHub Actions only.
+- [x] 2.1 Remove the GitLab peer from `.ethos/release.toml`, the GitLab projection and runner declarations from the CI configuration, and the generated `.gitlab-ci.yml`, and project the gates again with `ethos lane project`; done when `ethos lane project --check` and `ethos lane repair-paradigm --json` report no gap and `CHANGELOG.md` names GitHub Actions only.
 
 ## Workflow follow-up
 

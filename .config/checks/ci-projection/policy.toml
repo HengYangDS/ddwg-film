@@ -9,8 +9,3 @@ inputs = { ci = ".config/ci/verification.toml" }
 provider = "github"
 kind = "cue"
 projection = ".github/workflows/ci.yml"
-
-[[projection]]
-provider = "gitlab"
-kind = "cue"
-projection = ".gitlab-ci.yml"
