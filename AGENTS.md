@@ -24,6 +24,12 @@ punctuation or forcing uniform speed.
 Generated output belongs under the ignored `build/`. The tracked tree holds
 sources only; the films are published as release assets.
 
+The engine is the filmkit release that `pyproject.toml` and `uv.lock` pin.
+Never patch the installed engine or copy it back here: an engine change goes
+through filmkit's own Change and release, then a lock update here, and a new
+engine release keeps the published films only by meeting the reproduction
+standard.
+
 ## Host and Film Gates
 
 A build needs Apple silicon and three host tools that Homebrew owns: FFmpeg with

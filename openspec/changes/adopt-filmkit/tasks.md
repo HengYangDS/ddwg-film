@@ -16,7 +16,7 @@
 
 ## 4. Documentation
 
-- [ ] 4.1 Update the README's layout, engine and check sections, `AGENTS.md` and `CHANGELOG.md`; verify that `ethos lane repair-paradigm --json` reports no gap and that the format check passes.
+- [x] 4.1 Update the README's layout, engine and check sections, `AGENTS.md` and `CHANGELOG.md`; verify that `ethos lane repair-paradigm --json` reports no gap and that the format check passes.
 
 ## Workflow follow-up
 
