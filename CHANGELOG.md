@@ -4,9 +4,14 @@ All notable changes to the DDWG introduction films and their build are recorded 
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-31
+
+The films are those of `1.0.0`; this release changes how they are built.
+
 ### Changed
 
 - The films are built by the published `filmkit` 0.1.0 release, which `pyproject.toml` pins by its tag `v0.1.0` and `uv.lock` by its commit, instead of the engine copy in `src/filmkit`. Every other locked package keeps its version. The declaration names the fonts the picture stages and the listening plan's readings, which `content/review/readings.json` holds, and the Mise tasks run the Node tools through `python -m filmkit.tools`.
+- A rebuild with filmkit 0.1.0 on an Apple M5 Max reproduces the published `1.0.0` editions: every soundtrack, staged picture document, caption, transcript and cover is byte-identical, and each film has the published frame count, decoded audio and container, with every frame at or above the 45 dB PSNR floor; the lowest frame measured 51.6 dB.
 
 ### Removed
 
@@ -22,5 +27,6 @@ All notable changes to the DDWG introduction films and their build are recorded 
 - ETHOS governance, with its portable proof projected into GitHub Actions.
 - The MIT License for the code and CC BY 4.0 for the films' content, with the third-party notices and the narrator's provenance in `NOTICE`.
 
-[Unreleased]: https://github.com/HengYangDS/ddwg-film/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/HengYangDS/ddwg-film/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/HengYangDS/ddwg-film/releases/tag/v1.1.0
 [1.0.0]: https://github.com/HengYangDS/ddwg-film/releases/tag/v1.0.0

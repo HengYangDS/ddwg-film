@@ -12,7 +12,7 @@
 
 ## 3. Reproduction
 
-- [ ] 3.1 Supply and rebuild both editions from the lane with `mise run film:supply` and `mise run film:build`, and compare them with `v1.0.0` with `mise run film:compare`; verify that every layer passes and that the tracked tree is unchanged.
+- [x] 3.1 Supply and rebuild both editions from the lane with `mise run film:supply` and `mise run film:build`, and compare them with `v1.0.0` with `mise run film:compare`; verify that every layer passes and that the tracked tree is unchanged.
 
 ## 4. Documentation
 
