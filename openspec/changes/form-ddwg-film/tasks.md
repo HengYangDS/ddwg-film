@@ -22,6 +22,7 @@
 
 - [x] 4.1 Write SRT and WebVTT through pysubs2 if its output is byte-identical to the accepted captions, otherwise keep the current writer; verify with the accepted captions.
 - [x] 4.2 Replace the Documents delivery module with `rsync --checksum` and `shasum -a 256 -c` in a Mise task, and verify a delivery reads back.
+- [x] 4.3 Mark the tests that run rsync so that, like the FFmpeg tests, they are skipped and named where the rsync on PATH is not rsync 3; verify that a run without Homebrew on PATH skips and names them and a run with it runs them.
 
 ## 5. Reproduction
 

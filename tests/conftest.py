@@ -1,4 +1,4 @@
-"""Fixtures shared by the narration tests, and the speech runtime and FFmpeg gates."""
+"""Fixtures shared by the narration tests, and the speech runtime and host tool gates."""
 
 import hashlib
 import json
@@ -6,10 +6,12 @@ import shutil
 import subprocess
 import sys
 import wave
+from typing import NamedTuple
 
 import numpy as np
 import pytest
 
+import filmkit.delivery.documents_folder as delivery_documents_folder
 from filmkit.narration.thought_groups import join_quiet
 from filmkit.narration.voice_model import MODEL, NATIVE_DECODER, REVISION
 
@@ -39,27 +41,53 @@ def speech_runtime() -> bool:
 # and the summary of every run name the modules a run without it leaves out.
 collect_ignore = [] if speech_runtime() else SPEECH_RUNTIME_MODULES
 
-# Production runs the host's FFmpeg build with VideoToolbox, which the locked toolchain does not
-# supply. Tests marked ffmpeg run it and are skipped where it is not on PATH; the header and the
+
+class HostTool(NamedTuple):
+    """A host tool that the tests marked with its marker run."""
+
+    name: str
+    runs: str
+    present: bool
+
+
+def rsync_3() -> bool:
+    """Whether the rsync on PATH is the rsync 3 that delivery requires."""
+    return bool(shutil.which("rsync")) and delivery_documents_folder.rsync_version().startswith(
+        delivery_documents_folder.RSYNC_3
+    )
+
+
+# Production runs host tools that Homebrew installs and the locked toolchain does not supply:
+# FFmpeg with VideoToolbox, and rsync 3 for delivery, since macOS's own rsync is openrsync. Tests
+# marked with a tool's marker run it and are skipped where it is not on PATH; the header and the
 # summary of every run name the tests it skips.
-FFMPEG = all(shutil.which(tool) for tool in ("ffmpeg", "ffprobe"))
-ffmpeg_skipped: list[str] = []
+HOST_TOOLS = {
+    "ffmpeg": HostTool(
+        "host FFmpeg",
+        "the host FFmpeg and FFprobe",
+        all(shutil.which(tool) for tool in ("ffmpeg", "ffprobe")),
+    ),
+    "rsync": HostTool("host rsync 3", "the host rsync 3", rsync_3()),
+}
+host_skipped: dict[str, list[str]] = {marker: [] for marker in HOST_TOOLS}
 
 
 def pytest_configure(config) -> None:
-    """Register the marker of the tests that run the host FFmpeg."""
-    config.addinivalue_line("markers", "ffmpeg: runs the host FFmpeg and FFprobe")
+    """Register the markers of the tests that run a host tool."""
+    for marker, tool in HOST_TOOLS.items():
+        config.addinivalue_line("markers", f"{marker}: runs {tool.runs}")
 
 
 def pytest_collection_modifyitems(items) -> None:
-    """Skip the tests that run the host FFmpeg where it is not on PATH."""
-    if FFMPEG:
-        return
-    skip = pytest.mark.skip(reason="the host FFmpeg is not on PATH")
-    for item in items:
-        if item.get_closest_marker("ffmpeg"):
-            item.add_marker(skip)
-            ffmpeg_skipped.append(item.nodeid)
+    """Skip the tests that run a host tool where it is not on PATH."""
+    for marker, tool in HOST_TOOLS.items():
+        if tool.present:
+            continue
+        skip = pytest.mark.skip(reason=f"the {tool.name} is not on PATH")
+        for item in items:
+            if item.get_closest_marker(marker):
+                item.add_marker(skip)
+                host_skipped[marker].append(item.nodeid)
 
 
 def pytest_report_header() -> list[str]:
@@ -68,12 +96,13 @@ def pytest_report_header() -> list[str]:
         if collect_ignore
         else "speech runtime: present; every speech runtime module collected"
     )
-    ffmpeg = (
-        "host FFmpeg: present; every test marked ffmpeg runs"
-        if FFMPEG
-        else "host FFmpeg: absent; the tests marked ffmpeg are skipped"
-    )
-    return [speech, ffmpeg]
+    tools = [
+        f"{tool.name}: present; every test marked {marker} runs"
+        if tool.present
+        else f"{tool.name}: absent; the tests marked {marker} are skipped"
+        for marker, tool in HOST_TOOLS.items()
+    ]
+    return [speech, *tools]
 
 
 def pytest_terminal_summary(terminalreporter) -> None:
@@ -85,11 +114,13 @@ def pytest_terminal_summary(terminalreporter) -> None:
         )
         for module in collect_ignore:
             terminalreporter.write_line(f"not collected: tests/{module}")
-    if ffmpeg_skipped:
+    for marker, skipped in host_skipped.items():
+        if not skipped:
+            continue
         terminalreporter.write_sep(
-            "!", f"host FFmpeg absent: {len(ffmpeg_skipped)} tests skipped", yellow=True
+            "!", f"{HOST_TOOLS[marker].name} absent: {len(skipped)} tests skipped", yellow=True
         )
-        for test in ffmpeg_skipped:
+        for test in skipped:
             terminalreporter.write_line(f"skipped: {test}")
 
 

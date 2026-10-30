@@ -44,6 +44,8 @@ FINDER_METADATA = ".DS_Store"
 APP_FOLDER = ".claude"
 # Seconds that rsync or shasum may take.
 DEADLINE = 3600
+# How the rsync 3 that delivery requires begins its version report; macOS's own rsync is openrsync.
+RSYNC_3 = "rsync  version 3."
 
 
 class DeliveryRefusedError(Exception):
@@ -142,7 +144,7 @@ def deliver(root: Path, destination: Path, *, dry_run: bool = False) -> dict:
         msg = f"Missing delivery sources: {', '.join(missing)}"
         raise DeliveryRefusedError(msg)
     version = rsync_version()
-    if not version.startswith("rsync  version 3."):
+    if not version.startswith(RSYNC_3):
         msg = f"rsync 3 is required to deliver, as Homebrew installs it; PATH holds {version}"
         raise DeliveryRefusedError(msg)
     paths = [path for _, path in members]

@@ -46,6 +46,7 @@ def test_the_delivery_members_are_the_entry_page_then_each_editions_films_and_vi
     assert sources[1] == root / "build/artifacts/film/zh/ddwg-zh-uhd.mp4"
 
 
+@pytest.mark.rsync
 def test_a_first_delivery_places_and_reads_back_every_member(film):
     root, destination = film
     report = delivery_documents_folder.deliver(root, destination)
@@ -64,6 +65,7 @@ def test_a_first_delivery_places_and_reads_back_every_member(film):
     assert sums[0] == f"{sha('current index.html' + chr(10))}  index.html"
 
 
+@pytest.mark.rsync
 def test_a_delivery_keeps_what_it_replaces_or_removes_and_the_foreign_entries(film):
     root, destination = film
     delivery_documents_folder.deliver(root, destination)
@@ -88,6 +90,7 @@ def test_a_delivery_keeps_what_it_replaces_or_removes_and_the_foreign_entries(fi
     assert report["all_match"]
 
 
+@pytest.mark.rsync
 def test_an_unchanged_delivery_replaces_nothing(film):
     root, destination = film
     delivery_documents_folder.deliver(root, destination)
@@ -95,6 +98,7 @@ def test_an_unchanged_delivery_replaces_nothing(film):
     assert (report["predecessors"], report["changes"]) == (None, [])
 
 
+@pytest.mark.rsync
 def test_a_dry_run_reports_the_changes_and_writes_nothing(film):
     root, destination = film
     report = delivery_documents_folder.deliver(root, destination, dry_run=True)
@@ -112,6 +116,7 @@ def test_missing_sources_refuse_before_any_change(film):
     assert not destination.exists()
 
 
+@pytest.mark.rsync
 def test_the_readback_refuses_a_member_that_differs_at_the_destination(film):
     root, destination = film
     delivery_documents_folder.deliver(root, destination)
@@ -120,6 +125,7 @@ def test_the_readback_refuses_a_member_that_differs_at_the_destination(film):
         delivery_documents_folder.readback(root, destination)
 
 
+@pytest.mark.rsync
 def test_the_readback_refuses_an_entry_beside_the_members(film):
     root, destination = film
     delivery_documents_folder.deliver(root, destination)
@@ -135,6 +141,7 @@ def test_an_rsync_other_than_rsync_3_is_refused(film, monkeypatch):
     assert not film.destination.exists()
 
 
+@pytest.mark.rsync
 def test_the_command_reports_the_readback_summary(film, monkeypatch, capsys):
     monkeypatch.setattr(repository, "ROOT", film.root)
     delivery_documents_folder.main(["--destination", str(film.destination)])
