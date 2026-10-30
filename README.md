@@ -56,7 +56,7 @@ The comparison refuses a published asset or a film-bound source that differs fro
 
 ## Checks
 
-`mise run check` runs the picture and Python test suites and the Markdown format check. The repository is governed by [ETHOS](https://github.com/HengYangDS/ethos): `ethos prove --full --execute` runs the portable proof that hosted CI also runs, and after a rebuild `ethos prove --gate film-media --gate film-reproduction --execute` verifies the films and their reproduction.
+`mise run check` runs the picture and Python test suites and the Markdown format check. The repository is governed by [ETHOS](https://github.com/HengYangDS/ethos): `ethos prove --full --execute` runs the portable proof that hosted CI also runs, and after a rebuild `ethos prove --host --gate film-media --gate film-reproduction --execute` verifies the films and their reproduction on this host.
 
 ## Layout
 

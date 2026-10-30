@@ -40,5 +40,5 @@
 
 ## Workflow follow-up
 
-- Archive the Change, prove the archived head once, land it and close out.
+- Archive the Change, prove the archived head once, run the film gates on it with `ethos prove --host --gate film-media --gate film-reproduction --execute`, land it and close out.
 - Add the forge remotes, push, tag `v1.0.0` and upload the release only after the user confirms; then run the README's download command and read back every asset and `SHA256SUMS` on both forges.

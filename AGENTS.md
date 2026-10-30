@@ -31,5 +31,5 @@ VideoToolbox, ExifTool and rsync 3 (`brew install ffmpeg exiftool rsync`).
 `mise run film:supply` is the only step that reaches the network. The proof
 sets hold the portable gates that hosted CI also runs. After
 `mise run film:build`, with the release assets in `build/artifacts/release/`,
-`ethos prove --gate film-media --gate film-reproduction --execute` accepts the
-films.
+`ethos prove --host --gate film-media --gate film-reproduction --execute`
+accepts the films as a host observation, which issues no proof attestation.
