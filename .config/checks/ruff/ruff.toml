@@ -72,11 +72,6 @@ allowed-confusables = ["，", "？", "；", "！", "：", "（", "）", "‘", "
 [lint.mccabe]
 max-complexity = 10
 
-# Import order stays at isort's defaults, so this policy and the runtime's isolated static gate
-# accept the same imports.
-[lint.isort]
-known-first-party = ["filmkit"]
-
 [lint.pydocstyle]
 convention = "google"
 
