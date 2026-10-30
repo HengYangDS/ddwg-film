@@ -45,7 +45,11 @@ test("otherwise the newest supplied macOS arm64 build runs", async () => {
       await mkdir(join(folder, version));
     assert.equal(
       await newestBrowser(folder),
-      join(folder, "mac_arm-152.0.7977.30", "chrome-headless-shell-mac-arm64/chrome-headless-shell"),
+      join(
+        folder,
+        "mac_arm-152.0.7977.30",
+        "chrome-headless-shell-mac-arm64/chrome-headless-shell",
+      ),
     );
   } finally {
     await rm(folder, { recursive: true, force: true });

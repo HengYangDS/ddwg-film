@@ -535,9 +535,7 @@ for (const code of ["zh", "en"]) {
   });
 }
 
-const COMPOSITION = fileURLToPath(
-  new URL("../../picture/film.js", import.meta.url),
-);
+const COMPOSITION = fileURLToPath(new URL("../../picture/film.js", import.meta.url));
 const spanOf = (points) => [
   Math.min(...points.map((p) => p[0])),
   Math.min(...points.map((p) => p[1])),
