@@ -10,6 +10,7 @@ All notable changes to the DDWG introduction films and their build are recorded 
 
 - The films are built by the published `filmkit` 0.1.0 release, which `pyproject.toml` pins by its tag `v0.1.0` and `uv.lock` by its commit, instead of the engine copy in `src/filmkit`. Every other locked package keeps its version. The declaration names the fonts the picture stages and the listening plan's readings, which `content/review/readings.json` holds, and the Mise tasks run the Node tools through `python -m filmkit.tools`.
 - A rebuild with filmkit 0.1.0 on an Apple M5 Max reproduces the published `1.0.0` editions: every soundtrack, staged picture document, caption, transcript and cover is byte-identical, and each film has the published frame count, decoded audio and container, with every frame at or above the 45 dB PSNR floor; the lowest frame measured 51.6 dB.
+- The portable proof runs the film's Python checks as the `film-checks` gate, because the repository no longer holds production Python for them to test, and measures the composition tests' coverage of `picture/film.js` alone.
 
 ### Removed
 

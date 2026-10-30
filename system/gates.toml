@@ -6,8 +6,8 @@ source_refs = ["system/gates.toml"]
 # silicon, the supplied models, a rebuild and the published release; they run locally as a host
 # observation through `ethos prove --host --gate film-media --gate film-reproduction --execute`.
 [proof_sets]
-default = ["native-static", "native-behavior", "source-integrity"]
-full = ["native-static", "native-behavior", "source-integrity"]
+default = ["native-static", "native-behavior", "film-checks", "source-integrity"]
+full = ["native-static", "native-behavior", "film-checks", "source-integrity"]
 
 [[gates]]
 id = "native-static"
@@ -42,6 +42,43 @@ tool_adapter = "ethos"
 writes_files = false
 network_policy = "offline"
 version_source = "product"
+
+# The film's own checks of its declaration, players, narration receipts and release manifest,
+# through the installed engine. They are Python but test no production Python of this repository,
+# so they run here rather than in native-behavior; -B and no cache keep the tree unchanged.
+[[gates]]
+id = "film-checks"
+kind = "test"
+command = [
+  "uv",
+  "run",
+  "--python",
+  "3.12",
+  "--frozen",
+  "--offline",
+  "--group",
+  "dev",
+  "python",
+  "-B",
+  "-m",
+  "pytest",
+  "-p",
+  "no:cacheprovider",
+  "-q",
+  "tests",
+]
+policy = "required"
+profile = "repository"
+toolchain = "uv-python"
+asset_classes = ["film-sources"]
+dimensions = ["declaration", "players", "narration-receipts", "release-manifest"]
+execution_mode = "adapter"
+evidence_class = "proof"
+trust_bearing = true
+tool_adapter = "check-ddwg-film"
+writes_files = false
+network_policy = "offline"
+version_source = "locked-toolchain"
 
 [[gates]]
 id = "film-media"

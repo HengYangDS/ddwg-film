@@ -1,5 +1,10 @@
 # Third-party fonts, their licenses and the Creative Commons legal code keep their upstream names.
 assets/fonts/** linguist-vendored
 LICENSES/** linguist-vendored
+# The Python checks verify the film's sources through the installed engine, which this
+# repository does not carry, so they are tooling that the film-checks gate runs; the helper
+# that finds the engine's JavaScript is tooling for the composition tests.
+tests/**/*.py ethos-role=tooling
+tests/engine.mjs ethos-role=tooling
 # Normalize every text file to LF in the index and working tree.
 * text=auto eol=lf
