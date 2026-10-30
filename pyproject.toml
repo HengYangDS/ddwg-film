@@ -1,29 +1,31 @@
 [project]
-name = "filmkit"
+name = "ddwg-film"
 dynamic = ["version"]
-description = "Rebuild narrated bilingual explainer films from their sources"
+description = "Rebuild the DDWG introduction films from their sources with the filmkit engine"
 requires-python = ">=3.12,<3.15"
 license = "MIT"
 license-files = ["LICENSE"]
-dependencies = ["mlx-audio==0.5.8", "numpy==2.5.4", "pillow==13.0.0", "pydantic==2.14.1"]
+dependencies = ["filmkit"]
 
 [build-system]
 requires = ["hatchling==1.32.4"]
 build-backend = "hatchling.build"
 
+# The repository is the film, not a package: uv installs its dependencies without building it.
 # Resolve stable releases only, as uv.lock records; `uv run --locked` refuses a lock that was
 # resolved in another prerelease mode.
 [tool.uv]
+package = false
 prerelease = "disallow"
 
-# VERSION is the only version source, as ETHOS requires of a repository that tags releases;
-# uv_build reads no dynamic version, so hatchling builds the package.
+# The film engine, at the release whose tag the lock pins to its commit.
+[tool.uv.sources]
+filmkit = { git = "https://github.com/HengYangDS/filmkit", tag = "v0.1.0" }
+
+# VERSION is the only version source, as ETHOS requires of a repository that tags releases.
 [tool.hatch.version]
 path = "VERSION"
 pattern = "^(?P<version>\\S+)$"
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/filmkit"]
 
 [dependency-groups]
 dev = ["coverage==7.16.2", "pytest==9.1.1", "pytest-cov==7.1.0", "pytest-reportlog==1.0.0"]

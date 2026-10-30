@@ -12,7 +12,7 @@ The films are published as release assets, together with their captions, transcr
 
 ## Rebuilding the films
 
-A rebuild needs an Apple-silicon Mac with [mise](https://mise.jdx.dev), which installs the locked Node, Python, uv and ETHOS, and three Homebrew tools: FFmpeg with VideoToolbox, ExifTool and rsync 3.
+The films are built by [filmkit](https://github.com/HengYangDS/filmkit), the film engine, at the release that `pyproject.toml` pins by its tag `v0.1.0` and `uv.lock` by its commit; this repository holds the film's sources and none of the engine's. A rebuild needs an Apple-silicon Mac with [mise](https://mise.jdx.dev), which installs the locked Node, Python, uv and ETHOS, and three Homebrew tools: FFmpeg with VideoToolbox, ExifTool and rsync 3.
 
 ```bash
 brew install mise ffmpeg exiftool rsync
@@ -65,8 +65,7 @@ The comparison refuses a published asset or a film-bound source that differs fro
 | `content/`                      | The film's declaration `film.toml`, both editions' scripts, casts, narration texts and players, the entry page, source manifest and release manifest. |
 | `picture/`                      | The film's picture composition.                                                                                                                       |
 | `assets/`                       | The narrator's reference recordings, the covers and the fonts.                                                                                        |
-| `src/filmkit/`                  | The film engine: narration, soundtrack, captions, picture staging and checks, packaging, verification, delivery and comparison.                       |
-| `tests/`                        | The engine's and the film's tests.                                                                                                                    |
+| `tests/`                        | The film's tests: its composition against both scripts, its retained narration receipts, its release manifest, its declaration and players.           |
 | `openspec/`                     | The accepted specification and any open Change.                                                                                                       |
 | `system/gates.toml`, `.config/` | The ETHOS gates, the check policies, the CI declaration and the locked toolchain with its tasks.                                                      |
 

@@ -1,6 +1,6 @@
-# The film this repository builds. The engine in src/filmkit takes every film-specific value
-# from this declaration and the files it names; each edition's script declares its title,
-# author, language, duration, frame rate and chapters. Paths are below the repository root.
+# The film this repository builds. The filmkit engine takes every film-specific value from this
+# declaration and the files it names; each edition's script declares its title, author,
+# language, duration, frame rate and chapters. Paths are below the repository root.
 
 # The prefix of every delivered file.
 slug = "ddwg"
@@ -43,9 +43,22 @@ caption_terms = [
   "the problem scope or completion condition",
 ]
 
+# The fonts the picture stages below fonts/, in this order: Noto Sans CJK SC for any text with a
+# Chinese character, and IBM Plex Sans for Latin-only text.
+[picture]
+fonts = [
+  "assets/fonts/NotoSansCJKsc-Regular.otf",
+  "assets/fonts/NotoSansCJKsc-Bold.otf",
+  "assets/fonts/IBMPlexSans-Regular.ttf",
+  "assets/fonts/IBMPlexSans-Bold.ttf",
+]
+
 [review]
 # The reviewer prompt: a str.format template that each round fills for each edition.
 prompt = "content/review/prompt.md"
+# The listening plan's analyst readings: context readings of Chinese words, and the English
+# heteronyms with the part of speech of each occurrence, keyed by segment and offset in the script.
+readings = "content/review/readings.json"
 # The verifier's floor: the overall score and every dimension at least this.
 overall_minimum = 90
 dimension_minimum = 90

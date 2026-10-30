@@ -31,8 +31,8 @@ run = [
 description = "Apply the Markdown formatter to the files it owns"
 run = "npm run format:markdown"
 
-# The film pipeline: each stage runs the engine's commands for both editions from the repository
-# root, and film:build runs every stage in order. Only film:supply reaches the network; HF_ENDPOINT
+# The film pipeline: each stage runs the filmkit engine's commands for both editions from the
+# repository root, and film:build runs every stage in order. Only film:supply reaches the network; HF_ENDPOINT
 # names a Hugging Face mirror where the hub is unreachable.
 [tasks."film:supply"]
 description = "Install the pinned browser build and speech models below build/runtime/tool-cache"
@@ -60,11 +60,11 @@ run = [
 description = "Stage each edition's picture, check its geometry in the browser, render it with the locked renderer and validate it"
 run = [
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language zh",
-  "node src/filmkit/picture/geometry-check.mjs build/runtime/work/final-delivery-zh-uhd build/evidence/editions/zh/picture-geometry.json 2",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.tools geometry-check build/runtime/work/final-delivery-zh-uhd build/evidence/editions/zh/picture-geometry.json 2",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language zh",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language zh",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce stage-picture --language en",
-  "node src/filmkit/picture/geometry-check.mjs build/runtime/work/final-delivery-en-uhd build/evidence/editions/en/picture-geometry.json 2",
+  "uv run --python 3.12 --frozen --offline python -m filmkit.tools geometry-check build/runtime/work/final-delivery-en-uhd build/evidence/editions/en/picture-geometry.json 2",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce render-picture --language en",
   "uv run --python 3.12 --frozen --offline python -m filmkit.produce validate-picture --language en",
 ]

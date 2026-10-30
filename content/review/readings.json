@@ -1,0 +1,372 @@
+{
+  "mandarin": {
+    "偏好": "piānhào",
+    "补一次数": "bǔ yí cì shù",
+    "降级": "jiàngjí",
+    "偏差": "piānchā",
+    "沉没": "chénmò",
+    "漂亮": "piàoliang",
+    "漂移": "piāoyí",
+    "重新": "chóngxīn",
+    "塞进": "sāijìn",
+    "阻塞": "zǔsè",
+    "不了": "bùliǎo",
+    "标识": "biāozhì or biāoshí (both in current use; either is accepted)",
+    "处置": "chǔzhì",
+    "处理": "chǔlǐ",
+    "调用": "diàoyòng",
+    "调查": "diàochá",
+    "相应": "xiāngyìng",
+    "长期": "chángqī",
+    "更长": "gèng cháng",
+    "重大": "zhòngdà",
+    "模型": "móxíng",
+    "模拟": "mónǐ",
+    "模式": "móshì",
+    "模板": "múbǎn",
+    "成长": "chéngzhǎng",
+    "差距": "chājù",
+    "校准": "jiàozhǔn",
+    "暴露": "bàolù",
+    "了解": "liǎojiě",
+    "懂行": "dǒngháng",
+    "行为": "xíngwéi",
+    "划清": "huàqīng",
+    "划不出": "huà bu chū",
+    "一字不差": "yí zì bú chà",
+    "差异": "chāyì",
+    "角色": "juésè",
+    "目的": "mùdì",
+    "得不偿失": "dé bù cháng shī",
+    "要求": "yāoqiú",
+    "变更": "biàngēng",
+    "充分": "chōngfèn",
+    "充当": "chōngdāng",
+    "答应": "dāying",
+    "钻空子": "zuān kòngzi",
+    "格调": "gédiào",
+    "该尽的": "gāi jìn de",
+    "应对": "yìngduì",
+    "假定": "jiǎdìng",
+    "强制性": "qiángzhìxìng",
+    "供应商": "gōngyìngshāng",
+    "运行": "yùnxíng"
+  },
+  "heteronyms": {
+    "lead": {
+      "noun": {
+        "phones": "L IY1 D",
+        "primary": 1
+      },
+      "verb": {
+        "phones": "L IY1 D",
+        "primary": 1
+      }
+    },
+    "leads": {
+      "noun": {
+        "phones": "L IY1 D Z",
+        "primary": 1
+      },
+      "verb": {
+        "phones": "L IY1 D Z",
+        "primary": 1
+      }
+    },
+    "read": {
+      "present": {
+        "phones": "R IY1 D",
+        "primary": 1
+      }
+    },
+    "reads": {
+      "present": {
+        "phones": "R IY1 D Z",
+        "primary": 1
+      }
+    },
+    "close": {
+      "verb": {
+        "phones": "K L OW1 Z",
+        "primary": 1
+      }
+    },
+    "present": {
+      "adjective": {
+        "phones": "P R EH1 Z AH0 N T",
+        "primary": 1,
+        "weak": [2]
+      },
+      "verb": {
+        "phones": "P R IY0 Z EH1 N T",
+        "primary": 2,
+        "weak": [1]
+      }
+    },
+    "permit": {
+      "verb": {
+        "phones": "P ER0 M IH1 T",
+        "primary": 2,
+        "weak": [1]
+      }
+    },
+    "permits": {
+      "verb": {
+        "phones": "P ER0 M IH1 T S",
+        "primary": 2,
+        "weak": [1]
+      }
+    },
+    "conflict": {
+      "noun": {
+        "phones": "K AA1 N F L IH0 K T",
+        "primary": 1,
+        "weak": [2]
+      },
+      "verb": {
+        "phones": "K AH0 N F L IH1 K T",
+        "primary": 2,
+        "weak": [1]
+      }
+    },
+    "conflicts": {
+      "noun": {
+        "phones": "K AA1 N F L IH0 K T S",
+        "primary": 1,
+        "weak": [2]
+      }
+    },
+    "subject": {
+      "noun": {
+        "phones": "S AH1 B JH IH0 K T",
+        "primary": 1,
+        "weak": [2]
+      }
+    },
+    "delegate": {
+      "verb": {
+        "phones": "D EH1 L AH0 G EY2 T",
+        "primary": 1,
+        "secondary": [3],
+        "weak": [2]
+      }
+    },
+    "delegated": {
+      "verb": {
+        "phones": "D EH1 L AH0 G EY2 T IH0 D",
+        "primary": 1,
+        "secondary": [3],
+        "weak": [2, 4]
+      }
+    },
+    "separate": {
+      "adjective": {
+        "phones": "S EH1 P ER0 IH0 T",
+        "primary": 1,
+        "weak": [2, 3]
+      }
+    },
+    "separates": {
+      "verb": {
+        "phones": "S EH1 P ER0 EY2 T S",
+        "primary": 1,
+        "secondary": [3],
+        "weak": [2]
+      }
+    },
+    "produce": {
+      "verb": {
+        "phones": "P R AH0 D UW1 S",
+        "primary": 2,
+        "weak": [1]
+      }
+    },
+    "duplicates": {
+      "verb": {
+        "phones": "D UW1 P L AH0 K EY2 T S",
+        "primary": 1,
+        "secondary": [3],
+        "weak": [2]
+      }
+    },
+    "digest": {
+      "noun": {
+        "phones": "D AY1 JH EH0 S T",
+        "primary": 1,
+        "weak": [2]
+      }
+    },
+    "update": {
+      "noun": {
+        "phones": "AH1 P D EY2 T",
+        "primary": 1,
+        "secondary": [2]
+      }
+    },
+    "coordinates": {
+      "verb": {
+        "phones": "K OW0 AO1 R D AH0 N EY2 T S",
+        "primary": 2,
+        "secondary": [4],
+        "weak": [1, 3]
+      }
+    },
+    "recording": {
+      "verb": {
+        "phones": "R AH0 K AO1 R D IH0 NG",
+        "primary": 2,
+        "weak": [1, 3]
+      }
+    },
+    "contracts": {
+      "noun": {
+        "phones": "K AA1 N T R AE2 K T S",
+        "primary": 1,
+        "secondary": [2]
+      }
+    }
+  },
+  "variants": {
+    "uses": {
+      "verb": {
+        "phones": "Y UW1 Z IH0 Z",
+        "primary": 1,
+        "weak": [2]
+      }
+    }
+  },
+  "grammar": {
+    "lead": {
+      "11:1139": "noun",
+      "13:917": "noun",
+      "14:680": "noun",
+      "20:35": "noun",
+      "20:131": "noun",
+      "25:658": "verb",
+      "29:841": "noun"
+    },
+    "leads": {
+      "23:242": "verb"
+    },
+    "reads": {
+      "18:674": "present",
+      "21:597": "present"
+    },
+    "close": {
+      "04:843": "verb"
+    },
+    "present": {
+      "05:393": "adjective",
+      "22:606": "verb",
+      "23:271": "adjective"
+    },
+    "permit": {
+      "13:851": "verb"
+    },
+    "permits": {
+      "12:857": "verb",
+      "20:113": "verb"
+    },
+    "conflict": {
+      "03:970": "noun",
+      "13:502": "noun",
+      "22:95": "verb",
+      "29:197": "verb"
+    },
+    "conflicts": {
+      "29:96": "noun"
+    },
+    "subject": {
+      "03:698": "noun",
+      "04:175": "noun",
+      "05:360": "noun",
+      "05:596": "noun",
+      "05:828": "noun",
+      "06:590": "noun",
+      "14:658": "noun",
+      "16:325": "noun",
+      "17:404": "noun",
+      "18:177": "noun",
+      "23:636": "noun",
+      "25:462": "noun",
+      "25:794": "noun",
+      "26:789": "noun"
+    },
+    "delegate": {
+      "03:57": "verb",
+      "19:8": "verb",
+      "19:221": "verb"
+    },
+    "delegated": {
+      "19:140": "verb"
+    },
+    "separate": {
+      "07:251": "adjective"
+    },
+    "separates": {
+      "07:551": "verb",
+      "07:718": "verb"
+    },
+    "produce": {
+      "02:391": "verb",
+      "24:16": "verb"
+    },
+    "duplicates": {
+      "26:807": "verb"
+    },
+    "update": {
+      "23:235": "noun"
+    },
+    "coordinates": {
+      "13:922": "verb"
+    },
+    "recording": {
+      "29:1103": "verb"
+    },
+    "contracts": {
+      "03:478": "noun"
+    },
+    "record": {
+      "03:1011": "noun",
+      "04:1010": "noun",
+      "15:724": "verb",
+      "15:776": "noun",
+      "21:979": "noun",
+      "27:783": "noun",
+      "29:1172": "noun"
+    },
+    "records": {
+      "03:527": "noun",
+      "03:640": "noun"
+    },
+    "use": {
+      "01:67": "verb",
+      "05:276": "verb",
+      "09:101": "noun",
+      "11:1101": "noun",
+      "12:261": "noun",
+      "12:351": "noun",
+      "12:392": "noun",
+      "12:463": "noun",
+      "12:513": "noun",
+      "12:668": "noun",
+      "12:842": "noun",
+      "12:877": "noun",
+      "12:962": "noun",
+      "13:782": "noun",
+      "13:1106": "noun",
+      "14:1117": "noun",
+      "16:510": "noun",
+      "25:895": "noun",
+      "29:377": "verb",
+      "29:681": "noun",
+      "30:168": "noun"
+    },
+    "uses": {
+      "18:649": "verb"
+    },
+    "project": {
+      "27:430": "noun"
+    }
+  }
+}

@@ -1,8 +1,16 @@
 # Changelog
 
-All notable changes to the DDWG introduction films and their engine are recorded here. The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/), and releases follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
+All notable changes to the DDWG introduction films and their build are recorded here. The format follows [Keep a Changelog 1.1.0](https://keepachangelog.com/en/1.1.0/), and releases follow [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- The films are built by the published `filmkit` 0.1.0 release, which `pyproject.toml` pins by its tag `v0.1.0` and `uv.lock` by its commit, instead of the engine copy in `src/filmkit`. Every other locked package keeps its version. The declaration names the fonts the picture stages and the listening plan's readings, which `content/review/readings.json` holds, and the Mise tasks run the Node tools through `python -m filmkit.tools`.
+
+### Removed
+
+- `src/filmkit` and the engine's tests, which filmkit carries with its sample film. The film keeps the tests of its own composition, narration receipts, release manifest, declaration and players.
 
 ## [1.0.0] - 2026-10-30
 

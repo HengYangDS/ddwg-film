@@ -185,22 +185,10 @@ wheels = [
 ]
 
 [[package]]
-name = "filelock"
-version = "4.2.4"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz", hash = "sha256:c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d", size = 652444, upload-time = "2026-10-19T01:57:51.001Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/e0/1b/5e74289a1878e666bb4b65fe5805a04cafcac2aa5f519ef1ead67ef91c56/filelock-4.2.4-py3-none-any.whl", hash = "sha256:301241438c57936ef93f4243a94f2559022268bfcf9b375a9a72eb0f8db8358e", size = 162475, upload-time = "2026-10-19T01:57:49.419Z" },
-]
-
-[[package]]
-name = "filmkit"
-source = { editable = "." }
+name = "ddwg-film"
+source = { virtual = "." }
 dependencies = [
-    { name = "mlx-audio" },
-    { name = "numpy" },
-    { name = "pillow" },
-    { name = "pydantic" },
+    { name = "filmkit" },
 ]
 
 [package.dev-dependencies]
@@ -212,12 +200,7 @@ dev = [
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "mlx-audio", specifier = "==0.5.8" },
-    { name = "numpy", specifier = "==2.5.4" },
-    { name = "pillow", specifier = "==13.0.0" },
-    { name = "pydantic", specifier = "==2.14.1" },
-]
+requires-dist = [{ name = "filmkit", git = "https://github.com/HengYangDS/filmkit?tag=v0.1.0" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -225,6 +208,26 @@ dev = [
     { name = "pytest", specifier = "==9.1.1" },
     { name = "pytest-cov", specifier = "==7.1.0" },
     { name = "pytest-reportlog", specifier = "==1.0.0" },
+]
+
+[[package]]
+name = "filelock"
+version = "4.2.4"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/28/3893324bcadf8f89b1616637468d766af3f625008c0735bf704fdfa86617/filelock-4.2.4.tar.gz", hash = "sha256:c6d8663535e1650ee430507b4ffbac7b464dd64b7647ea0112a9f406499d163d", size = 652444, upload-time = "2026-10-19T01:57:51.001Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e0/1b/5e74289a1878e666bb4b65fe5805a04cafcac2aa5f519ef1ead67ef91c56/filelock-4.2.4-py3-none-any.whl", hash = "sha256:301241438c57936ef93f4243a94f2559022268bfcf9b375a9a72eb0f8db8358e", size = 162475, upload-time = "2026-10-19T01:57:49.419Z" },
+]
+
+[[package]]
+name = "filmkit"
+version = "0.1.0"
+source = { git = "https://github.com/HengYangDS/filmkit?tag=v0.1.0#9e58d07e60378507b190c2a86b25e160800a6e20" }
+dependencies = [
+    { name = "mlx-audio" },
+    { name = "numpy" },
+    { name = "pillow" },
+    { name = "pydantic" },
 ]
 
 [[package]]
