@@ -8,7 +8,7 @@ Keep the film engine reusable by a second film: every film-specific value comes 
 
 ### Requirement: A film declares its parameters
 
-A film SHALL declare, in one declaration, its file prefix, delivery folder, entry page, source manifest, each edition's sources folder, cover and caption terms, and its review prompt, floors and scored dimensions. Each edition's script SHALL declare the edition's title, author, language, duration, frame rate and chapters. The engine SHALL check the declaration and the scripts before any work and SHALL refuse an invalid or incomplete declaration, naming each failing field.
+A film SHALL declare, in one declaration, its file prefix, delivery folder, entry page, source manifest, each edition's sources, cover and caption terms, its picture fonts, its review prompt, floors and dimensions, and its listening-plan readings. Each edition's script SHALL declare its title, author, language, duration, frame rate and chapters. The engine SHALL refuse an invalid or incomplete declaration or script before any work, naming each failing field.
 
 #### Scenario: An invalid declaration refuses before work
 
@@ -20,11 +20,23 @@ A film SHALL declare, in one declaration, its file prefix, delivery folder, entr
 - **WHEN** the editions' scripts declare different durations, authors or chapter counts, or a frame rate other than the 60 fps the engine encodes
 - **THEN** the engine refuses when it loads and names the value
 
-### Requirement: The engine carries no film's content
+#### Scenario: The film's readings derive its listening plan
 
-The engine SHALL NOT contain any film's title, identity, script, voice, source, player page, review policy or picture composition. It SHALL take them from the declared film.
+- **WHEN** the listening plan is derived from the current scripts
+- **THEN** it takes the film's Mandarin readings, heteronyms, variants and grammar from the declared readings file
+- **AND** it equals the plan that the engine copy of `v1.0.0` derives from the same scripts
 
-#### Scenario: The engine names no film
+### Requirement: The engine is a pinned release
 
-- **WHEN** the engine's sources are scanned for the film's file prefix, delivery folder, source repository, titles, author and chapter titles
-- **THEN** none is found
+The film SHALL take its engine from one filmkit release, pinned by its tag and commit in the lock, and SHALL NOT track a copy of the engine's sources. The lock SHALL keep the versions of the packages that reproduced the published films.
+
+#### Scenario: The lock pins the engine's release
+
+- **WHEN** the dependencies are installed from the lock
+- **THEN** the installed filmkit reports the version of the release the lock names, built from that tag's commit
+- **AND** no engine source file is tracked in the repository
+
+#### Scenario: A rebuild with the release reproduces the published films
+
+- **WHEN** both editions are rebuilt with the pinned release from a clean checkout and its declared supply
+- **THEN** the comparison with the published `v1.0.0` release passes every layer of the reproduction standard
