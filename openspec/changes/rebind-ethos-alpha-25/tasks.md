@@ -6,4 +6,4 @@
 ## 2. Verification
 
 - [x] 2.1 Apply the paradigm repairs that `ethos lane repair-paradigm` reports under alpha.25, if any; done when it reports no gap and `ethos lane project --check` passes.
-- [ ] 2.2 Run the full proof of the lane head under alpha.25; done when every gate passes.
+- [x] 2.2 Run the full proof of the lane head under alpha.25; done when every gate passes.
