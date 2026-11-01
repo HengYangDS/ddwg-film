@@ -5,8 +5,8 @@
   "scripts": {
     "test": "node --test tests/picture/composition.test.mjs",
     "test:coverage": "c8 --include=picture/film.js npm test",
-    "format:markdown": "prettier --no-config --no-editorconfig --ignore-path .gitignore --print-width 100 --prose-wrap preserve --no-error-on-unmatched-pattern --write AGENTS.md CHANGELOG.md README.md 'openspec/changes/*/*.md' 'openspec/changes/*/specs/**/*.md'",
-    "format:markdown:check": "prettier --no-config --no-editorconfig --ignore-path .gitignore --print-width 100 --prose-wrap preserve --no-error-on-unmatched-pattern --check AGENTS.md CHANGELOG.md README.md 'openspec/changes/*/*.md' 'openspec/changes/*/specs/**/*.md'"
+    "format:markdown": "prettier --no-config --no-editorconfig --ignore-path .gitignore --print-width 100 --prose-wrap preserve --no-error-on-unmatched-pattern --write AGENTS.md CHANGELOG.md CONTRIBUTING.md README.md 'openspec/changes/*/*.md' 'openspec/changes/*/specs/**/*.md'",
+    "format:markdown:check": "prettier --no-config --no-editorconfig --ignore-path .gitignore --print-width 100 --prose-wrap preserve --no-error-on-unmatched-pattern --check AGENTS.md CHANGELOG.md CONTRIBUTING.md README.md 'openspec/changes/*/*.md' 'openspec/changes/*/specs/**/*.md'"
   },
   "devDependencies": {
     "@puppeteer/browsers": "3.2.3",

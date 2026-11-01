@@ -4,6 +4,14 @@ All notable changes to the DDWG introduction films and their build are recorded 
 
 ## [Unreleased]
 
+### Added
+
+- `CONTRIBUTING.md`: how to prepare the tools, change the films in an ETHOS Work Lane, verify a change, rebuild and compare the films, commit, and cut and publish a release.
+
+### Changed
+
+- The repository is now `data-department-work-guidelines-film`, titled "Data Department Work Guidelines: Film", so that its name corresponds to the guidelines' own repository; the old address redirects.
+
 ## [1.1.0] - 2026-10-31
 
 ### Changed
@@ -26,6 +34,6 @@ All notable changes to the DDWG introduction films and their build are recorded 
 - ETHOS governance, with its portable proof projected into GitHub Actions.
 - The MIT License for the code and CC BY 4.0 for the films' content, with the third-party notices and the narrator's provenance in `NOTICE`.
 
-[Unreleased]: https://github.com/HengYangDS/ddwg-film/compare/v1.1.0...HEAD
-[1.1.0]: https://github.com/HengYangDS/ddwg-film/releases/tag/v1.1.0
-[1.0.0]: https://github.com/HengYangDS/ddwg-film/releases/tag/v1.0.0
+[Unreleased]: https://github.com/HengYangDS/data-department-work-guidelines-film/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/HengYangDS/data-department-work-guidelines-film/releases/tag/v1.1.0
+[1.0.0]: https://github.com/HengYangDS/data-department-work-guidelines-film/releases/tag/v1.0.0

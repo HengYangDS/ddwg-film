@@ -1,4 +1,4 @@
-# ddwg-film
+# Data Department Work Guidelines: Film
 
 Two introduction films to the [Data Department Work Guidelines](https://github.com/HengYangDS/data-department-work-guidelines), one in Chinese and one in English, and everything needed to rebuild them from source.
 
@@ -47,7 +47,7 @@ The stages also run one at a time: `film:narrate`, `film:sound`, `film:picture`,
 Download the release assets into `build/artifacts/release/` and compare:
 
 ```bash
-gh release download v1.0.0 --repo HengYangDS/ddwg-film --dir build/artifacts/release
+gh release download v1.0.0 --repo HengYangDS/data-department-work-guidelines-film --dir build/artifacts/release
 ```
 
 ```bash
@@ -58,7 +58,7 @@ The comparison refuses a published asset or a film-bound source that differs fro
 
 ## Checks
 
-`mise run check` runs the picture and Python test suites and the Markdown format check. The repository is governed by [ETHOS](https://github.com/HengYangDS/ethos): `ethos prove --full --execute` runs the portable proof that hosted CI also runs, including the `film-checks` gate, which runs the Python checks of the declaration, players, narration receipts and release manifest through the installed engine, and after a rebuild `ethos prove --host --gate film-media --gate film-reproduction --execute` verifies the films and their reproduction on this host.
+`mise run check` runs the picture and Python test suites and the Markdown format check. The repository is governed by [ETHOS](https://github.com/HengYangDS/ethos): `ethos prove --full --execute` runs the portable proof that hosted CI also runs, including the `film-checks` gate, which runs the Python checks of the declaration, players, narration receipts and release manifest through the installed engine, and after a rebuild `ethos prove --host --gate film-media --gate film-reproduction --execute` verifies the films and their reproduction on this host. [CONTRIBUTING.md](CONTRIBUTING.md) explains how to change, verify, rebuild and release the films.
 
 ## Layout
 
